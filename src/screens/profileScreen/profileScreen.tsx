@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export const Test = () => {
+export const ProfileScreen = () => {
     return (
         <View>
-            <Text>test</Text>
+            <Text>profileScreen</Text>
         </View>
     )
 }

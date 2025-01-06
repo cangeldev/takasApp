@@ -8,6 +8,8 @@ module.exports = {
         alias: {
           // Alias tanımları
           'components': './src/components',
+          'container': './src/container',
+          'screens': './src/screens'
         },
       },
     ],
