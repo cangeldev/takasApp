@@ -9,7 +9,8 @@ module.exports = {
           // Alias tanımları
           'components': './src/components',
           'container': './src/container',
-          'screens': './src/screens'
+          'screens': './src/screens',
+          'pages': './src/pages',
         },
       },
     ],
