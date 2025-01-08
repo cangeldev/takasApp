@@ -21,6 +21,7 @@ export const TabNavigation = () => {
     return (
         <Tab.Navigator
             screenOptions={{
+                headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     paddingTop: 5

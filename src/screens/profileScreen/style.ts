@@ -9,5 +9,18 @@ export default StyleSheet.create({
     profileImageView: {
         width: 60,
         height: 60
+    },
+    header: {
+        flexDirection: "row",
+
+        margin: 10
+    },
+    logo: {
+        flex: 1
+    },
+    icon: {
+        fontSize: 24,
+        color: colors.bottomTabIconInactiveColor,
+        marginLeft: 20
     }
 })
