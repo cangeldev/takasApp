@@ -16,7 +16,10 @@ export default StyleSheet.create({
         margin: 10
     },
     logo: {
-        flex: 1
+        flex: 1,
+        fontFamily: "Pacifico-Regular",
+        fontSize: 24,
+        color: colors.bottomTabIconActiveColor
     },
     icon: {
         fontSize: 24,
