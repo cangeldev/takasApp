@@ -1,0 +1,8 @@
+export const home = require("./images/home.png")
+export const homeInactive = require("./images/homeInactive.png")
+export const search = require("./images/search.png")
+export const plus = require("./images/plus.png")
+export const menuButtonInactive = require("./images/menuButtonInactive.png")
+export const menuButton = require("./images/menuButton.png")
+export const avatarInactive = require("./images/avatarInactive.png")
+export const avatar = require("./images/avatar.png")

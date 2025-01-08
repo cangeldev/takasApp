@@ -11,6 +11,8 @@ module.exports = {
           'container': './src/container',
           'screens': './src/screens',
           'pages': './src/pages',
+          'assets': './src/assets',
+          'navigation': './src/navigation'
         },
       },
     ],
