@@ -2,7 +2,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { Divider, Icon, ProfileImage, StatusBarComponent } from 'components/index'
 import style from './style'
-import { ProfileStatsCard } from 'components/cards'
+import { ProfileActivitySummaryCard, ProfileStatsCard } from 'components/cards'
+import { gave, received, replacement } from 'assets/index'
 
 export const ProfileScreen = () => {
     return (
@@ -39,6 +40,13 @@ export const ProfileScreen = () => {
                 </View>
             </View>
             <Divider />
+
+            {/* Activity Summary Section */}
+            <View style={style.activitySummarySection}>
+                <ProfileActivitySummaryCard image={received} title='Aldıklarım' />
+                <ProfileActivitySummaryCard image={replacement} title='Bekleyen Takaslar' />
+                <ProfileActivitySummaryCard image={gave} title='Verdiklerim' />
+            </View>
         </View>
     )
 }

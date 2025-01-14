@@ -63,6 +63,11 @@ export default StyleSheet.create({
         flexDirection: 'row'
     },
     profileInfoContainer: {
-        alignItems: 'center'       
+        alignItems: 'center'
+    },
+    activitySummarySection: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginVertical: 15 * scale
     }
 })
