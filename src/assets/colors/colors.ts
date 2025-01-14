@@ -4,5 +4,6 @@ export default {
     red: "#FF0000",
     orange: "#FF5722",
     bottomTabIconActiveColor: "#f73f3f",
-    bottomTabIconInactiveColor: "#808080"
+    bottomTabIconInactiveColor: "#808080",
+    textInactiveColor: "#808080"
 }
