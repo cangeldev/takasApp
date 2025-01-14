@@ -5,5 +5,6 @@ export default {
     orange: "#FF5722",
     bottomTabIconActiveColor: "#f73f3f",
     bottomTabIconInactiveColor: "#808080",
-    textInactiveColor: "#808080"
+    textInactiveColor: "#808080",
+    lightGrey: "#DEE1E3",
 }

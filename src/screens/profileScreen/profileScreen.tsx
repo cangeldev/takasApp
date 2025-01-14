@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { Icon, ProfileImage, StatusBarComponent } from 'components/index'
+import { Divider, Icon, ProfileImage, StatusBarComponent } from 'components/index'
 import style from './style'
 import { ProfileStatsCard } from 'components/cards'
 
@@ -38,6 +38,7 @@ export const ProfileScreen = () => {
                     <ProfileStatsCard count='0' title='Favori' />
                 </View>
             </View>
+            <Divider />
         </View>
     )
 }

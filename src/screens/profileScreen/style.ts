@@ -10,7 +10,8 @@ const scale = width / 375
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: colors.white,
+        paddingHorizontal: 12 * scale
     },
     profileImageWrapper: {
         width: 60 * scale,
@@ -22,7 +23,7 @@ export default StyleSheet.create({
     },
     header: {
         flexDirection: 'row',
-        margin: 10 * scale,
+        marginVertical: 10 * scale,
         alignItems: 'center'
     },
     logoText: {
@@ -58,11 +59,10 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     profileSection: {
-        marginBottom: 40 * scale,
+        marginBottom: 15 * scale,
         flexDirection: 'row'
     },
     profileInfoContainer: {
-        alignItems: 'center',
-        marginLeft: 10 * scale
+        alignItems: 'center'       
     }
 })
