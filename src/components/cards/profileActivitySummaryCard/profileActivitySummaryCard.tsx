@@ -10,9 +10,7 @@ interface IProfileActivitySummaryCard {
 export const ProfileActivitySummaryCard: FC<IProfileActivitySummaryCard> = ({ image, title }) => {
     return (
         <View style={style.container}>
-            <View style={style.activityIconWrapper}>
-                <Image source={image} style={style.activityIcon} />
-            </View>
+            <Image source={image} style={style.activityIcon} />
             <Text style={style.activityLabel}>
                 {title}
             </Text>

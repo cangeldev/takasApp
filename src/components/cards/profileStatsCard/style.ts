@@ -9,6 +9,7 @@ export default StyleSheet.create({
         fontWeight: "700"
     },
     title: {
-        color: colors.textInactiveColor
+        color: colors.textInactiveColor,
+        fontSize:13
     }
 })

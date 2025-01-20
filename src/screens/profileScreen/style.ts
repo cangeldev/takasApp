@@ -11,7 +11,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
-        paddingHorizontal: 12 * scale
+        paddingHorizontal: 13 * scale
     },
     profileImageWrapper: {
         width: 60 * scale,
@@ -50,7 +50,8 @@ export default StyleSheet.create({
     },
     profileName: {
         marginTop: 5 * scale,
-        fontWeight: "600"
+        fontWeight: "600",
+        alignSelf: "center"
     },
     statsContainer: {
         flexDirection: 'row',
@@ -62,12 +63,32 @@ export default StyleSheet.create({
         marginBottom: 15 * scale,
         flexDirection: 'row'
     },
-    profileInfoContainer: {
-        alignItems: 'center'
-    },
     activitySummarySection: {
         flexDirection: "row",
         justifyContent: "space-around",
-        marginVertical: 15 * scale
+        marginVertical: 15 * scale,
+        backgroundColor: "white",
+        elevation: 3,
+        borderRadius: 10,
+        paddingVertical: 10 * scale,
+    },
+    divider: {
+        width: 1,
+        backgroundColor: colors.lightGrey,
+        height: '80%',
+        alignSelf: "center"
+    },
+    advert: {
+        width: "100%",
+        height: 120 * scale,
+        backgroundColor: "yellow",
+        borderRadius: 10
+    },
+    settingsListContainer: {
+        backgroundColor: colors.white,
+        elevation: 3,
+        borderRadius: 10,
+        marginVertical: 15 * scale,
+        paddingHorizontal: 10 * scale
     }
 })

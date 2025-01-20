@@ -6,5 +6,5 @@ export default {
     bottomTabIconActiveColor: "#f73f3f",
     bottomTabIconInactiveColor: "#808080",
     textInactiveColor: "#808080",
-    lightGrey: "#DEE1E3",
+    lightGrey: "#E9E9E9"
 }

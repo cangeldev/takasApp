@@ -9,24 +9,16 @@ const scale = width / 375
 
 export default StyleSheet.create({
     container: {
-        alignItems: "center"
-    },
-    activityIconWrapper: {
-        width: 60 * scale,
-        height: 60 * scale,
-        backgroundColor: colors.white,
-        borderRadius: 30 * scale,
-        justifyContent: "center",
         alignItems: "center",
-        borderWidth: 1,
-        borderColor: colors.lightGrey,
-        elevation: 0.5
+        marginVertical:5 * scale
     },
     activityIcon: {
-        width: 40 * scale,
-        height: 40 * scale
+        width: 30 * scale,
+        height: 30 * scale
     },
     activityLabel: {
-       marginTop:2
+        marginTop: 2,
+        color: colors.bottomTabIconInactiveColor,
+        fontSize: 13
     }
 })

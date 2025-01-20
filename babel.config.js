@@ -12,7 +12,8 @@ module.exports = {
           'screens': './src/screens',
           'pages': './src/pages',
           'assets': './src/assets',
-          'navigation': './src/navigation'
+          'navigation': './src/navigation',
+          'utils': './src/utils'
         },
       },
     ],
