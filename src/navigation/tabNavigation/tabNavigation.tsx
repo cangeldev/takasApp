@@ -3,7 +3,7 @@ import { Image } from 'react-native'
 import colors from 'assets/colors/colors'
 import { avatar, avatarInactive, home, homeInactive, menuButton, menuButtonInactive, plus, search } from 'assets/index'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { HomeStackNavigator, MyAdsStackNavigator, ProductAddStackNavigator, ProfileStackNavigator, SearchStackNavigator, } from '../stackNavigation/stackNavigation'
+import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from 'screens/index'
 
 const Tab = createBottomTabNavigator()
 
@@ -29,35 +29,35 @@ export const TabNavigation = () => {
             }}>
             <Tab.Screen
                 name="Home"
-                component={HomeStackNavigator}
+                component={HomeScreen}
                 options={{
                     tabBarIcon: ({ focused }) => renderIcon(focused ? home : homeInactive, focused)
                 }}
             />
             <Tab.Screen
                 name="Search"
-                component={SearchStackNavigator}
+                component={SearchScreen}
                 options={{
                     tabBarIcon: ({ focused }) => renderIcon(search, focused, 24, true)
                 }}
             />
             <Tab.Screen
                 name="ProductAdd"
-                component={ProductAddStackNavigator}
+                component={ProductAddScreen}
                 options={{
                     tabBarIcon: ({ focused }) => renderIcon(plus, focused, 34, true)
                 }}
             />
             <Tab.Screen
                 name="MyAds"
-                component={MyAdsStackNavigator}
+                component={MyAdsScreen}
                 options={{
                     tabBarIcon: ({ focused }) => renderIcon(focused ? menuButton : menuButtonInactive, focused)
                 }}
             />
             <Tab.Screen
                 name="Profile"
-                component={ProfileStackNavigator}
+                component={ProfileScreen}
                 options={{
                     tabBarIcon: ({ focused }) => renderIcon(focused ? avatar : avatarInactive, focused)
                 }}

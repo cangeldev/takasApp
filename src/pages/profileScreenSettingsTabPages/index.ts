@@ -1,0 +1,1 @@
+export { PersonInformationPage } from "./personInformationPage/personInformationPage"

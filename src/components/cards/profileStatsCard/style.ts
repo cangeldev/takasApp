@@ -1,15 +1,16 @@
-import colors from "assets/colors/colors"
-import { StyleSheet } from "react-native"
+import { StyleSheet, PixelRatio } from 'react-native'
+import colors from 'assets/colors/colors'
 
 export default StyleSheet.create({
     container: {
-        alignItems: "center"
+        alignItems: 'center'
     },
     count: {
-        fontWeight: "700"
+        fontWeight: '700',
+        fontSize: PixelRatio.getFontScale() * 14
     },
     title: {
         color: colors.textInactiveColor,
-        fontSize:13
+        fontSize: PixelRatio.getFontScale() * 13
     }
 })

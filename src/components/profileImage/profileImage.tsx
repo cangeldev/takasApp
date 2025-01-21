@@ -1,6 +1,6 @@
-import { View, Text, Image } from 'react-native'
+import { Image } from 'react-native'
 import React from 'react'
-import { image } from 'assets/index'
+import { defaultProfileImage } from 'assets/index'
 import style from './style'
 
 /**
@@ -8,6 +8,9 @@ import style from './style'
  */
 export const ProfileImage = () => {
     return (
-        <Image source={image} style={style.profileImage} />
+        <Image
+            source={defaultProfileImage}
+            style={style.profileImage}
+        />
     )
 }

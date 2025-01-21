@@ -14,7 +14,7 @@ import { ProfileSettingsOptionsList } from 'utils/helper'
 */
 
 const renderItem = ({ item }: any) =>
-    <ProfileSettingOptionCard iconName={item.iconName} icontype={item.type} title={item.title} />
+    <ProfileSettingOptionCard iconName={item.iconName} icontype={item.type} title={item.title} navigatePage={item.navigatePage} />
 const MemoizedIcon = React.memo(Icon)
 
 export const ProfileScreen = () => {

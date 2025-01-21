@@ -4,7 +4,7 @@ export const ProfileSettingsOptionsList = [
         iconName: 'user',
         type: 'Feather',
         title: "Kişisel Bilgiler",
-        navigatePage: "null"
+        navigatePage: "PersonInformationPage"
     },
     {
         id: 2,

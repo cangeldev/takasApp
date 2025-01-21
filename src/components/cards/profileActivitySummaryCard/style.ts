@@ -1,16 +1,17 @@
-import { Dimensions, StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet, PixelRatio } from 'react-native'
 import colors from 'assets/colors/colors'
 
-// Ekran boyutunu almak için Dimensions API'si kullanılır
+// Ekran boyutlarını almak için kullanılır
 const { width, height } = Dimensions.get('window')
 
-// Ekran genişliğine göre ölçeklendirme faktörü
-const scale = width / 375
+// Ölçekleme faktörü
+const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
+const spacing = 5 * scale // Sabit boşluk değeri
 
 export default StyleSheet.create({
     container: {
-        alignItems: "center",
-        marginVertical:5 * scale
+        alignItems: 'center',
+        marginVertical: spacing,
     },
     activityIcon: {
         width: 30 * scale,
@@ -19,6 +20,6 @@ export default StyleSheet.create({
     activityLabel: {
         marginTop: 2,
         color: colors.bottomTabIconInactiveColor,
-        fontSize: 13
+        fontSize: PixelRatio.getFontScale() * 13
     }
 })

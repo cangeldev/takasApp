@@ -1,57 +1,66 @@
-import { Dimensions, StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet, PixelRatio } from 'react-native'
 import colors from 'assets/colors/colors'
 
-// Ekran boyutunu almak için Dimensions API'si kullanılır
+// Ekran boyutlarını al
 const { width, height } = Dimensions.get('window')
 
-// Ekran genişliğine göre ölçeklendirme faktörü
-const scale = width / 375
+// Ölçekleme faktörü
+const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
+const spacing = 10 * scale // Sabit boşluk değeri
+
+const shadowStyle = {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 3
+}
 
 export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
-        paddingHorizontal: 13 * scale
+        paddingHorizontal: spacing * 1.3
     },
     profileImageWrapper: {
         width: 60 * scale,
         height: 60 * scale,
         padding: 3 * scale,
         backgroundColor: colors.white,
-        elevation: 2,
-        borderRadius: 30 * scale
+        borderRadius: 30 * scale,
+        ...shadowStyle
     },
     header: {
         flexDirection: 'row',
-        marginVertical: 10 * scale,
+        marginVertical: spacing,
         alignItems: 'center'
     },
     logoText: {
         flex: 1,
         fontFamily: 'Pacifico-Regular',
-        fontSize: 24 * scale,
-        color: colors.bottomTabIconActiveColor
+        fontSize: PixelRatio.getFontScale() * 24,
+        color: colors.bottomTabIconActiveColor,
     },
     icon: {
-        fontSize: 22 * scale,
+        fontSize: PixelRatio.getFontScale() * 22,
         color: colors.textInactiveColor,
-        marginLeft: 20 * scale
+        marginLeft: spacing * 2
     },
     cameraIcon: {
-        fontSize: 14 * scale,
+        fontSize: PixelRatio.getFontScale() * 14,
         color: colors.textInactiveColor,
         backgroundColor: colors.white,
         position: 'absolute',
         borderRadius: 25 * scale,
         padding: 4 * scale,
-        elevation: 1,
         bottom: 0,
-        right: 5 * scale
+        right: spacing * 0.5,
+        ...shadowStyle
     },
     profileName: {
-        marginTop: 5 * scale,
-        fontWeight: "600",
-        alignSelf: "center"
+        marginTop: spacing / 2,
+        fontWeight: '600',
+        alignSelf: 'center'
     },
     statsContainer: {
         flexDirection: 'row',
@@ -60,35 +69,35 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     profileSection: {
-        marginBottom: 15 * scale,
+        marginBottom: spacing * 1.5,
         flexDirection: 'row'
     },
     activitySummarySection: {
-        flexDirection: "row",
-        justifyContent: "space-around",
-        marginVertical: 15 * scale,
-        backgroundColor: "white",
-        elevation: 3,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginVertical: spacing * 1.5,
+        backgroundColor: colors.white,
         borderRadius: 10,
-        paddingVertical: 10 * scale,
+        paddingVertical: spacing,
+        ...shadowStyle
     },
     divider: {
         width: 1,
         backgroundColor: colors.lightGrey,
         height: '80%',
-        alignSelf: "center"
+        alignSelf: 'center'
     },
     advert: {
-        width: "100%",
+        width: '100%',
         height: 120 * scale,
-        backgroundColor: "yellow",
+        backgroundColor: 'yellow',
         borderRadius: 10
     },
     settingsListContainer: {
         backgroundColor: colors.white,
-        elevation: 3,
         borderRadius: 10,
-        marginVertical: 15 * scale,
-        paddingHorizontal: 10 * scale
+        marginVertical: spacing * 1.5,
+        paddingHorizontal: spacing,
+        ...shadowStyle
     }
 })

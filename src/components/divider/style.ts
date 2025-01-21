@@ -9,6 +9,6 @@ export default StyleSheet.create({
     containerWrap: {
         flex: 1,
         height: 1,
-        backgroundColor:colors.lightGrey
+        backgroundColor: colors.lightGrey
     }
 })
