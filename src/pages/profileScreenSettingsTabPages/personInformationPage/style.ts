@@ -69,10 +69,17 @@ export default StyleSheet.create({
   },
   inputSection: {
     paddingHorizontal: spacing * 1.3,
-    marginTop: 100 * scale,
+    marginTop: 80 * scale,
   },
   memberInfoContainer: {
     alignSelf: 'flex-end',
     marginLeft: spacing
+  },
+  backIcon: {
+    fontSize: PixelRatio.getFontScale() * 28,
+    color: colors.white,
+    flex: 1,
+    marginTop: 45 * scale,
+    marginHorizontal: 15 * scale
   }
 })
