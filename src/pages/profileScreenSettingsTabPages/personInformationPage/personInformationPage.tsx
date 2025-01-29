@@ -1,28 +1,28 @@
-import { View, Text, ImageBackground } from 'react-native'  
-import React, { useCallback } from 'react'  
-import { Icon, ProfileImage, ProfilePageTextInput, StatusBarComponent } from 'components/index'  
-import style from './style'  
-import { gradient } from 'assets/index'  
-import { useNavigation } from '@react-navigation/native'  
+import { View, Text, ImageBackground } from 'react-native'
+import React, { useCallback } from 'react'
+import { Icon, NameVisibilitySectionComponent, ProfileImage, ProfilePageTextInput, StatusBarComponent } from 'components/index'
+import style from './style'
+import { gradient } from 'assets/index'
+import { useNavigation } from '@react-navigation/native'
 
 const MEMBER_INFO_TEXTS = [
   { icon: 'check-square', text: 'Telefon numarası doğrulandı.' },
   { icon: 'calendar', text: 'Bir ay önce üye oldu.' }
-]  
+]
 
 export const PersonInformationPage = () => {
-  const navigation = useNavigation<any>()  
-  const goBack = useCallback(() => navigation.goBack(), [navigation])  
+  const navigation = useNavigation<any>()
+  const goBack = useCallback(() => navigation.goBack(), [navigation])
 
   return (
     <View style={style.container}>
       <StatusBarComponent theme="light" translucent backgroundColor="transparent" />
       <HeaderSection onGoBack={goBack} />
       <InputSection />
-      <DescriptionSection />
+      <NameVisibilitySection />
     </View>
-  )  
-}  
+  )
+}
 
 /* Header Section */
 const HeaderSection = ({ onGoBack }: { onGoBack: () => void }) => (
@@ -33,7 +33,7 @@ const HeaderSection = ({ onGoBack }: { onGoBack: () => void }) => (
       <MemberInfoSection />
     </View>
   </ImageBackground>
-)  
+)
 
 /* Profile Image Section */
 const ProfileImageSection = () => (
@@ -41,7 +41,7 @@ const ProfileImageSection = () => (
     <ProfileImage />
     <Icon name="camera-plus-outline" type="MaterialCommunityIcons" style={style.cameraIcon} />
   </View>
-)  
+)
 
 /* Member Info Section */
 const MemberInfoSection = () => (
@@ -52,7 +52,7 @@ const MemberInfoSection = () => (
       </Text>
     ))}
   </View>
-)  
+)
 
 /* Input Section */
 const InputSection = () => (
@@ -69,14 +69,15 @@ const InputSection = () => (
     />
     <ProfilePageTextInput title="Açıklama" placeHolder="Hakkınızda bir şeyler yazabilirsiniz" />
   </View>
-)  
+)
 
-/* Description Section */
-const DescriptionSection = () => (
+/* Name Visibility Section */
+const NameVisibilitySection = () => (
   <View style={style.descriptionContainer}>
     <Text style={style.descriptionText}>
       İlan verme, mesajlaşma, takas teklifi gönderme, gelen teklifleri cevaplama gibi özellikleri
       kullanırken diğer kullanıcıların adınızı nasıl göreceğini buradan seçebilirsiniz.
     </Text>
+    <NameVisibilitySectionComponent />
   </View>
 )  

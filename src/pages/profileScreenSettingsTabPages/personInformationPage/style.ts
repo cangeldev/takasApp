@@ -63,6 +63,7 @@ export default StyleSheet.create({
   },
   descriptionText: {
     color: '#686868',
+    marginBottom: 10 * scale
   },
   memberInfoText: {
     fontSize: PixelRatio.getFontScale() * 11
