@@ -1,0 +1,28 @@
+{
+    "translation": {
+        "exchange": "Exchange",
+        "followers": "Followers",
+        "following": "Following",
+        "favorite": "Favorite",
+        "received": "Received",
+        "gave": "Gave",
+        "pendingExchanges": "Pending Exchanges",
+        "personalInformation": "Personal Information",
+        "addressAndLocationInformation": "Address and Location Information",
+        "myNetwork": "My Network",
+        "myFavorites": "My Favorites",
+        "notificationSettings": "Notification Settings",
+        "applicationLanguage": "Application Language",
+        "helpAndSupport": "Help and Support",
+        "logOut": "Log out",
+        "username": "Username",
+        "name": "Name",
+        "surname": "Surname",
+        "password": "Password",
+        "description": "Description",
+        "youCanWriteSomethingAboutYourself": "You can write something about yourself",
+        "selectNameText": "You can choose how other users will see your name when using features such as posting ads, messaging, sending trade offers, and responding to offers.",
+        "phoneNnumberVerified": "Phone number verified.",
+        "youSignedUpMonthAgo": "You signed up a month ago."
+    }
+}

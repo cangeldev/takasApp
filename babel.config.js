@@ -13,7 +13,8 @@ module.exports = {
           'pages': './src/pages',
           'assets': './src/assets',
           'navigation': './src/navigation',
-          'utils': './src/utils'
+          'utils': './src/utils',
+          'locales': './src/locales'
         },
       },
     ],

@@ -4,13 +4,23 @@ import { Icon, NameVisibilitySectionComponent, ProfileImage, ProfilePageTextInpu
 import style from './style'
 import { gradient } from 'assets/index'
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
+
+const { t } = useTranslation()
 
 const MEMBER_INFO_TEXTS = [
-  { icon: 'check-square', text: 'Telefon numarası doğrulandı.' },
-  { icon: 'calendar', text: 'Bir ay önce üye oldu.' }
+  { icon: 'check-square', text: t('phoneNnumberVerified') },
+  { icon: 'calendar', text: t('youSignedUpMonthAgo') }
 ]
 
+/*
+  PersonInformationPage, kullanıcının kişisel bilgilerinin görüntülendiği ve çeşitli ayarların yapıldığı bir ekran bileşenidir. 
+  Bu ekran, kullanıcıya profil bilgilerini gösterirken, aynı zamanda profil bilgilerini güncelleme fırsatı sunar.
+  kullanıcıların profilini güncelleyebilmesi, isterlerse şifre değişikliği yapabilmeleri ve diğer kullanıcılar tarafından görüntülenecek kullanıcı adını seçebilecekleri bir radio buton bölümü bulunur.
+*/
+
 export const PersonInformationPage = () => {
+
   const navigation = useNavigation<any>()
   const goBack = useCallback(() => navigation.goBack(), [navigation])
 
@@ -57,17 +67,17 @@ const MemberInfoSection = () => (
 /* Input Section */
 const InputSection = () => (
   <View style={style.inputSection}>
-    <ProfilePageTextInput title="Kullanıcı Adı" />
-    <ProfilePageTextInput title="Ad" />
-    <ProfilePageTextInput title="Soyad" />
+    <ProfilePageTextInput title={t('username')} />
+    <ProfilePageTextInput title={t('name')} />
+    <ProfilePageTextInput title={t('surname')} />
     <ProfilePageTextInput
-      title="Şifre"
+      title={t('password')}
       placeHolder="******"
       iconName="chevron-right"
       iconType="Entypo"
       editable={false}
     />
-    <ProfilePageTextInput title="Açıklama" placeHolder="Hakkınızda bir şeyler yazabilirsiniz" />
+    <ProfilePageTextInput title={t('description')} placeHolder={t('youCanWriteSomethingAboutYourself')} />
   </View>
 )
 
@@ -75,8 +85,7 @@ const InputSection = () => (
 const NameVisibilitySection = () => (
   <View style={style.descriptionContainer}>
     <Text style={style.descriptionText}>
-      İlan verme, mesajlaşma, takas teklifi gönderme, gelen teklifleri cevaplama gibi özellikleri
-      kullanırken diğer kullanıcıların adınızı nasıl göreceğini buradan seçebilirsiniz.
+      {t('selectNameText')}
     </Text>
     <NameVisibilitySectionComponent />
   </View>

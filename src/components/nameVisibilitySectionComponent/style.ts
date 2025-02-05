@@ -9,7 +9,7 @@ const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
 export default StyleSheet.create({
   boxStyle: {
     backgroundColor: "transparent",
-    marginVertical: 20 * scale
+    marginVertical: 10 * scale
   },
   textStyle: {
     fontWeight: "600",

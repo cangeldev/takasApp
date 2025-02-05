@@ -1,0 +1,28 @@
+{
+    "translation": {
+        "exchange": "Takaslar",
+        "followers": "Takipçi",
+        "following": "Takip",
+        "favorite": "Favori",
+        "received": "Aldıklarım",
+        "gave": "Verdiklerim",
+        "pendingExchanges": "Bekleyen Takaslar",
+        "personalInformation": "Kişisel Bilgiler",
+        "addressAndLocationInformation": "Adres ve Konum Bilgileri",
+        "myNetwork": "Ağım",
+        "myFavorites": "Favorilerim",
+        "notificationSettings": "Bildirim Ayarları",
+        "applicationLanguage": "Uygulama Dili",
+        "helpAndSupport": "Yardım ve Destek",
+        "logOut": "Çıkış Yap",
+        "username": "Kullanıcı Adı",
+        "name": "Ad",
+        "surname": "Soyad",
+        "password": "Şifre",
+        "description": "Açıklama",
+        "youCanWriteSomethingAboutYourself": "Hakkınızda bir şeyler yazabilirsiniz",
+        "selectNameText": "İlan verme, mesajlaşma, takas teklifi gönderme, gelen teklifleri cevaplama gibi özellikleri kullanırken diğer kullanıcıların adınızı nasıl göreceğini buradan seçebilirsiniz.",
+        "phoneNnumberVerified": "Telefon numarası doğrulandı.",
+        "youSignedUpMonthAgo.": "Bir ay önce üye oldunuz."
+    }
+}

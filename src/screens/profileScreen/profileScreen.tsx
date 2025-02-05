@@ -5,6 +5,7 @@ import { Divider, Icon, ProfileImage, StatusBarComponent } from 'components/inde
 import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/cards'
 import { gave, received, replacement } from 'assets/index'
 import { ProfileSettingsOptionsList } from 'utils/helper'
+import { useTranslation } from 'react-i18next'
 
 /*
   ProfileScreen, kullanıcı profilinin görüntülendiği ve çeşitli ayarların yapıldığı bir ekran bileşenidir. 
@@ -16,6 +17,7 @@ import { ProfileSettingsOptionsList } from 'utils/helper'
 const renderItem = ({ item }: any) =>
     <ProfileSettingOptionCard iconName={item.iconName} icontype={item.type} title={item.title} navigatePage={item.navigatePage} />
 const MemoizedIcon = React.memo(Icon)
+const { t } = useTranslation()
 
 export const ProfileScreen = () => {
     return (
@@ -61,10 +63,10 @@ const ProfileSection = () => (
             <Text style={style.profileName}>Can GEL</Text>
         </View>
         <View style={style.statsContainer}>
-            <ProfileStatsCard count='0' title='Takaslar' />
-            <ProfileStatsCard count='0' title='Takipçi' />
-            <ProfileStatsCard count='0' title='Takip' />
-            <ProfileStatsCard count='0' title='Favori' />
+            <ProfileStatsCard count='0' title={t('exchange')} />
+            <ProfileStatsCard count='0' title={t('followers')} />
+            <ProfileStatsCard count='0' title={t('following')} />
+            <ProfileStatsCard count='0' title={t('favorite')} />
         </View>
     </View>
 )
@@ -72,10 +74,10 @@ const ProfileSection = () => (
 {/* Activity Summary Section */ }
 const ActivitySummarySection = () => (
     <View style={style.activitySummarySection}>
-        <ProfileActivitySummaryCard image={received} title='Aldıklarım' />
+        <ProfileActivitySummaryCard image={received} title={t('received')} />
         <View style={style.divider} />
-        <ProfileActivitySummaryCard image={replacement} title='Bekleyen Takaslar' />
+        <ProfileActivitySummaryCard image={replacement} title={t('pendingExchanges')} />
         <View style={style.divider} />
-        <ProfileActivitySummaryCard image={gave} title='Verdiklerim' />
+        <ProfileActivitySummaryCard image={gave} title={t('gave')} />
     </View>
 )
