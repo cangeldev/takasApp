@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { TabNavigation } from "navigation/tabNavigation/tabNavigation"
-import { PersonInformationPage } from "pages/profileScreenSettingsTabPages"
+import { ApplicationLanguageAndThemePage, PersonInformationPage } from "pages/profileScreenSettingsTabPages"
 import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from "screens/index"
 
 const Stack = createNativeStackNavigator()
@@ -15,6 +15,7 @@ export const StackNavigation = () => {
             <Stack.Screen name='MyAds' component={MyAdsScreen} />
             <Stack.Screen name='Profile' component={ProfileScreen} />
             <Stack.Screen name="PersonInformationPage" component={PersonInformationPage} />
+            <Stack.Screen name="ApplicationLanguageAndThemePage" component={ApplicationLanguageAndThemePage} />
         </Stack.Navigator>
     )
 }

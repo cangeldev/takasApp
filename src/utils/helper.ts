@@ -41,8 +41,8 @@ export const ProfileSettingsOptionsList = [
         id: 6,
         iconName: 'language',
         type: 'MaterialIcons',
-        title:  t('applicationLanguage'),
-        navigatePage: "null"
+        title:  t('applicationLanguageAndTheme'),
+        navigatePage: "ApplicationLanguageAndThemePage"
     },
     {
         id: 7,

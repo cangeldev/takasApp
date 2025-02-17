@@ -1,1 +1,2 @@
 export { PersonInformationPage } from "./personInformationPage/personInformationPage"
+export { ApplicationLanguageAndThemePage } from "./applicationLanguageAndThemePage/applicationLanguageAndThemePage"
