@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Button } from '@react-navigation/elements'
 import switchTheme from 'react-native-theme-switch-animation'
-import { StatusBarComponent } from 'components/index'
 
 export const HomeScreen = () => {
     const [theme, setTheme] = useState('light')
@@ -11,7 +10,6 @@ export const HomeScreen = () => {
 
     return (
         <View style={{ backgroundColor: theme === 'light' ? 'black' : 'white', flex: 1 }}>
-            <StatusBarComponent theme={theme} />
             <Text>homeScreen</Text>
             <Button onPress={() => navigation.navigate('FirstPage')}>
                 Go to Details

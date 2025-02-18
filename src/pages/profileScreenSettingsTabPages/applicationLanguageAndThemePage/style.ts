@@ -6,17 +6,31 @@ const { width, height } = Dimensions.get('window')
 
 // Ölçekleme faktörü
 const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
-const spacing = 10 * scale // Sabit boşluk değeri
-
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
+    paddingHorizontal: 10 * scale
   },
   backIcon: {
     fontSize: PixelRatio.getFontScale() * 22,
-    color: colors.bottomTabIconInactiveColor,
-    marginHorizontal: 15 * scale
+    marginRight: 10 * scale
+  },
+  header: {
+    flexDirection: "row",
+    marginTop: 10 * scale,
+    alignItems: "center"
+  },
+  headerTitle: {
+    fontSize: 22,
+    fontWeight: "600"
+  },
+  sectionTitle: {
+    fontSize: PixelRatio.getFontScale() * 20,
+    fontWeight: "bold",
+    marginTop: 15 * scale,
+    marginBottom: 2 * scale,
+    marginLeft: 5 * scale
   }
 })

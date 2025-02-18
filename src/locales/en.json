@@ -23,6 +23,12 @@
         "youCanWriteSomethingAboutYourself": "You can write something about yourself",
         "selectNameText": "You can choose how other users will see your name when using features such as posting ads, messaging, sending trade offers, and responding to offers.",
         "phoneNnumberVerified": "Phone number verified.",
-        "youSignedUpMonthAgo": "You signed up a month ago."
+        "youSignedUpMonthAgo": "You signed up a month ago.",
+        "lightMode": "Light mode",
+        "darkMode": "Dark mode",
+        "defaultMode": "Default theme",
+        "languageAndThemeSettings": "Language and Theme Settings",
+        "themeSelection": "Theme selection",
+        "languageSelection": "Language selection"
     }
 }

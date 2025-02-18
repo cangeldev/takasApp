@@ -1,7 +1,7 @@
 import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import style from './style'
-import { Divider, Icon, ProfileImage, StatusBarComponent } from 'components/index'
+import { Divider, Icon, ProfileImage } from 'components/index'
 import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/cards'
 import { gave, received, replacement } from 'assets/index'
 import { ProfileSettingsOptionsList } from 'utils/helper'
@@ -22,7 +22,6 @@ const { t } = useTranslation()
 export const ProfileScreen = () => {
     return (
         <ScrollView style={style.container}>
-            <StatusBarComponent theme='dark' />
             <HeaderSection />
             <ProfileSection />
             <Divider />
@@ -42,8 +41,6 @@ export const ProfileScreen = () => {
     )
 }
 
-
-{/* Header Section */ }
 const HeaderSection = () => (
     <View style={style.header}>
         <Text style={style.logoText}>Takasla</Text>
@@ -52,7 +49,6 @@ const HeaderSection = () => (
     </View>
 )
 
-{/* Profile Section */ }
 const ProfileSection = () => (
     <View style={style.profileSection}>
         <View>
@@ -71,7 +67,6 @@ const ProfileSection = () => (
     </View>
 )
 
-{/* Activity Summary Section */ }
 const ActivitySummarySection = () => (
     <View style={style.activitySummarySection}>
         <ProfileActivitySummaryCard image={received} title={t('received')} />

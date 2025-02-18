@@ -23,6 +23,12 @@
         "youCanWriteSomethingAboutYourself": "Hakkınızda bir şeyler yazabilirsiniz",
         "selectNameText": "İlan verme, mesajlaşma, takas teklifi gönderme, gelen teklifleri cevaplama gibi özellikleri kullanırken diğer kullanıcıların adınızı nasıl göreceğini buradan seçebilirsiniz.",
         "phoneNnumberVerified": "Telefon numarası doğrulandı.",
-        "youSignedUpMonthAgo.": "Bir ay önce üye oldunuz."
+        "youSignedUpMonthAgo.": "Bir ay önce üye oldunuz.",
+        "lightMode": "Aydınlık mod",
+        "darkMode": "Karanlık mod",
+        "defaultMode": "Varsayılan sistem ayarı",
+        "languageAndThemeSettings": "Dil ve Tema Ayarları",
+        "themeSelection":"Tema seçimi",
+        "languageSelection":"Dil seçimi"
     }
 }

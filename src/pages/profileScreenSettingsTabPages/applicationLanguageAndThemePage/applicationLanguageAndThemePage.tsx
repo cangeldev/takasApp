@@ -1,25 +1,66 @@
-import { View, Text } from 'react-native'
-import React, { useCallback } from 'react'
-import style from './style'
-import { Icon } from 'components/index'
+import React, { useCallback, useState } from 'react'
+import { View, Text, FlatList, Appearance, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { Icon } from 'components/index'
+import { languages, themeOptionsList } from 'utils/helper'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import styles from './style'
+import {ThemeItem } from 'components/languageAndThemeItems'
+import { useTranslation } from 'react-i18next'
 
+/*
+  ApplicationLanguageAndThemePage, kullanıcının istediği temayı kullanması için seçim yapabildiği veya istediği dil seçeceğini seçebildiği sayfadır. 
+  Bu ekran, kullanıcıya tema bilgilerini ve dil bilgilerini gösterirken, aynı zamanda istedikleri dil seç ve temayı seçip uygulama üzerinde kullanmalarına olanak tanır.
+*/
 export const ApplicationLanguageAndThemePage = () => {
 
-    const navigation = useNavigation<any>()
-    const goBack = useCallback(() => navigation.goBack(), [navigation])
+    const navigation = useNavigation()
+
+    const [selectedTheme, setSelectedTheme] = useState("light")
+    const [selectedLanguage, setSelectedLanguage] = useState("fr")
+
+    const handleThemeChange = useCallback(async (theme: string) => {
+        try {
+            const systemTheme = Appearance.getColorScheme() || "light"
+            const newTheme = theme === "default" ? systemTheme : theme
+            setSelectedTheme(newTheme)
+            await AsyncStorage.setItem("theme", newTheme)
+        } catch (error) {
+            console.error("Tema kaydetme hatası:", error)
+        }
+    }, [])
 
     return (
-        <View style={style.container}>
-            <View style={{ flexDirection: "row", marginTop: 10, alignItems: "center" }}>
-                <Icon onPress={goBack} name="chevron-back-sharp" type="Ionicons" style={style.backIcon} />
-                <Text style={{ fontSize: 20, fontWeight: "600" }}>Uygulama Dili ve Tema</Text>
-            </View>
-            <View>
-                <Text>
-                    Seçili Tema
-                </Text>
-            </View>
-        </View>
+        <ScrollView style={styles.container}>
+            <HeaderSection navigation={navigation} />
+            <ThemeSection selectedTheme={selectedTheme} onThemeChange={handleThemeChange} />
+          
+        </ScrollView>
     )
 }
+
+const { t } = useTranslation()
+const HeaderSection = ({ navigation }: { navigation: any }) => (
+    <View style={styles.header}>
+        <Icon onPress={navigation.goBack} name="chevron-back-sharp" type="Ionicons" style={styles.backIcon} />
+        <Text style={styles.headerTitle}>
+            {t('languageAndThemeSettings')}
+        </Text>
+    </View>
+)
+
+const ThemeSection = ({ selectedTheme, onThemeChange }: { selectedTheme: string, onThemeChange: (theme: string) => void }) => (
+    <View>
+        <Text style={styles.sectionTitle}>{t('themeSelection')}</Text>
+        <FlatList
+            scrollEnabled={false}
+            data={themeOptionsList}
+            keyExtractor={(item) => item.theme}
+            renderItem={({ item }) => (
+                <ThemeItem item={item} selectedTheme={selectedTheme} onPress={onThemeChange} />
+            )}
+        />
+    </View>
+)
+
+export default ApplicationLanguageAndThemePage
