@@ -5,7 +5,7 @@ import { Icon } from 'components/index'
 import { languages, themeOptionsList } from 'utils/helper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import styles from './style'
-import {ThemeItem } from 'components/languageAndThemeItems'
+import { LanguageItem, ThemeItem } from 'components/languageAndThemeItems'
 import { useTranslation } from 'react-i18next'
 
 /*
@@ -34,7 +34,7 @@ export const ApplicationLanguageAndThemePage = () => {
         <ScrollView style={styles.container}>
             <HeaderSection navigation={navigation} />
             <ThemeSection selectedTheme={selectedTheme} onThemeChange={handleThemeChange} />
-          
+            <LanguageSection selectedLanguage={selectedLanguage} onLanguageChange={setSelectedLanguage} />
         </ScrollView>
     )
 }
@@ -63,4 +63,17 @@ const ThemeSection = ({ selectedTheme, onThemeChange }: { selectedTheme: string,
     </View>
 )
 
+const LanguageSection = ({ selectedLanguage, onLanguageChange }: { selectedLanguage: string, onLanguageChange: (language: string) => void }) => (
+    <View>
+        <Text style={styles.sectionTitle}>{t('languageSelection')}</Text>
+        <FlatList
+            scrollEnabled={false}
+            data={languages}
+            keyExtractor={(item) => item.code}
+            renderItem={({ item }) => (
+                <LanguageItem item={item} selectedLanguage={selectedLanguage} onPress={onLanguageChange} />
+            )}
+        />
+    </View>
+)
 export default ApplicationLanguageAndThemePage
