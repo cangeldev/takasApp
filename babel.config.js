@@ -14,7 +14,8 @@ module.exports = {
           'assets': './src/assets',
           'navigation': './src/navigation',
           'utils': './src/utils',
-          'locales': './src/locales'
+          'locales': './src/locales',
+          'features': './src/features'
         },
       },
     ],

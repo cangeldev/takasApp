@@ -26,7 +26,7 @@ export const PersonInformationPage = () => {
 
   return (
     <View style={style.container}>
-      <StatusBarComponent theme="light" translucent backgroundColor="transparent" />
+      <StatusBarComponent translucent backgroundColor="transparent" />
       <HeaderSection onGoBack={goBack} />
       <InputSection />
       <NameVisibilitySection />
