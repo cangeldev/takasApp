@@ -1,12 +1,6 @@
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import { StyleSheet, useWindowDimensions } from 'react-native'
 import colors from 'assets/colors/colors'
-
-// Ekran boyutlarını almak için kullanılır
-const { width, height } = Dimensions.get('window')
-
-// Ölçekleme faktörü
-const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
-const spacing = 10 * scale // Sabit boşluk değeri
+import { useTheme } from 'hooks/useTheme'
 
 const shadowStyle = {
   shadowColor: '#000',
@@ -16,71 +10,79 @@ const shadowStyle = {
   elevation: 3
 }
 
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.white
-  },
-  headerBackground: {
-    height: 180 * scale,
-    justifyContent: 'flex-end'
-  },
-  profileSection: {
-    position: 'absolute',
-    bottom: -40,
-    left: 15,
-    flexDirection: 'row'
-  },
-  profileImageContainer: {
-    width: 80 * scale,
-    height: 80 * scale,
-    padding: 3 * scale,
-    backgroundColor: colors.white,
-    borderRadius: 40 * scale,
-    ...shadowStyle
-  },
-  cameraIcon: {
-    fontSize: PixelRatio.getFontScale() * 14,
-    color: colors.textInactiveColor,
-    backgroundColor: colors.white,
-    position: 'absolute',
-    borderRadius: 25 * scale,
-    padding: 4 * scale,
-    elevation: 1,
-    bottom: 0,
-    right: 5 * scale
-  },
-  memberInfoIcon: {
-    fontSize: PixelRatio.getFontScale() * 12,
-    color: colors.bottomTabIconInactiveColor
-  },
-  descriptionContainer: {
-    backgroundColor: colors.lightGrey,
-    borderRadius: 5 * scale,
-    marginHorizontal: spacing * 1.3,
-    padding: spacing,
-    ...shadowStyle
-  },
-  descriptionText: {
-    color: '#686868',
-    marginBottom: 10 * scale
-  },
-  memberInfoText: {
-    fontSize: PixelRatio.getFontScale() * 11
-  },
-  inputSection: {
-    paddingHorizontal: spacing * 1.3,
-    marginTop: 80 * scale,
-  },
-  memberInfoContainer: {
-    alignSelf: 'flex-end',
-    marginLeft: spacing
-  },
-  backIcon: {
-    fontSize: PixelRatio.getFontScale() * 28,
-    color: colors.white,
-    flex: 1,
-    marginTop: 45 * scale,
-    marginHorizontal: 15 * scale
-  }
-})
+const getStyles = () => {
+  
+  const theme = useTheme()
+  const { width } = useWindowDimensions()
+  const scaleFactor = width / 375
+
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.backgroundColor
+    },
+    headerBackground: {
+      height: 180 * scaleFactor,
+      justifyContent: 'flex-end'
+    },
+    profileSection: {
+      position: 'absolute',
+      bottom: -40 * scaleFactor,
+      left: 15 * scaleFactor,
+      flexDirection: 'row'
+    },
+    profileImageContainer: {
+      width: 80 * scaleFactor,
+      height: 80 * scaleFactor,
+      padding: 3 * scaleFactor,
+      backgroundColor: theme.backgroundColor,
+      borderRadius: 40 * scaleFactor,
+      ...shadowStyle
+    },
+    cameraIcon: {
+      fontSize: scaleFactor * 14,
+      color: colors.textInactiveColor,
+      backgroundColor: theme.backgroundColor,
+      position: 'absolute',
+      borderRadius: 25 * scaleFactor,
+      padding: 4 * scaleFactor,
+      elevation: 1,
+      bottom: 0 * scaleFactor,
+      right: 5 * scaleFactor
+    },
+    memberInfoIcon: {
+      fontSize: scaleFactor * 12,
+      color: colors.bottomTabIconInactiveColor
+    },
+    descriptionContainer: {
+      backgroundColor: colors.lightGrey,
+      borderRadius: 5 * scaleFactor,
+      marginHorizontal: 15 * scaleFactor,
+      padding: 10 * scaleFactor,
+      ...shadowStyle
+    },
+    descriptionText: {
+      color: '#686868',
+      marginBottom: 10 * scaleFactor
+    },
+    memberInfoText: {
+      fontSize: scaleFactor * 11
+    },
+    inputSection: {
+      paddingHorizontal: scaleFactor * 15,
+      marginTop: 80 * scaleFactor,
+    },
+    memberInfoContainer: {
+      alignSelf: 'flex-end',
+      marginLeft: scaleFactor * 10
+    },
+    backIcon: {
+      fontSize: scaleFactor * 28,
+      color: theme.backgroundColor,
+      flex: 1,
+      marginTop: 45 * scaleFactor,
+      marginHorizontal: 15 * scaleFactor
+    }
+  })
+}
+export default getStyles

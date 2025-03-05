@@ -1,36 +1,40 @@
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
-import colors from 'assets/colors/colors'
+import { useTheme } from 'hooks/useTheme'
+import { StyleSheet, useWindowDimensions } from 'react-native'
 
-// Ekran boyutlarını almak için kullanılır
-const { width, height } = Dimensions.get('window')
+const getStyles = () => {
+  const { width } = useWindowDimensions()
+  const scaleFactor = width / 375
+  const theme = useTheme()
+  
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.backgroundColor,
+      paddingHorizontal: 10 * scaleFactor
+    },
+    backIcon: {
+      fontSize: 22 * scaleFactor,
+      marginRight: 10 * scaleFactor
+    },
+    header: {
+      flexDirection: 'row',
+      marginTop: 10 * scaleFactor,
+      alignItems: 'center'
+    },
+    headerTitle: {
+      fontSize: 22 * scaleFactor,
+      fontWeight: '600',
+      color:  theme.textColor
+    },
+    sectionTitle: {
+      fontSize: 20 * scaleFactor,
+      fontWeight: 'bold',
+      marginTop: 15 * scaleFactor,
+      marginBottom: 2 * scaleFactor,
+      marginLeft: 5 * scaleFactor,
+      color:  theme.textColor
+    }
+  })
+}
 
-// Ölçekleme faktörü
-const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
-
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.white,
-    paddingHorizontal: 10 * scale
-  },
-  backIcon: {
-    fontSize: PixelRatio.getFontScale() * 22,
-    marginRight: 10 * scale
-  },
-  header: {
-    flexDirection: "row",
-    marginTop: 10 * scale,
-    alignItems: "center"
-  },
-  headerTitle: {
-    fontSize: 22,
-    fontWeight: "600"
-  },
-  sectionTitle: {
-    fontSize: PixelRatio.getFontScale() * 20,
-    fontWeight: "bold",
-    marginTop: 15 * scale,
-    marginBottom: 2 * scale,
-    marginLeft: 5 * scale
-  }
-})
+export default getStyles

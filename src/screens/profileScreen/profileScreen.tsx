@@ -1,11 +1,11 @@
 import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
-import style from './style'
 import { Divider, Icon, ProfileImage } from 'components/index'
 import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/cards'
 import { gave, received, replacement } from 'assets/index'
 import { ProfileSettingsOptionsList } from 'utils/helper'
-import { useTranslation } from 'react-i18next'
+import { t } from 'i18next'
+import getStyles from './style'
 
 /*
   ProfileScreen, kullanıcı profilinin görüntülendiği ve çeşitli ayarların yapıldığı bir ekran bileşenidir. 
@@ -16,49 +16,40 @@ import { useTranslation } from 'react-i18next'
 
 const renderItem = ({ item }: any) =>
     <ProfileSettingOptionCard iconName={item.iconName} icontype={item.type} title={item.title} navigatePage={item.navigatePage} />
-const MemoizedIcon = React.memo(Icon)
-const { t } = useTranslation()
 
 export const ProfileScreen = () => {
-    return (
-        <ScrollView style={style.container}>
-            <HeaderSection />
-            <ProfileSection />
-            <Divider />
-            <ActivitySummarySection />
-            <View style={style.advert} />
 
-            {/* Settings Options section */}
-            <FlatList
-                data={ProfileSettingsOptionsList}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.title}
-                style={style.settingsListContainer}
-                scrollEnabled={false}
-            />
-            {/* değerlendirmeler eklenebilir ayarlara */}
+    const styles = getStyles()
+    return (
+        <ScrollView style={styles.container}>
+            <HeaderSection styles={styles} />
+            <ProfileSection styles={styles} />
+            <Divider />
+            <ActivitySummarySection styles={styles} />
+            <View style={styles.advert} />
+            <SettingsOptionListSection styles={styles} />
         </ScrollView>
     )
 }
 
-const HeaderSection = () => (
-    <View style={style.header}>
-        <Text style={style.logoText}>Takasla</Text>
-        <MemoizedIcon name='setting' type='AntDesign' style={style.icon} />
-        <MemoizedIcon name='bell' type='Fontisto' style={style.icon} />
+const HeaderSection = ({ styles }: { styles: any }) => (
+    <View style={styles.header}>
+        <Text style={styles.logoText}>Takasla</Text>
+        <Icon name='setting' type='AntDesign' style={styles.icon} />
+        <Icon name='bell' type='Fontisto' style={styles.icon} />
     </View>
 )
 
-const ProfileSection = () => (
-    <View style={style.profileSection}>
+const ProfileSection = ({ styles }: { styles: any }) => (
+    <View style={styles.profileSection}>
         <View>
-            <View style={style.profileImageWrapper}>
+            <View style={styles.profileImageWrapper}>
                 <ProfileImage />
-                <MemoizedIcon name='camera-plus-outline' type='MaterialCommunityIcons' style={style.cameraIcon} />
+                <Icon name='camera-plus-outline' type='MaterialCommunityIcons' style={styles.cameraIcon} />
             </View>
-            <Text style={style.profileName}>Can GEL</Text>
+            <Text style={styles.profileName}>Can GEL</Text>
         </View>
-        <View style={style.statsContainer}>
+        <View style={styles.statsContainer}>
             <ProfileStatsCard count='0' title={t('exchange')} />
             <ProfileStatsCard count='0' title={t('followers')} />
             <ProfileStatsCard count='0' title={t('following')} />
@@ -67,12 +58,22 @@ const ProfileSection = () => (
     </View>
 )
 
-const ActivitySummarySection = () => (
-    <View style={style.activitySummarySection}>
+const ActivitySummarySection = ({ styles }: { styles: any }) => (
+    <View style={styles.activitySummarySection}>
         <ProfileActivitySummaryCard image={received} title={t('received')} />
-        <View style={style.divider} />
+        <View style={styles.divider} />
         <ProfileActivitySummaryCard image={replacement} title={t('pendingExchanges')} />
-        <View style={style.divider} />
+        <View style={styles.divider} />
         <ProfileActivitySummaryCard image={gave} title={t('gave')} />
     </View>
+)
+
+const SettingsOptionListSection = ({ styles }: { styles: any }) => (
+    <FlatList
+        data={ProfileSettingsOptionsList}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.title}
+        style={styles.settingsListContainer}
+        scrollEnabled={false}
+    />
 )

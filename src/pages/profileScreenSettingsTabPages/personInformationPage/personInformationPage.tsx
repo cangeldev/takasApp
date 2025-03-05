@@ -1,17 +1,11 @@
 import { View, Text, ImageBackground } from 'react-native'
 import React, { useCallback } from 'react'
 import { Icon, NameVisibilitySectionComponent, ProfileImage, ProfilePageTextInput, StatusBarComponent } from 'components/index'
-import style from './style'
 import { gradient } from 'assets/index'
 import { useNavigation } from '@react-navigation/native'
-import { useTranslation } from 'react-i18next'
-
-const { t } = useTranslation()
-
-const MEMBER_INFO_TEXTS = [
-  { icon: 'check-square', text: t('phoneNnumberVerified') },
-  { icon: 'calendar', text: t('youSignedUpMonthAgo') }
-]
+import getStyles from './style'
+import { t } from 'i18next'
+import { MemberInfoTexts } from 'utils/helper'
 
 /*
   PersonInformationPage, kullanıcının kişisel bilgilerinin görüntülendiği ve çeşitli ayarların yapıldığı bir ekran bileşenidir. 
@@ -23,50 +17,51 @@ export const PersonInformationPage = () => {
 
   const navigation = useNavigation<any>()
   const goBack = useCallback(() => navigation.goBack(), [navigation])
+  const styles = getStyles()
 
   return (
-    <View style={style.container}>
+    <View style={styles.container}>
       <StatusBarComponent translucent backgroundColor="transparent" />
-      <HeaderSection onGoBack={goBack} />
-      <InputSection />
-      <NameVisibilitySection />
+      <HeaderSection onGoBack={goBack} styles={styles} />
+      <InputSection styles={styles} />
+      <NameVisibilitySection styles={styles} />
     </View>
   )
 }
 
 /* Header Section */
-const HeaderSection = ({ onGoBack }: { onGoBack: () => void }) => (
-  <ImageBackground source={gradient} style={style.headerBackground}>
-    <Icon onPress={onGoBack} name="chevron-left" type="Entypo" style={style.backIcon} />
-    <View style={style.profileSection}>
-      <ProfileImageSection />
-      <MemberInfoSection />
+const HeaderSection = ({ onGoBack, styles }: { onGoBack: () => void, styles: any }) => (
+  <ImageBackground source={gradient} style={styles.headerBackground}>
+    <Icon onPress={onGoBack} name="chevron-left" type="Entypo" style={styles.backIcon} />
+    <View style={styles.profileSection}>
+      <ProfileImageSection styles={styles} />
+      <MemberInfoSection styles={styles} />
     </View>
   </ImageBackground>
 )
 
 /* Profile Image Section */
-const ProfileImageSection = () => (
-  <View style={style.profileImageContainer}>
+const ProfileImageSection = ({ styles }: { styles: any }) => (
+  <View style={styles.profileImageContainer}>
     <ProfileImage />
-    <Icon name="camera-plus-outline" type="MaterialCommunityIcons" style={style.cameraIcon} />
+    <Icon name="camera-plus-outline" type="MaterialCommunityIcons" style={styles.cameraIcon} />
   </View>
 )
 
 /* Member Info Section */
-const MemberInfoSection = () => (
-  <View style={style.memberInfoContainer}>
-    {MEMBER_INFO_TEXTS.map(({ icon, text }, index) => (
-      <Text key={index} style={style.memberInfoText}>
-        <Icon name={icon} type="Feather" style={style.memberInfoIcon} /> {text}
+const MemberInfoSection = ({ styles }: { styles: any }) => (
+  <View style={styles.memberInfoContainer}>
+    {MemberInfoTexts.map(({ icon, text }, index) => (
+      <Text key={index} style={styles.memberInfoText}>
+        <Icon name={icon} type="Feather" style={styles.memberInfoIcon} /> {text}
       </Text>
     ))}
   </View>
 )
 
 /* Input Section */
-const InputSection = () => (
-  <View style={style.inputSection}>
+const InputSection = ({ styles }: { styles: any }) => (
+  <View style={styles.inputSection}>
     <ProfilePageTextInput title={t('username')} />
     <ProfilePageTextInput title={t('name')} />
     <ProfilePageTextInput title={t('surname')} />
@@ -82,9 +77,9 @@ const InputSection = () => (
 )
 
 /* Name Visibility Section */
-const NameVisibilitySection = () => (
-  <View style={style.descriptionContainer}>
-    <Text style={style.descriptionText}>
+const NameVisibilitySection = ({ styles }: { styles: any }) => (
+  <View style={styles.descriptionContainer}>
+    <Text style={styles.descriptionText}>
       {t('selectNameText')}
     </Text>
     <NameVisibilitySectionComponent />

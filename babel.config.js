@@ -15,7 +15,8 @@ module.exports = {
           'navigation': './src/navigation',
           'utils': './src/utils',
           'locales': './src/locales',
-          'features': './src/features'
+          'features': './src/features',
+          'hooks': './src/hooks'
         },
       },
     ],

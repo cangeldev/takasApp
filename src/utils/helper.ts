@@ -2,6 +2,11 @@ import { moon, palette, sun } from 'assets/index'
 import { useTranslation } from 'react-i18next'
 const { t } = useTranslation()
 
+export const MemberInfoTexts = [
+    { icon: 'check-square', text: t('phoneNnumberVerified') },
+    { icon: 'calendar', text: t('youSignedUpMonthAgo') }
+  ]
+
 export const ProfileSettingsOptionsList = [
     {
         id: 1,
