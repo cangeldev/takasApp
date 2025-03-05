@@ -4,10 +4,12 @@ import colors from 'assets/colors/colors'
 import { avatar, avatarInactive, home, homeInactive, menuButton, menuButtonInactive, plus, search } from 'assets/index'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from 'screens/index'
-
-const Tab = createBottomTabNavigator()
+import { useTheme } from 'hooks/useTheme'
 
 export const TabNavigation = () => {
+
+    const Tab = createBottomTabNavigator()
+    const theme = useTheme()
     const renderIcon = (source: any, focused: any, size = 24, isTinted = false) => (
         <Image
             source={source}
@@ -24,7 +26,8 @@ export const TabNavigation = () => {
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
-                    paddingTop: 5
+                    paddingTop: 5,
+                    backgroundColor: theme.backgroundColor
                 }
             }}>
             <Tab.Screen

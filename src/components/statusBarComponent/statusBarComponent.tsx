@@ -1,7 +1,7 @@
 import { StatusBar } from 'react-native'
-import React, { FC } from 'react'
-import { useSelector } from 'react-redux'
-import { RootState } from 'features/reduxToolkit/store'
+import React, { FC, useEffect } from 'react'
+import { useTheme } from 'hooks/useTheme'
+import SystemNavigationBar from 'react-native-system-navigation-bar'
 
 interface IStatusBar {
     translucent?: boolean
@@ -10,15 +10,19 @@ interface IStatusBar {
 
 export const StatusBarComponent: FC<IStatusBar> = ({ translucent = false, backgroundColor }) => {
 
-    const theme = useSelector((state: RootState) => state.themes.ThemeInfo.theme)
-    const barStyle = theme === 'light' ? 'dark-content' : 'light-content'
-    const backgroundColorToUse = backgroundColor || (theme === 'light' ? 'white' : 'black')
+    const theme = useTheme()
+    const barBackgroundColor = backgroundColor || theme.backgroundColor
+    const barStyle = theme.backgroundColor === '#fff' ? 'dark-content' : 'light-content'
+
+    useEffect(() => {
+        SystemNavigationBar.setNavigationColor(theme.backgroundColor)
+    }, [theme.backgroundColor])
 
     return (
         <StatusBar
-            translucent={translucent}
             barStyle={barStyle}
-            backgroundColor={backgroundColorToUse}
+            backgroundColor={barBackgroundColor}
+            translucent={translucent}
         />
     )
 }
