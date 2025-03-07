@@ -1,10 +1,10 @@
 import { View, Text, ImageBackground } from 'react-native'
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Icon, NameVisibilitySectionComponent, ProfileImage, ProfilePageTextInput, StatusBarComponent } from 'components/index'
 import { gradient } from 'assets/index'
 import { useNavigation } from '@react-navigation/native'
 import getStyles from './style'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 import { MemberInfoTexts } from 'utils/helper'
 
 /*
@@ -12,19 +12,17 @@ import { MemberInfoTexts } from 'utils/helper'
   Bu ekran, kullanıcıya profil bilgilerini gösterirken, aynı zamanda profil bilgilerini güncelleme fırsatı sunar.
   kullanıcıların profilini güncelleyebilmesi, isterlerse şifre değişikliği yapabilmeleri ve diğer kullanıcılar tarafından görüntülenecek kullanıcı adını seçebilecekleri bir radio buton bölümü bulunur.
 */
-
 export const PersonInformationPage = () => {
-
-  const navigation = useNavigation<any>()
-  const goBack = useCallback(() => navigation.goBack(), [navigation])
+  const { t } = useTranslation()
+  const navigation = useNavigation()
   const styles = getStyles()
 
   return (
     <View style={styles.container}>
       <StatusBarComponent translucent backgroundColor="transparent" />
-      <HeaderSection onGoBack={goBack} styles={styles} />
-      <InputSection styles={styles} />
-      <NameVisibilitySection styles={styles} />
+      <HeaderSection onGoBack={navigation.goBack} styles={styles} />
+      <InputSection styles={styles} t={t} />
+      <NameVisibilitySection styles={styles} t={t} />
     </View>
   )
 }
@@ -50,7 +48,7 @@ const ProfileImageSection = ({ styles }: { styles: any }) => (
 
 /* Member Info Section */
 const MemberInfoSection = ({ styles }: { styles: any }) => (
-  <View style={styles.memberInfoContainer}>
+  <View style={styles.memberInfoRow}>
     {MemberInfoTexts.map(({ icon, text }, index) => (
       <Text key={index} style={styles.memberInfoText}>
         <Icon name={icon} type="Feather" style={styles.memberInfoIcon} /> {text}
@@ -58,30 +56,27 @@ const MemberInfoSection = ({ styles }: { styles: any }) => (
     ))}
   </View>
 )
-
 /* Input Section */
-const InputSection = ({ styles }: { styles: any }) => (
+const InputSection = ({ styles, t }: { styles: any, t: any }) => (
   <View style={styles.inputSection}>
-    <ProfilePageTextInput title={t('username')} />
-    <ProfilePageTextInput title={t('name')} />
-    <ProfilePageTextInput title={t('surname')} />
+    {["username", "name", "surname"].map((field) => (
+      <ProfilePageTextInput key={field} title={t(field)} />
+    ))}
     <ProfilePageTextInput
-      title={t('password')}
+      title={t("password")}
       placeHolder="******"
       iconName="chevron-right"
       iconType="Entypo"
       editable={false}
     />
-    <ProfilePageTextInput title={t('description')} placeHolder={t('youCanWriteSomethingAboutYourself')} />
+    <ProfilePageTextInput title={t("description")} placeHolder={t("youCanWriteSomethingAboutYourself")} />
   </View>
 )
 
 /* Name Visibility Section */
-const NameVisibilitySection = ({ styles }: { styles: any }) => (
+const NameVisibilitySection = ({ styles, t }: { styles: any, t: any }) => (
   <View style={styles.descriptionContainer}>
-    <Text style={styles.descriptionText}>
-      {t('selectNameText')}
-    </Text>
+    <Text style={styles.descriptionText}>{t("selectNameText")}</Text>
     <NameVisibilitySectionComponent />
   </View>
-)  
+)

@@ -3,33 +3,35 @@ import { Container } from 'container/container'
 import { I18nextProvider } from 'react-i18next'
 import i18n from './src/utils/i18next'
 import { StatusBarComponent } from 'components/index'
-import { Provider, useDispatch } from 'react-redux'
+import { Provider } from 'react-redux'
 import { store } from 'features/reduxToolkit/store'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { setTheme } from 'features/reduxToolkit/themeSlice'
+import { setLanguage } from 'features/reduxToolkit/languageSlice'
 
 const App = () => {
-
-  const dispatch = useDispatch()
-
+  
   useEffect(() => {
-    const fetchTheme = async () => {
+    const loadSettings = async () => {
       try {
-        const storedTheme = await AsyncStorage.getItem('theme')
-        if (storedTheme) {
-          dispatch(setTheme(storedTheme as 'light' | 'dark'))
+        const [storedTheme, storedLanguage] = await Promise.all([
+          AsyncStorage.getItem('theme'),
+          AsyncStorage.getItem('language'),
+        ])
+        if (storedTheme) store.dispatch(setTheme(storedTheme as 'light' | 'dark'))
+        if (storedLanguage) {
+          i18n.changeLanguage(storedLanguage)
+          store.dispatch(setLanguage(storedLanguage))
         }
       } catch (error) {
-        console.error('Tema alma hatası:', error)
+        console.error('Ayarları yüklerken hata oluştu:', error)
       }
     }
-
-    fetchTheme()
-  }, [dispatch])
+    loadSettings()
+  }, [])
 
   return (
     <I18nextProvider i18n={i18n}>
-      <StatusBarComponent />
       <Container />
     </I18nextProvider>
   )
@@ -37,6 +39,7 @@ const App = () => {
 
 const AppWrapper = () => (
   <Provider store={store}>
+    <StatusBarComponent />
     <App />
   </Provider>
 )

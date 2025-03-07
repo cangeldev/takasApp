@@ -66,30 +66,18 @@ export const ProfileSettingsOptionsList = [
     }
 ]
 
-export const themeOptionsList = [
-    {
-        id: 1,
-        image: sun,
-        title: t('lightMode'),
-        theme: "light"
-    },
-    {
-        id: 2,
-        image: moon,
-        title: t('darkMode'),
-        theme: "dark"
-    },
-    {
-        id: 3,
-        image: palette,
-        title: t('defaultMode'),
-        theme: "default"
-    }
-]
+export const getThemeOptionsList = () => {
+    const { t } = useTranslation()
+    return [
+        { id: 1, image: sun, title: t('lightMode'), theme: "light" },
+        { id: 2, image: moon, title: t('darkMode'), theme: "dark" },
+        { id: 3, image: palette, title: t('defaultMode'), theme: "default" }
+    ]
+}
 
 export const languages = [
     { code: "tr", label: "Turkish", flag: "🇹🇷" },
-    { code: "us", label: "English (US)", flag: "🇺🇸" },
+    { code: "en", label: "English (US)", flag: "🇺🇸" },
     { code: "uk", label: "English (UK)", flag: "🇬🇧" },
     { code: "fr", label: "French", flag: "🇫🇷" },
     { code: "de", label: "German", flag: "🇩🇪" },

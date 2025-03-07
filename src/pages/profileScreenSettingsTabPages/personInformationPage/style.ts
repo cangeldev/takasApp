@@ -72,7 +72,7 @@ const getStyles = () => {
       paddingHorizontal: scaleFactor * 15,
       marginTop: 80 * scaleFactor,
     },
-    memberInfoContainer: {
+    memberInfoRow: {
       alignSelf: 'flex-end',
       marginLeft: scaleFactor * 10
     },

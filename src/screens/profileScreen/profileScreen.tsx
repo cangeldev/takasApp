@@ -4,7 +4,7 @@ import { Divider, Icon, ProfileImage } from 'components/index'
 import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/cards'
 import { gave, received, replacement } from 'assets/index'
 import { ProfileSettingsOptionsList } from 'utils/helper'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 import getStyles from './style'
 
 /*
@@ -20,12 +20,13 @@ const renderItem = ({ item }: any) =>
 export const ProfileScreen = () => {
 
     const styles = getStyles()
+    const { t } = useTranslation()
     return (
         <ScrollView style={styles.container}>
             <HeaderSection styles={styles} />
-            <ProfileSection styles={styles} />
+            <ProfileSection styles={styles} t={t} />
             <Divider />
-            <ActivitySummarySection styles={styles} />
+            <ActivitySummarySection styles={styles} t={t} />
             <View style={styles.advert} />
             <SettingsOptionListSection styles={styles} />
         </ScrollView>
@@ -40,7 +41,7 @@ const HeaderSection = ({ styles }: { styles: any }) => (
     </View>
 )
 
-const ProfileSection = ({ styles }: { styles: any }) => (
+const ProfileSection = ({ styles, t }: { styles: any, t: any }) => (
     <View style={styles.profileSection}>
         <View>
             <View style={styles.profileImageWrapper}>
@@ -58,7 +59,7 @@ const ProfileSection = ({ styles }: { styles: any }) => (
     </View>
 )
 
-const ActivitySummarySection = ({ styles }: { styles: any }) => (
+const ActivitySummarySection = ({ styles, t }: { styles: any, t: any }) => (
     <View style={styles.activitySummarySection}>
         <ProfileActivitySummaryCard image={received} title={t('received')} />
         <View style={styles.divider} />
