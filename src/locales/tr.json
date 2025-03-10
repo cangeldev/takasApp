@@ -28,7 +28,9 @@
         "darkMode": "Karanlık mod",
         "defaultMode": "Varsayılan sistem ayarı",
         "languageAndThemeSettings": "Dil ve Tema Ayarları",
-        "themeSelection":"Tema seçimi",
-        "languageSelection":"Dil seçimi"
+        "themeSelection": "Tema seçimi",
+        "languageSelection": "Dil seçimi",
+        "NoSavedAddressInformationFound": "Kaydedilen adres bilgisi bulunamadı",
+        "addNewAddress": "Yeni Adres Ekle"
     }
 }

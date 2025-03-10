@@ -5,7 +5,7 @@ const { t } = useTranslation()
 export const MemberInfoTexts = [
     { icon: 'check-square', text: t('phoneNnumberVerified') },
     { icon: 'calendar', text: t('youSignedUpMonthAgo') }
-  ]
+]
 
 export const ProfileSettingsOptionsList = [
     {
@@ -20,7 +20,7 @@ export const ProfileSettingsOptionsList = [
         iconName: 'location',
         type: 'Octicons',
         title: t('addressAndLocationInformation'),
-        navigatePage: "null"
+        navigatePage: "AddressAndLocationPage"
     },
     {
         id: 3,

@@ -1,7 +1,6 @@
 import React from 'react'
-import { View, Text, FlatList, Appearance, ScrollView } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { Icon } from 'components/index'
+import { Text, FlatList, Appearance, ScrollView } from 'react-native'
+import { HeaderSection } from 'components/index'
 import { getThemeOptionsList, languages, } from 'utils/helper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useDispatch, useSelector } from 'react-redux'
@@ -25,7 +24,6 @@ export const ApplicationLanguageAndThemePage = () => {
     const selectedLanguage = useSelector((state: RootState) => state.languages.LanguageInfo.language)
     const { t } = useTranslation()
     const dispatch = useDispatch()
-
     const systemTheme = Appearance.getColorScheme() || "light"
 
     const handleThemeChange = async (theme: string) => {
@@ -52,20 +50,10 @@ export const ApplicationLanguageAndThemePage = () => {
 
     return (
         <ScrollView style={styles.container}>
-            <HeaderSection styles={styles} t={t} />
+            <HeaderSection headerTitle={"languageAndThemeSettings"} />
             <ThemeSection selectedTheme={selectedTheme} onThemeChange={handleThemeChange} styles={styles} t={t} themeOptionsList={themeOptionsList} />
             <LanguageSection selectedLanguage={selectedLanguage} onLanguageChange={handleLanguageChange} styles={styles} t={t} />
         </ScrollView>
-    )
-}
-
-const HeaderSection = ({ styles, t }: { styles: any, t: any }) => {
-    const navigation = useNavigation()
-    return (
-        <View style={styles.header}>
-            <Icon onPress={navigation.goBack} name="chevron-back-sharp" type="Ionicons" style={styles.backIcon} />
-            <Text style={styles.headerTitle}>{t('languageAndThemeSettings')}</Text>
-        </View>
     )
 }
 

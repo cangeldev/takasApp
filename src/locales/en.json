@@ -29,6 +29,8 @@
         "defaultMode": "Default theme",
         "languageAndThemeSettings": "Language and Theme Settings",
         "themeSelection": "Theme selection",
-        "languageSelection": "Language selection"
+        "languageSelection": "Language selection",
+        "NoSavedAddressInformationFound": "No saved address information found",
+        "addNewAddress": "Add New Address"
     }
 }
