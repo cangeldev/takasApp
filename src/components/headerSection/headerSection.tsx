@@ -6,10 +6,13 @@ import { Icon } from 'components/icon/icon'
 import { useNavigation } from '@react-navigation/native'
 
 interface IHeaderSection {
-
     headerTitle: any
 }
 
+/*
+  HeaderSection, bu yapı sayfalarda kullanılacak üst bölge için tasarlanan yapıdır.
+  Bir geri butonu ve sayfa hakkında başlığı ve içeriği hakkında bilgi veren yapıdır.
+*/
 export const HeaderSection: FC<IHeaderSection> = ({ headerTitle }) => {
 
     const styles = getStyles()

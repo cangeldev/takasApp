@@ -1,14 +1,20 @@
 import React from 'react'
-import style from './style'
 import RadioButtonRN from 'radio-buttons-react-native'
 import colors from 'assets/colors/colors'
+import getStyles from './style'
 
 const data = [
     { label: 'Can GEL' },
     { label: 'Can G.' }
 ]
 
+/*
+  NameVisibilitySectionComponent, bu yapı kullanıcının uygulama içinde hangi isimle görüneceğini seçebileceği bir radio-buttons yapısıdır.
+*/
 export const NameVisibilitySectionComponent = () => {
+
+    const style = getStyles()
+
     return (
         <RadioButtonRN
             textStyle={style.textStyle}

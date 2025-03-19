@@ -3,8 +3,8 @@ import React from 'react'
 import { defaultProfileImage } from 'assets/index'
 import style from './style'
 
-/**
- * `ProfileImage` componenti, , kullanıcının belirlediği profil fotoğrafını gösteren bir bileşendir.
+/*
+ `ProfileImage` componenti, , kullanıcının belirlediği profil fotoğrafını gösteren bir bileşendir.
  */
 export const ProfileImage = () => {
     return (

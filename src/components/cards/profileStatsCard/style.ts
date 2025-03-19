@@ -1,16 +1,23 @@
-import { StyleSheet, PixelRatio } from 'react-native'
-import colors from 'assets/colors/colors'
+import colors from "assets/colors/colors"
+import { StyleSheet, useWindowDimensions } from "react-native"
 
-export default StyleSheet.create({
-    container: {
-        alignItems: 'center'
-    },
-    count: {
-        fontWeight: '700',
-        fontSize: PixelRatio.getFontScale() * 14
-    },
-    title: {
-        color: colors.textInactiveColor,
-        fontSize: PixelRatio.getFontScale() * 13
-    }
-})
+const getStyles = () => {
+
+    const { width } = useWindowDimensions()
+    const scaleFactor = width / 375
+
+    return StyleSheet.create({
+        container: {
+            alignItems: 'center'
+        },
+        count: {
+            fontWeight: '700',
+            fontSize: scaleFactor * 14
+        },
+        title: {
+            color: colors.textInactiveColor,
+            fontSize: scaleFactor * 13
+        }
+    })
+}
+export default getStyles

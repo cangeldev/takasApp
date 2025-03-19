@@ -1,30 +1,33 @@
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
-import colors from 'assets/colors/colors'
+import { useTheme } from 'hooks/useTheme'
+import { StyleSheet, useWindowDimensions } from 'react-native'
 
-// Ekran boyutlarını almak için kullanılır
-const { width, height } = Dimensions.get('window')
+const getStyles = () => {
 
-// Ölçekleme faktörü
-const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
+  const { width } = useWindowDimensions()
+  const scaleFactor = width / 375
+  const theme = useTheme()
 
-export default StyleSheet.create({
-  themeItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: colors.white,
-    padding: 8 * scale,
-    marginVertical: 5 * scale,
-    borderRadius: 10,
-    elevation: 4,
-    margin: 5 * scale
-  },
-  themeText: {
-    flex: 1,
-    fontSize: PixelRatio.getFontScale() * 16
-  },
-  themeImage: {
-    width: 20 * scale,
-    height: 20 * scale,
-    marginRight: 10 * scale
-  }
-})
+  return StyleSheet.create({
+    themeItem: {
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: theme.backgroundColor,
+      padding: 8 * scaleFactor,
+      marginVertical: 5 * scaleFactor,
+      borderRadius: 10,
+      elevation: 4,
+      margin: 5 * scaleFactor
+    },
+    themeText: {
+      flex: 1,
+      fontSize: scaleFactor * 16,
+      color: theme.textColor
+    },
+    themeImage: {
+      width: 20 * scaleFactor,
+      height: 20 * scaleFactor,
+      marginRight: 10 * scaleFactor
+    }
+  })
+}
+export default getStyles

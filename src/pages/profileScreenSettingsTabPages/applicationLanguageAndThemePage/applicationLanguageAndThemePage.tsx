@@ -1,22 +1,18 @@
 import React from 'react'
-import { Text, FlatList, Appearance, ScrollView } from 'react-native'
+import { Text, FlatList, ScrollView } from 'react-native'
 import { HeaderSection } from 'components/index'
-import { getThemeOptionsList, languages, } from 'utils/helper'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import { getThemeOptionsList, languages } from 'utils/helper'
 import { useDispatch, useSelector } from 'react-redux'
-import { setTheme } from 'features/reduxToolkit/themeSlice'
 import { RootState } from 'features/reduxToolkit/store'
 import { useTranslation } from 'react-i18next'
 import getStyles from './style'
 import { LanguageItem, ThemeItem } from 'components/languageAndThemeItems'
-import { setLanguage } from 'features/reduxToolkit/languageSlice'
-import i18n from 'utils/i18next'
+import { handleLanguageChange, handleThemeChange } from 'utils/helperFunctions'
 
 /*
   ApplicationLanguageAndThemePage, kullanıcının istediği temayı kullanması için seçim yapabildiği veya istediği dil seçeceğini seçebildiği sayfadır. 
   Bu ekran, kullanıcıya tema bilgilerini ve dil bilgilerini gösterirken, aynı zamanda istedikleri dil seç ve temayı seçip uygulama üzerinde kullanmalarına olanak tanır.
 */
-
 export const ApplicationLanguageAndThemePage = () => {
 
     const themeOptionsList = getThemeOptionsList()
@@ -24,40 +20,18 @@ export const ApplicationLanguageAndThemePage = () => {
     const selectedLanguage = useSelector((state: RootState) => state.languages.LanguageInfo.language)
     const { t } = useTranslation()
     const dispatch = useDispatch()
-    const systemTheme = Appearance.getColorScheme() || "light"
-
-    const handleThemeChange = async (theme: string) => {
-        try {
-            const newTheme = theme === "default" ? systemTheme : theme
-            dispatch(setTheme(newTheme))
-            await AsyncStorage.setItem("theme", newTheme)
-        } catch (error) {
-            console.error("Tema kaydetme hatası:", error)
-        }
-    }
-
-    const handleLanguageChange = async (language: string) => {
-        try {
-            i18n.changeLanguage(language)
-            dispatch(setLanguage(language))
-            await AsyncStorage.setItem("language", language)
-        } catch (error) {
-            console.error("Dil kaydetme hatası:", error)
-        }
-    }
-
     const styles = getStyles()
 
     return (
         <ScrollView style={styles.container}>
             <HeaderSection headerTitle={"languageAndThemeSettings"} />
-            <ThemeSection selectedTheme={selectedTheme} onThemeChange={handleThemeChange} styles={styles} t={t} themeOptionsList={themeOptionsList} />
-            <LanguageSection selectedLanguage={selectedLanguage} onLanguageChange={handleLanguageChange} styles={styles} t={t} />
+            <ThemeSection selectedTheme={selectedTheme} onThemeChange={(theme: any) => handleThemeChange(theme, dispatch)} styles={styles} t={t} themeOptionsList={themeOptionsList} />
+            <LanguageSection selectedLanguage={selectedLanguage} onLanguageChange={(language: any) => handleLanguageChange(language, dispatch)} styles={styles} t={t} />
         </ScrollView>
     )
 }
 
-const ThemeSection = ({ selectedTheme, onThemeChange, styles, t, themeOptionsList }: { selectedTheme: string, onThemeChange: (theme: string) => void, styles: any, t: any, themeOptionsList: any }) => (
+const ThemeSection = ({ selectedTheme, onThemeChange, styles, t, themeOptionsList }: any) => (
     <>
         <Text style={styles.sectionTitle}>{t('themeSelection')}</Text>
         <FlatList
@@ -71,7 +45,7 @@ const ThemeSection = ({ selectedTheme, onThemeChange, styles, t, themeOptionsLis
     </>
 )
 
-const LanguageSection = ({ selectedLanguage, onLanguageChange, styles, t }: { selectedLanguage: string, onLanguageChange: (language: string) => void, styles: any, t: any }) => (
+const LanguageSection = ({ selectedLanguage, onLanguageChange, styles, t }: any) => (
     <>
         <Text style={styles.sectionTitle}>{t('languageSelection')}</Text>
         <FlatList
@@ -84,5 +58,4 @@ const LanguageSection = ({ selectedLanguage, onLanguageChange, styles, t }: { se
         />
     </>
 )
-
 export default ApplicationLanguageAndThemePage

@@ -1,37 +1,38 @@
-import colors from 'assets/colors/colors'
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import colors from "assets/colors/colors"
+import { StyleSheet, useWindowDimensions } from "react-native"
+import { useTheme } from 'hooks/useTheme'
+const getStyles = () => {
 
-// Ekran boyutunu almak için Dimensions API'si kullanılır
-const { width, height } = Dimensions.get('window')
+    const { width } = useWindowDimensions()
+    const scaleFactor = width / 375
+    const theme = useTheme()
 
-// Ekran genişliğine göre ölçeklendirme faktörü
-const scale = Math.min(width / 375, height / 667)// Hem genişlik hem yükseklik baz alınarak
-const spacing = 13 * scale // Sabit boşluk değeri
-
-export default StyleSheet.create({
-    container: {
-        justifyContent: 'center',
-        marginBottom: 20 * scale
-    },
-    txtInput: {
-        borderRadius: 6,
-        paddingHorizontal: spacing,
-        borderWidth: 1,
-        borderColor: colors.lightGrey
-    },
-    title: {
-        position: 'absolute',
-        backgroundColor: colors.white,
-        top: -10,
-        left: 6,
-        paddingHorizontal: 6 * scale,
-        fontSize: PixelRatio.getFontScale() * 12,
-        color: colors.black
-    },
-    icon: {
-        fontSize: PixelRatio.getFontScale() * 20,
-        color: colors.black,
-        position: 'absolute',
-        right: 10
-    }
-})
+    return StyleSheet.create({
+        container: {
+            justifyContent: 'center',
+            marginBottom: 20 * scaleFactor
+        },
+        txtInput: {
+            borderRadius: 6,
+            paddingHorizontal: scaleFactor * 10,
+            borderWidth: 1,
+            borderColor: colors.lightGrey
+        },
+        title: {
+            position: 'absolute',
+            backgroundColor: theme.backgroundColor,
+            top: -10,
+            left: 6,
+            paddingHorizontal: 6 * scaleFactor,
+            fontSize: scaleFactor * 12,
+            color: colors.black
+        },
+        icon: {
+            fontSize: scaleFactor * 20,
+            color: theme.textColor,
+            position: 'absolute',
+            right: 10
+        }
+    })
+}
+export default getStyles

@@ -8,6 +8,9 @@ interface IStatusBar {
     backgroundColor?: string
 }
 
+/*
+  StatusBarComponent, bu component uygulama içinde kullanılan status barın ayarlamalarını yapmak için kullandığı bileşendir.
+*/
 export const StatusBarComponent: FC<IStatusBar> = ({ translucent = false, backgroundColor }) => {
 
     const theme = useTheme()

@@ -1,19 +1,20 @@
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import { StyleSheet, useWindowDimensions } from "react-native"
 
-// Ekran boyutlarını almak için kullanılır
-const { width, height } = Dimensions.get('window')
+const getStyles = () => {
 
-// Ölçekleme faktörü
-const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
-
-export default StyleSheet.create({
-  boxStyle: {
-    backgroundColor: "transparent",
-    marginVertical: 10 * scale
-  },
-  textStyle: {
-    fontWeight: "600",
-    fontSize: PixelRatio.getFontScale() * 15,
-    color: "#505050"
-  }
-})
+  const { width } = useWindowDimensions()
+  const scaleFactor = width / 375
+  
+  return StyleSheet.create({
+    boxStyle: {
+      backgroundColor: "transparent",
+      marginVertical: 10 * scaleFactor
+    },
+    textStyle: {
+      fontWeight: "600",
+      fontSize: scaleFactor * 14,
+      color: "#505050"
+    }
+  })
+}
+export default getStyles

@@ -1,7 +1,7 @@
 import { Text, TextInput, Pressable } from 'react-native'
 import React, { FC } from 'react'
-import style from './style'
 import { Icon } from 'components/icon/icon'
+import getStyles from './style'
 
 interface IProfilePageTextInput {
     title: string
@@ -11,11 +11,15 @@ interface IProfilePageTextInput {
     editable?: boolean
 }
 
+/*
+  ProfilePageTextInput, bu component ProfilePage sayfasındaki, kullanıcının bilgilerini girmek için kullandığı bileşendir.
+*/
 export const ProfilePageTextInput: FC<IProfilePageTextInput> = ({ title, placeHolder, iconName, iconType, editable }) => {
 
     const onPress = () => {
         editable === false && console.log("modal açıp şifre değiştir")
     }
+    const style = getStyles()
 
     return (
         <Pressable onPress={onPress} style={style.container}>

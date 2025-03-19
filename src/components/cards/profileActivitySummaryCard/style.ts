@@ -1,25 +1,25 @@
-import { Dimensions, StyleSheet, PixelRatio } from 'react-native'
-import colors from 'assets/colors/colors'
+import { StyleSheet, useWindowDimensions } from "react-native"
+import colors from "assets/colors/colors"
 
-// Ekran boyutlarını almak için kullanılır
-const { width, height } = Dimensions.get('window')
+const getStyles = () => {
 
-// Ölçekleme faktörü
-const scale = Math.min(width / 375, height / 667) // iPhone 6 baz alınarak
-const spacing = 5 * scale // Sabit boşluk değeri
+    const { width } = useWindowDimensions()
+    const scaleFactor = width / 375
 
-export default StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        marginVertical: spacing,
-    },
-    activityIcon: {
-        width: 30 * scale,
-        height: 30 * scale
-    },
-    activityLabel: {
-        marginTop: 2,
-        color: colors.bottomTabIconInactiveColor,
-        fontSize: PixelRatio.getFontScale() * 13
-    }
-})
+    return StyleSheet.create({
+        container: {
+            alignItems: 'center',
+            marginVertical: scaleFactor * 10,
+        },
+        activityIcon: {
+            width: 30 * scaleFactor,
+            height: 30 * scaleFactor
+        },
+        activityLabel: {
+            marginTop: 2 * scaleFactor,
+            color: colors.bottomTabIconInactiveColor,
+            fontSize: 13 * scaleFactor
+        }
+    })
+}
+export default getStyles
