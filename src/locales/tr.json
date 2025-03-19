@@ -31,6 +31,8 @@
         "themeSelection": "Tema seçimi",
         "languageSelection": "Dil seçimi",
         "NoSavedAddressInformationFound": "Kaydedilen adres bilgisi bulunamadı",
-        "addNewAddress": "Yeni Adres Ekle"
+        "addNewAddress": "Yeni Adres Ekle",
+        "addAddress": "Adres Ekle",
+        "addressInformation": "Adres Bilgilerim"
     }
 }

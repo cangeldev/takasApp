@@ -8,7 +8,7 @@
         "gave": "Gave",
         "pendingExchanges": "Pending Exchanges",
         "personalInformation": "Personal Information",
-        "addressAndLocationInformation": "Address and Location Information",
+        "addressAndLocationInformation": "Address Information",
         "myNetwork": "My Network",
         "myFavorites": "My Favorites",
         "notificationSettings": "Notification Settings",
@@ -31,6 +31,8 @@
         "themeSelection": "Theme selection",
         "languageSelection": "Language selection",
         "NoSavedAddressInformationFound": "No saved address information found",
-        "addNewAddress": "Add New Address"
+        "addNewAddress": "Add New Address",
+        "addAddress": "Add Address",
+        "addressInformation": "Address Information"
     }
 }

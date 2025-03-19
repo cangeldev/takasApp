@@ -43,6 +43,27 @@ const getStyles = () => {
       color: colors.white,
       fontWeight: "600",
       fontSize: 15 * scaleFactor
+    },
+    addressListSectionContainer: {
+      flex: 1,
+      backgroundColor: "#f5f5f5"
+    },
+    addressListSectionHeader: {
+      flexDirection: "row",
+      backgroundColor: theme.backgroundColor,
+      padding: 15,
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    headerTitle: {
+      fontSize: 17,
+      flex: 1,
+      fontWeight: "600",
+      paddingLeft: 10
+    },
+    addAddress: {
+      color: colors.bottomTabIconActiveColor,
+      fontWeight: "600"
     }
   })
 }
