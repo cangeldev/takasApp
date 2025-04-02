@@ -6,6 +6,6 @@ import { lightTheme, darkTheme } from "utils/theme"
  Bu bileşen  uygulama içinde kullanılacak tema ayarlarınıyapmak amaçlı oluşturulmuş bir hook yapısıdır.
 */
 export const useTheme = () => {
-    const selectedTheme = useSelector((state: RootState) => state.themes.ThemeInfo.theme)
+    const selectedTheme = useSelector((state: RootState) => state.theme.theme)
     return selectedTheme === "light" ? lightTheme : darkTheme
 }

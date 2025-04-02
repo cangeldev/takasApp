@@ -1,23 +1,26 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { TabNavigation } from "navigation/tabNavigation/tabNavigation"
-import { ApplicationLanguageAndThemePage, PersonInformationPage } from "pages/profileScreenSettingsTabPages"
-import AddressAndLocationPage from "pages/profileScreenSettingsTabPages/addressAndLocationPage/addressAndLocationPage"
+import { ApplicationLanguageAndThemePage, PersonInformationPage, AddressAndLocationPage, NotificationSettingsPage } from "pages/profileScreenSettingsTabPages"
 import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from "screens/index"
 
 const Stack = createNativeStackNavigator()
+const screens = [
+  { name: "TabNavigation", component: TabNavigation },
+  { name: "Home", component: HomeScreen },
+  { name: "Search", component: SearchScreen },
+  { name: "ProductAdd", component: ProductAddScreen },
+  { name: "MyAds", component: MyAdsScreen },
+  { name: "Profile", component: ProfileScreen },
+  { name: "PersonInformationPage", component: PersonInformationPage },
+  { name: "ApplicationLanguageAndThemePage", component: ApplicationLanguageAndThemePage },
+  { name: "AddressAndLocationPage", component: AddressAndLocationPage },
+  { name: "NotificationSettingsPage", component: NotificationSettingsPage },
+]
 
-export const StackNavigation = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="TabNavigation" component={TabNavigation} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name='Search' component={SearchScreen} />
-            <Stack.Screen name='ProductAdd' component={ProductAddScreen} />
-            <Stack.Screen name='MyAds' component={MyAdsScreen} />
-            <Stack.Screen name='Profile' component={ProfileScreen} />
-            <Stack.Screen name="PersonInformationPage" component={PersonInformationPage} />
-            <Stack.Screen name="ApplicationLanguageAndThemePage" component={ApplicationLanguageAndThemePage} />
-            <Stack.Screen name="AddressAndLocationPage" component={AddressAndLocationPage} />
-        </Stack.Navigator>
-    )
-}
+export const StackNavigation = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    {screens.map(({ name, component }) => (
+      <Stack.Screen key={name} name={name} component={component} />
+    ))}
+  </Stack.Navigator>
+)

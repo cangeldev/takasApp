@@ -33,6 +33,16 @@
         "NoSavedAddressInformationFound": "Kaydedilen adres bilgisi bulunamadı",
         "addNewAddress": "Yeni Adres Ekle",
         "addAddress": "Adres Ekle",
-        "addressInformation": "Adres Bilgilerim"
+        "addressInformation": "Adres Bilgilerim",
+        "GeneralNotifications": "Genel Bildirimler",
+        "emailNotifications": "E-Posta Bildirimleri",
+        "whenCommentisMadeOnProduct": "Ürüne Yorum Yapıldığında",
+        "whenOfferMadeProduct": "Ürüne Teklif Yapıldığında",
+        "campaignNotifications": "Kampanya Bildirimleri",
+        "notificationsOffersYouSent": "Yaptığın Teklif Bildirimleri",
+        "offersMadeYourProducts": "Ürünlerine Yapılan Teklifler",
+        "favoriteListings": "Favori İlanlar",
+        "receiveSMSNotifications": "SMS Almak İstiyorum",
+        "receiveCallsRelatedCampaigns": "Kampanyalarla İlgili Çağrı Almak İstiyorum"
     }
 }

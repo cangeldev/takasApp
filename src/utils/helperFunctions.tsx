@@ -3,6 +3,7 @@ import { setTheme } from 'features/reduxToolkit/themeSlice'
 import { setLanguage } from 'features/reduxToolkit/languageSlice'
 import i18n from 'utils/i18next'
 import { Appearance } from 'react-native'
+import { store } from 'features/reduxToolkit/store'
 
 // Tema değiştirme fonksiyonu
 export const handleThemeChange = async (theme: any, dispatch: any) => {
@@ -26,3 +27,16 @@ export const handleLanguageChange = async (language: any, dispatch: any) => {
         console.error("Dil kaydetme hatası:", error)
     }
 }
+
+export const loadSettings = async () => {
+    try {
+      const [storedTheme, storedLanguage] = await Promise.all([
+        AsyncStorage.getItem('theme'),
+        AsyncStorage.getItem('language'),
+      ])
+      storedTheme && store.dispatch(setTheme(storedTheme))
+      storedLanguage && (i18n.changeLanguage(storedLanguage), store.dispatch(setLanguage(storedLanguage)))
+    } catch (error) {
+      console.error('Ayarları yüklerken hata oluştu:', error)
+    }
+  }

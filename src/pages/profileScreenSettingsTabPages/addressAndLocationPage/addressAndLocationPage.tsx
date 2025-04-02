@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import getStyles from './style'
-import { HeaderSection, Icon } from 'components/index'
+import { HeaderSection } from 'components/index'
 import { useTranslation } from 'react-i18next'
 import { address } from 'assets/index'
 import { AddAddressModal } from 'components/modals'
-import { useNavigation } from '@react-navigation/native'
 import { AddressCard } from 'components/cards'
 
 /*
@@ -17,14 +16,13 @@ export const AddressAndLocationPage = () => {
     const styles = getStyles()
     const [isModalVisible, setIsModalVisible] = useState(false)
     const handleModalClose = () => setIsModalVisible(false)
-    const navigation = useNavigation()
 
     return (
         <View style={styles.container}>
-            {/* <HeaderSection headerTitle={"addressAndLocationInformation"} />
-            <InfoSection onPress={() => setIsModalVisible(true)} /> */}
+            <HeaderSection headerTitle={"addressAndLocationInformation"} />
+            {/* <InfoSection onPress={() => setIsModalVisible(true)} /> */}
             <AddAddressModal onCloseModal={handleModalClose} isModalVisible={isModalVisible} />
-            <AddressListSection navigation={navigation} />
+            <AddressListSection />
         </View>
     )
 }
@@ -45,18 +43,14 @@ const InfoSection = ({ onPress }: { onPress: () => void }) => {
     )
 }
 
-const AddressListSection = ({ navigation }: { navigation: any }) => {
+const AddressListSection = () => {
 
     const styles = getStyles()
     const { t } = useTranslation()
 
     return (
         <View style={styles.addressListSectionContainer}>
-            <View style={styles.addressListSectionHeader}>
-                <Icon onPress={navigation.goBack} name="arrow-back" type="Ionicons" style={styles.backIcon} />
-                <Text style={styles.headerTitle}>{t("addressInformation")}</Text>
-                <Text style={styles.addAddress}>{t("addAddress")}</Text>
-            </View>
+            <HeaderSection addAddressVisible={true} headerTitle={"addressInformation"} />
             <AddressCard
                 title="Ev Adresim"
                 addressDetails={[

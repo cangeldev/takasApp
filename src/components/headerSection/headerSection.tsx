@@ -7,13 +7,14 @@ import { useNavigation } from '@react-navigation/native'
 
 interface IHeaderSection {
     headerTitle: any
+    addAddressVisible?: boolean
 }
 
 /*
   HeaderSection, bu yapı sayfalarda kullanılacak üst bölge için tasarlanan yapıdır.
   Bir geri butonu ve sayfa hakkında başlığı ve içeriği hakkında bilgi veren yapıdır.
 */
-export const HeaderSection: FC<IHeaderSection> = ({ headerTitle }) => {
+export const HeaderSection: FC<IHeaderSection> = ({ headerTitle, addAddressVisible }) => {
 
     const styles = getStyles()
     const { t } = useTranslation()
@@ -21,8 +22,9 @@ export const HeaderSection: FC<IHeaderSection> = ({ headerTitle }) => {
 
     return (
         <View style={styles.header}>
-            <Icon onPress={navigation.goBack} name="chevron-back-sharp" type="Ionicons" style={styles.backIcon} />
+            <Icon onPress={navigation.goBack} name="arrow-back" type="Ionicons" style={styles.backIcon} />
             <Text style={styles.headerTitle}>{t(headerTitle)}</Text>
+            {addAddressVisible == true ? <Text style={styles.addAddress}>{t("addAddress")}</Text> : null}
         </View>
     )
 }

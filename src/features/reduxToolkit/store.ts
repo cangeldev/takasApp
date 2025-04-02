@@ -4,8 +4,8 @@ import languageReducer from './languageSlice'
 
 export const store = configureStore({
     reducer: {
-        themes: themeReducer,
-        languages: languageReducer
+        theme: themeReducer,
+        language: languageReducer
     }
 })
 

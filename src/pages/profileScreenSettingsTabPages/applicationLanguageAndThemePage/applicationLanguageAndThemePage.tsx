@@ -16,8 +16,8 @@ import { handleLanguageChange, handleThemeChange } from 'utils/helperFunctions'
 export const ApplicationLanguageAndThemePage = () => {
 
     const themeOptionsList = getThemeOptionsList()
-    const selectedTheme = useSelector((state: RootState) => state.themes.ThemeInfo.theme)
-    const selectedLanguage = useSelector((state: RootState) => state.languages.LanguageInfo.language)
+    const selectedTheme = useSelector((state: RootState) => state.theme.theme)
+    const selectedLanguage = useSelector((state: RootState) => state.language.language)
     const { t } = useTranslation()
     const dispatch = useDispatch()
     const styles = getStyles()

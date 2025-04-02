@@ -33,6 +33,16 @@
         "NoSavedAddressInformationFound": "No saved address information found",
         "addNewAddress": "Add New Address",
         "addAddress": "Add Address",
-        "addressInformation": "Address Information"
+        "addressInformation": "Address Information",
+        "generalNotifications": "General Notifications",
+        "emailNotifications": "Email Notifications",
+        "whenCommentisMadeOnProduct": "When a Comment is Made on Product",
+        "whenOfferMadeProduct": "When an Offer is Made on Product",
+        "campaignNotifications": "Campaign Notifications",
+        "notificationsOffersYouSent": "Notifications for Offers You Sent",
+        "offersMadeYourProducts": "Offers Made on Your Products",
+        "favoriteListings": "Favorite Listings",
+        "receiveSMSNotifications": "Receive SMS Notifications",
+        "receiveCallsRelatedCampaigns": "Receive Calls Related to Campaigns"
     }
 }

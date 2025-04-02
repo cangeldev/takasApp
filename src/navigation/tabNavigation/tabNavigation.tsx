@@ -6,66 +6,31 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from 'screens/index'
 import { useTheme } from 'hooks/useTheme'
 
+const renderIcon = (source: any, focused: any, size = 24, isTinted = false) => (
+  <Image
+    source={source}
+    style={[
+      { width: size, height: size },
+      isTinted && { tintColor: focused ? colors.bottomTabIconActiveColor : colors.bottomTabIconInactiveColor }
+    ]}
+  />
+)
+
 export const TabNavigation = () => {
+  const Tab = createBottomTabNavigator()
+  const theme = useTheme()
 
-    const Tab = createBottomTabNavigator()
-    const theme = useTheme()
-    const renderIcon = (source: any, focused: any, size = 24, isTinted = false) => (
-        <Image
-            source={source}
-            style={[
-                { width: size, height: size },
-                isTinted && { tintColor: focused ? colors.bottomTabIconActiveColor : colors.bottomTabIconInactiveColor }
-            ]}
-        />
-    )
-
-    return (
-        <Tab.Navigator
-            screenOptions={{
-                headerShown: false,
-                tabBarShowLabel: false,
-                tabBarStyle: {
-                    paddingTop: 5,
-                    backgroundColor: theme.backgroundColor
-                }
-            }}>
-            <Tab.Screen
-                name="Home"
-                component={HomeScreen}
-                options={{
-                    tabBarIcon: ({ focused }) => renderIcon(focused ? home : homeInactive, focused)
-                }}
-            />
-            <Tab.Screen
-                name="Search"
-                component={SearchScreen}
-                options={{
-                    tabBarIcon: ({ focused }) => renderIcon(search, focused, 24, true)
-                }}
-            />
-            <Tab.Screen
-                name="ProductAdd"
-                component={ProductAddScreen}
-                options={{
-                    tabBarIcon: ({ focused }) => renderIcon(plus, focused, 34, true)
-                }}
-            />
-            <Tab.Screen
-                name="MyAds"
-                component={MyAdsScreen}
-                options={{
-                    tabBarIcon: ({ focused }) => renderIcon(focused ? menuButton : menuButtonInactive, focused)
-                }}
-            />
-            <Tab.Screen
-                name="Profile"
-                component={ProfileScreen}
-                options={{
-                    tabBarIcon: ({ focused }) => renderIcon(focused ? avatar : avatarInactive, focused)
-                }}
-            />
-        </Tab.Navigator>
-    )
+  return (
+    <Tab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false, tabBarStyle: { paddingTop: 5, backgroundColor: theme.backgroundColor } }}>
+      {[ 
+        { name: "Home", component: HomeScreen, icon: [homeInactive, home] },
+        { name: "Search", component: SearchScreen, icon: [search, search], isTinted: true },
+        { name: "ProductAdd", component: ProductAddScreen, icon: [plus, plus], size: 34, isTinted: true },
+        { name: "MyAds", component: MyAdsScreen, icon: [menuButtonInactive, menuButton] },
+        { name: "Profile", component: ProfileScreen, icon: [avatarInactive, avatar] }
+      ].map(({ name, component, icon, size = 24, isTinted }) => (
+        <Tab.Screen key={name} name={name} component={component} options={{ tabBarIcon: ({ focused }) => renderIcon(icon[+focused], focused, size, isTinted) }} />
+      ))}
+    </Tab.Navigator>
+  )
 }
-
