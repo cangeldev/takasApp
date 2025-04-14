@@ -2,3 +2,4 @@ export { PersonInformationPage } from "./personInformationPage/personInformation
 export { ApplicationLanguageAndThemePage } from "./applicationLanguageAndThemePage/applicationLanguageAndThemePage"
 export { AddressAndLocationPage } from "./addressAndLocationPage/addressAndLocationPage"
 export { NotificationSettingsPage } from "./notificationSettingsPage/notificationSettingsPage"
+export { HelpAndSupportPage } from "./helpAndSupportPage/helpAndSupportPage"

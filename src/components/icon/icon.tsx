@@ -25,48 +25,23 @@ interface IconProps {
  * Bu, uygulamadaki farklı simgeleri tek bir bileşende yönetmeyi sağlar.
  */
 export const Icon: React.FC<IconProps> = React.memo(({ type, name, style, onPress, disabled }) => {
-
-    // Belirtilen simge türüne göre uygun simge bileşenini döndürmek için kullanılır.
-    const getIconComponent = () => {
-        switch (type) {
-
-            case 'AntDesign':
-                return IconA
-            case 'Octicons':
-                return IconO
-            case 'Ionicons':
-                return IconI
-            case 'Fontisto':
-                return IconF
-            case 'FontAwesome5':
-                return IconF5
-            case 'FontAwesome6':
-                return IconF6
-            case 'FontAwesome':
-                return IconFA
-            case 'MaterialIcons':
-                return IconM
-            case 'MaterialCommunityIcons':
-                return IconMC
-            case 'EvilIcons':
-                return IconEV
-            case 'Feather':
-                return IconFE
-            case 'Entypo':
-                return IconE
-            default:
-                return IconA
+    const IconComponent = React.useMemo(() => {
+        const iconMap = {
+            AntDesign: IconA,
+            Octicons: IconO,
+            Ionicons: IconI,
+            Fontisto: IconF,
+            FontAwesome5: IconF5,
+            FontAwesome6: IconF6,
+            FontAwesome: IconFA,
+            MaterialIcons: IconM,
+            MaterialCommunityIcons: IconMC,
+            EvilIcons: IconEV,
+            Feather: IconFE,
+            Entypo: IconE
         }
-    }
+        return iconMap[type] || IconA
+    }, [type])
 
-    const IconComponent = getIconComponent()
-
-    return (
-        <IconComponent
-            name={name}
-            style={style}
-            onPress={onPress}
-            disabled={disabled}
-        />
-    )
+    return <IconComponent name={name} style={style} onPress={onPress} disabled={disabled} />
 })

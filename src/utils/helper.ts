@@ -55,7 +55,7 @@ export const ProfileSettingsOptionsList = [
         iconName: 'support',
         type: 'MaterialIcons',
         title: t('helpAndSupport'),
-        navigatePage: "null"
+        navigatePage: "HelpAndSupportPage"
     },
     {
         id: 8,
@@ -92,13 +92,19 @@ export const languages = [
 
 export const notificationSettingsOptions = [
     { key: "pushNotifications", label: t('GeneralNotifications'), icon: "notifications" },
-    { key: "emailNotifications", label:t('emailNotifications'), icon: "mail" },
-    { key: "commentNotifications", label:t('whenCommentisMadeOnProduct'),  icon: "chatbubble-ellipses" },
-    { key: "offerNotifications", label: t('whenOfferMadeProduct'),  icon: "pricetag" },
-    { key: "campaignNotifications", label:t('campaignNotifications'), icon: "megaphone" },
-    { key: "sentOfferNotifications", label:t('notificationsOffersYouSent'),  icon: "send" },
+    { key: "emailNotifications", label: t('emailNotifications'), icon: "mail" },
+    { key: "commentNotifications", label: t('whenCommentisMadeOnProduct'), icon: "chatbubble-ellipses" },
+    { key: "offerNotifications", label: t('whenOfferMadeProduct'), icon: "pricetag" },
+    { key: "campaignNotifications", label: t('campaignNotifications'), icon: "megaphone" },
+    { key: "sentOfferNotifications", label: t('notificationsOffersYouSent'), icon: "send" },
     { key: "receivedOfferNotifications", label: t('offersMadeYourProducts'), icon: "cart" },
-    { key: "favoriteListingsNotifications", label:t('favoriteListings'), icon: "heart" },
-    { key: "smsNotifications", label: t('receiveSMSNotifications'),  icon: "chatbox" },
-    { key: "campaignCalls", label: t('receiveCallsRelatedCampaigns'),  icon: "call" }
+    { key: "favoriteListingsNotifications", label: t('favoriteListings'), icon: "heart" },
+    { key: "smsNotifications", label: t('receiveSMSNotifications'), icon: "chatbox" },
+    { key: "campaignCalls", label: t('receiveCallsRelatedCampaigns'), icon: "call" }
+]
+
+export const faqList = [
+    { q: t('howToTrade'), a: t('howToTradeDesc') },
+    { q: t('problemSolution'), a: t('problemSolutionDesc') },
+    { q: t('isSafeTrade'), a: t('isSafeTradeDesc') }
 ]

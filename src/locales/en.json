@@ -13,7 +13,7 @@
         "myFavorites": "My Favorites",
         "notificationSettings": "Notification Settings",
         "applicationLanguageAndTheme": "Application Language & Theme",
-        "helpAndSupport": "Help and Support",
+        "helpAndSupport": "Help & Support",
         "logOut": "Log out",
         "username": "Username",
         "name": "Name",
@@ -43,6 +43,20 @@
         "offersMadeYourProducts": "Offers Made on Your Products",
         "favoriteListings": "Favorite Listings",
         "receiveSMSNotifications": "Receive SMS Notifications",
-        "receiveCallsRelatedCampaigns": "Receive Calls Related to Campaigns"
+        "receiveCallsRelatedCampaigns": "Receive Calls Related to Campaigns",
+        "faq": "Frequently Asked Questions",
+        "howToTrade": "How to trade a product?",
+        "howToTradeDesc": "Go to the product you're interested in and click the 'Send Trade Offer' button.",
+        "problemSolution": "What should I do if I face a problem?",
+        "problemSolutionDesc": "You can contact us by filling out the support form.",
+        "isSafeTrade": "Is trading safe?",
+        "isSafeTradeDesc": "We verify all users and recommend you follow the suggested safety rules.",
+        "contactUs": "Contact Us",
+        "yourEmail": "Your email address",
+        "yourMessage": "Your issue / message",
+        "send": "Send",
+        "messageSent": "Your message has been sent!",
+        "supportEmail": "Support Email",
+        "openMailApp": "The mail app will open"
     }
 }

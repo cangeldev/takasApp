@@ -13,7 +13,7 @@
         "myFavorites": "Favorilerim",
         "notificationSettings": "Bildirim Ayarları",
         "applicationLanguageAndTheme": "Uygulama Dili ve Tema",
-        "helpAndSupport": "Yardım ve Destek",
+        "helpAndSupport": "Yardım & Destek",
         "logOut": "Çıkış Yap",
         "username": "Kullanıcı Adı",
         "name": "Ad",
@@ -43,6 +43,20 @@
         "offersMadeYourProducts": "Ürünlerine Yapılan Teklifler",
         "favoriteListings": "Favori İlanlar",
         "receiveSMSNotifications": "SMS Almak İstiyorum",
-        "receiveCallsRelatedCampaigns": "Kampanyalarla İlgili Çağrı Almak İstiyorum"
+        "receiveCallsRelatedCampaigns": "Kampanyalarla İlgili Çağrı Almak İstiyorum",
+        "faq": "Sıkça Sorulan Sorular",
+        "howToTrade": "Ürün nasıl takas edilir?",
+        "howToTradeDesc": "İlgilendiğiniz ürüne girip, 'Takas Teklifi Gönder' butonuna basın.",
+        "problemSolution": "Bir sorun yaşarsam ne yapmalıyım?",
+        "problemSolutionDesc": "Destek formunu doldurarak bizimle iletişime geçebilirsiniz.",
+        "isSafeTrade": "Takas sırasında güvende miyim?",
+        "isSafeTradeDesc": "Tüm kullanıcılarımızı doğruluyoruz, önerdiğimiz kurallara uymanızı tavsiye ederiz.",
+        "contactUs": "Bize Ulaşın",
+        "yourEmail": "E-posta adresiniz",
+        "yourMessage": "Sorununuz / Mesajınız",
+        "send": "Gönder",
+        "messageSent": "Mesajınız gönderildi!",
+        "supportEmail": "Destek Maili",
+        "openMailApp": "Mail uygulaması açılacak"
     }
 }
