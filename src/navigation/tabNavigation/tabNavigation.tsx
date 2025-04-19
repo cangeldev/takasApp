@@ -1,22 +1,12 @@
 import React from 'react'
-import { Image } from 'react-native'
-import colors from 'assets/colors/colors'
-import { avatar, avatarInactive, home, homeInactive, menuButton, menuButtonInactive, plus, search } from 'assets/index'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from 'screens/index'
 import { useTheme } from 'hooks/useTheme'
-
-const renderIcon = (source: any, focused: any, size = 24, isTinted = false) => (
-  <Image
-    source={source}
-    style={[
-      { width: size, height: size },
-      isTinted && { tintColor: focused ? colors.bottomTabIconActiveColor : colors.bottomTabIconInactiveColor }
-    ]}
-  />
-)
+import { home, homeInactive, search, plus, menuButton, menuButtonInactive, avatar, avatarInactive } from 'assets/index'
+import { TabBarIcon } from 'components/index'
 
 export const TabNavigation = () => {
+  
   const Tab = createBottomTabNavigator()
   const theme = useTheme()
 
@@ -29,7 +19,14 @@ export const TabNavigation = () => {
         { name: "MyAds", component: MyAdsScreen, icon: [menuButtonInactive, menuButton] },
         { name: "Profile", component: ProfileScreen, icon: [avatarInactive, avatar] }
       ].map(({ name, component, icon, size = 24, isTinted }) => (
-        <Tab.Screen key={name} name={name} component={component} options={{ tabBarIcon: ({ focused }) => renderIcon(icon[+focused], focused, size, isTinted) }} />
+        <Tab.Screen 
+          key={name} 
+          name={name} 
+          component={component} 
+          options={{ 
+            tabBarIcon: ({ focused }) => TabBarIcon({ source: icon[+focused], focused, size, isTinted }) 
+          }} 
+        />
       ))}
     </Tab.Navigator>
   )
