@@ -1,37 +1,37 @@
 import colors from "assets/colors/colors"
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
+import { horizontalScale, verticalScale, scaleFont, moderateScale } from "utils/scale"
+
 const getStyles = () => {
 
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
     const theme = useTheme()
 
     return StyleSheet.create({
         container: {
             justifyContent: 'center',
-            marginBottom: 20 * scaleFactor
+            marginBottom: verticalScale(20)
         },
         txtInput: {
-            borderRadius: 6,
-            paddingHorizontal: scaleFactor * 10,
+            borderRadius: moderateScale(6),
+            paddingHorizontal: horizontalScale(10),
             borderWidth: 1,
             borderColor: colors.lightGrey
         },
         title: {
             position: 'absolute',
             backgroundColor: theme.backgroundColor,
-            top: -10,
-            left: 6,
-            paddingHorizontal: 6 * scaleFactor,
-            fontSize: scaleFactor * 12,
+            top: -verticalScale(10),
+            left: horizontalScale(6),
+            paddingHorizontal: horizontalScale(6),
+            fontSize: scaleFont(12),
             color: colors.black
         },
         icon: {
-            fontSize: scaleFactor * 20,
+            fontSize: scaleFont(20),
             color: theme.textColor,
             position: 'absolute',
-            right: 10
+            right: horizontalScale(10)
         }
     })
 }

@@ -1,6 +1,7 @@
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
 import colors from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
+import { horizontalScale, moderateScale, scaleFont, verticalScale } from "utils/scale"
 
 const shadowStyle = {
   shadowColor: '#000',
@@ -13,8 +14,6 @@ const shadowStyle = {
 const getStyles = () => {
   
   const theme = useTheme()
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
 
   return StyleSheet.create({
     container: {
@@ -22,67 +21,68 @@ const getStyles = () => {
       backgroundColor: theme.backgroundColor
     },
     headerBackground: {
-      height: 180 * scaleFactor,
+      height: verticalScale(180),
       justifyContent: 'flex-end'
     },
     profileSection: {
       position: 'absolute',
-      bottom: -40 * scaleFactor,
-      left: 15 * scaleFactor,
+      bottom: verticalScale(-40),
+      left: horizontalScale(15),
       flexDirection: 'row'
     },
     profileImageContainer: {
-      width: 80 * scaleFactor,
-      height: 80 * scaleFactor,
-      padding: 3 * scaleFactor,
+      width: horizontalScale(80),
+      height: verticalScale(80),
+      padding: moderateScale(3),
       backgroundColor: theme.backgroundColor,
-      borderRadius: 40 * scaleFactor,
+      borderRadius: moderateScale(40),
       ...shadowStyle
     },
     cameraIcon: {
-      fontSize: scaleFactor * 14,
+      fontSize: scaleFont(14),
       color: colors.textInactiveColor,
       backgroundColor: theme.backgroundColor,
       position: 'absolute',
-      borderRadius: 25 * scaleFactor,
-      padding: 4 * scaleFactor,
+      borderRadius: moderateScale(25),
+      padding: moderateScale(4),
       elevation: 1,
-      bottom: 0 * scaleFactor,
-      right: 5 * scaleFactor
+      bottom: verticalScale(0),
+      right: horizontalScale(5)
     },
     memberInfoIcon: {
-      fontSize: scaleFactor * 12,
+      fontSize: scaleFont(12),
       color: colors.bottomTabIconInactiveColor
     },
     descriptionContainer: {
       backgroundColor: colors.lightGrey,
-      borderRadius: 5 * scaleFactor,
-      marginHorizontal: 15 * scaleFactor,
-      padding: 10 * scaleFactor,
+      borderRadius: moderateScale(5),
+      marginHorizontal: horizontalScale(15),
+      padding: moderateScale(10),
       ...shadowStyle
     },
     descriptionText: {
       color: '#686868',
-      marginBottom: 10 * scaleFactor
+      marginBottom: verticalScale(10)
     },
     memberInfoText: {
-      fontSize: scaleFactor * 11
+      fontSize: scaleFont(11)
     },
     inputSection: {
-      paddingHorizontal: scaleFactor * 15,
-      marginTop: 80 * scaleFactor,
+      paddingHorizontal: horizontalScale(15),
+      marginTop: verticalScale(80)
     },
     memberInfoRow: {
       alignSelf: 'flex-end',
-      marginLeft: scaleFactor * 10
+      marginLeft: horizontalScale(10)
     },
     backIcon: {
-      fontSize: scaleFactor * 28,
+      fontSize: scaleFont(28),
       color: theme.backgroundColor,
       flex: 1,
-      marginTop: 45 * scaleFactor,
-      marginHorizontal: 15 * scaleFactor
+      marginTop: verticalScale(45),
+      marginHorizontal: horizontalScale(15)
     }
   })
 }
+
 export default getStyles

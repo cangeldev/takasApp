@@ -1,10 +1,9 @@
 import { useTheme } from 'hooks/useTheme'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { horizontalScale, verticalScale, scaleFont,moderateScale } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
   const theme = useTheme()
 
   return StyleSheet.create({
@@ -12,21 +11,21 @@ const getStyles = () => {
       flexDirection: "row",
       alignItems: "center",
       backgroundColor: theme.backgroundColor,
-      padding: 8 * scaleFactor,
-      marginVertical: 5 * scaleFactor,
-      borderRadius: 10,
+      padding: moderateScale(8),
+      marginVertical: verticalScale(5),
+      borderRadius: moderateScale(10),
       elevation: 4,
-      margin: 5 * scaleFactor
+      margin: moderateScale(5)
     },
     themeText: {
       flex: 1,
-      fontSize: scaleFactor * 16,
+      fontSize: scaleFont(16),
       color: theme.textColor
     },
     themeImage: {
-      width: 20 * scaleFactor,
-      height: 20 * scaleFactor,
-      marginRight: 10 * scaleFactor
+      width: horizontalScale(20),
+      height: verticalScale(20),
+      marginRight: horizontalScale(10)
     }
   })
 }

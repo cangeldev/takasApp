@@ -8,7 +8,16 @@ import { store } from 'features/reduxToolkit/store'
 import { loadSettings } from 'utils/helperFunctions'
 
 const App = () => {
-  useEffect(() => { loadSettings() }, [])
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await loadSettings()
+      } catch (err) {
+        console.error('Ayar yükleme hatası:', err)
+      }
+    })()
+  }, [])
 
   return (
     <I18nextProvider i18n={i18n}>

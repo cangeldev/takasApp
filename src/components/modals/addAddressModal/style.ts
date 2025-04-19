@@ -1,19 +1,18 @@
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
 import colors from "assets/colors/colors"
+import { horizontalScale, verticalScale, scaleFont ,moderateScale} from "utils/scale"
 
 const getStyles = () => {
 
     const theme = useTheme()
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
 
     return StyleSheet.create({
         container: {
             flex: 1,
-            padding: 15 * scaleFactor,
+            padding: moderateScale(15),
             justifyContent: "center",
-            marginTop: 15 * scaleFactor
+            marginTop: verticalScale(15)
         },
         row: {
             flexDirection: 'row',
@@ -24,22 +23,22 @@ const getStyles = () => {
         },
         button: {
             backgroundColor: '#2d7f6f',
-            padding: 15 * scaleFactor,
-            borderRadius: 8,
+            padding: moderateScale(15),
+            borderRadius: moderateScale(8),
             alignItems: 'center',
-            marginTop: 10 * scaleFactor
+            marginTop: verticalScale(10)
         },
         buttonText: {
             color: colors.white,
-            fontSize: 16 * scaleFactor,
+            fontSize: scaleFont(16),
             fontWeight: 'bold'
         },
         closeIcon: {
-            fontSize: 25 * scaleFactor,
+            fontSize: scaleFont(25),
             color: "grey",
             alignSelf: "flex-end",
-            top: 10 * scaleFactor,
-            right: 10 * scaleFactor
+            top: verticalScale(10),
+            right: horizontalScale(10)
         }
     })
 }

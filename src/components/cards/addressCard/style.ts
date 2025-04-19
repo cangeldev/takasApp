@@ -1,44 +1,45 @@
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
 import colors from "assets/colors/colors"
 import { useTheme } from "hooks/useTheme"
+import { horizontalScale, verticalScale, scaleFont, moderateScale } from "utils/scale"
 
 const getStyles = () => {
 
     const theme = useTheme()
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
 
     return StyleSheet.create({
         cardContainer: {
-            marginTop: 10 * scaleFactor,
-            borderRadius: 10,
+            marginTop: verticalScale(10),
+            borderRadius: moderateScale(10),
             flexDirection: "row",
             backgroundColor: theme.backgroundColor,
-            padding: 15 * scaleFactor,
+            padding: moderateScale(15),
             justifyContent: "space-between",
-            marginHorizontal: 10 * scaleFactor,
-            paddingBottom: 25 * scaleFactor
+            marginHorizontal: horizontalScale(10),
+            paddingBottom: verticalScale(25)
         },
         cardTitle: {
-            fontSize: 17 * scaleFactor,
-            paddingBottom: 10 * scaleFactor,
-            fontWeight: "600"
+            fontSize: scaleFont(17),
+            paddingBottom: verticalScale(10),
+            fontWeight: "600",
+            color: theme.textColor
         },
         addressText: {
             color: "grey",
-            fontSize: 13
+            fontSize: scaleFont(13)
         },
         locationIcon: {
-            fontSize: 20 * scaleFactor,
+            fontSize: scaleFont(20),
             color: colors.bottomTabIconActiveColor
         },
         editIcon: {
-            fontSize: 20 * scaleFactor,
+            fontSize: scaleFont(20),
             color: "grey"
         },
         addressDetails: {
-            paddingLeft: 10 * scaleFactor
+            paddingLeft: horizontalScale(10)
         }
     })
 }
+
 export default getStyles

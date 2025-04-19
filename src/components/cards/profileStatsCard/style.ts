@@ -1,10 +1,8 @@
 import colors from "assets/colors/colors"
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
+import { scaleFont } from "utils/scale"
 
 const getStyles = () => {
-
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
 
     return StyleSheet.create({
         container: {
@@ -12,11 +10,11 @@ const getStyles = () => {
         },
         count: {
             fontWeight: '700',
-            fontSize: scaleFactor * 14
+            fontSize: scaleFont(14)
         },
         title: {
             color: colors.textInactiveColor,
-            fontSize: scaleFactor * 13
+            fontSize: scaleFont(13)
         }
     })
 }

@@ -1,18 +1,16 @@
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
+import { verticalScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
-  
   return StyleSheet.create({
     boxStyle: {
       backgroundColor: "transparent",
-      marginVertical: 10 * scaleFactor
+      marginVertical: verticalScale(10)
     },
     textStyle: {
       fontWeight: "600",
-      fontSize: scaleFactor * 14,
+      fontSize: scaleFont(14),
       color: "#505050"
     }
   })

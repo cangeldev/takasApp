@@ -1,25 +1,23 @@
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
 import colors from "assets/colors/colors"
+import { horizontalScale, verticalScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
-
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
-
     return StyleSheet.create({
         container: {
             alignItems: 'center',
-            marginVertical: scaleFactor * 10,
+            marginVertical: verticalScale(10),
         },
         activityIcon: {
-            width: 30 * scaleFactor,
-            height: 30 * scaleFactor
+            width: horizontalScale(30),
+            height: verticalScale(30),
         },
         activityLabel: {
-            marginTop: 2 * scaleFactor,
+            marginTop: verticalScale(2),
             color: colors.bottomTabIconInactiveColor,
-            fontSize: 13 * scaleFactor
+            fontSize: scaleFont(13),
         }
     })
 }
+
 export default getStyles

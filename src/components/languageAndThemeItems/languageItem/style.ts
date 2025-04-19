@@ -1,10 +1,9 @@
 import { useTheme } from 'hooks/useTheme'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { horizontalScale, scaleFont, moderateScale } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
   const theme = useTheme()
 
   return StyleSheet.create({
@@ -12,18 +11,18 @@ const getStyles = () => {
       flexDirection: "row",
       alignItems: "center",
       backgroundColor: theme.backgroundColor,
-      padding: 8 * scaleFactor,
-      margin: 5 * scaleFactor,
-      borderRadius: 10,
+      padding: moderateScale(8),
+      margin: moderateScale(5),
+      borderRadius: moderateScale(10),
       elevation: 3
     },
     flag: {
-      fontSize: scaleFactor * 20,
-      marginRight: 10 * scaleFactor,
+      fontSize: scaleFont(20),
+      marginRight: horizontalScale(10),
     },
     languageText: {
       flex: 1,
-      fontSize: scaleFactor * 16,
+      fontSize: scaleFont(16),
       color: theme.textColor
     }
   })

@@ -1,35 +1,34 @@
 import colors from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { horizontalScale, verticalScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
   const theme = useTheme()
 
   return StyleSheet.create({
     header: {
       flexDirection: "row",
       backgroundColor: theme.backgroundColor,
-      paddingVertical: 15 * scaleFactor,
+      paddingVertical: verticalScale(15),
       justifyContent: "space-between",
       alignItems: "center",
-      paddingHorizontal: 5 * scaleFactor
+      paddingHorizontal: horizontalScale(5)
     },
     headerTitle: {
-      fontSize: 17*scaleFactor,
+      fontSize: scaleFont(17),
       flex: 1,
       fontWeight: "600",
-      paddingLeft: 10*scaleFactor
+      paddingLeft: horizontalScale(10)
     },
     addAddress: {
       color: colors.bottomTabIconActiveColor,
       fontWeight: "600"
     },
     backIcon: {
-      fontSize: 22 * scaleFactor,
-      marginRight: 10 * scaleFactor
+      fontSize: scaleFont(22),
+      marginRight: horizontalScale(10)
     }
   })
 }

@@ -73,7 +73,7 @@ const SettingsOptionListSection = ({ styles }: { styles: any }) => (
     <FlatList
         data={ProfileSettingsOptionsList}
         renderItem={renderItem}
-        keyExtractor={(item) => item.title}
+        keyExtractor={(item) => item.id.toString()}
         style={styles.settingsListContainer}
         scrollEnabled={false}
     />

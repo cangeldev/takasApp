@@ -1,29 +1,29 @@
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
 import colors from "assets/colors/colors"
+import { scaleFont, verticalScale, moderateScale } from "utils/scale"
 
 const getStyles = () => {
 
     const theme = useTheme()
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
 
     return StyleSheet.create({
         label: {
-            fontSize: 15 * scaleFactor,
+            fontSize: scaleFont(15),
             fontWeight: 'bold',
-            marginVertical: 4 * scaleFactor
+            marginVertical: verticalScale(4)
         },
         input: {
             borderWidth: 1,
             borderColor: '#ccc',
-            borderRadius: 8,
-            padding: 10 * scaleFactor,
-            marginBottom: 10 * scaleFactor
+            borderRadius: moderateScale(8),
+            padding: moderateScale(10),
+            marginBottom: verticalScale(10)
         },
         focusedInput: {
             borderColor: colors.bottomTabIconActiveColor
         }
     })
 }
+
 export default getStyles

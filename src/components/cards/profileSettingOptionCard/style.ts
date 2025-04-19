@@ -1,28 +1,26 @@
-import { StyleSheet, useWindowDimensions } from "react-native"
+import { StyleSheet } from "react-native"
+import { horizontalScale, verticalScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
-
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
 
     return StyleSheet.create({
         container: {
             flexDirection: 'row',
             alignItems: 'center',
-            paddingVertical: scaleFactor * 10
+            paddingVertical: verticalScale(10)
         },
         icon: {
-            fontSize: scaleFactor * 18,
+            fontSize: scaleFont(18),
             color: '#323136'
         },
         rightIcon: {
-            fontSize: scaleFactor * 15,
+            fontSize: scaleFont(15),
             color: '#323136'
         },
         title: {
-            marginLeft: scaleFactor * 10,
+            marginLeft: horizontalScale(10),
             flex: 1,
-            fontSize: scaleFactor * 15
+            fontSize: scaleFont(15)
         }
     })
 }

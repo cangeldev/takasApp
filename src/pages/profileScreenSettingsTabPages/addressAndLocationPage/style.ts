@@ -1,50 +1,50 @@
 import colors from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { horizontalScale, verticalScale, moderateScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
   const theme = useTheme()
 
   return StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: theme.backgroundColor,
-      paddingHorizontal: 10 * scaleFactor
+      paddingHorizontal: horizontalScale(10),
     },
-    
+
     infoView: {
       flex: 1,
       alignItems: "center",
       justifyContent: "center",
     },
     infoImage: {
-      width: 160 * scaleFactor,
-      height: 160 * scaleFactor,
+      width: horizontalScale(160),
+      height: verticalScale(160),
     },
     infoText: {
-      fontSize: 17 * scaleFactor,
+      fontSize: scaleFont(17),
       fontWeight: "600",
-      marginVertical: 15 * scaleFactor,
-      color: theme.textColor
+      marginVertical: verticalScale(15),
+      color: theme.textColor,
     },
     button: {
       backgroundColor: colors.bottomTabIconActiveColor,
-      padding: 10 * scaleFactor,
-      borderRadius: 20,
-      paddingHorizontal: 110 * scaleFactor
+      padding: moderateScale(10),
+      borderRadius: moderateScale(20),
+      paddingHorizontal: horizontalScale(110),
     },
     buttonText: {
       color: colors.white,
       fontWeight: "600",
-      fontSize: 15 * scaleFactor
+      fontSize: scaleFont(15),
     },
-    addressListSectionContainer: {
+    SavedAddressesSectionContainer: {
       flex: 1,
-      backgroundColor: "#f5f5f5"
+      backgroundColor: "#f5f5f5",
     }
   })
 }
+
 export default getStyles

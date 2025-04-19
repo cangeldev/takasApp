@@ -20,14 +20,14 @@ export const AddressAndLocationPage = () => {
     return (
         <View style={styles.container}>
             <HeaderSection headerTitle={"addressAndLocationInformation"} />
-            {/* <InfoSection onPress={() => setIsModalVisible(true)} /> */}
+            <NoAddressInfoSection onPress={() => setIsModalVisible(true)} /> 
             <AddAddressModal onCloseModal={handleModalClose} isModalVisible={isModalVisible} />
-            <AddressListSection />
+            <SavedAddressesSection />
         </View>
     )
 }
 
-const InfoSection = ({ onPress }: { onPress: () => void }) => {
+const NoAddressInfoSection = ({ onPress }: { onPress: () => void }) => {
 
     const styles = getStyles()
     const { t } = useTranslation()
@@ -43,13 +43,13 @@ const InfoSection = ({ onPress }: { onPress: () => void }) => {
     )
 }
 
-const AddressListSection = () => {
+const SavedAddressesSection = () => {
 
     const styles = getStyles()
     const { t } = useTranslation()
 
     return (
-        <View style={styles.addressListSectionContainer}>
+        <View style={styles.SavedAddressesSectionContainer}>
             <HeaderSection addAddressVisible={true} headerTitle={"addressInformation"} />
             <AddressCard
                 title="Ev Adresim"

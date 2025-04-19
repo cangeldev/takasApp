@@ -1,6 +1,7 @@
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
 import colors from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
+import { horizontalScale, verticalScale, scaleFont, moderateScale } from "utils/scale"
 
 const shadowStyle = {
     shadowColor: '#000',
@@ -12,53 +13,51 @@ const shadowStyle = {
 
 const getStyles = () => {
 
-    const { width } = useWindowDimensions()
-    const scaleFactor = width / 375
     const theme = useTheme()
 
     return StyleSheet.create({
         container: {
             flex: 1,
             backgroundColor: theme.backgroundColor,
-            paddingHorizontal: 15 * scaleFactor
+            paddingHorizontal: horizontalScale(15)
         },
         profileImageWrapper: {
-            width: 60 * scaleFactor,
-            height: 60 * scaleFactor,
-            padding: 3 * scaleFactor,
+            width: horizontalScale(60),
+            height: verticalScale(60),
+            padding: moderateScale(3),
             backgroundColor: theme.backgroundColor,
-            borderRadius: 30 * scaleFactor,
+            borderRadius: moderateScale(30),
             ...shadowStyle
         },
         header: {
             flexDirection: 'row',
-            marginVertical: 10 * scaleFactor,
+            marginVertical: verticalScale(10),
             alignItems: 'center'
         },
         logoText: {
             flex: 1,
             fontFamily: 'Pacifico-Regular',
-            fontSize: scaleFactor * 24,
+            fontSize: scaleFont(24),
             color: colors.bottomTabIconActiveColor,
         },
         icon: {
-            fontSize: scaleFactor * 22,
+            fontSize: scaleFont(22),
             color: colors.textInactiveColor,
-            marginLeft: scaleFactor * 10
+            marginLeft: horizontalScale(10)
         },
         cameraIcon: {
-            fontSize: scaleFactor * 14,
+            fontSize: scaleFont(14),
             color: colors.textInactiveColor,
             backgroundColor: theme.backgroundColor,
             position: 'absolute',
-            borderRadius: 25 * scaleFactor,
-            padding: 4 * scaleFactor,
-            bottom: 0,
-            right: 2 * scaleFactor,
+            borderRadius: moderateScale(25),
+            padding: moderateScale(4),
+            bottom: verticalScale(0),
+            right: horizontalScale(2),
             ...shadowStyle
         },
         profileName: {
-            marginTop: scaleFactor * 4,
+            marginTop: verticalScale(4),
             fontWeight: '600',
             alignSelf: 'center'
         },
@@ -69,16 +68,16 @@ const getStyles = () => {
             alignItems: 'center'
         },
         profileSection: {
-            marginBottom: scaleFactor * 10,
+            marginBottom: verticalScale(10),
             flexDirection: 'row'
         },
         activitySummarySection: {
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginVertical: scaleFactor * 15,
+            marginVertical: verticalScale(15),
             backgroundColor: theme.backgroundColor,
-            borderRadius: 10,
-            paddingVertical: 10 * scaleFactor,
+            borderRadius: moderateScale(10),
+            paddingVertical: verticalScale(10),
             ...shadowStyle
         },
         divider: {
@@ -89,17 +88,18 @@ const getStyles = () => {
         },
         advert: {
             width: '100%',
-            height: 120 * scaleFactor,
+            height: verticalScale(120),
             backgroundColor: 'yellow',
-            borderRadius: 10
+            borderRadius: moderateScale(10)
         },
         settingsListContainer: {
             backgroundColor: theme.backgroundColor,
-            borderRadius: 10,
-            marginVertical: scaleFactor * 15,
-            paddingHorizontal: 10 * scaleFactor,
+            borderRadius: moderateScale(10),
+            marginVertical: verticalScale(15),
+            paddingHorizontal: horizontalScale(10),
             ...shadowStyle
         }
     })
 }
+
 export default getStyles

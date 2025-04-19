@@ -1,31 +1,31 @@
 import { useTheme } from 'hooks/useTheme'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { horizontalScale, verticalScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
   const theme = useTheme()
 
   return StyleSheet.create({
     icon: {
-      fontSize: 22 * scaleFactor,
+      fontSize: scaleFont(22),
       color: "red"
     },
     settingRow: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
-      paddingVertical: 12 * scaleFactor,
+      paddingVertical: verticalScale(12),
       borderBottomWidth: 1,
       borderBottomColor: '#ddd',
     },
     settingText: {
-      fontSize: 16 * scaleFactor,
+      fontSize: scaleFont(16),
       flex: 1,
-      marginLeft: 10 * scaleFactor,
+      marginLeft: horizontalScale(10),
       color: '#333',
     }
   })
 }
+
 export default getStyles

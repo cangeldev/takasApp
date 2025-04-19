@@ -1,28 +1,27 @@
 import { useTheme } from 'hooks/useTheme'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { horizontalScale, verticalScale, scaleFont } from "utils/scale"
 
 const getStyles = () => {
 
-  const { width } = useWindowDimensions()
-  const scaleFactor = width / 375
   const theme = useTheme()
 
   return StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: theme.backgroundColor,
-      paddingHorizontal: 10 * scaleFactor
+      paddingHorizontal: horizontalScale(10)
     },
     backIcon: {
-      fontSize: 22 * scaleFactor,
-      marginRight: 10 * scaleFactor
+      fontSize: scaleFont(22),
+      marginRight: horizontalScale(10)
     },
     sectionTitle: {
-      fontSize: 20 * scaleFactor,
+      fontSize: scaleFont(20),
       fontWeight: 'bold',
-      marginTop: 15 * scaleFactor,
-      marginBottom: 2 * scaleFactor,
-      marginLeft: 5 * scaleFactor,
+      marginTop: verticalScale(15),
+      marginBottom: verticalScale(2),
+      marginLeft: horizontalScale(5),
       color: theme.textColor
     }
   })
