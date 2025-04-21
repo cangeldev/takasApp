@@ -1,0 +1,2 @@
+export { NameVisibilitySectionComponent } from "./nameVisibilitySectionComponent/nameVisibilitySectionComponent"
+export { PersonInfoPageTxtInput } from "./personInfoPageTxtInput/personInfoPageTxtInput"

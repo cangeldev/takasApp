@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { StackNavigation } from 'navigation/stackNavigation/stackNavigation'
+import { StackNavigation } from 'navigation/index'
 
 export const Container = () => {
     return (

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
-import { RootState } from "features/reduxToolkit/store"
-import { lightTheme, darkTheme } from "utils/theme"
+import { RootState } from "src/store/store"
+import { lightTheme, darkTheme } from "theme/theme"
 
 /*
  Bu bileşen  uygulama içinde kullanılacak tema ayarlarınıyapmak amaçlı oluşturulmuş bir hook yapısıdır.

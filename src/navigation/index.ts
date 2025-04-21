@@ -1,2 +1,2 @@
-export { HomeStackNavigator, MyAdsStackNavigator, ProductAddStackNavigator, ProfileStackNavigator, SearchStackNavigator } from "./stackNavigation/stackNavigation"
+export { StackNavigation } from "./stackNavigation/stackNavigation"
 export { TabNavigation } from "./tabNavigation/tabNavigation"

@@ -1,11 +1,11 @@
 import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
-import { Divider, Icon, ProfileImage } from 'components/index'
-import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/cards'
+import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/profileScreenComponents/index'
 import { gave, received, replacement } from 'assets/index'
 import { ProfileSettingsOptionsList } from 'utils/helper'
 import { useTranslation } from 'react-i18next'
-import getStyles from './style'
+import getStyles from './profileScreen.style'
+import { Divider, Icon, ProfileImage } from 'components/commonComponents'
 
 /*
   ProfileScreen, kullanıcı profilinin görüntülendiği ve çeşitli ayarların yapıldığı bir ekran bileşenidir. 

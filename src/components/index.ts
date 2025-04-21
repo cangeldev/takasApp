@@ -1,8 +1,0 @@
-export { StatusBarComponent } from "./statusBarComponent/statusBarComponent"
-export { ProfileImage } from "./profileImage/profileImage"
-export { Icon } from "./icon/icon"
-export { Divider } from "./divider/divider"
-export { ProfilePageTextInput } from "./profilePageTextInput/profilePageTextInput"
-export { NameVisibilitySectionComponent } from "./nameVisibilitySectionComponent/nameVisibilitySectionComponent"
-export { HeaderSection } from "./headerSection/headerSection"
-export { TabBarIcon } from "./tabBarIcon/tabBarIcon"

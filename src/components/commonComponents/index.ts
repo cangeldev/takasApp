@@ -1,0 +1,6 @@
+export { CustomHeader } from "./customHeader/customHeader"
+export { Icon } from "./icon/icon"
+export { StatusBarComponent } from "./statusBarComponent/statusBarComponent"
+export { TabBarIcon } from "./tabBarIcon/tabBarIcon"
+export { Divider } from "./divider/divider"
+export { ProfileImage } from "./profileImage/profileImage"

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { Container } from 'container/container'
 import { I18nextProvider } from 'react-i18next'
-import i18n from './src/utils/i18next'
-import { StatusBarComponent } from 'components/index'
 import { Provider } from 'react-redux'
-import { store } from 'features/reduxToolkit/store'
-import { loadSettings } from 'utils/helperFunctions'
+import { loadSettings } from 'utils/settingsLoader'
+import { StatusBarComponent } from 'components/commonComponents'
+import { store } from 'store/store'
+import i18n from './src/localization/i18next'
 
 const App = () => {
 

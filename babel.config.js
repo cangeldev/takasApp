@@ -10,13 +10,13 @@ module.exports = {
           'components': './src/components',
           'container': './src/container',
           'screens': './src/screens',
-          'pages': './src/pages',
           'assets': './src/assets',
           'navigation': './src/navigation',
           'utils': './src/utils',
-          'locales': './src/locales',
-          'features': './src/features',
-          'hooks': './src/hooks'
+          'localization': './src/localization',
+          'store': './src/store',
+          'hooks': './src/hooks',
+          'theme': './src/theme'
         },
       },
     ],
