@@ -57,6 +57,10 @@
         "send": "Send",
         "messageSent": "Your message has been sent!",
         "supportEmail": "Support Email",
-        "openMailApp": "The mail app will open"
+        "openMailApp": "The mail app will open",
+        "explore": "Explore",
+        "favoriteTheProductsYouLike": "Favorite the products you like",
+        "getNotifiedWhenTradeOptionsChange": "Get notified when trade options change",
+        "productsYouMayLike": "Products you may like"
     }
 }

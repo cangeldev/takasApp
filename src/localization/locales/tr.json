@@ -57,6 +57,10 @@
         "send": "Gönder",
         "messageSent": "Mesajınız gönderildi!",
         "supportEmail": "Destek Maili",
-        "openMailApp": "Mail uygulaması açılacak"
+        "openMailApp": "Mail uygulaması açılacak",
+        "explore": "Keşfet",
+        "favoriteTheProductsYouLike": "Beğendiğin Ürünleri Favorile",
+        "getNotifiedWhenTradeOptionsChange": "Takas seçenekleri değişince haberin olsun",
+        "productsYouMayLike": "Beğenebileceğin Ürünler"
     }
 }

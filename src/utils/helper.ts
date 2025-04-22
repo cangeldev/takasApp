@@ -34,7 +34,7 @@ export const ProfileSettingsOptionsList = [
         iconName: 'favorite-outline',
         type: 'MaterialIcons',
         title: t('myFavorites'),
-        navigatePage: "null"
+        navigatePage: "FavoritesPage"
     },
     {
         id: 5,
