@@ -62,6 +62,9 @@
         "favoriteTheProductsYouLike": "Favorite the products you like",
         "getNotifiedWhenTradeOptionsChange": "Get notified when trade options change",
         "productsYouMayLike": "Products you may like",
-        "swap": "Swap"
+        "makeOffer": "Make offer",
+        "sortBy": "Sort By",
+        "filter": "Filter",
+        "yourFavoriteProductsForYou": "Your favorite products are waiting for you! Don't miss the opportunities!"
     }
 }

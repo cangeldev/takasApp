@@ -8,30 +8,30 @@ const getStyles = () => {
     const theme = useTheme()
 
     return StyleSheet.create({
-        container: {
+        cardContainer: {
             elevation: 3,
             marginHorizontal: horizontalScale(3),
-            maxWidth: horizontalScale(152),
+            maxWidth: horizontalScale(142),
             backgroundColor: theme.backgroundColor,
             marginBottom: verticalScale(20),
             borderRadius: moderateScale(8),
             overflow: "hidden"
         },
-        image: {
-            width: horizontalScale(150),
-            height: verticalScale(170)
+        productImage: {
+            width: horizontalScale(140),
+            height: verticalScale(150)
         },
-        description: {
+        descriptionText: {
             paddingHorizontal: horizontalScale(5),
             marginBottom: verticalScale(5)
         },
-        price: {
+        priceText: {
             paddingHorizontal: horizontalScale(5),
             fontWeight: "700",
-            fontSize: scaleFont(16),
+            fontSize: scaleFont(15),
             marginBottom: verticalScale(3)
         },
-        tradeText: {
+        offerText: {
             padding: moderateScale(5),
             backgroundColor: colors.bottomTabIconActiveColor,
             borderRadius: moderateScale(15),
@@ -41,14 +41,14 @@ const getStyles = () => {
             textAlign: "center",
             color: theme.backgroundColor
         },
-        heartIcon: {
+        favoriteIcon: {
             fontSize: scaleFont(18),
             color: theme.backgroundColor,
             right: horizontalScale(6),
             top: horizontalScale(6),
             position: "absolute"
         },
-        heartIconSelected: {
+        favoriteIconSelected: {
             fontSize: scaleFont(18),
             color: colors.bottomTabIconActiveColor,
             right: horizontalScale(6),

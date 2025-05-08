@@ -1,5 +1,5 @@
-import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
 import { ProfileActivitySummaryCard, ProfileSettingOptionCard, ProfileStatsCard } from 'components/profileScreenComponents/index'
 import { gave, received, replacement } from 'assets/index'
 import { ProfileSettingsOptionsList } from 'utils/helper'
@@ -14,22 +14,19 @@ import { Divider, Icon, ProfileImage } from 'components/commonComponents'
   kullanıcıların profilini güncelleyebilmesi, istatistiklerini takip edebilmesi ve hesap ayarlarını düzenleyebilmesi için gerekli tüm özellikleri içerir.
 */
 
-const renderItem = ({ item }: any) =>
-    <ProfileSettingOptionCard iconName={item.iconName} icontype={item.type} title={item.title} navigatePage={item.navigatePage} />
-
 export const ProfileScreen = () => {
 
     const styles = getStyles()
     const { t } = useTranslation()
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <HeaderSection styles={styles} />
             <ProfileSection styles={styles} t={t} />
             <Divider />
             <ActivitySummarySection styles={styles} t={t} />
             <View style={styles.advert} />
             <SettingsOptionListSection styles={styles} />
-        </ScrollView>
+        </View>
     )
 }
 
@@ -70,11 +67,15 @@ const ActivitySummarySection = ({ styles, t }: { styles: any, t: any }) => (
 )
 
 const SettingsOptionListSection = ({ styles }: { styles: any }) => (
-    <FlatList
-        data={ProfileSettingsOptionsList}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id.toString()}
-        style={styles.settingsListContainer}
-        scrollEnabled={false}
-    />
+    <View style={styles.settingsListContainer}>
+        {ProfileSettingsOptionsList.map((item) => (
+            <ProfileSettingOptionCard
+                key={item.id}
+                iconName={item.iconName}
+                icontype={item.type}
+                title={item.title}
+                navigatePage={item.navigatePage}
+            />
+        ))}
+    </View>
 )

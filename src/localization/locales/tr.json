@@ -62,6 +62,9 @@
         "favoriteTheProductsYouLike": "Beğendiğin Ürünleri Favorile",
         "getNotifiedWhenTradeOptionsChange": "Takas seçenekleri değişince haberin olsun",
         "productsYouMayLike": "Beğenebileceğin Ürünler",
-        "swap": "Takas İste"
+        "makeOffer": "Teklif Yap",
+        "sortBy": "Sırala",
+        "filter": "Filtrele",
+        "yourFavoriteProductsForYou": "Favori ürünlerin seni bekliyor! Fırsatları kaçırma!"
     }
 }

@@ -110,8 +110,8 @@ export const faqList = [
 ]
 
 export const recommenedList = [
-    { id: 1, image: gradient, description: "descriptiondescription description", price: "1881" },
+    { id: 1, image: gradient, description: "descriptiondescription descriptiosddn", price: "1881" },
     { id: 2, image: gradient, description: "description", price: "190" },
-    { id: 3, image: gradient, description: "description description description", price: "23" },
+    { id: 3, image: gradient, description: "description description description description description description description", price: "23" },
     { id: 4, image: gradient, description: "saf dfs sdf sdfsg", price: "1" },
 ]
