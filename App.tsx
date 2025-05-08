@@ -6,6 +6,7 @@ import { loadSettings } from 'utils/settingsLoader'
 import { StatusBarComponent } from 'components/commonComponents'
 import { store } from 'store/store'
 import i18n from './src/localization/i18next'
+import { MenuProvider } from 'react-native-popup-menu'
 
 const App = () => {
 
@@ -29,6 +30,8 @@ const App = () => {
 export default () => (
   <Provider store={store}>
     <StatusBarComponent />
-    <App />
+    <MenuProvider>
+      <App />
+    </MenuProvider>
   </Provider>
 )

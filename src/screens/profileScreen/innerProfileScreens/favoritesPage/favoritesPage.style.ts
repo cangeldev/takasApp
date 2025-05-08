@@ -53,18 +53,16 @@ const getStyles = () => {
             marginHorizontal: horizontalScale(5)
         },
         filterSortContainer: {
-            backgroundColor: colors.white,
             flexDirection: 'row',
             borderBottomWidth: 1,
             marginTop: verticalScale(5),
             paddingVertical: verticalScale(5),
-            borderColor: colors.lightGrey
+            borderColor: colors.lightGrey,
+            justifyContent: "space-around"
         },
         filterSortButton: {
             flexDirection: 'row',
             alignItems: 'center',
-            flex: 1,
-            justifyContent: 'center'
         },
         filterText: {
             fontSize: scaleFont(15),
@@ -75,7 +73,7 @@ const getStyles = () => {
             color: colors.bottomTabIconActiveColor
         },
         separator: {
-            fontSize: 20,
+            fontSize: scaleFont(20),
             color: colors.lightGrey
         },
         bannerText: {
@@ -92,6 +90,39 @@ const getStyles = () => {
             backgroundColor: colors.lightGrey,
             width: '100%',
             height: verticalScale(2)
+        },
+        titleText: {
+            flex: 1,
+            textAlign: "center",
+            fontSize: scaleFont(18),
+            fontWeight: 600,
+
+        },
+        closeIcon: {
+            fontSize: scaleFont(15),
+            position: "absolute",
+            right: 0,
+            top: 0
+        },
+        themeItem: {
+            flexDirection: "row",
+            alignItems: "center",
+        },
+        sortOptionText: {
+            color: colors.textGrey,
+            fontSize: scaleFont(16),
+            marginLeft: verticalScale(12),
+        },
+        menuOptionsContainer: {
+            paddingVertical: verticalScale(15),
+            paddingHorizontal: horizontalScale(20),
+            backgroundColor: theme.backgroundColor,
+            borderLeftWidth: 1,
+            borderRightWidth: 1,
+            borderTopWidth: 1,
+            borderColor: colors.lightGrey,
+            borderTopLeftRadius: moderateScale(25),
+            borderTopRightRadius: moderateScale(25),
         }
     })
 }
