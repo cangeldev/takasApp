@@ -1,7 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
-import getStyles from './helpAndSupportPage.style'
-import { Header } from 'components/commonComponents'
+import { ScrollView } from 'react-native'
 import { ContactInfo, FaqSection, SupportForm } from './components'
 
 /*
@@ -10,14 +8,11 @@ import { ContactInfo, FaqSection, SupportForm } from './components'
   Kullanıcılar, burada sorularını iletebilir, çözüm arayabilir veya destek ekibiyle iletişime geçebilirler.
 */
 export const HelpAndSupportPage = () => {
-    const styles = getStyles()
-
     return (
-        <View style={styles.container}>
-            <Header title={"helpAndSupport"} />
+        <ScrollView>
             <FaqSection />
             <SupportForm />
             <ContactInfo />
-        </View>
+        </ScrollView>
     )
 }

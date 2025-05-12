@@ -13,11 +13,11 @@ const getStyles = () => {
         },
         icon: {
             fontSize: scaleFont(18),
-            color: '#323136'
+            color: theme.profileTextColor
         },
         rightIcon: {
             fontSize: scaleFont(15),
-            color: '#323136'
+            color: theme.profileTextColor
         },
         title: {
             marginLeft: horizontalScale(10),

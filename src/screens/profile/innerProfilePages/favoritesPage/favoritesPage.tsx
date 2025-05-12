@@ -1,7 +1,4 @@
-import { View } from 'react-native'
 import React from 'react'
-import { Header } from 'components/commonComponents'
-import getStyles from './favoritesPage.style'
 import { FavoriteProductsSection } from './components'
 
 /*
@@ -10,14 +7,9 @@ import { FavoriteProductsSection } from './components'
   Favori ürünler, kullanıcı tarafından daha önce seçilen ürünlerden oluşur.
 */
 export const FavoritesPage = () => {
-    const styles = getStyles()
-
     return (
-        <View style={styles.container}>
-            <Header title="myFavorites" />
+        <>
             <FavoriteProductsSection />
-        </View>
+        </>
     )
 }
-
-

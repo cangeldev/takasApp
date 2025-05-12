@@ -7,12 +7,16 @@ const getStyles = () => {
   const theme = useTheme()
 
   return StyleSheet.create({
+    container: {
+      paddingHorizontal: horizontalScale(12),
+      backgroundColor: theme.backgroundColor
+    },
     card: {
       backgroundColor: theme.backgroundColor,
       borderRadius: moderateScale(12),
       paddingHorizontal: horizontalScale(16),
       paddingVertical: verticalScale(10),
-      marginBottom: verticalScale(10),
+      marginVertical: verticalScale(15),
       elevation: 3
     },
     sectionTitle: {

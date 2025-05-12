@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import colors from 'assets/colors/colors'
-import { horizontalScale, moderateScale, verticalScale } from "theme/scale"
+import { horizontalScale, moderateScale, scaleFont, verticalScale } from "theme/scale"
 
 const shadowStyle = {
   shadowColor: '#000',
@@ -23,7 +23,8 @@ const getStyles = () => {
     },
     descriptionText: {
       color: '#686868',
-      marginBottom: verticalScale(10)
+      marginBottom: verticalScale(10),
+      fontSize: scaleFont(14)
     }
   })
 }

@@ -9,7 +9,7 @@ const getStyles = () => {
   return StyleSheet.create({
     memberInfoIcon: {
       fontSize: scaleFont(12),
-      color: colors.bottomTabInactive
+      color: colors.disabledText
     },
     memberInfoText: {
       fontSize: scaleFont(11),

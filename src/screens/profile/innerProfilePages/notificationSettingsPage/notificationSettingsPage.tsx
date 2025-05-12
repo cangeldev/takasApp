@@ -2,9 +2,7 @@ import React from 'react'
 import { View, FlatList } from 'react-native'
 import { notificationSettingsOptions } from 'utils/helper'
 import getStyles from './notificationSettingsPage.style'
-import { Header } from 'components/commonComponents'
 import { NotificationSettingsCard } from './components/notificationSettingsCard/notificationSettingsCard'
-
 
 //  NotificationSettingsPage, bu sayfa kullanıcının bildirim ayarlarının listelendiği ve istediği ayarları açıp kapatması için tasarlanan sayfadır.
 export const NotificationSettingsPage = () => {
@@ -14,7 +12,6 @@ export const NotificationSettingsPage = () => {
 
     return (
         <View style={styles.container}>
-            <Header title={"notificationSettings"} />
             <FlatList
                 data={notificationSettingsOptions}
                 renderItem={renderItem}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, FlatList } from 'react-native'
+import { Text, FlatList, View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import getStyles from './themeSection.style'
 import { ThemeOptionsList } from 'utils/helper'
@@ -22,7 +22,7 @@ export const ThemeSection = () => {
     const dispatch = useDispatch()
 
     return (
-        <>
+        <View style={styles.container}>
             <Text style={styles.sectionTitle}>{t('themeSelection')}</Text>
             <FlatList
                 scrollEnabled={false}
@@ -32,7 +32,7 @@ export const ThemeSection = () => {
                     <ThemeItem item={item} selectedTheme={selectedTheme} onPress={(theme: any) => handleThemeChange(theme, dispatch)} />
                 )}
             />
-        </>
+        </View>
     )
 }
 export default ThemeSection

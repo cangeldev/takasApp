@@ -15,15 +15,17 @@ export const ContactInfo = () => {
     const styles = getStyles()
 
     return (
-        <View style={styles.card}>
-            <Text style={styles.contactLabel}>{t('supportEmail')}:</Text>
-            <TouchableOpacity onPress={() => Linking.openURL('mailto:destek@takasapp.com')}>
-                <Text style={styles.contactLink}>destek@takasapp.com</Text>
-            </TouchableOpacity>
+        <View style={styles.container}>
+            <View style={styles.card}>
+                <Text style={styles.contactLabel}>{t('supportEmail')}:</Text>
+                <TouchableOpacity onPress={() => Linking.openURL('mailto:destek@takasapp.com')}>
+                    <Text style={styles.contactLink}>destek@takasapp.com</Text>
+                </TouchableOpacity>
 
-            <View style={styles.phoneRow}>
-                <Icon name="phone" type="FontAwesome" style={styles.phoneIcon} />
-                <Text style={styles.phoneNumber}>+90 555 555 55 55</Text>
+                <View style={styles.phoneRow}>
+                    <Icon name="phone" type="FontAwesome" style={styles.phoneIcon} />
+                    <Text style={styles.phoneNumber}>+90 555 555 55 55</Text>
+                </View>
             </View>
         </View>
     )

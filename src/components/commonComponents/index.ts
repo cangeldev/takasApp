@@ -1,4 +1,3 @@
-export { Header } from "./header/header"
 export { Icon } from "./icon/icon"
 export { StatusBarComponent } from "./statusBar/statusBar"
 export { TabBarIcon } from "./tabBarIcon/tabBarIcon"

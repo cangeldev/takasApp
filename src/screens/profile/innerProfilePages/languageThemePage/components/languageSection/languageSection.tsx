@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import { languages } from 'utils/helper'
 import getStyles from './languageSection.style'
@@ -21,7 +21,7 @@ export const LanguageSection = () => {
     const dispatch = useDispatch()
 
     return (
-        <>
+        <View style={styles.container}>
             <Text style={styles.sectionTitle}>{t('languageSelection')}</Text>
             <FlatList
                 scrollEnabled={false}
@@ -31,7 +31,7 @@ export const LanguageSection = () => {
                     <LanguageItem item={item} selectedLanguage={selectedLanguage} onPress={(language: any) => handleLanguageChange(language, dispatch)} />
                 )}
             />
-        </>
+        </View>
     )
 }
 export default LanguageSection

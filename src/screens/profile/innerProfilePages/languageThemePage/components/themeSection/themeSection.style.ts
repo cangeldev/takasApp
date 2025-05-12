@@ -6,6 +6,10 @@ const getStyles = () => {
   const theme = useTheme()
 
   return StyleSheet.create({
+    container: {
+      backgroundColor: theme.backgroundColor,
+      paddingHorizontal: horizontalScale(10)
+    },
     sectionTitle: {
       fontSize: scaleFont(20),
       fontWeight: 'bold',

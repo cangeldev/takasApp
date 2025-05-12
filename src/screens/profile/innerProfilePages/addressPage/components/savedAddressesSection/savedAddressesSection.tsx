@@ -1,6 +1,5 @@
 import React from 'react'
 import { View } from 'react-native'
-import { Header } from 'components/commonComponents'
 import getStyles from './savedAddressesSection.style'
 import { AddressCard } from './components/addressCard/addressCard'
 
@@ -13,7 +12,6 @@ export const SavedAddressesSection = () => {
 
     return (
         <View style={styles.container}>
-            <Header showAddAddressButton={true} title="addressInformation" />
             <AddressCard
                 title="Ev Adresim"
                 addressDetails={[

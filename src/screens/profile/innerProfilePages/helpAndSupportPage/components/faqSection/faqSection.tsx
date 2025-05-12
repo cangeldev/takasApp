@@ -14,14 +14,16 @@ export const FaqSection = () => {
     const styles = getStyles()
 
     return (
-        <View style={styles.card}>
-            <Text style={styles.sectionTitle}>{t('faq')}</Text>
-            {Faqs.map((item, index) => (
-                <View key={index} style={styles.faqItem}>
-                    <Text style={styles.faqQuestion}>{t(item.q)}</Text>
-                    <Text style={styles.faqAnswer}>{t(item.a)}</Text>
-                </View>
-            ))}
+        <View style={styles.container}>
+            <View style={styles.card}>
+                <Text style={styles.sectionTitle}>{t('faq')}</Text>
+                {Faqs.map((item, index) => (
+                    <View key={index} style={styles.faqItem}>
+                        <Text style={styles.faqQuestion}>{t(item.q)}</Text>
+                        <Text style={styles.faqAnswer}>{t(item.a)}</Text>
+                    </View>
+                ))}
+            </View>
         </View>
     )
 }

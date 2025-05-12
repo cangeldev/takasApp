@@ -9,10 +9,11 @@ interface IProfileInfoPageTxtInputProps {
     iconName?: any,
     iconType?: any,
     editable?: boolean
+    multiline?: boolean
 }
 
 //  ProfileInfoPageTxtInput, bu component ProfilePage sayfasındaki, kullanıcının bilgilerini girmek için kullandığı bileşendir.
-export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ title, placeHolder, iconName, iconType, editable }) => {
+export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable }) => {
 
     const onPress = () => {
         editable === false && console.log("modal açıp şifre değiştir")
@@ -21,7 +22,7 @@ export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ tit
 
     return (
         <Pressable onPress={onPress} style={style.container}>
-            <TextInput style={style.txtInput} placeholder={placeHolder} editable={editable} />
+            <TextInput multiline={multiline} style={style.txtInput} placeholder={placeHolder} editable={editable} />
             <Text style={style.title}>
                 {title}
             </Text>

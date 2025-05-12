@@ -23,7 +23,8 @@ const getStyles = () => {
         descriptionText: {
             paddingHorizontal: horizontalScale(5),
             marginBottom: verticalScale(5),
-            color: theme.textColor
+            color: theme.textColor,
+            fontSize: scaleFont(14)
         },
         priceText: {
             paddingHorizontal: horizontalScale(5),
@@ -40,7 +41,8 @@ const getStyles = () => {
             fontWeight: "600",
             marginVertical: verticalScale(10),
             textAlign: "center",
-            color: colors.white
+            color: colors.white,
+            fontSize: scaleFont(14)
         },
         favoriteIcon: {
             fontSize: scaleFont(18),

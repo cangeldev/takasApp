@@ -28,26 +28,28 @@ export const SupportForm = () => {
     }
 
     return (
-        <View style={styles.card}>
-            <Text style={styles.sectionTitle}>{t('contactUs')}</Text>
-            <TextInput
-                placeholder={t('yourEmail')}
-                value={email}
-                onChangeText={setEmail}
-                style={styles.input}
-                placeholderTextColor="#888"
-            />
-            <TextInput
-                placeholder={t('yourMessage')}
-                value={message}
-                onChangeText={setMessage}
-                style={[styles.input, styles.textArea]}
-                placeholderTextColor="#888"
-                multiline
-            />
-            <TouchableOpacity style={styles.button} onPress={handleSend}>
-                <Text style={styles.buttonText}>{t('send')}</Text>
-            </TouchableOpacity>
+        <View style={styles.container}>
+            <View style={styles.card}>
+                <Text style={styles.sectionTitle}>{t('contactUs')}</Text>
+                <TextInput
+                    placeholder={t('yourEmail')}
+                    value={email}
+                    onChangeText={setEmail}
+                    style={styles.input}
+                    placeholderTextColor="#888"
+                />
+                <TextInput
+                    placeholder={t('yourMessage')}
+                    value={message}
+                    onChangeText={setMessage}
+                    style={[styles.input, styles.textArea]}
+                    placeholderTextColor="#888"
+                    multiline
+                />
+                <TouchableOpacity style={styles.button} onPress={handleSend}>
+                    <Text style={styles.buttonText}>{t('send')}</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

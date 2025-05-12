@@ -37,7 +37,8 @@ const getStyles = () => {
             textAlign: "center",
             fontSize: scaleFont(18),
             fontWeight: 600,
-            color: theme.textColor
+            color: theme.textColor,
+            marginTop: verticalScale(10)
         },
         closeIcon: {
             fontSize: scaleFont(15),

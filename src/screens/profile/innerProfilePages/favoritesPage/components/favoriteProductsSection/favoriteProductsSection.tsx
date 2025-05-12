@@ -21,7 +21,7 @@ const renderFavoriteProductItem = ({ item }: any) => (
 export const FavoriteProductsSection = () => {
   const styles = getStyles()
   const { t } = useTranslation()
-  const [selectedSort, setSelectedSort] = useState<string>(t('recommended'))
+  const [selectedSort, setSelectedSort] = useState<string>('recommended')
   const [sortedList, setSortedList] = useState(recommenedList)
 
   const handleSortChange = (option: string) => {
@@ -42,7 +42,7 @@ export const FavoriteProductsSection = () => {
   }
 
   return (
-    <>
+    <View style={styles.container}>
       <Text style={styles.bannerText}>
         {t('yourFavoriteProductsForYou')}
       </Text>
@@ -59,7 +59,7 @@ export const FavoriteProductsSection = () => {
         ListEmptyComponent={<EmptyFavoritesContent />}
         ItemSeparatorComponent={() => <View style={styles.itemSeparator} />}
       />
-    </>
+    </View>
   )
 }
 export default FavoriteProductsSection

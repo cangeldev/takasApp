@@ -18,11 +18,13 @@ export const handleThemeChange = async (theme: any, dispatch: any) => {
 export const lightTheme = {
   backgroundColor: colors.lightBackground,
   textColor: colors.lightText,
-  dividerColor: colors.lightDivider
+  dividerColor: colors.lightDivider,
+  profileTextColor: colors.lightText
 }
 
 export const darkTheme = {
   backgroundColor: colors.darkBackground,
   textColor: colors.darkText,
-  dividerColor: colors.darkDivider
+  dividerColor: colors.darkDivider,
+  profileTextColor: colors.darkText
 }

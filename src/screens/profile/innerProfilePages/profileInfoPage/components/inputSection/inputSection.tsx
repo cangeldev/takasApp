@@ -24,7 +24,7 @@ export const InputSection = () => {
                 iconType="Entypo"
                 editable={false}
             />
-            <ProfileInfoPageTxtInput title={t("description")} placeHolder={t("youCanWriteSomethingAboutYourself")} />
+            <ProfileInfoPageTxtInput multiline title={t("description")} placeHolder={t("youCanWriteSomethingAboutYourself")} />
         </View>
     )
 }

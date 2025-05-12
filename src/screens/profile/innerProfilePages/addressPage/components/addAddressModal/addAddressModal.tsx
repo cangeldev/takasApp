@@ -3,6 +3,7 @@ import { View, Alert, Text, TouchableOpacity, Modal, ScrollView, KeyboardAvoidin
 import getStyles from './addAddressModal.style'
 import { Icon } from 'components/commonComponents'
 import { AddressModalTextInput } from './components/addressModalTextInput/addressModalTextInput'
+import { useTranslation } from 'react-i18next'
 
 interface IAddAddressModalProps {
     isModalVisible: boolean
@@ -16,6 +17,7 @@ interface IAddAddressModalProps {
 export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isModalVisible }) => {
 
     const styles = getStyles()
+    const { t } = useTranslation()
 
     const [form, setForm] = useState({
         identifier: '',
@@ -55,6 +57,7 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
         <AddressModalTextInput label={`${label} *`} value={form[key]} onInputChange={text => handleChange(key, text)} />
     )
 
+
     return (
         <Modal animationType="slide" statusBarTranslucent visible={isModalVisible} onRequestClose={onCloseModal}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -78,7 +81,7 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
                             {renderInput('Town / City', 'city')}
                             {renderInput('Postcode / ZIP', 'zip')}
                             <TouchableOpacity style={styles.button} onPress={handleSave}>
-                                <Text style={styles.saveButtonText}>Save address</Text>
+                                <Text style={styles.saveButtonText}>{t("saveAddress")}</Text>
                             </TouchableOpacity>
                         </View>
                     </ScrollView>

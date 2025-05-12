@@ -1,7 +1,5 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
-import getStyles from './languageThemePage.style'
-import { Header } from 'components/commonComponents'
 import { LanguageSection, ThemeSection } from './components'
 
 /*
@@ -10,11 +8,9 @@ import { LanguageSection, ThemeSection } from './components'
   Sayfa, tüm içeriklerin kaydırılabilir bir alanda gösterildiği bir `ScrollView` içinde yer alır.
 */
 export const LanguageThemePage = () => {
-    const styles = getStyles()
 
     return (
-        <ScrollView style={styles.container}>
-            <Header title={"languageAndThemeSettings"} />
+        <ScrollView>
             <ThemeSection />
             <LanguageSection />
         </ScrollView>

@@ -6,6 +6,10 @@ const getStyles = () => {
   const theme = useTheme()
 
   return StyleSheet.create({
+    container: {
+      paddingHorizontal: horizontalScale(12),
+      backgroundColor: theme.backgroundColor
+    },
     card: {
       backgroundColor: theme.backgroundColor,
       borderRadius: moderateScale(12),
@@ -22,7 +26,8 @@ const getStyles = () => {
     },
     contactLink: {
       color: '#007bff',
-      textDecorationLine: 'underline'
+      textDecorationLine: 'underline',
+      fontSize: scaleFont(14)
     },
     phoneRow: {
       flexDirection: 'row',
@@ -31,7 +36,8 @@ const getStyles = () => {
     },
     phoneNumber: {
       marginLeft: horizontalScale(5),
-      color: theme.textColor
+      color: theme.textColor,
+      fontSize: scaleFont(14)
     },
     phoneIcon: {
       fontSize: scaleFont(20),
