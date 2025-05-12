@@ -1,0 +1,5 @@
+export { FavoriteProductsSection } from "./favoriteProductsSection/favoriteProductsSection"
+export { FavoritesFilterSortHeader } from "./favoritesFilterSortHeader/favoritesFilterSortHeader"
+export { EmptyFavoritesContent } from "./emptyFavoritesContent/emptyFavoritesContent"
+export { NoFavoriteInfoSection } from "./noFavoriteInfoSection/noFavoriteInfoSection"
+export { RecommendedProductsSection } from "./recommendedProductsSection/recommendedProductsSection"

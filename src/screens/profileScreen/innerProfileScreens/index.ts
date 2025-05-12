@@ -1,6 +1,0 @@
-export { PersonInfoPage } from "./personInfoPage/personInfoPage"
-export { LanguageThemePage } from "./languageThemePage/languageThemePage"
-export { AddressPage } from "./addressPage/addressPage"
-export { NotificationSettingsPage } from "./notificationSettingsPage/notificationSettingsPage"
-export { HelpAndSupportPage } from "./helpAndSupportPage/helpAndSupportPage"
-export { FavoritesPage } from "./favoritesPage/favoritesPage"

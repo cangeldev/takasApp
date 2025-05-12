@@ -9,16 +9,14 @@ interface ITabBarIconProps {
     isTinted?: boolean
 }
 
-/*
-  TabBarIcon, bu component uygulamada kullanılan tab navigasyonu seçili anında veya seçili olmadığı durumda gösterilecek iconun belirlenmesi ve gösterilmesi için kullanılan bileşendir.
-*/
+// TabBarIcon, bu component uygulamada kullanılan tab navigasyonu seçili anında veya seçili olmadığı durumda gösterilecek iconun belirlenmesi ve gösterilmesi için kullanılan bileşendir.
 export const TabBarIcon: FC<ITabBarIconProps> = ({ source, focused, size = 24, isTinted = false }) => {
     return (
         <Image
             source={source}
             style={[
                 { width: size, height: size },
-                isTinted && { tintColor: focused ? colors.bottomTabIconActiveColor : colors.bottomTabIconInactiveColor }
+                isTinted && { tintColor: focused ? colors.bottomTabActive : colors.bottomTabInactive }
             ]}
         />
     )

@@ -1,15 +1,13 @@
 import { Image } from 'react-native'
 import React from 'react'
-import { defaultProfileImage } from 'assets/index'
 import style from './profileImage.style'
+import images from 'assets/index'
 
-/*
- `ProfileImage` componenti, , kullanıcının belirlediği profil fotoğrafını gösteren bir bileşendir.
- */
+// `ProfileImage` componenti, , kullanıcının belirlediği profil fotoğrafını gösteren bir bileşendir.
 export const ProfileImage = () => {
     return (
         <Image
-            source={defaultProfileImage}
+            source={images.profile.defaultProfileImage}
             style={style.profileImage}
         />
     )

@@ -65,6 +65,13 @@
         "makeOffer": "Make offer",
         "sortBy": "Sort By",
         "filter": "Filter",
-        "yourFavoriteProductsForYou": "Your favorite products are waiting for you! Don't miss the opportunities!"
+        "yourFavoriteProductsForYou": "Your favorite products are waiting for you! Don't miss the opportunities!",
+        "recommended": "Recommended",
+        "lowestPrice": "Lowest Price",
+        "highestPrice": "Highest Price",
+        "newest": "Newest",
+        "topFavorites": "Top Favorites",
+        "distance": "Distance",
+        "publishedDate": "Published Date"
     }
 }

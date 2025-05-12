@@ -34,7 +34,7 @@
         "addNewAddress": "Yeni Adres Ekle",
         "addAddress": "Adres Ekle",
         "addressInformation": "Adres Bilgilerim",
-        "GeneralNotifications": "Genel Bildirimler",
+        "generalNotifications": "Genel Bildirimler",
         "emailNotifications": "E-Posta Bildirimleri",
         "whenCommentisMadeOnProduct": "Ürüne Yorum Yapıldığında",
         "whenOfferMadeProduct": "Ürüne Teklif Yapıldığında",
@@ -65,6 +65,13 @@
         "makeOffer": "Teklif Yap",
         "sortBy": "Sırala",
         "filter": "Filtrele",
-        "yourFavoriteProductsForYou": "Favori ürünlerin seni bekliyor! Fırsatları kaçırma!"
+        "yourFavoriteProductsForYou": "Favori ürünlerin seni bekliyor! Fırsatları kaçırma!",
+        "recommended": "Önerilen",
+        "lowestPrice": "En Düşük Fiyat",
+        "highestPrice": "En Yüksek Fiyat",
+        "newest": "En Yeniler",
+        "topFavorites": "Çok Favorilenenler",
+        "distance": "Mesafeye Göre",
+        "publishedDate": "Yayınlanma Tarihi"
     }
 }

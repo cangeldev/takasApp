@@ -1,1 +1,0 @@
-export { NotificationSettingsCard } from "./notificationSettingsCard/notificationSettingsCard"

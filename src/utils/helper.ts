@@ -1,10 +1,24 @@
-import { gradient, moon, palette, sun } from 'assets/index'
-import { useTranslation } from 'react-i18next'
-const { t } = useTranslation()
+import images from 'assets/index'
 
 export const MemberInfoTexts = [
-    { icon: 'check-square', text: t('phoneNnumberVerified') },
-    { icon: 'calendar', text: t('youSignedUpMonthAgo') }
+    { icon: 'check-square', text: 'phoneNnumberVerified' },
+    { icon: 'calendar', text: 'youSignedUpMonthAgo' }
+]
+
+export const userName = [
+    { label: 'Can GEL' },
+    { label: 'Can G.' }
+]
+
+export const sortOptions = [
+    'recommended',
+    'lowestPrice',
+    'highestPrice',
+    'newest',
+    'topFavorites',
+    'distance',
+    'publishedDate',
+
 ]
 
 export const ProfileSettingsOptionsList = [
@@ -12,68 +26,67 @@ export const ProfileSettingsOptionsList = [
         id: 1,
         iconName: 'user',
         type: 'Feather',
-        title: t('personalInformation'),
-        navigatePage: "PersonInformationPage"
+        title: 'personalInformation',
+        navigatePage: "ProfileInfoPage"
     },
     {
         id: 2,
         iconName: 'location',
         type: 'Octicons',
-        title: t('addressAndLocationInformation'),
-        navigatePage: "AddressAndLocationPage"
+        title: 'addressAndLocationInformation',
+        navigatePage: "AddressPage"
     },
     {
         id: 3,
         iconName: 'users',
         type: 'Feather',
-        title: t('myNetwork'),
+        title: 'myNetwork',
         navigatePage: "null"
     },
     {
         id: 4,
         iconName: 'favorite-outline',
         type: 'MaterialIcons',
-        title: t('myFavorites'),
+        title: 'myFavorites',
         navigatePage: "FavoritesPage"
     },
     {
         id: 5,
         iconName: 'bell',
         type: 'Fontisto',
-        title: t('notificationSettings'),
+        title: 'notificationSettings',
         navigatePage: "NotificationSettingsPage"
     },
     {
         id: 6,
         iconName: 'language',
         type: 'MaterialIcons',
-        title: t('applicationLanguageAndTheme'),
-        navigatePage: "ApplicationLanguageAndThemePage"
+        title: 'applicationLanguageAndTheme',
+        navigatePage: "LanguageThemePage"
     },
     {
         id: 7,
         iconName: 'support',
         type: 'MaterialIcons',
-        title: t('helpAndSupport'),
+        title: 'helpAndSupport',
         navigatePage: "HelpAndSupportPage"
     },
     {
         id: 8,
         iconName: 'logout',
         type: 'MaterialCommunityIcons',
-        title: t('logOut'),
+        title: 'logOut',
         navigatePage: "null"
     }
 ]
 
-export const getThemeOptionsList = () => {
-    const { t } = useTranslation()
-    return [
-        { id: 1, image: sun, title: t('lightMode'), theme: "light" },
-        { id: 2, image: moon, title: t('darkMode'), theme: "dark" },
-        { id: 3, image: palette, title: t('defaultMode'), theme: "default" }
+export const ThemeOptionsList =
+    [
+        { id: 1, image: images.other.sun, title: 'lightMode', theme: "light" },
+        { id: 2, image: images.other.moon, title: 'darkMode', theme: "dark" },
+        { id: 3, image: images.other.palette, title: 'defaultMode', theme: "default" }
     ]
-}
+
 
 export const languages = [
     { code: "tr", label: "Turkish", flag: "🇹🇷" },
@@ -91,27 +104,27 @@ export const languages = [
 ]
 
 export const notificationSettingsOptions = [
-    { key: "pushNotifications", label: t('GeneralNotifications'), icon: "notifications" },
-    { key: "emailNotifications", label: t('emailNotifications'), icon: "mail" },
-    { key: "commentNotifications", label: t('whenCommentisMadeOnProduct'), icon: "chatbubble-ellipses" },
-    { key: "offerNotifications", label: t('whenOfferMadeProduct'), icon: "pricetag" },
-    { key: "campaignNotifications", label: t('campaignNotifications'), icon: "megaphone" },
-    { key: "sentOfferNotifications", label: t('notificationsOffersYouSent'), icon: "send" },
-    { key: "receivedOfferNotifications", label: t('offersMadeYourProducts'), icon: "cart" },
-    { key: "favoriteListingsNotifications", label: t('favoriteListings'), icon: "heart" },
-    { key: "smsNotifications", label: t('receiveSMSNotifications'), icon: "chatbox" },
-    { key: "campaignCalls", label: t('receiveCallsRelatedCampaigns'), icon: "call" }
+    { key: "pushNotifications", label: 'generalNotifications', icon: "notifications" },
+    { key: "emailNotifications", label: 'emailNotifications', icon: "mail" },
+    { key: "commentNotifications", label: 'whenCommentisMadeOnProduct', icon: "chatbubble-ellipses" },
+    { key: "offerNotifications", label: 'whenOfferMadeProduct', icon: "pricetag" },
+    { key: "campaignNotifications", label: 'campaignNotifications', icon: "megaphone" },
+    { key: "sentOfferNotifications", label: 'notificationsOffersYouSent', icon: "send" },
+    { key: "receivedOfferNotifications", label: 'offersMadeYourProducts', icon: "cart" },
+    { key: "favoriteListingsNotifications", label: 'favoriteListings', icon: "heart" },
+    { key: "smsNotifications", label: 'receiveSMSNotifications', icon: "chatbox" },
+    { key: "campaignCalls", label: 'receiveCallsRelatedCampaigns', icon: "call" }
 ]
 
-export const faqList = [
-    { q: t('howToTrade'), a: t('howToTradeDesc') },
-    { q: t('problemSolution'), a: t('problemSolutionDesc') },
-    { q: t('isSafeTrade'), a: t('isSafeTradeDesc') }
+export const Faqs = [
+    { q: 'howToTrade', a: 'howToTradeDesc' },
+    { q: 'problemSolution', a: 'problemSolutionDesc' },
+    { q: 'isSafeTrade', a: 'isSafeTradeDesc' }
 ]
 
 export const recommenedList = [
-    { id: 1, image: gradient, description: "descriptiondescription descriptiosddn", price: "1881" },
-    { id: 2, image: gradient, description: "description", price: "190" },
-    { id: 3, image: gradient, description: "description description description description description description description", price: "23" },
-    { id: 4, image: gradient, description: "saf dfs sdf sdfsg", price: "1" },
+    { id: 1, image: images.other.gradient, description: "descriptiondescription descriptiosddn", price: 1881 },
+    { id: 2, image: images.other.gradient, description: "description", price: 190 },
+    { id: 3, image: images.other.gradient, description: "description description description description description description description", price: 23 },
+    { id: 4, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1 }
 ]

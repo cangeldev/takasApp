@@ -1,18 +1,28 @@
-export const home = require("./images/home.png")
-export const homeInactive = require("./images/homeInactive.png")
-export const search = require("./images/search.png")
-export const plus = require("./images/plus.png")
-export const menuButtonInactive = require("./images/menuButtonInactive.png")
-export const menuButton = require("./images/menuButton.png")
-export const avatarInactive = require("./images/avatarInactive.png")
-export const avatar = require("./images/avatar.png")
-export const gave = require("./images/gave.png")
-export const received = require("./images/received.png")
-export const replacement = require("./images/replacement.png")
-export const defaultProfileImage = require("./images/defaultProfileImage.png")
-export const gradient = require("./images/gradient.png")
-export const sun = require("./images/sun.png")
-export const moon = require("./images/moon.png")
-export const palette = require("./images/palette.png")
-export const address = require("./images/address.png")
-export const touch = require("./images/touch.png")
+const images = {
+    icons: {
+        home: require("./images/icons/home.png"),
+        homeInactive: require("./images/icons/home_off.png"),
+        search: require("./images/icons/search.png"),
+        plus: require("./images/icons/plus.png"),
+        menuButton: require("./images/icons/menuButton.png"),
+        menuButtonInactive: require("./images/icons/menuButtonInactive.png"),
+        avatar: require("./images/icons/avatar.png"),
+        avatarInactive: require("./images/icons/avatar_off.png")
+    },
+    profile: {
+        defaultProfileImage: require("./images/profile/defaultProfileImage.png")
+    },
+    other: {
+        gradient: require("./images/other/gradient.png"),
+        sun: require("./images/other/sun.png"),
+        moon: require("./images/other/moon.png"),
+        palette: require("./images/other/palette.png"),
+        address: require("./images/other/address.png"),
+        touch: require("./images/other/touch.png"),
+        gave: require("./images/other/gave.png"),
+        replacement: require("./images/other/replacement.png"),
+        received: require("./images/other/received.png"),
+    }
+}
+
+export default images

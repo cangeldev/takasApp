@@ -1,14 +1,15 @@
 import React from 'react'
 import { View } from 'react-native'
-import style from './divider.style'
+import getStyles from './divider.style'
 
-/**
- * `Divider` bileşeni, sayfa veya bileşenler arasında görsel bir ayırıcı için kullanılır.
- */
+// `Divider` bileşeni, sayfa veya bileşenler arasında görsel bir ayırıcı için kullanılır.
 export const Divider = React.memo(() => {
+
+  const styles = getStyles()
+
   return (
-    <View style={style.container}>
-      <View style={style.containerWrap} />
+    <View style={styles.container}>
+      <View style={styles.dividerLine} />
     </View>
   )
 })
