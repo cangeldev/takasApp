@@ -4,7 +4,7 @@ import { useTheme } from 'hooks/useTheme'
 import { AppTabNavigator } from 'navigation/tabNavigation/appTabNavigator'
 import { useTranslation } from 'react-i18next'
 import { Text } from 'react-native'
-import { LanguageThemePage, ProfileInfoPage, AddressPage, NotificationSettingsPage, HelpAndSupportPage, FavoritesPage } from 'screens/profile/innerProfilePages'
+import { LanguageThemePage, ProfileInfoPage, AddressPage, NotificationSettingsPage, HelpAndSupportPage, FavoritesPage, MyNetworksPage } from 'screens/profile/innerProfilePages'
 
 export const StackNavigation = () => {
   const { t } = useTranslation()
@@ -52,6 +52,11 @@ export const StackNavigation = () => {
         name="FavoritesPage"
         component={FavoritesPage}
         options={{ headerTitle: t('myFavorites') }}
+      />
+      <Stack.Screen
+        name="MyNetworksPage"
+        component={MyNetworksPage}
+        options={{ headerTitle: t('myNetwork') }}
       />
     </Stack.Navigator>
   )

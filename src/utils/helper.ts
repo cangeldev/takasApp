@@ -41,7 +41,7 @@ export const ProfileSettingsOptionsList = [
         iconName: 'users',
         type: 'Feather',
         title: 'myNetwork',
-        navigatePage: "null"
+        navigatePage: "MyNetworksPage"
     },
     {
         id: 4,
@@ -127,4 +127,23 @@ export const recommenedList = [
     { id: 2, image: images.other.gradient, description: "description", price: 190 },
     { id: 3, image: images.other.gradient, description: "description description description description description description description", price: 23 },
     { id: 4, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1 }
+]
+
+export const followingUsers = [
+    { id: '1', name: 'Mücahit ASLANHAN', avatar: images.profile.defaultProfileImage },
+    { id: '2', name: 'Nata Vega Ankara', avatar: images.profile.defaultProfileImage },
+    { id: '3', name: 'otoplus Kullanıcısı', avatar: images.profile.defaultProfileImage },
+    { id: '4', name: 'Nazmi Budak', avatar: images.profile.defaultProfileImage },
+    { id: '5', name: 'SEVER_444', avatar: images.profile.defaultProfileImage },
+    { id: '6', name: 'Halil.', avatar: images.profile.defaultProfileImage },
+    { id: '7', name: 'asd Kullanıcısı', avatar: images.profile.defaultProfileImage }
+]
+
+export const followerUsers = [
+    { id: '1', name: 'otoplus ASLANHAN', avatar: images.profile.defaultProfileImage },
+    { id: '2', name: 'Kullanıcısı Vega Ankara', avatar: images.profile.defaultProfileImage },
+    { id: '3', name: 'Kullanıcısı', avatar: images.profile.defaultProfileImage },
+    { id: '4', name: 'Halil Budak', avatar: images.profile.defaultProfileImage },
+    { id: '5', name: 'SEVER_444', avatar: images.profile.defaultProfileImage },
+    { id: '6', name: 'Halil.', avatar: images.profile.defaultProfileImage },
 ]

@@ -1,0 +1,1 @@
+export { FollowItemCard } from "./followItemCard/followItemCard"
