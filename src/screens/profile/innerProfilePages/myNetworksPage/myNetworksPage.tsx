@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity, useWindowDimensions } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view'
 import getStyles from './myNetworksPage.style'
-import { FollowItemCard } from './components'
+import { EmptyListComponent, FollowItemCard } from './components'
 import { followerUsers, followingUsers } from 'utils/helper'
 import { useTranslation } from 'react-i18next'
 
@@ -32,6 +32,7 @@ export const MyNetworksPage = () => {
             renderItem={({ item }) => (
                 <FollowItemCard image={item.avatar} name={item.name} activeTab="following" />
             )}
+            ListEmptyComponent={<EmptyListComponent text={t('youDontHaveAnyFollowersYet')} />}
         />
     )
 
@@ -42,6 +43,7 @@ export const MyNetworksPage = () => {
             renderItem={({ item }) => (
                 <FollowItemCard image={item.avatar} name={item.name} activeTab="followers" />
             )}
+            ListEmptyComponent={<EmptyListComponent text={t('youHaventFollowedAnyoneYet')} />}
         />
     )
 

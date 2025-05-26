@@ -85,6 +85,8 @@
         "Spanish": "İspanyolca",
         "Arabic": "Arapça",
         "Chinese": "Çince",
-        "Italian": "İtalyanca"
+        "Italian": "İtalyanca",
+        "youDontHaveAnyFollowersYet": "Henüz takipçiniz yok",
+        "youHaventFollowedAnyoneYet": "Henüz kimseyi takip etmediniz"
     }
 }

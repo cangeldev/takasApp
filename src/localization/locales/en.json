@@ -85,6 +85,8 @@
         "Spanish": "Spanish",
         "Arabic": "Arabic",
         "Chinese": "Chinese",
-        "Italian": "Italian"
+        "Italian": "Italian",
+        "youDontHaveAnyFollowersYet": "You don't have any followers yet",
+        "youHaventFollowedAnyoneYet": "You haven't followed anyone yet"
     }
 }
