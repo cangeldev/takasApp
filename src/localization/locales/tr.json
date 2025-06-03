@@ -87,6 +87,7 @@
         "Chinese": "Çince",
         "Italian": "İtalyanca",
         "youDontHaveAnyFollowersYet": "Henüz takipçiniz yok",
-        "youHaventFollowedAnyoneYet": "Henüz kimseyi takip etmediniz"
+        "youHaventFollowedAnyoneYet": "Henüz kimseyi takip etmediniz",
+        "homeSearchPlaceHolder": "Ürün, kategori, marka ve daha fazlası ..."
     }
 }

@@ -29,7 +29,6 @@
     "react-native-screens": "^4.4.0",
     "react-native-system-navigation-bar": "^2.6.4",
     "react-native-tab-view": "^4.1.0",
-    "react-native-theme-switch-animation": "^0.8.0",
     "react-native-vector-icons": "^10.2.0",
     "react-redux": "^9.2.0"
   },
