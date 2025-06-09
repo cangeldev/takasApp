@@ -1,1 +1,1 @@
-export { HeaderSection } from "./searchBar/headerSection"
+export { HeaderSection } from "./headerSection/headerSection"
