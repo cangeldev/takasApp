@@ -1,6 +1,6 @@
 import React from 'react'
 import RadioButtonRN from 'radio-buttons-react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import getStyles from './nameVisibilitySectionComponent.style'
 import { userName } from 'utils/helper'
 
@@ -18,7 +18,7 @@ export const NameVisibilitySectionComponent = () => {
             circleSize={14}
             box={false}
             activeColor={"#02A598"}
-            deactiveColor={colors.bottomTabInactive}
+            deactiveColor={colors.tab.inactive}
             boxStyle={style.boxStyle}
             data={userName}
             selectedBtn={(e: any) => console.log(e)}

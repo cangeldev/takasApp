@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import React from 'react'
 import getStyles from './profileInfoPage.style'
-import { StatusBarComponent } from 'components/commonComponents'
+import { AppStatusBar } from 'components/commonComponents'
 import { HeaderSection, InputSection, NameVisibilitySection } from './components'
 
 /*
@@ -14,7 +14,7 @@ export const ProfileInfoPage = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBarComponent translucent backgroundColor="transparent" />
+      <AppStatusBar translucent backgroundColor="transparent" />
       <HeaderSection />
       <InputSection />
       <NameVisibilitySection />

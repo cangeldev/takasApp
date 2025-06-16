@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
-import colors from "assets/colors/colors"
+import { colors } from 'assets/colors/colors'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
 
 const getStyles = () => {
@@ -23,7 +23,7 @@ const getStyles = () => {
         descriptionText: {
             flex: 1,
             fontSize: scaleFont(14),
-            color: colors.secondaryText
+            color: colors.text.secondary
         },
         priceText: {
             flex: 1,
@@ -42,7 +42,7 @@ const getStyles = () => {
         },
         favoriteIconSelected: {
             fontSize: scaleFont(18),
-            color: colors.primaryText
+            color: colors.text.primary
         },
         headerRow: {
             flexDirection: "row",

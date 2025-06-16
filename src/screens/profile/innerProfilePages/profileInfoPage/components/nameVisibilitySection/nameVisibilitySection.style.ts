@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { horizontalScale, moderateScale, scaleFont, verticalScale } from "theme/scale"
 
 const shadowStyle = {
@@ -15,7 +15,7 @@ const getStyles = () => {
   return StyleSheet.create({
 
     descriptionContainer: {
-      backgroundColor: colors.lightGreyBackground,
+      backgroundColor: colors.background.lightGrey,
       borderRadius: moderateScale(5),
       marginHorizontal: horizontalScale(15),
       padding: moderateScale(10),

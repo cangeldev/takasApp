@@ -1,4 +1,4 @@
-import colors from "assets/colors/colors"
+import { colors } from "assets/colors/colors"
 import { useTheme } from "hooks/useTheme"
 import { StyleSheet } from "react-native"
 import { scaleFont } from "theme/scale"
@@ -16,7 +16,7 @@ const getStyles = () => {
             color: theme.textColor
         },
         title: {
-            color: colors.disabledText,
+            color: colors.text.disabled,
             fontSize: scaleFont(13)
         }
     })

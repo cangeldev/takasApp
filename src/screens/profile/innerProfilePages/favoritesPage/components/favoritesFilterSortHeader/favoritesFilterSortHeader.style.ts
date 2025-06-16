@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from 'theme/scale'
 
@@ -26,7 +26,7 @@ const getStyles = () => {
         },
         filterIcon: {
             fontSize: scaleFont(15),
-            color: colors.primaryText
+            color: colors.text.primary
         },
         separator: {
             fontSize: scaleFont(20),
@@ -52,7 +52,7 @@ const getStyles = () => {
             alignItems: "center"
         },
         sortOptionText: {
-            color: colors.secondaryText,
+            color: colors.text.secondary,
             fontSize: scaleFont(16),
             marginLeft: verticalScale(12)
         },
@@ -63,7 +63,7 @@ const getStyles = () => {
             borderLeftWidth: 1,
             borderRightWidth: 1,
             borderTopWidth: 1,
-            borderColor: colors.lightGreyBackground,
+            borderColor: colors.background.lightGrey,
             borderTopLeftRadius: moderateScale(25),
             borderTopRightRadius: moderateScale(25)
         }

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, scaleFont } from "theme/scale"
 
@@ -9,7 +9,7 @@ const getStyles = () => {
   return StyleSheet.create({
     memberInfoIcon: {
       fontSize: scaleFont(12),
-      color: colors.disabledText
+      color: colors.text.disabled
     },
     memberInfoText: {
       fontSize: scaleFont(11),

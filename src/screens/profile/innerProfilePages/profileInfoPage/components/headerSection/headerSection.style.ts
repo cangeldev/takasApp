@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { horizontalScale, scaleFont, verticalScale } from "theme/scale"
 
 const getStyles = () => {
@@ -17,7 +17,7 @@ const getStyles = () => {
     },
     backIcon: {
       fontSize: scaleFont(28),
-      color: colors.white,
+      color: colors.base.white,
       flex: 1,
       marginTop: verticalScale(45),
       marginHorizontal: horizontalScale(15)

@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
-import colors from "assets/colors/colors"
 import { useTheme } from "hooks/useTheme"
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
+import { colors } from "assets/colors/colors"
 
 const getStyles = () => {
     const theme = useTheme()
@@ -29,7 +29,7 @@ const getStyles = () => {
         },
         locationIcon: {
             fontSize: scaleFont(20),
-            color: colors.primaryText
+            color: colors.text.primary
         },
         editIcon: {
             fontSize: scaleFont(20),

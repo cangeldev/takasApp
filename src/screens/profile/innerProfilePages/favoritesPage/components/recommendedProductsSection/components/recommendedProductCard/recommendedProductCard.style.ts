@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
-import colors from "assets/colors/colors"
+import { colors } from 'assets/colors/colors'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
 
 const getStyles = () => {
@@ -35,13 +35,13 @@ const getStyles = () => {
         },
         offerText: {
             padding: moderateScale(5),
-            backgroundColor: colors.primaryText,
+            backgroundColor: colors.text.primary,
             borderRadius: moderateScale(15),
             marginHorizontal: horizontalScale(14),
             fontWeight: "600",
             marginVertical: verticalScale(10),
             textAlign: "center",
-            color: colors.white,
+            color: colors.base.white,
             fontSize: scaleFont(14)
         },
         favoriteIcon: {
@@ -53,7 +53,7 @@ const getStyles = () => {
         },
         favoriteIconSelected: {
             fontSize: scaleFont(18),
-            color: colors.primaryText,
+            color: colors.text.primary,
             right: horizontalScale(6),
             top: horizontalScale(6),
             position: "absolute"

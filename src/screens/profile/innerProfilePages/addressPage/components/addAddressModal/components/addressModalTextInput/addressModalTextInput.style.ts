@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
-import colors from "assets/colors/colors"
 import { scaleFont, verticalScale, moderateScale } from "theme/scale"
+import { colors } from "assets/colors/colors"
 
 const getStyles = () => {
     const theme = useTheme()
@@ -21,7 +21,7 @@ const getStyles = () => {
             marginBottom: verticalScale(10)
         },
         focusedInput: {
-            borderColor: colors.primaryText
+            borderColor: colors.text.primary
         }
     })
 }

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
 import { horizontalScale, verticalScale, scaleFont } from "theme/scale"
 import { useTheme } from 'hooks/useTheme'
+import { colors } from 'assets/colors/colors'
 
 const getStyles = () => {
     const theme = useTheme()
@@ -18,11 +18,11 @@ const getStyles = () => {
             flex: 1,
             fontFamily: 'Pacifico-Regular',
             fontSize: scaleFont(24),
-            color: colors.primaryText
+            color: colors.text.primary
         },
         iconButton: {
             fontSize: scaleFont(22),
-            color: colors.disabledText,
+            color: colors.text.disabled,
             marginLeft: horizontalScale(15)
         }
     })

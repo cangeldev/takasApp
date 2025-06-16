@@ -1,5 +1,5 @@
+import { colors } from "assets/colors/colors"
 import { StyleSheet } from "react-native"
-import colors from "assets/colors/colors"
 import { horizontalScale, verticalScale, scaleFont } from "theme/scale"
 
 const getStyles = () => {
@@ -14,7 +14,7 @@ const getStyles = () => {
         },
         activityLabel: {
             marginTop: verticalScale(2),
-            color: colors.bottomTabInactive,
+            color: colors.tab.inactive,
             fontSize: scaleFont(13)
         }
     })

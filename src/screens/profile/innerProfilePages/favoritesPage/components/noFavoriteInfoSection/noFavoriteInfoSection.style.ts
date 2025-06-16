@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from 'theme/scale'
 
@@ -31,13 +31,13 @@ const getStyles = () => {
             color: theme.textColor
         },
         exploreButton: {
-            backgroundColor: colors.primaryText,
+            backgroundColor: colors.text.primary,
             padding: moderateScale(10),
             borderRadius: moderateScale(20),
             paddingHorizontal: horizontalScale(110)
         },
         exploreButtonText: {
-            color: colors.white,
+            color: colors.base.white,
             fontWeight: '600',
             fontSize: scaleFont(15)
         }

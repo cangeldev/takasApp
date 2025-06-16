@@ -1,2 +1,2 @@
-export { StackNavigation } from "./stackNavigation/stackNavigation"
-export { AppTabNavigator } from "./tabNavigation/appTabNavigator"
+export { AppStackNavigator } from "./appStackNavigator/appStackNavigator"
+export { AppTabNavigator } from "./appTabNavigator/appTabNavigator"

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
+import { colors } from 'assets/colors/colors'
 
 const shadowStyle = {
     shadowColor: '#000',
@@ -39,7 +39,7 @@ const getStyles = () => {
         },
         cameraOverlayIcon: {
             fontSize: scaleFont(14),
-            color: colors.disabledText,
+            color: colors.text.disabled,
             backgroundColor: theme.backgroundColor,
             position: 'absolute',
             borderRadius: moderateScale(25),

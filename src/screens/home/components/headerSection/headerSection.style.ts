@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
-import colors from "assets/colors/colors"
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
 import { useTheme } from "hooks/useTheme"
+import { colors } from "assets/colors/colors"
 
 const getStyles = () => {
 
@@ -21,7 +21,7 @@ const getStyles = () => {
       flex: 1,
       fontFamily: 'Pacifico-Regular',
       fontSize: scaleFont(24),
-      color: colors.primaryText
+      color: colors.text.primary
     },
     addressContainer: {
       flexDirection: "row",
@@ -34,7 +34,7 @@ const getStyles = () => {
     },
     locationIcon: {
       fontSize: scaleFont(16),
-      color: colors.primaryText
+      color: colors.text.primary
     },
     locationText: {
       fontSize: scaleFont(13),
@@ -44,12 +44,12 @@ const getStyles = () => {
     },
     downIcon: {
       fontSize: scaleFont(12),
-      color: colors.primaryText,
+      color: colors.text.primary,
       marginLeft: horizontalScale(10)
     },
     iconButton: {
       fontSize: scaleFont(22),
-      color: colors.disabledText,
+      color: colors.text.disabled,
       marginLeft: horizontalScale(15)
     },
     inputContainer: {
@@ -62,7 +62,7 @@ const getStyles = () => {
     },
     searchIcon: {
       fontSize: scaleFont(17),
-      color: colors.primaryText
+      color: colors.text.primary
     }
   })
 }

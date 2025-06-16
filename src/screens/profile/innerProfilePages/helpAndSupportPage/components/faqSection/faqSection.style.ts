@@ -1,4 +1,4 @@
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { StyleSheet } from 'react-native'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
@@ -34,7 +34,7 @@ const getStyles = () => {
       color: theme.textColor
     },
     faqAnswer: {
-      color: colors.secondaryText,
+      color: colors.text.secondary,
       marginTop: verticalScale(4),
       fontSize: scaleFont(14)
     }

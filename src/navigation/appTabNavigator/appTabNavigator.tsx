@@ -37,7 +37,7 @@ export const AppTabNavigator = () => {
           name={name}
           component={component}
           options={{
-            tabBarIcon: ({ focused }) => TabBarIcon({ source: icon[+focused], focused, size, isTinted }),
+            tabBarIcon: ({ focused }) => <TabBarIcon source={icon[+focused]} focused={focused} size={size} isTinted={isTinted} />,
           }}
         />
       ))}

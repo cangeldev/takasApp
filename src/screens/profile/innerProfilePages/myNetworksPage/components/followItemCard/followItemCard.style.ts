@@ -1,4 +1,4 @@
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { StyleSheet } from 'react-native'
 import { horizontalScale, moderateScale, scaleFont, verticalScale } from "theme/scale"
@@ -39,19 +39,19 @@ const getStyles = () => {
 
     // Followed (checked state)
     followedButton: {
-      backgroundColor: colors.primaryText,
+      backgroundColor: colors.text.primary,
     },
     followedIcon: {
-      color: colors.white,
+      color: colors.base.white,
     },
 
     // Follow (plus/minus state)
     followButton: {
       borderWidth: 2,
-      borderColor: colors.primaryText,
+      borderColor: colors.text.primary,
     },
     followIcon: {
-      color: colors.primaryText,
+      color: colors.text.primary,
     },
   })
 }

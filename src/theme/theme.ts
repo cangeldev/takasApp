@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import colors from "assets/colors/colors"
+import { colors } from 'assets/colors/colors'
 import { Appearance } from "react-native"
 import { setTheme } from "store/slices/themeSlice"
 
@@ -16,15 +16,15 @@ export const handleThemeChange = async (theme: any, dispatch: any) => {
 }
 
 export const lightTheme = {
-  backgroundColor: colors.lightBackground,
-  textColor: colors.lightText,
-  dividerColor: colors.lightDivider,
-  profileTextColor: colors.lightText
+  backgroundColor: colors.background.light,
+  textColor: colors.background.dark,
+  dividerColor: colors.border.lightDivider,
+  profileTextColor: colors.background.dark
 }
 
 export const darkTheme = {
-  backgroundColor: colors.darkBackground,
-  textColor: colors.darkText,
-  dividerColor: colors.darkDivider,
-  profileTextColor: colors.darkText
+  backgroundColor: colors.background.dark,
+  textColor: colors.background.light,
+  dividerColor: colors.border.darkDivider,
+  profileTextColor: colors.background.light
 }

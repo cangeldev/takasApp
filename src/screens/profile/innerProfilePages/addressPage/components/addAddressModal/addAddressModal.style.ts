@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
-import colors from "assets/colors/colors"
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
+import { colors } from "assets/colors/colors"
 
 const getStyles = () => {
     const theme = useTheme()
@@ -29,7 +29,7 @@ const getStyles = () => {
             marginTop: verticalScale(10)
         },
         saveButtonText: {
-            color: colors.white,
+            color: colors.base.white,
             fontSize: scaleFont(16),
             fontWeight: 'bold'
         },

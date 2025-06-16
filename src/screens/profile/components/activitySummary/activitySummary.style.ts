@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { verticalScale, moderateScale, horizontalScale } from "theme/scale"
+import { colors } from 'assets/colors/colors'
 
 const shadowStyle = {
     shadowColor: '#000',
@@ -30,7 +30,7 @@ const getStyles = () => {
         },
         cardDivider: {
             width: 1,
-            backgroundColor: colors.lightGreyBackground,
+            backgroundColor: colors.background.lightGrey,
             height: '80%',
             alignSelf: 'center'
         }

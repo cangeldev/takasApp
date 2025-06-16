@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, moderateScale, scaleFont, verticalScale } from "theme/scale"
 
@@ -25,7 +25,7 @@ const getStyles = () => {
     },
     cameraIcon: {
       fontSize: scaleFont(14),
-      color: colors.disabledText,
+      color: colors.text.disabled,
       backgroundColor: theme.backgroundColor,
       position: 'absolute',
       borderRadius: moderateScale(25),

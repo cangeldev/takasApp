@@ -1,14 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
 import { useTheme } from 'hooks/useTheme'
-import { AppTabNavigator } from 'navigation/tabNavigation/appTabNavigator'
+import { AppTabNavigator } from 'navigation/appTabNavigator/appTabNavigator'
 import { useTranslation } from 'react-i18next'
 import { Text } from 'react-native'
 import { LanguageThemePage, ProfileInfoPage, AddressPage, NotificationSettingsPage, HelpAndSupportPage, FavoritesPage, MyNetworksPage } from 'screens/profile/innerProfilePages'
 
-export const StackNavigation = () => {
+
+const Stack = createNativeStackNavigator()
+
+export const AppStackNavigator = () => {
   const { t } = useTranslation()
-  const Stack = createNativeStackNavigator()
   const theme = useTheme()
 
   const commonScreenOptions = {
@@ -32,7 +34,7 @@ export const StackNavigation = () => {
         options={{
           headerTitle: t('addressAndLocationInformation'),
           headerRight: () => (
-            <Text style={{ color: colors.primaryText, fontWeight: '600' }}>
+            <Text style={{ color: colors.text.primary, fontWeight: '600' }}>
               {t('addAddress')}
             </Text>
           ),

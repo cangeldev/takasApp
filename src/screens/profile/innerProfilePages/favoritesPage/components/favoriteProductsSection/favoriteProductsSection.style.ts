@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import colors from 'assets/colors/colors'
 import { horizontalScale, verticalScale, scaleFont } from 'theme/scale'
 import { useTheme } from 'hooks/useTheme'
+import { colors } from 'assets/colors/colors'
 
 const getStyles = () => {
     const theme = useTheme()
@@ -19,7 +19,7 @@ const getStyles = () => {
             marginHorizontal: horizontalScale(-10)
         },
         itemSeparator: {
-            backgroundColor: colors.lightGreyBackground,
+            backgroundColor: colors.background.lightGrey,
             width: '100%',
             height: verticalScale(2)
         }

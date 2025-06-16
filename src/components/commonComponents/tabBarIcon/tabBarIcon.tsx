@@ -1,6 +1,7 @@
 import { Image } from 'react-native'
 import React, { FC } from 'react'
-import colors from 'assets/colors/colors'
+import { colors } from 'assets/colors/colors'
+
 
 interface ITabBarIconProps {
     source: any
@@ -16,7 +17,7 @@ export const TabBarIcon: FC<ITabBarIconProps> = ({ source, focused, size = 24, i
             source={source}
             style={[
                 { width: size, height: size },
-                isTinted && { tintColor: focused ? colors.bottomTabActive : colors.bottomTabInactive }
+                isTinted && { tintColor: focused ? colors.tab.active : colors.tab.inactive }
             ]}
         />
     )
