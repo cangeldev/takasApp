@@ -147,3 +147,11 @@ export const followerUsers = [
     { id: '5', name: 'SEVER_444', avatar: images.profile.defaultProfileImage },
     { id: '6', name: 'Halil.', avatar: images.profile.defaultProfileImage },
 ]
+
+
+export const productList = [
+    { id: 1, image: images.other.gradient, description: "descriptiondescription descriptiosddn", price: 1881, oldPrice: 0, likes: 0, swap: true },
+    { id: 2, image: images.other.gradient, description: "description", price: 0, oldPrice: 10, likes: 3, swap: true },
+    { id: 3, image: images.other.gradient, description: "description description description description description description description", price: 23, oldPrice: 0, likes: 10 },
+    { id: 4, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 }
+]

@@ -9,6 +9,10 @@ const images = {
         avatar: require("./images/icons/avatar.png"),
         avatarInactive: require("./images/icons/avatar_off.png")
     },
+    home: {
+        swap: require("./images/home/swap.png"),
+        cargo: require("./images/home/cargo.png")
+    },
     profile: {
         defaultProfileImage: require("./images/profile/defaultProfileImage.png")
     },
