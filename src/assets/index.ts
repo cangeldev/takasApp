@@ -11,7 +11,8 @@ const images = {
     },
     home: {
         swap: require("./images/home/swap.png"),
-        cargo: require("./images/home/cargo.png")
+        cargo: require("./images/home/cargo.png"),
+        advert: require("./images/home/advert.png")
     },
     profile: {
         defaultProfileImage: require("./images/profile/defaultProfileImage.png")

@@ -153,5 +153,11 @@ export const productList = [
     { id: 1, image: images.other.gradient, description: "descriptiondescription descriptiosddn", price: 1881, oldPrice: 0, likes: 0, swap: true },
     { id: 2, image: images.other.gradient, description: "description", price: 0, oldPrice: 10, likes: 3, swap: true },
     { id: 3, image: images.other.gradient, description: "description description description description description description description", price: 23, oldPrice: 0, likes: 10 },
-    { id: 4, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 }
+    { id: 4, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 },
+    { id: 5, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 },
+    { id: 6, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 },
+    { id: 7, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 },
+    { id: 8, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 },
+    { id: 9, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 },
+    { id: 10, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1, oldPrice: 100, likes: 200 }
 ]

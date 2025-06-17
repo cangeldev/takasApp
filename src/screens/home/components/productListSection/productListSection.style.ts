@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { verticalScale } from "theme/scale"
+import { horizontalScale, scaleFont, verticalScale } from "theme/scale"
 import { useTheme } from "hooks/useTheme"
 
 const getStyles = () => {
@@ -9,7 +9,14 @@ const getStyles = () => {
   return StyleSheet.create({
     container: {
       backgroundColor: theme.backgroundColor,
-      paddingTop: verticalScale(10)
+      paddingBottom: verticalScale(120)
+    },
+    title: {
+      paddingHorizontal: horizontalScale(10),
+      paddingBottom: verticalScale(7),
+      paddingTop: verticalScale(15),
+      fontWeight: "600",
+      fontSize: scaleFont(16)
     }
   })
 }

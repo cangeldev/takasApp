@@ -1,6 +1,6 @@
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import React from 'react'
-import { HeaderSection, ProductListSection } from './components'
+import { AdvertSection, HeaderSection, ProductListSection } from './components'
 
 /*
   HomeScreen, ürünlerin görüntülendiği ve listelendiği istenilen başlıkta arama yapılabildiğimiz bir ekran bileşenidir.  
@@ -10,7 +10,10 @@ export const HomeScreen = () => {
     return (
         <View>
             <HeaderSection />
-            <ProductListSection />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <AdvertSection />
+                <ProductListSection />
+            </ScrollView>
         </View>
     )
 }

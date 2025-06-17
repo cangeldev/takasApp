@@ -10,7 +10,8 @@ const getStyles = () => {
   return StyleSheet.create({
     container: {
       backgroundColor: theme.backgroundColor,
-      paddingHorizontal: horizontalScale(15)
+      paddingHorizontal: horizontalScale(15),
+      paddingBottom: verticalScale(10)
     },
     headerContainer: {
       flexDirection: 'row',
