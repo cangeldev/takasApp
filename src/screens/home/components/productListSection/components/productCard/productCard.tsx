@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, Image, ImageSourcePropType } from 'react-native'
+import { View, Text, Image, ImageSourcePropType, TouchableWithoutFeedback } from 'react-native'
 import { Icon } from 'components/commonComponents'
 import getStyles from './productCard.style'
 import images from 'assets/index'
 import { useTranslation } from 'react-i18next'
+import { useNavigation } from '@react-navigation/native'
 
 interface ProductCardProps {
     image: ImageSourcePropType
@@ -22,6 +23,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     image, title, price, oldPrice, likes, swap
 }) => {
     const { t } = useTranslation()
+    const navigation = useNavigation<any>()
     const styles = getStyles()
     const [isFavorite, setIsFavorite] = useState(false)
     const [currentLikes, setCurrentLikes] = useState(likes)
@@ -44,22 +46,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )
 
     return (
-        <View style={styles.container}>
-            <View style={styles.imageWrapper}>
-                <Image source={image} style={styles.productImage} resizeMode="cover" />
-                <View style={styles.likeWrapper}>
-                    <Icon
-                        onPress={toggleFavorite}
-                        name={isFavorite ? 'heart' : 'heart-outline'}
-                        type="Ionicons"
-                        style={isFavorite ? styles.favoriteIconSelected : styles.favoriteIcon}
-                    />
-                    <Text style={styles.likeCount}>{currentLikes}</Text>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate("ProductDetailsCard")}>
+            <View style={styles.container}>
+                <View style={styles.imageWrapper}>
+                    <Image source={image} style={styles.productImage} resizeMode="cover" />
+                    <View style={styles.likeWrapper}>
+                        <Icon
+                            onPress={toggleFavorite}
+                            name={isFavorite ? 'heart' : 'heart-outline'}
+                            type="Ionicons"
+                            style={isFavorite ? styles.favoriteIconSelected : styles.favoriteIcon}
+                        />
+                        <Text style={styles.likeCount}>{currentLikes}</Text>
+                    </View>
+                    <Image source={swap ? images.home.swap : images.home.cargo} style={styles.badgeIcon} />
                 </View>
-                <Image source={swap ? images.home.swap : images.home.cargo} style={styles.badgeIcon} />
+                <Text numberOfLines={1} style={styles.productTitle}>{title}</Text>
+                <View style={styles.priceContainer}>{renderPrice()}</View>
             </View>
-            <Text numberOfLines={1} style={styles.productTitle}>{title}</Text>
-            <View style={styles.priceContainer}>{renderPrice()}</View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }

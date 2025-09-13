@@ -1,12 +1,11 @@
-import { View, Text, TextInput } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
-import { Icon } from 'components/commonComponents'
+import { Icon, SearchBar } from 'components/commonComponents'
 import getStyles from './headerSection.style'
-import { useTranslation } from 'react-i18next'
 
 export const HeaderSection = () => {
     const styles = getStyles()
-    const { t } = useTranslation()
+   
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
@@ -21,10 +20,7 @@ export const HeaderSection = () => {
                 <Icon name='shopping-outline' type='MaterialCommunityIcons' style={styles.iconButton} />
                 <Icon name='bell' type='Fontisto' style={styles.iconButton} />
             </View>
-            <View style={styles.inputContainer}>
-                <Icon name='search' type='Feather' style={styles.searchIcon} />
-                <TextInput placeholderTextColor={"#5b5d5f"} placeholder={t("homeSearchPlaceHolder")} />
-            </View>
+            <SearchBar />
         </View>
     )
 }

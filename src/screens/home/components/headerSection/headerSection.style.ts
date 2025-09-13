@@ -52,18 +52,6 @@ const getStyles = () => {
       fontSize: scaleFont(22),
       color: colors.text.disabled,
       marginLeft: horizontalScale(15)
-    },
-    inputContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      borderWidth: 1,
-      borderColor: '#ccc',
-      borderRadius: moderateScale(10),
-      paddingHorizontal: horizontalScale(10)
-    },
-    searchIcon: {
-      fontSize: scaleFont(17),
-      color: colors.text.primary
     }
   })
 }
