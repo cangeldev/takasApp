@@ -1,10 +1,12 @@
-import { View, Text, TouchableWithoutFeedback, Image } from 'react-native'
+import { View, Text, TouchableWithoutFeedback, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import getStyles from './productDetailsCard.style'
-import { Icon, SearchBar } from 'components/commonComponents'
+import { Icon } from 'components/commonComponents'
 import { useNavigation } from '@react-navigation/native'
 import ImageView from 'react-native-image-viewing'
-
+import Stars from 'react-native-stars'
+import images from 'assets/index'
+import { useTranslation } from 'react-i18next'
 /*
   ProductDetailsCard, Bu kart yapısı ürünlerin görüntülenmesi ve detay bilgilere ulaşılabilmesi için kullanılan bileşendir.  
   Bu ekran, kullanıcıya ürünlerin resimlerini, fiyatını, ürün bilgisini gibi bilgileri gösteririrken istediğimiz ürünün detayına ulaşmamıza olanak tanır.   
@@ -15,7 +17,7 @@ export const ProductDetailsCard = () => {
     const [isFavorite, setIsFavorite] = useState(false)
     const [selectedImageIndex, setSelectedImageIndex] = useState(0)
     const [isImageViewerVisible, setIsImageViewerVisible] = useState(false)
-
+    const { t } = useTranslation()
     const toggleFavorite = () => setIsFavorite(prev => !prev)
 
     const productImages = [
@@ -34,26 +36,9 @@ export const ProductDetailsCard = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Icon
-                    name="arrow-back"
-                    type="Ionicons"
-                    style={styles.headerIcon}
-                    onPress={() => navigation.goBack()}
-                />
-                <View style={styles.searchBarWrapper}>
-                    <SearchBar />
-                </View>
-                <Icon name="share" type="Entypo" style={styles.headerIcon} />
-                <Icon
-                    onPress={toggleFavorite}
-                    name={isFavorite ? 'heart' : 'heart-outline'}
-                    type="Ionicons"
-                    style={isFavorite ? styles.favoriteIconActive : styles.favoriteIcon}
-                />
-            </View>
+
             <TouchableWithoutFeedback onPress={() => setIsImageViewerVisible(true)}>
-                <View style={styles.imageWrapper}>
+                <View>
                     <Image
                         source={{ uri: productImages[selectedImageIndex].uri }}
                         style={styles.productImage}
@@ -72,6 +57,59 @@ export const ProductDetailsCard = () => {
                 onImageIndexChange={setSelectedImageIndex}
                 FooterComponent={renderImageFooter}
             />
+            <View style={styles.header}>
+                <Icon
+                    name="arrow-back"
+                    type="Ionicons"
+                    style={styles.backIcon}
+                    onPress={() => navigation.goBack()}
+                />
+
+                <Icon name="share" type="Entypo" style={styles.shareIcon} />
+                <Icon
+                    onPress={toggleFavorite}
+                    name={isFavorite ? 'heart' : 'heart-outline'}
+                    type="Ionicons"
+                    style={isFavorite ? styles.favoriteIconActive : styles.favoriteIcon}
+                />
+
+            </View>
+            <View style={styles.userInfoContainer}>
+                <Image source={images.profile.defaultProfileImage} style={styles.avatar} />
+                <View style={styles.userDetails}>
+                    <Text style={styles.usernameText}>cangel81</Text>
+                    <Stars
+                        default={2.5}
+                        count={5}
+                        half={true}
+                        fullStar={<Icon name={'star'} type='FontAwesome' style={styles.starFilled} />}
+                        emptyStar={<Icon name={'star-o'} type='FontAwesome' style={[styles.starFilled, styles.starEmpty]} />}
+                        halfStar={<Icon name={'star-half-empty'} type='FontAwesome' style={[styles.starFilled]} />}
+                    />
+                </View>
+                <TouchableOpacity style={styles.askSellerButton}>
+                    <Text style={styles.askSellerButtonText}>{t("askTheSeller")}</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.productInfoContainer}>
+                <View style={styles.productDetails}>
+                    <Text numberOfLines={2} style={styles.productTitle}>
+                        KAMP YATAĞI KATLANABİLİR VE TAŞINABİLİR
+                    </Text>
+                    <Text numberOfLines={3} style={styles.productInfoText}>
+                        KAMP YATAĞI katlanır günlük kullanım ve kampsd gibi aktiviteler için uygundur.
+                    </Text>
+                </View>
+                <View style={styles.likeWrapper}>
+                    <Icon
+                        onPress={toggleFavorite}
+                        name={isFavorite ? 'heart' : 'heart-outline'}
+                        type="Ionicons"
+                        style={isFavorite ? styles.favoriteIconActive : styles.favoriteIcon}
+                    />
+                    <Text style={styles.likeCount}>155</Text>
+                </View>
+            </View>
         </View>
     );
 };
