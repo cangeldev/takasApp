@@ -1,0 +1,7 @@
+export { HeaderSection } from "./headerSection/headerSection"
+export { SellerInfoSection } from "./sellerInfoSection/sellerInfoSection"
+export { ProductInfoSection } from "./productInfoSection/productInfoSection"
+export { ImageSection } from "./imageSection/imageSection"
+export { FooterSection } from "./footerSection/footerSection"
+export { QuestionSection } from "./questionSection/questionSection"
+export { SimilarProductsSection } from "./similarProductsSection/similarProductsSection"

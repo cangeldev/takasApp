@@ -91,6 +91,12 @@
         "homeSearchPlaceHolder": "Ürün, kategori, marka ve daha fazlası ...",
         "onlyTradeOffers": "Sadece Takas Teklifleri",
         "ourPicksForYou": "Senin için seçtiklerimiz",
-        "askTheSeller": "Satıcıya sor"
+        "askTheSeller": "Satıcıya sor",
+        "addToCart": "Sepete Ekle",
+        "questionAnswer": "Soru & Cevap",
+        "askSellerQuestion": "Satıcıya soru sor",
+        "follow": "Takip et",
+        "evaluation": "Değerlendirme",
+        "similarProducts": "Benzer Ürünler"
     }
 }

@@ -1,0 +1,1 @@
+export { SimilarProductCard } from "./similarProductCard/similarProductCard"

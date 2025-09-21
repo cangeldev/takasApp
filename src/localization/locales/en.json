@@ -91,6 +91,12 @@
         "homeSearchPlaceHolder": "Product, category, brand and more...",
         "onlyTradeOffers": "Only Trade Offers",
         "ourPicksForYou": "Our picks for you",
-        "askTheSeller": "Ask the seller"
+        "askTheSeller": "Ask the seller",
+        "addToCart": "Sepete Ekle",
+        "questionAnswer": "Question & Answer",
+        "askSellerQuestion": "Ask the seller a question",
+        "follow": "Follow",
+        "evaluation": "Evaluation",
+        "similarProducts": "Similar Products"
     }
 }
