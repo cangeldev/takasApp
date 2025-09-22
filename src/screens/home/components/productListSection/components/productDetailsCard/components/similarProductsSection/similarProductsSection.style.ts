@@ -9,12 +9,13 @@ const getStyles = () => {
         sectionTitleText: {
             fontSize: scaleFont(18),
             fontWeight: 'bold',
-            marginBottom: verticalScale(10),
+            marginTop: verticalScale(15),
+            marginBottom: verticalScale(6),
             color: theme.textColor,
-            marginLeft: horizontalScale(10),
+            marginLeft: horizontalScale(16),
         },
         list: {
-            paddingHorizontal: horizontalScale(10),
+            paddingHorizontal: horizontalScale(16)
         }
     })
 }

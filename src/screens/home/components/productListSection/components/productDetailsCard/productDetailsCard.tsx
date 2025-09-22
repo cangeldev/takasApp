@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
 import { SafeAreaView, ScrollView } from 'react-native'
-import { FooterSection, HeaderSection, ImageSection, ProductInfoSection, QuestionSection, SellerInfoSection, SimilarProductsSection } from './components'
+import { FooterSection, HeaderSection, ImageSection, MapsSection, ProductInfoSection, QuestionSection, SellerInfoSection, SimilarProductsSection } from './components'
 import getStyles from './productDetailsCard.style'
 
 /*
@@ -14,12 +14,13 @@ export const ProductDetailsCard: FC = () => {
     const styles = getStyles()
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView contentContainerStyle={styles.contentContainer}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.contentContainer}>
                 <ImageSection />
                 <HeaderSection isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
                 <ProductInfoSection isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
                 <SellerInfoSection />
                 <QuestionSection />
+                <MapsSection />
                 <SimilarProductsSection />
             </ScrollView>
             <FooterSection />

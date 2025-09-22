@@ -71,9 +71,8 @@ const getStyles = () => {
         },
         featureTagText: {
             color: '#2a7d6e',
-            fontSize: 12
+            fontSize: scaleFont(10)
         }
     })
 }
-
 export default getStyles

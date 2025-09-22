@@ -2,6 +2,7 @@ import { View, Text, TouchableWithoutFeedback, Image } from 'react-native'
 import React, { useState } from 'react'
 import getStyles from './imageSection.style'
 import ImageView from 'react-native-image-viewing'
+import { Icon } from 'components/commonComponents'
 
 /*
   ImageSection, Bu bileşen ProductDetailsCard yapısındaki ürünün resimlerinin görüntülenebilmesi için kullanılan bileşendir.
@@ -25,6 +26,13 @@ export const ImageSection = () => {
         </View>
     )
 
+    const tags = [
+        { label: 'Kargo Bedava', icon: 'cube' },
+        { label: 'Fırsat Ürünü', icon: 'pricetag' },
+        // { label: 'Yakınındaki Ürün', icon: 'location-sharp'},
+        // { label: 'Acil Takas/Satış', icon: 'flash'},
+    ]
+
     return (
         <View>
             <TouchableWithoutFeedback onPress={() => setIsImageViewerVisible(true)}>
@@ -47,6 +55,14 @@ export const ImageSection = () => {
                 onImageIndexChange={setSelectedImageIndex}
                 FooterComponent={renderImageFooter}
             />
+            <View style={styles.tagContainer}>
+                {tags.map((tag, index) => (
+                    <View key={index} style={[styles.tag]}>
+                        <Icon name={tag.icon} type='Ionicons' style={styles.tagIcon} />
+                        <Text style={styles.tagText}>{tag.label}</Text>
+                    </View>
+                ))}
+            </View>
         </View>
     )
 }
