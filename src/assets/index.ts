@@ -30,7 +30,11 @@ const images = {
         addFriends: require("./images/other/addFriends.png")
     },
     login: {
-        welcome: require("./images/login/welcome.png")
+        welcome: require("./images/login/welcome.png"),
+        login: require("./images/login/login.png"),
+        facebook: require("./images/login/facebook.png"),
+        google: require("./images/login/google.png"),
+        apple: require("./images/login/apple.png")
     }
 }
 

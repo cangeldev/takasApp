@@ -100,7 +100,14 @@
         "similarProducts": "Similar Products",
         "welcomeText": "Trade or Sell Your Products, Enjoy Fast and Secure Shopping!",
         "welcome": "Welcome",
-        "login":"Log in",
-        "signUp":"Sign up"
+        "login": "Log in",
+        "signUp": "Sign up",
+        "loginText": "Welcome back! Glad to see you, Again!",
+        "forgotPassword": "Forgot Password?",
+        "loginWith": "Or Login with",
+        "dontHaveAccount": "Don’t have an account? ",
+        "registerNow": "Register Now",
+        "enterYourEmail": "Enter your email",
+        "enterYourPassword": "Enter your password"
     }
 }

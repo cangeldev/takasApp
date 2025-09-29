@@ -101,6 +101,13 @@
         "welcomeText": "Ürünlerinizi Takaslayın veya Satın, Hızlı ve Güvenli Alışverişin Tadını Çıkarın!",
         "welcome": "Hoş geldiniz",
         "login": "Giriş Yap",
-        "signUp": "Kaydol"
+        "signUp": "Kaydol",
+        "loginText": "Tekrar Hoşgeldiniz! Sizi tekrar görmek harika!",
+        "forgotPassword": "Parolanızı mı unuttunuz?",
+        "loginWith": "Veya Giriş Yap",
+        "dontHaveAccount": "Hesabınız yok mu? ",
+        "registerNow": "Hemen Kaydolun",
+        "enterYourEmail": "E-postanızı girin",
+        "enterYourPassword": "Şifrenizi girin"
     }
 }

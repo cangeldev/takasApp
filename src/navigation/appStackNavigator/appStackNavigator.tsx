@@ -5,7 +5,7 @@ import { AppTabNavigator } from 'navigation/appTabNavigator/appTabNavigator'
 import { useTranslation } from 'react-i18next'
 import { Text } from 'react-native'
 import { ProductDetailsCard } from 'screens/home/components/productListSection/components/productDetailsCard/productDetailsCard'
-import { Welcome } from 'screens/index'
+import { LoginScreen, Welcome } from 'screens/index'
 import { LanguageThemePage, ProfileInfoPage, AddressPage, NotificationSettingsPage, HelpAndSupportPage, FavoritesPage, MyNetworksPage } from 'screens/profile/innerProfilePages'
 
 const Stack = createNativeStackNavigator()
@@ -23,6 +23,7 @@ export const AppStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={commonScreenOptions}>
       <Stack.Screen name='Welcome' component={Welcome} options={{ headerShown: false }} />
+      <Stack.Screen name='LoginScreen' component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen options={{ headerShown: false }} name="AppTabNavigator" component={AppTabNavigator} />
       <Stack.Screen options={{ headerShown: false }} name="ProfileInfoPage" component={ProfileInfoPage} />
       <Stack.Screen
