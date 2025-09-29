@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Image } from "react-native"
-import { CustomButton, Icon } from "components/commonComponents"
+import { View, Text, TouchableOpacity, SafeAreaView, Image } from "react-native"
+import { AuthInput, CustomButton, Icon } from "components/commonComponents"
 import images from "assets/index";
 import { useTranslation } from "react-i18next";
 import getStyles from "./login.style";
@@ -12,7 +12,6 @@ import { useNavigation } from "@react-navigation/native";
  * Eğer kullanıcı üye değilse, Register sayfasına yönlendirir.
  */
 export const LoginScreen = () => {
-    const [passwordVisible, setPasswordVisible] = useState(false)
     const [form, setForm] = useState({ email: "", password: "" });
     const { t } = useTranslation()
     const styles = getStyles()
@@ -35,28 +34,8 @@ export const LoginScreen = () => {
                 style={styles.image}
                 resizeMode="contain"
             />
-            <TextInput
-                placeholder={t("enterYourEmail")}
-                onChangeText={(text) => setForm({ ...form, email: text })}
-                keyboardType="email-address"
-                style={styles.input}
-            />
-            <View style={styles.passwordContainer}>
-                <TextInput
-                    placeholder={t("enterYourPassword")}
-                    secureTextEntry={!passwordVisible}
-                    onChangeText={(text) => setForm({ ...form, password: text })}
-                    style={styles.passwordInput}
-                />
-                <TouchableOpacity
-                    onPress={() => setPasswordVisible(!passwordVisible)}>
-                    <Icon
-                        name={passwordVisible ? "eye-off" : "eye"}
-                        type="Ionicons"
-                        style={styles.eyeIcon}
-                    />
-                </TouchableOpacity>
-            </View>
+            <AuthInput placeholder="enterYourEmail" onInputChange={(text) => setForm({ ...form, email: text })} />
+            <AuthInput placeholder="enterYourPassword" onInputChange={(text) => setForm({ ...form, password: text })} password />
             <TouchableOpacity style={styles.forgotPassword}>
                 <Text style={styles.forgotText}>{t("forgotPassword")}</Text>
             </TouchableOpacity>

@@ -8,7 +8,7 @@ const getStyles = () => {
     container: {
       flex: 1,
       padding: moderateScale(20),
-      backgroundColor: colors.base.white,
+      backgroundColor: colors.base.white
     },
     backButton: {
       marginBottom: verticalScale(30),
@@ -22,32 +22,6 @@ const getStyles = () => {
       width: "100%",
       height: verticalScale(170),
       marginVertical: verticalScale(20)
-    },
-    input: {
-      borderWidth: 1,
-      borderColor: "#ddd",
-      borderRadius: moderateScale(10),
-      padding: moderateScale(15),
-      marginBottom: verticalScale(15),
-      fontSize: scaleFont(14),
-      backgroundColor: "#f9f9f9",
-    },
-    passwordContainer: {
-      flexDirection: "row",
-      borderWidth: 1,
-      borderColor: "#ddd",
-      borderRadius: moderateScale(10),
-      paddingHorizontal: horizontalScale(15),
-      alignItems: "center",
-      backgroundColor: "#f9f9f9",
-    },
-    passwordInput: {
-      flex: 1,
-      paddingVertical: verticalScale(12),
-      fontSize: scaleFont(14),
-    },
-    eyeIcon: {
-      fontSize: scaleFont(20)
     },
     forgotPassword: {
       alignSelf: "flex-end",
@@ -85,6 +59,7 @@ const getStyles = () => {
     socialContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      marginHorizontal: moderateScale(-10),
     },
     socialButton: {
       borderWidth: 1,
