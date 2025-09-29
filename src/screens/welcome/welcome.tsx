@@ -28,7 +28,7 @@ export const Welcome = () => {
             </View>
             <View style={styles.buttonContainer}>
                 <CustomButton onPress={() => navigation.navigate("LoginScreen")} title="login" variant="primary" style={styles.button} textStyle={styles.buttonText} />
-                <CustomButton title="signUp" variant="secondary" style={styles.button} textStyle={styles.buttonText} />
+                <CustomButton onPress={() => navigation.navigate("RegisterScreen")} title="signUp" variant="secondary" style={styles.button} textStyle={styles.buttonText} />
             </View>
 
         </View>

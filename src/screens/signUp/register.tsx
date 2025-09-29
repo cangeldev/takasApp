@@ -3,17 +3,17 @@ import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Image } from "re
 import { CustomButton, Icon } from "components/commonComponents"
 import images from "assets/index";
 import { useTranslation } from "react-i18next";
-import getStyles from "./login.style";
+import getStyles from "./register.style";
 import { useNavigation } from "@react-navigation/native";
 
 /**
- * LoginScreen
- * Kullanıcıların giriş yapmasını sağlar.
- * Eğer kullanıcı üye değilse, Register sayfasına yönlendirir.
+ * RegisterScreen
+ * Kullanıcıların henüz üyeliği yoksa kayıt olmasını sağlar.
+ * Eğer kullanıcı üyeyse, Login sayfasına yönlendirir.
  */
-export const LoginScreen = () => {
+export const RegisterScreen = () => {
     const [passwordVisible, setPasswordVisible] = useState(false)
-    const [form, setForm] = useState({ email: "", password: "" });
+    const [form, setForm] = useState({ email: "", password: "", confirmPassword: "" });
     const { t } = useTranslation()
     const styles = getStyles()
     const navigation = useNavigation<any>()
@@ -21,7 +21,7 @@ export const LoginScreen = () => {
     const socials = [
         { id: "facebook", icon: images.login.facebook },
         { id: "google", icon: images.login.google },
-        { id: "apple", icon: images.login.apple },
+        { id: "apple", icon: images.login.apple }
     ]
 
     return (
@@ -29,7 +29,7 @@ export const LoginScreen = () => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Icon name="arrow-back" type="Ionicons" style={styles.backButton} />
             </TouchableOpacity>
-            <Text style={styles.title}>{t("loginText")}</Text>
+            <Text style={styles.title}>{t("signText")}</Text>
             <Image
                 source={images.login.welcome}
                 style={styles.image}
@@ -57,10 +57,23 @@ export const LoginScreen = () => {
                     />
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.forgotPassword}>
-                <Text style={styles.forgotText}>{t("forgotPassword")}</Text>
-            </TouchableOpacity>
-            <CustomButton title={t("login")} variant='primary' style={styles.loginButton} textStyle={styles.loginText} />
+            <View style={styles.passwordContainer}>
+                <TextInput
+                    placeholder={t("confirmPassword")}
+                    secureTextEntry={!passwordVisible}
+                    onChangeText={(text) => setForm({ ...form, confirmPassword: text })}
+                    style={styles.passwordInput}
+                />
+                <TouchableOpacity
+                    onPress={() => setPasswordVisible(!passwordVisible)}>
+                    <Icon
+                        name={passwordVisible ? "eye-off" : "eye"}
+                        type="Ionicons"
+                        style={styles.eyeIcon}
+                    />
+                </TouchableOpacity>
+            </View>
+            <CustomButton title={t("signUp")} variant='primary' style={styles.loginButton} textStyle={styles.loginText} />
             <View style={styles.dividerContainer}>
                 <View style={styles.divider} />
                 <Text style={styles.orText}>{t("loginWith")}</Text>
@@ -74,9 +87,9 @@ export const LoginScreen = () => {
                 ))}
             </View>
             <View style={styles.registerContainer}>
-                <Text style={styles.registerText}>{t("dontHaveAccount")}</Text>
-                <TouchableOpacity onPress={() => navigation.navigate("RegisterScreen")}>
-                    <Text style={styles.registerNow}>{t("registerNow")}</Text>
+                <Text style={styles.registerText}>{t("alreadyHaveAnAccount")}</Text>
+                <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+                    <Text style={styles.registerNow}>{t("loginNow")}</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

@@ -108,6 +108,10 @@
         "dontHaveAccount": "Don’t have an account? ",
         "registerNow": "Register Now",
         "enterYourEmail": "Enter your email",
-        "enterYourPassword": "Enter your password"
+        "enterYourPassword": "Enter your password",
+        "signText": "Hello Register to get started!",
+        "confirmPassword": "Confirm password",
+        "alreadyHaveAnAccount": "Already have an account",
+        "loginNow": "Login Now"
     }
 }

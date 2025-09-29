@@ -108,6 +108,11 @@
         "dontHaveAccount": "Hesabınız yok mu? ",
         "registerNow": "Hemen Kaydolun",
         "enterYourEmail": "E-postanızı girin",
-        "enterYourPassword": "Şifrenizi girin"
+        "enterYourPassword": "Şifrenizi girin",
+        "email": "E-posta",
+        "signText": "Merhaba Başlamak için kayıt olun!",
+        "confirmPassword": "Şifreyi onayla",
+        "alreadyHaveAnAccount": "Zaten bir hesabınız var mı? ",
+        "loginNow": "Şimdi Giriş Yapın"
     }
 }
