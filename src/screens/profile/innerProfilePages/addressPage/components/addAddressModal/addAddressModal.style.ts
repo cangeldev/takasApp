@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native"
 import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
-import { colors } from "assets/colors/colors"
 
 const getStyles = () => {
     const theme = useTheme()
@@ -22,14 +21,11 @@ const getStyles = () => {
             width: '48%'
         },
         button: {
-            backgroundColor: '#2d7f6f',
             padding: moderateScale(15),
             borderRadius: moderateScale(8),
-            alignItems: 'center',
             marginTop: verticalScale(10)
         },
         saveButtonText: {
-            color: colors.base.white,
             fontSize: scaleFont(16),
             fontWeight: 'bold'
         },

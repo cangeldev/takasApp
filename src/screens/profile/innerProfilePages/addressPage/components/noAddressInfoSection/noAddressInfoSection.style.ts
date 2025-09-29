@@ -1,6 +1,5 @@
-import { colors } from 'assets/colors/colors'
-import { useTheme } from 'hooks/useTheme'
 import { StyleSheet } from 'react-native'
+import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, verticalScale, moderateScale, scaleFont } from "theme/scale"
 
 const getStyles = () => {
@@ -23,13 +22,11 @@ const getStyles = () => {
       color: theme.textColor
     },
     button: {
-      backgroundColor: colors.text.primary,
       padding: moderateScale(10),
       borderRadius: moderateScale(20),
       paddingHorizontal: horizontalScale(110)
     },
     buttonText: {
-      color: colors.base.white,
       fontWeight: "600",
       fontSize: scaleFont(15)
     }

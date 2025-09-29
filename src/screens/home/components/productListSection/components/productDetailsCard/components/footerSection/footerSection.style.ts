@@ -36,22 +36,18 @@ const getStyles = () => {
         footerButtonsRow: {
             flexDirection: 'row'
         },
-        offerButton: {
-            borderWidth: 1,
-            borderColor: colors.text.primary,
-            borderRadius: moderateScale(20),
+        offerButton: {          
+            borderRadius: moderateScale(10),
             paddingVertical: verticalScale(8),
             paddingHorizontal: horizontalScale(16),
             marginRight: horizontalScale(8)
         },
         offerButtonText: {
-            color: colors.text.primary,
             fontWeight: '600',
             fontSize: scaleFont(14)
         },
-        cartButton: {
-            backgroundColor: colors.text.primary,
-            borderRadius: moderateScale(20),
+        cartButton: {         
+            borderRadius: moderateScale(10),
             paddingVertical: verticalScale(8),
             paddingHorizontal: horizontalScale(16)
         },

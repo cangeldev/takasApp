@@ -1,8 +1,9 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import getStyles from './sellerInfoSection.style'
 import images from 'assets/index'
 import { useTranslation } from 'react-i18next'
+import { CustomButton } from 'components/commonComponents'
 
 /*
   SellerInfoSection, ProductDetailsCard yapısında satıcı bilgilerini
@@ -22,9 +23,7 @@ export const SellerInfoSection = () => {
                 <Text style={styles.sellerNameText}>cangel81</Text>
                 <Text style={styles.sellerMetaText}>⭐ 4.6 · 23 {t("evaluation")}</Text>
             </View>
-            <TouchableOpacity style={styles.followButton}>
-                <Text style={styles.followButtonText}>{t("follow")}</Text>
-            </TouchableOpacity>
+            <CustomButton title="follow" variant="primary" style={styles.followButton} textStyle={styles.followButtonText} />
         </View>
     )
 }

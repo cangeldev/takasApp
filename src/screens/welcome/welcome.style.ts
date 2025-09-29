@@ -28,30 +28,15 @@ const getStyles = () => {
       textAlign: "center",
       marginTop: verticalScale(10)
     },
-    loginBtn: {
+    buttonContainer: {
+      gap: 15
+    },
+    button: {
       width: "100%",
       padding: moderateScale(15),
-      backgroundColor: "#5A4FCF",
-      borderRadius: moderateScale(30),
-      alignItems: "center",
-      marginBottom: verticalScale(15)
+      borderRadius: moderateScale(30)
     },
-    loginText: {
-      color: colors.base.white,
-      fontSize: scaleFont(16),
-      fontWeight: "600"
-    },
-    signUpBtn: {
-      width: "100%",
-      padding: moderateScale(15),
-      borderRadius: moderateScale(30),
-      alignItems: "center",
-      borderWidth: 1,
-      borderColor: "#5A4FCF",
-      marginBottom: verticalScale(30)
-    },
-    signUpText: {
-      color: "#5A4FCF",
+    buttonText: {
       fontSize: scaleFont(16),
       fontWeight: "600"
     }

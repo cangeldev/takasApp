@@ -1,13 +1,18 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
-import { View, Text, Image, TouchableOpacity } from "react-native"
+import { View, Text, Image } from "react-native"
 import getStyles from "./welcome.style"
 import images from "assets/index"
+import { CustomButton } from "components/commonComponents"
+import { useNavigation } from "@react-navigation/native"
 
+/*
+  WelcomeScreen, Uygulamamızın ilk sayfasıdır kullanıcının uygulayı tanıması ve kayıtlı ise giriş sayfasına yönlenmesini üye değiş ise üye ol sayfasına yönlenmesi için yardımcı olmaya yarar.
+*/
 export const Welcome = () => {
     const styles = getStyles()
     const { t } = useTranslation()
-
+    const navigation = useNavigation<any>()
     return (
         <View style={styles.container}>
             <Image
@@ -21,13 +26,9 @@ export const Welcome = () => {
                     {t("welcomeText")}
                 </Text>
             </View>
-            <View>
-                <TouchableOpacity style={styles.loginBtn}>
-                    <Text style={styles.loginText}>{t("login")}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.signUpBtn}>
-                    <Text style={styles.signUpText}>{t("signUp")}</Text>
-                </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+                <CustomButton onPress={() => navigation.navigate("AppTabNavigator")} title="login" variant="primary" style={styles.button} textStyle={styles.buttonText} />
+                <CustomButton title="signUp" variant="secondary" style={styles.button} textStyle={styles.buttonText} />
             </View>
 
         </View>

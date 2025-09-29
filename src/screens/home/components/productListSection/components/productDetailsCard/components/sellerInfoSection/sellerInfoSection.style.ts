@@ -32,9 +32,12 @@ const getStyles = () => {
             marginTop: verticalScale(4),
             fontSize: scaleFont(12)
         },
-        followButton: { backgroundColor: colors.text.primary, paddingHorizontal: 16, paddingVertical: 6, borderRadius: 20 },
+        followButton: {
+            paddingHorizontal: horizontalScale(16),
+            paddingVertical: verticalScale(6),
+            borderRadius: moderateScale(20)
+        },
         followButtonText: {
-            color: theme.backgroundColor,
             fontSize: scaleFont(14),
             fontWeight: '600'
         }

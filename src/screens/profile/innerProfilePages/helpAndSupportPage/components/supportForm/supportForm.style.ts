@@ -1,6 +1,5 @@
-import { colors } from 'assets/colors/colors'
-import { useTheme } from 'hooks/useTheme'
 import { StyleSheet } from 'react-native'
+import { useTheme } from 'hooks/useTheme'
 import { horizontalScale, verticalScale, scaleFont, moderateScale } from "theme/scale"
 
 const getStyles = () => {
@@ -38,14 +37,12 @@ const getStyles = () => {
       textAlignVertical: 'top'
     },
     button: {
-      backgroundColor: colors.text.primary,
+
       padding: verticalScale(15),
       borderRadius: moderateScale(12),
-      alignItems: 'center',
       elevation: 4
     },
     buttonText: {
-      color: '#fff',
       fontWeight: 'bold',
       fontSize: scaleFont(16)
     }

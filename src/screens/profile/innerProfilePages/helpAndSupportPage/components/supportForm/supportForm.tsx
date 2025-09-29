@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Alert, Linking } from 'react-native'
+import { View, Text, TextInput, Alert, Linking } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import getStyles from './supportForm.style'
+import { CustomButton } from 'components/commonComponents'
 
 /*
   Bu bileşen, kullanıcıların destek talebi gönderebileceği bir iletişim formu sunar.
@@ -46,9 +47,7 @@ export const SupportForm = () => {
                     placeholderTextColor="#888"
                     multiline
                 />
-                <TouchableOpacity style={styles.button} onPress={handleSend}>
-                    <Text style={styles.buttonText}>{t('send')}</Text>
-                </TouchableOpacity>
+                <CustomButton title="send" variant="primary" style={styles.button} textStyle={styles.buttonText} onPress={handleSend} />
             </View>
         </View>
     )
