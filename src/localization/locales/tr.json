@@ -97,6 +97,10 @@
         "askSellerQuestion": "Satıcıya soru sor",
         "follow": "Takip et",
         "evaluation": "Değerlendirme",
-        "similarProducts": "Benzer Ürünler"
+        "similarProducts": "Benzer Ürünler",
+        "welcomeText": "Ürünlerinizi Takaslayın veya Satın, Hızlı ve Güvenli Alışverişin Tadını Çıkarın!",
+        "welcome": "Hoş geldiniz",
+        "login": "Giriş Yap",
+        "signUp": "Kaydol"
     }
 }

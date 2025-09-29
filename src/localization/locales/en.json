@@ -97,6 +97,10 @@
         "askSellerQuestion": "Ask the seller a question",
         "follow": "Follow",
         "evaluation": "Evaluation",
-        "similarProducts": "Similar Products"
+        "similarProducts": "Similar Products",
+        "welcomeText": "Trade or Sell Your Products, Enjoy Fast and Secure Shopping!",
+        "welcome": "Welcome",
+        "login":"Log in",
+        "signUp":"Sign up"
     }
 }

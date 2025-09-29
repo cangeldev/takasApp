@@ -27,7 +27,10 @@ const images = {
         gave: require("./images/other/gave.png"),
         replacement: require("./images/other/replacement.png"),
         received: require("./images/other/received.png"),
-        addFriends: require("./images/other/addFriends.png"),
+        addFriends: require("./images/other/addFriends.png")
+    },
+    login: {
+        welcome: require("./images/login/welcome.png")
     }
 }
 
