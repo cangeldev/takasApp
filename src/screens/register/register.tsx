@@ -30,7 +30,7 @@ export const RegisterScreen = () => {
             </TouchableOpacity>
             <Text style={styles.title}>{t("signText")}</Text>
             <Image
-                source={images.login.welcome}
+                source={images.login.register}
                 style={styles.image}
                 resizeMode="contain"
             />

@@ -30,7 +30,7 @@ export const LoginScreen = () => {
             </TouchableOpacity>
             <Text style={styles.title}>{t("loginText")}</Text>
             <Image
-                source={images.login.welcome}
+                source={images.login.login}
                 style={styles.image}
                 resizeMode="contain"
             />
@@ -39,7 +39,7 @@ export const LoginScreen = () => {
             <TouchableOpacity style={styles.forgotPassword}>
                 <Text style={styles.forgotText}>{t("forgotPassword")}</Text>
             </TouchableOpacity>
-            <CustomButton title={t("login")} variant='primary' style={styles.loginButton} textStyle={styles.loginText} />
+            <CustomButton title={t("login")} variant='primary' onPress={()=>navigation.navigate("AppTabNavigator")} style={styles.loginButton} textStyle={styles.loginText} />
             <View style={styles.dividerContainer}>
                 <View style={styles.divider} />
                 <Text style={styles.orText}>{t("loginWith")}</Text>
