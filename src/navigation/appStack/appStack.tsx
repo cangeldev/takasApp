@@ -6,9 +6,9 @@ import { useTheme } from 'hooks/useTheme'
 import { AppTabs } from 'navigation/appTabs/appTabs'
 import { useTranslation } from 'react-i18next'
 import { ProductDetailsCard } from 'screens/home/components/productListSection/components/productDetailsCard/productDetailsCard'
-import { AccountDetails, LoginScreen, RegisterScreen, Welcome } from 'screens/index'
 import { LanguageThemePage, ProfileInfoPage, AddressPage, NotificationSettingsPage, HelpAndSupportPage, FavoritesPage, MyNetworksPage } from 'screens/profile/innerProfilePages'
 import { RootStackParamList } from 'utils/types'
+import { AccountDetails, LoginScreen, RegisterScreen, Welcome } from 'screens/auth'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
