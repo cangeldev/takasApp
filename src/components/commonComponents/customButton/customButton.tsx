@@ -11,9 +11,13 @@ interface ICustomButton extends TouchableOpacityProps {
     textStyle?: TextStyle
 }
 
-/*
-  CustomButton, Uygulanın içerisinde farklı sayfalarda kullanılan butonların tek component altından kullanılması için tasarlanmış buton bileşenidir.
-*/
+/**
+ * CustomButton: Uygulama genelinde tekrar eden buton işlevselliğini tek bir merkezden yönetmek için tasarlanmış yeniden kullanılabilir (reusable) bileşendir.
+ *
+ * Farklı stilleri (birincil/primary ve ikincil/secondary) destekler ve bu varyantlara göre otomatik stil ayarlarını yapar.
+ * Başlığı (title) çeviri (i18n) sistemi üzerinden alır, böylece dil desteği sunar.
+ * Geniş bir özelleştirme için dışarıdan stil (style ve textStyle) prop'ları kabul eder.
+ */
 export const CustomButton: FC<ICustomButton> = ({ title, variant = 'primary', onPress, style, textStyle, }) => {
     const styles = getStyles()
     const { t } = useTranslation()

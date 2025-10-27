@@ -9,9 +9,12 @@ interface IHeaderSection {
     isFavorite: boolean
 }
 
-/*
-  HeaderSection, Bu bileşen ProductDetailsCard yapısındaki header bölümündeki butonlar ve işlevleri için kullanılan bileşendir.
-*/
+/**
+ * HeaderSection: Ürün Detay sayfasının (ProductDetailsCard) üst kısmında yer alan, navigasyon ve temel aksiyon butonlarını içeren bileşendir.
+ *
+ * Temel olarak, önceki ekrana geri dönme (back), ürünü paylaşma (share) ve ürünü favorilere ekleme/çıkarma (heart/heart-outline) işlevlerini sunar.
+ * isFavorite prop'una göre favori ikonunun durumunu dinamik olarak yönetir ve toggleFavorite aksiyonunu tetikler.
+ */
 export const HeaderSection: FC<IHeaderSection> = ({ isFavorite, toggleFavorite }) => {
 
     const navigation = useNavigation()

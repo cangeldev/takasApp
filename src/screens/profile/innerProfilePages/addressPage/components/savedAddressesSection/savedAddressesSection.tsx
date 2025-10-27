@@ -3,10 +3,13 @@ import { View } from 'react-native'
 import getStyles from './savedAddressesSection.style'
 import { AddressCard } from './components/addressCard/addressCard'
 
-/*
-  `SavedAddressesSection`, 
-  kullanıcının kaydedilmiş adreslerini görüntülediği ve gerektiğinde yeni adres ekleyebileceği bölümü temsil eder.
-*/
+/**
+ * SavedAddressesSection: Kullanıcının daha önce kaydettiği tüm adresleri (teslimat veya fatura adresleri) listeleyen ve yönettiği bölümdür.
+ *
+ * Her bir kayıtlı adresi göstermek için AddressCard bileşenini kullanır.
+ * Bu bölüm, adreslerin düzenlenmesi, silinmesi veya yeni bir adres eklenmesi gibi işlemleri kapsayan bir arayüzün parçasıdır.
+ * Şu an için örnek bir 'Ev Adresim' kartı statik verilerle gösterilmektedir.
+ */
 export const SavedAddressesSection = () => {
     const styles = getStyles()
 

@@ -113,6 +113,7 @@
         "signText": "Merhaba Başlamak için kayıt olun!",
         "confirmPassword": "Şifreyi onayla",
         "alreadyHaveAnAccount": "Zaten bir hesabınız var mı? ",
-        "loginNow": "Şimdi Giriş Yapın"
+        "loginNow": "Şimdi Giriş Yapın",
+        "detailsText": "Profiliniz, yeni ürünleri ve fırsatları keşfetmenize yardımcı olur."
     }
 }

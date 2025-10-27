@@ -1,19 +1,22 @@
 import React from 'react'
-import { Text, TouchableOpacity, Image } from 'react-native'
+import { Text, TouchableOpacity, Image, ImageSourcePropType } from 'react-native'
 import { RadioButton } from 'react-native-paper'
 import getStyles from './themeItem.style'
 import { useTranslation } from 'react-i18next'
 
 interface ThemeItemProps {
-    item: { theme: string, title: string, image: any }
+    item: { theme: string, title: string, image: ImageSourcePropType }
     selectedTheme: string
     onPress: (theme: string) => void
 }
 
-/*
-  ThemeItem, kullanıcının istediği temayı kullanması için seçim yapabildiği bir yardımcı bileşendir.
-  Bu bileşen, kullanıcıya tema bilgilerini radio buton şeklinde listelerken aynı zamanda istedikleri temayı seçip uygulama üzerinde kullanmalarına olanak tanır.
-*/
+/**
+ * ThemeItem: Tema Bölümü (ThemeSection) ekranında gösterilen, tek bir tema seçeneğini (örneğin, Açık veya Koyu Mod) temsil eden etkileşimli liste öğesidir.
+ *
+ * Temanın görsel bir önizlemesini (Image), çevrilmiş başlığını (themeText) ve bir RadioButton içerir.
+ * RadioButton'ın durumu (checked/unchecked), global olarak seçili olan tema (selectedTheme) ile öğenin tema kodunu (item.theme) karşılaştırarak dinamik olarak belirlenir.
+ * Kullanıcının öğeye dokunması, uygulama temasını değiştirecek olan 'onPress' aksiyonunu tetikler.
+ */
 export const ThemeItem = ({ item, selectedTheme, onPress }: ThemeItemProps) => {
 
     const styles = getStyles()

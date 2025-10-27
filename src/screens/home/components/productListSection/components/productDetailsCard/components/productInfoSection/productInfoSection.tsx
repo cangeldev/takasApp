@@ -13,9 +13,13 @@ const productFeatures = [
     "Az kullanılmış",
     "Defosuz",
 ]
-/*
-  ProductInfoSection, ProductDetailsCard içindeki ürün bilgisini göstermek için kullanılan bileşendir.
-*/
+/**
+ * ProductInfoSection: Ürün Detay sayfasında (ProductDetailsCard) ürünün temel başlığını, özellik etiketlerini (tags), açıklamasını ve favori istatistiklerini gösteren bölümdür.
+ *
+ * Ürünün ana başlığını (productTitleText) ve bir ScrollView içinde kaydırılabilir özellik etiketlerini (featureTag) sunar.
+ * Ayrıca, ürünün mevcut favori sayısını ve kullanıcının favori durumunu dinamik olarak göstererek favori aksiyonunu (toggleFavorite) tetikler.
+ * Alt kısımda ürünün Açıklama metni yer alır.
+ */
 export const ProductInfoSection: FC<IProductInfoSection> = ({ isFavorite, toggleFavorite }) => {
     const styles = getStyles()
 

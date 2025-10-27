@@ -15,7 +15,8 @@ const images = {
         advert: require("./images/home/advert.png")
     },
     profile: {
-        defaultProfileImage: require("./images/profile/defaultProfileImage.png")
+        defaultProfileImage: require("./images/profile/defaultProfileImage.png"),
+        testProfileImage: require("./images/profile/test.png")
     },
     other: {
         gradient: require("./images/other/gradient.png"),

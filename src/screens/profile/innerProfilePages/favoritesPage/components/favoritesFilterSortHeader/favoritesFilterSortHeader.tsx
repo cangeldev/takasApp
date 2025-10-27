@@ -12,8 +12,14 @@ type Props = {
     onOptionSelect: (option: string) => void
 }
 
-// Bu bileşen, favoriler sayfasındaki sıralama ve filtreleme başlıkları için kullanılan menü bileşenidir.
-//   Kullanıcı, ürünlerini sıralamak ve filtrelemek için menü seçeneklerine tıklayabilir.
+/**
+ * FavoritesFilterSortHeader: Favori Ürünler (FavoriteProducts) sayfasının üst kısmında yer alan, kullanıcının ürünleri sıralamasına ve filtrelemesine olanak tanıyan etkileşimli menü başlık bileşenidir.
+ *
+ * Sıralama ve filtreleme işlevselliği için 'react-native-popup-menu' kütüphanesinin SlideInMenu renderer'ını kullanır.
+ *
+ * 1. Sıralama Menüsü: 'sortBy' başlığı altında, 'sortOptions' dizisindeki seçenekleri (örneğin, en düşük fiyat, en yüksek fiyat) RadioButton'lar ile listeler (renderSortOptions). Kullanıcı seçimi (selectedOption), 'onOptionSelect' fonksiyonu ile üst bileşene iletilir.
+ * 2. Filtreleme Menüsü: Filtreleme seçeneklerini barındıran ayrı bir menü içerir (şu an için yer tutucu Alert aksiyonları içerir).
+ */
 export const FavoritesFilterSortHeader = ({ selectedOption, onOptionSelect }: Props) => {
     const styles = getStyles()
     const { t } = useTranslation()

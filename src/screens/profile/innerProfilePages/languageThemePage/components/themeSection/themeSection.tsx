@@ -8,12 +8,13 @@ import { RootState } from 'store/store'
 import { handleThemeChange } from 'theme/theme'
 import ThemeItem from './components/themeItem/themeItem'
 
-/*
-  Bu bileşen, kullanıcının uygulama teması arasında seçim yapmasına olanak tanır.
-  `ThemeOptionsList` aracılığıyla tema seçeneklerini listeleyen bir `FlatList` kullanır.
-  Kullanıcı bir tema seçtiğinde, `handleThemeChange` fonksiyonu ile tema değişikliği yapılır ve bu değişiklik Redux ile yönetilir.
-  Mevcut seçili tema, Redux store'dan alınarak, seçili temayı görsel olarak vurgulamak için `ThemeItem` bileşenine iletilir.
-*/
+/**
+ * ThemeSection: Kullanıcının uygulama temasını (örneğin, açık veya koyu mod) seçmesini sağlayan ayarlar arayüzü bölümüdür.
+ *
+ * Mevcut tema seçeneklerini (ThemeOptionsList) bir FlatList içinde listeler.
+ * Redux store'dan mevcut seçili temayı (selectedTheme) alır ve ThemeItem bileşeni aracılığıyla bu seçimi görsel olarak vurgular.
+ * Kullanıcı bir tema seçtiğinde, handleThemeChange fonksiyonunu (Redux dispatch ile birlikte) çağırarak uygulama temasını dinamik olarak günceller ve kalıcı olarak kaydeder.
+ */
 
 export const ThemeSection = () => {
     const { t } = useTranslation()

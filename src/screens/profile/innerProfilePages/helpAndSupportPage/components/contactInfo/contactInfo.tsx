@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from 'components/commonComponents'
 import getStyles from './contactInfo.style'
 
-/*
-  Bu bileşen, kullanıcıların destek ekibiyle iletişime geçebileceği bilgileri içerir.
-  Kullanıcılar, bir e-posta adresine tıklayarak destek e-postasına kolayca ulaşabilir ve e-posta gönderebilirler.
-  Ayrıca, bir telefon numarası ve ikon gösterimi ile telefonla iletişim kurma imkanı da sağlanır.
-  E-posta bağlantısı, cihazın varsayılan e-posta istemcisi ile açılır.
-*/
+/**
+ * ContactInfo: Kullanıcılara Destek/İletişim sayfasında (Support/Contact Page) uygulamanın destek ekibine ait temel iletişim bilgilerini (e-posta ve telefon) sunan bileşendir.
+ *
+ * E-posta adresi (destek@takasapp.com), kullanıcı dokunduğunda cihazın varsayılan e-posta uygulamasını açarak doğrudan e-posta gönderme işlevselliği sağlar (Linking.openURL('mailto:...')).
+ * Telefon numarası ve ilgili ikon (phoneIcon) görsel olarak listelenir.
+ * Tüm başlıklar çeviri (i18n) desteklidir.
+ */
 export const ContactInfo = () => {
     const { t } = useTranslation()
     const styles = getStyles()

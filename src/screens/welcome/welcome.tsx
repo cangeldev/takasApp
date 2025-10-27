@@ -4,15 +4,21 @@ import { View, Text, Image } from "react-native"
 import getStyles from "./welcome.style"
 import images from "assets/index"
 import { CustomButton } from "components/commonComponents"
-import { useNavigation } from "@react-navigation/native"
+import { useAppNavigation } from "hooks/useAppNavigation"
 
-/*
-  WelcomeScreen, Uygulamamızın ilk sayfasıdır kullanıcının uygulayı tanıması ve kayıtlı ise giriş sayfasına yönlenmesini üye değiş ise üye ol sayfasına yönlenmesi için yardımcı olmaya yarar.
-*/
+/**
+ * Welcome: Uygulamanın kullanıcıya gösterilen ilk karşılama ve tanıtım ekranıdır.
+ *
+ * Kullanıcıyı uygulamaya davet eder, kısa bir açıklama sunar ve kimlik doğrulama akışını başlatır.
+ * Kullanıcıya iki ana seçenek sunar:
+ * 1. Giriş Yap (Login) ekranına yönlendirme.
+ * 2. Kayıt Ol (Register) ekranına yönlendirme.
+ * Bu ekran, uygulama kimlik doğrulamasının giriş noktasıdır.
+ */
 export const Welcome = () => {
     const styles = getStyles()
     const { t } = useTranslation()
-    const navigation = useNavigation<any>()
+    const navigation = useAppNavigation()
     return (
         <View style={styles.container}>
             <Image
@@ -27,8 +33,8 @@ export const Welcome = () => {
                 </Text>
             </View>
             <View style={styles.buttonContainer}>
-                <CustomButton onPress={() => navigation.navigate("LoginScreen")} title="login" variant="primary" style={styles.button} textStyle={styles.buttonText} />
-                <CustomButton onPress={() => navigation.navigate("RegisterScreen")} title="signUp" variant="secondary" style={styles.button} textStyle={styles.buttonText} />
+                <CustomButton onPress={() => navigation.navigate("Login")} title="login" variant="primary" style={styles.button} textStyle={styles.buttonText} />
+                <CustomButton onPress={() => navigation.navigate("Register")} title="signUp" variant="secondary" style={styles.button} textStyle={styles.buttonText} />
             </View>
 
         </View>

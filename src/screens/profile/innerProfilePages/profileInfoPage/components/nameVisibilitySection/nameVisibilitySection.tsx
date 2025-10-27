@@ -4,10 +4,13 @@ import { useTranslation } from 'react-i18next'
 import getStyles from './nameVisibilitySection.style'
 import { NameVisibilitySectionComponent } from './components/nameVisibilitySectionComponent/nameVisibilitySectionComponent'
 
-/*
-  Bu bileşen, kullanıcıya profilinde görünen ismini kimlerin görebileceğini seçme imkanı sunar.
-  Açıklayıcı bir metin ve bu işlemi gerçekleştirecek alt bileşen olan `NameVisibilitySectionComponent`'i içerir.
-*/
+/**
+ * NameVisibilitySection: Kullanıcının profil bilgilerini (ad ve soyad) kimlerin görebileceği ile ilgili gizlilik ayarını yapabildiği bölümdür.
+ *
+ * Kullanıcıya bu ayarın önemini açıklayan bir metin (selectNameText) sunar.
+ * Ana seçim mantığını ve arayüzünü (örneğin, radyo butonları veya anahtarlar) içeren NameVisibilitySectionComponent alt bileşenini render eder.
+ * Bu sayede kullanıcı, ad ve soyadının herkese mi yoksa sadece belirli kişilere mi görünür olacağını belirler.
+ */
 export const NameVisibilitySection = () => {
     const styles = getStyles()
     const { t } = useTranslation()

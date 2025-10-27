@@ -5,10 +5,13 @@ import images from 'assets/index'
 import { useTranslation } from 'react-i18next'
 import { CustomButton } from 'components/commonComponents'
 
-/*
-  SellerInfoSection, ProductDetailsCard yapısında satıcı bilgilerini
-  göstermek için kullanılan bileşendir.
-*/
+/**
+ * SellerInfoSection: Ürün Detay sayfasında (ProductDetailsCard) ürünün satıcısına ait temel bilgileri ve aksiyonları gösteren bölümdür.
+ *
+ * Satıcının profil fotoğrafı (sellerAvatar), kullanıcı adı (sellerNameText), değerlendirme puanı ve yorum sayısı (sellerMetaText) gibi detayları içerir.
+ * Ayrıca, kullanıcıya satıcıyı doğrudan takip etme (follow) aksiyonunu gerçekleştirebileceği bir buton sunar.
+ * Bu bileşen, alıcıların satıcı hakkında güvenilir bilgi edinmesini sağlar.
+ */
 export const SellerInfoSection = () => {
     const styles = getStyles()
     const { t } = useTranslation()

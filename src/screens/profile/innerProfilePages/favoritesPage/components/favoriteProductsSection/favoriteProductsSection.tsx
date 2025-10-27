@@ -16,8 +16,14 @@ const renderFavoriteProductItem = ({ item }: any) => (
   />
 )
 
-// `FavoriteProductsSection` bileşeni, kullanıcının favori ürünlerini listelemek için kullanılan bir bölümdür.
-//   Bu bölümde kullanıcı, favori ürünlerini sıralayabilir ve görüntüleyebilir.
+/**
+ * FavoriteProductsSection: Kullanıcının favorilerine eklediği ürünleri listeleyen, sıralama ve filtreleme işlevselliği sunan ana bölümdür.
+ *
+ * Ürün listesini (recommenedList) bir FlatList içinde gösterir; her bir öğe FavoriteProductCard bileşeni ile render edilir.
+ * selectedSort state'ini kullanarak seçilen sıralama seçeneğini tutar ve handleSortChange fonksiyonu ile ürünleri fiyata (en düşük/en yüksek) göre sıralar.
+ * Liste boş olduğunda EmptyFavoritesContent bileşenini gösterir.
+ * ListHeaderComponent olarak kullanılan FavoritesFilterSortHeader, kullanıcıya sıralama seçeneklerini sunar.
+ */
 export const FavoriteProductsSection = () => {
   const styles = getStyles()
   const { t } = useTranslation()

@@ -10,10 +10,13 @@ interface IFavoriteProductCardProps {
     address: string
 }
 
-/*
-  FavoriteProductCard, kullanıcı favorilerine eklediği ürünlerin listelenmesi için kullanılan kart yapısıdır. 
-  kullanıcıların favorilediği ürünleri görebilmesini, güncelleyebilmesini takip edebilmesi ve diğer seçenekleri için gerekli tüm özellikleri içerir.
-*/
+/**
+ * FavoriteProductCard: Favori Ürünler Bölümü (FavoriteProductsSection) içinde, kullanıcının favorilere eklediği tek bir ürünü detaylı bir şekilde listelemek için kullanılan kart yapısıdır.
+ *
+ * Ürünün görselini (image), güncel fiyatını (price), açıklamasını (description) ve bulunduğu konumu (address) gösterir.
+ * Kartın sağ üst köşesinde, kullanıcının ürünü favorilerden hızlıca kaldırmasını sağlayan etkileşimli bir kalp simgesi (Icon) bulunur.
+ * isFavorite state'i başlangıçta 'true' olarak ayarlanmıştır ve 'toggleFavorite' fonksiyonu ile kullanıcının kaldırma işlemi simge durumunu günceller (heart/heart-outline).
+ */
 export const FavoriteProductCard: FC<IFavoriteProductCardProps> = ({ image, price, description, address }) => {
     const styles = getStyles()
     const [isFavorite, setIsFavorite] = useState(true)

@@ -4,21 +4,24 @@ import getStyles from './authInput.style'
 import { Icon } from '../icon/icon'
 import { useTranslation } from 'react-i18next'
 
-interface ILoginInput {
+interface IAuthInput {
     placeholder: string
     onInputChange: (inputText: string) => void
-    password?: boolean
+    isSecure?: boolean
 }
 
 /**
- * AuthInput
- * Kullanıcıların bilgi girişi yapmasını sağlayan bileşendir.
- * Giriş ve auth işlemleri sayfalarında kullanılır.
+ * AuthInput: Giriş (Login) ve Kayıt (Register) gibi kimlik doğrulama akışlarında kullanılan, standartlaştırılmış metin giriş bileşenidir.
+ *
+ * Kullanıcı girişini (inputText) yönetir ve değişiklikleri üst bileşene iletir (onInputChange).
+ * 'isSecure' prop'u ayarlanmışsa, şifre gizleme işlevselliği sunar; bu durumda, kullanıcıya şifreyi gizleme/gösterme (eye/eye-off ikonları) butonu sağlar.
+ * Yer tutucu metnini (placeholder) çeviri (i18n) sistemi üzerinden alır.
  */
-export const AuthInput: FC<ILoginInput> = ({ placeholder, onInputChange, password }) => {
+export const AuthInput: FC<IAuthInput> = ({ placeholder, onInputChange, isSecure }) => {
+
     const styles = getStyles()
     const [inputText, setInputText] = useState('')
-    const [passwordVisible, setPasswordVisible] = useState(password)
+    const [isSecureEntry, setIsSecureEntry] = useState(isSecure)
     const { t } = useTranslation()
 
     const handleTextChange = useCallback((text: string) => {
@@ -31,20 +34,20 @@ export const AuthInput: FC<ILoginInput> = ({ placeholder, onInputChange, passwor
             <TextInput
                 autoCapitalize='none'
                 placeholder={t(placeholder)}
-                secureTextEntry={password ? passwordVisible : false}
+                secureTextEntry={isSecure ? isSecureEntry : false}
                 value={inputText}
                 onChangeText={handleTextChange}
                 style={styles.input}
                 numberOfLines={1}
             />
             {
-                password && (
+                isSecure && (
                     <TouchableOpacity
                         style={styles.eyeButton}
-                        onPress={() => setPasswordVisible(!passwordVisible)}
+                        onPress={() => setIsSecureEntry(!isSecureEntry)}
                     >
                         <Icon
-                            name={passwordVisible ? "eye-off" : "eye"}
+                            name={isSecureEntry ? "eye-off" : "eye"}
                             type="Ionicons"
                             style={styles.eyeIcon}
                         />

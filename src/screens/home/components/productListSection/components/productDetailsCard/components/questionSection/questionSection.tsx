@@ -4,9 +4,13 @@ import getStyles from './questionSection.style'
 import { Icon } from 'components/commonComponents'
 import { useTranslation } from 'react-i18next'
 
-/*
-  QuestionSection, ProductDetailsCard içindeki ürün bilgilerini sorgulamak veya satıcıya soru sormak için kullanılan bileşendir.
-*/
+/**
+ * QuestionSection: Ürün Detay sayfasında (ProductDetailsCard) alıcıların ürün hakkında satıcıya soru sorabileceği alanı temsil eder.
+ *
+ * "Soru & Cevap" başlığını ve bilgilendirme ikonunu (qaHeaderRow) içerir.
+ * Kullanıcının hızlıca soru sorabilmesi için önceden tanımlanmış soru etiketlerini (questionTagsWrapper) yatay kaydırılabilir bir liste halinde sunar.
+ * Ayrıca, kullanıcıyı satıcıya yeni bir soru sorması için bir giriş kutusuna (questionInputBox) yönlendirir.
+ */
 export const QuestionSection = () => {
     const { t } = useTranslation()
 

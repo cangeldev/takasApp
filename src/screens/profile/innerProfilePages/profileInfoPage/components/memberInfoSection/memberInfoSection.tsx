@@ -5,10 +5,12 @@ import { MemberInfoTexts } from 'utils/helper'
 import { Icon } from 'components/commonComponents'
 import getStyles from './memberInfoSection.style'
 
-/*
-  Bu bileşen, üyelik bilgilerini simgelerle birlikte yatay bir satırda listeleyen bir arayüz sunar.
-  Veriler `MemberInfoTexts` adlı yardımcı yapıdan alınır; her bilgi bir ikon ve çeviri destekli metinle birlikte görüntülenir.
-*/
+/**
+ * MemberInfoSection: Kullanıcının profil sayfasında yer alan, üyelikle ilgili temel istatistikleri (örneğin, takipçi sayısı, ilan sayısı, değerlendirme puanı gibi) ikonlarla birlikte gösteren yatay bir liste bileşenidir.
+ *
+ * `MemberInfoTexts` yardımcı yapısından alınan her bir bilgi öğesi için bir ikon ve çeviri destekli metin (t(text)) gösterir.
+ * Bu bölüm, kullanıcının uygulama içindeki aktivitelerine dair özet bir bakış sunar.
+ */
 export const MemberInfoSection = () => {
     const styles = getStyles()
     const { t } = useTranslation()

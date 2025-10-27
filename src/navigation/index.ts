@@ -1,2 +1,2 @@
-export { AppStackNavigator } from "./appStackNavigator/appStackNavigator"
-export { AppTabNavigator } from "./appTabNavigator/appTabNavigator"
+export { AppStack } from "./appStack/appStack"
+export { AppTabs } from "./appTabs/appTabs"

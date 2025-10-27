@@ -4,12 +4,14 @@ import getStyles from './settingsOptionList.style'
 import { ProfileSettingsOptionsList } from 'utils/helper'
 import { ProfileSettingOptionCard } from './components/profileSettingOptionCard/profileSettingOptionCard'
 
-/*
-  `SettingsOptionList`, kullanıcının profil ayarlarıyla ilgili seçeneklerin gösterildiği bir bileşendir. 
-  Bu ekran, kullanıcıya çeşitli ayar seçeneklerini sunar ve her seçeneğe tıklandığında ilgili ayar sayfasına yönlendirilir. 
-  Profil ayarları, kullanıcı hesabıyla ilgili özelleştirmeleri yapabilmesini sağlar. 
-  Ayar seçenekleri bir liste olarak görüntülenir ve her biri bir `ProfileSettingOptionCard` bileşeniyle temsil edilir.
-*/
+/**
+ * SettingsOptionList: Profil Ekranında (ProfileScreen) yer alan ve kullanıcının hesap ayarlarını yönetebileceği tüm seçenekleri (örneğin, "Kişisel Bilgiler", "Adresler", "Bildirimler", "Güvenlik" vb.) listeleyen ana bileşendir.
+ *
+ * Ayar seçenekleri verisi `ProfileSettingsOptionsList` yardımcı yapısından alınır.
+ * Bu veriler, bir FlatList içinde haritalanarak her bir ayar seçeneği için bir `ProfileSettingOptionCard` bileşeni oluşturulur.
+ * Her kart, kullanıcı tıklandığında ilgili ayar sayfasına (navigatePage prop'u ile belirtilen) yönlendirme işlevini içerir.
+ * Bu yapı, kullanıcıya hesap özelleştirmesi ve yönetimi için düzenli ve erişilebilir bir arayüz sunar.
+ */
 export const SettingsOptionList = () => {
     const styles = getStyles()
 

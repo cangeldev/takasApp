@@ -4,9 +4,13 @@ import getStyles from './imageSection.style'
 import ImageView from 'react-native-image-viewing'
 import { Icon } from 'components/commonComponents'
 
-/*
-  ImageSection, Bu bileşen ProductDetailsCard yapısındaki ürünün resimlerinin görüntülenebilmesi için kullanılan bileşendir.
-*/
+/**
+ * ImageSection: Ürün Detay sayfasında (ProductDetailsCard) ürün görsellerini görüntülemekten ve görsel galeri (Image Viewer) işlevini sunmaktan sorumlu bileşendir.
+ *
+ * Ürünün ana görselini gösterir ve dokunulduğunda tam ekran bir görsel görüntüleyici (ImageViewer) açar.
+ * Görseller arasında geçiş yapma ve aktif görsel sayısını gösterme özelliklerini içerir.
+ * Ayrıca, "Kargo Bedava" veya "Fırsat Ürünü" gibi ürüne ait durum etiketlerini (tags) görselin üzerinde gösterir.
+ */
 export const ImageSection = () => {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0)
     const [isImageViewerVisible, setIsImageViewerVisible] = useState(false)

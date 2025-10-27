@@ -5,7 +5,14 @@ import { productList } from 'utils/helper'
 import { ProductCard } from './components/productCard/productCard'
 import { useTranslation } from 'react-i18next'
 
-//ProductListSection, ürünlerin görüntülenmesi ve listelenmesi için kullanılan bileşenidir.  
+/**
+ * ProductListSection: Uygulamanın ana sayfasında (HomeScreen) veya kategori sayfalarında, kullanıcılara çift sütunlu (numColumns={2}) bir ızgara düzeninde ürünleri listelemek ve görüntülemek için kullanılan ana bölümdür.
+ *
+ * Başlık metni ("ourPicksForYou") çeviri (i18n) desteklidir.
+ * Ürün verilerini 'productList' dizisinden alır ve her bir ürünü göstermek için 'ProductCard' bileşenini kullanır.
+ * Liste, dikey kaydırma özelliği devre dışı bırakılmış (scrollEnabled={false}) bir FlatList içinde sunulur, bu da listenin üst bileşen tarafından yönetilen ScrollView içinde yer almasını sağlar.
+ * Bu bölüm, kullanıcının uygulama içindeki ana ürün akışını oluşturur.
+ */
 export const ProductListSection = () => {
 
     const styles = getStyles()

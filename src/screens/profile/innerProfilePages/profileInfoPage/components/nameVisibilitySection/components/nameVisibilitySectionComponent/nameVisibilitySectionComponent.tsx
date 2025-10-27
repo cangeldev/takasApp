@@ -4,10 +4,13 @@ import { colors } from 'assets/colors/colors'
 import getStyles from './nameVisibilitySectionComponent.style'
 import { userName } from 'utils/helper'
 
-/*
-  Bu bileşen, kullanıcının uygulama içerisinde hangi isim formatıyla görüneceğini seçmesini sağlayan bir radyo buton arayüzü sunar.
-  Seçenekler sabit bir veri dizisinden alınır ve kullanıcı seçim yaptığında konsola loglanır.
-*/
+/**
+ * NameVisibilitySectionComponent: Kullanıcının, profilinde veya ilanlarında gösterilecek isim formatını (örneğin, "Ad Soyad" veya "Kullanıcı Adı") seçmesini sağlayan özel bir radyo buton grubudur.
+ *
+ * 'radio-buttons-react-native' kütüphanesini kullanarak kullanıcıya seçenekleri (userName dizisi) sunar.
+ * Kullanıcı seçim yaptığında (selectedBtn), ilgili bilgiyi konsola loglar (gerçek uygulamada bu, Redux'a kaydedilmelidir).
+ * Bu bileşen, isim görünürlüğü gizlilik ayarının ana etkileşim noktasını oluşturur.
+ */
 export const NameVisibilitySectionComponent = () => {
     const style = getStyles()
 

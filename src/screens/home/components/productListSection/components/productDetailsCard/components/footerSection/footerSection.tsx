@@ -3,9 +3,13 @@ import React from 'react'
 import getStyles from './footerSection.style'
 import { CustomButton } from 'components/commonComponents'
 
-/*
-  FooterSection, Bu bileşen ProductDetailsCard yapısındaki ürünün fiyat, takas gibi tekliflerin görüntülenebilmesi için kullanılan bileşendir.
-*/
+/**
+ * FooterSection: Ürün Detay sayfasının (ProductDetailsCard) alt kısmında sabit olarak duran, ana aksiyonları ve fiyat bilgisini içeren bileşendir.
+ *
+ * Ürünün güncel ve indirimli fiyatını gösterir (priceWrapper).
+ * Kullanıcının ürüne yönelik temel aksiyonları (Teklif Yapma - makeOffer ve Sepete Ekleme - addToCart) için butonları barındırır.
+ * Bu bölüm, kullanıcının ürünü satın alma veya takas/teklif sürecini başlatma işlemlerini kolaylaştırır.
+ */
 export const FooterSection = () => {
     const styles = getStyles()
     return (

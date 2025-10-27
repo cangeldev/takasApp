@@ -7,11 +7,12 @@ interface IProfileActivitySummaryCardProps {
     image: ImageSourcePropType
 }
 
-/*
-  `ProfileActivitySummaryCard`, kullanıcının aldığı, verdiği veya bekleyen takaslarını görmesi ve 
-  bu takaslara kolayca ulaşabilmesi için tasarlanmış bir kart bileşenidir. 
-  Bu bileşen, her bir aktiviteyi bir ikon ve başlıkla birlikte görsel olarak sunar.
-*/
+/**
+ * ProfileActivitySummaryCard: ActivitySummary bileşeni içinde kullanılan, kullanıcının tek bir takas aktivitesi (Alınan, Verilen, Bekleyen Takaslar) hakkında bilgi gösteren küçük, etkileşime açık kart bileşenidir.
+ *
+ * Kart, ilgili aktiviteyi temsil eden bir görsel (image) ve aktivitenin başlığını (title) içerir.
+ * Bu kartlar, genellikle üzerine tıklandığında kullanıcıyı ilgili aktivite listesi ekranına yönlendirir (ancak bu işlevsellik burada tanımlanmamıştır).
+ */
 export const ProfileActivitySummaryCard: FC<IProfileActivitySummaryCardProps> = ({ image, title }) => {
     const style = getStyles()
 

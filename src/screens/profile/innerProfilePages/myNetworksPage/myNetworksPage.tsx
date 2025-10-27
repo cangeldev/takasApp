@@ -11,10 +11,13 @@ type Route = {
     title: string
 }
 
-/*
-  `MyNetworksPage`, kullanıcının takip ettiği ve takipçilerinin görüntülenmesi için kullanacağı istediği kişileri listeden çıkarabilmesi için tasarlanmış bileşendir. 
-   TabView içerisinde 2 sayfa olarak hem takiğçi hemde takip edilenlerin bilgilerini bir resim ve kullanıcı bilgileriyle birlikte görsel olarak listeler.
-*/
+/**
+ * MyNetworksPage: Kullanıcının takip ettiği (Following) ve kendisini takip eden (Followers) kişileri sekme (Tab View) yapısı içinde görüntülediği sayfadır.
+ *
+ * Sayfa, kullanıcıların bir sekmede takip ettiklerini, diğer sekmede ise takipçilerini görebilmesini sağlar.
+ * Her iki liste de FlatList kullanılarak FollowItemCard bileşenleri ile görsel olarak sunulur ve listeden çıkarma (takibi bırakma, engelleme) gibi etkileşimlere olanak tanır.
+ * Kullanıcının sosyal çevresini yönettiği ana ekrandır.
+ */
 export const MyNetworksPage = () => {
     const styles = getStyles()
     const layout = useWindowDimensions()

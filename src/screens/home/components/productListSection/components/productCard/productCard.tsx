@@ -4,7 +4,7 @@ import { Icon } from 'components/commonComponents'
 import getStyles from './productCard.style'
 import images from 'assets/index'
 import { useTranslation } from 'react-i18next'
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from 'hooks/useAppNavigation'
 
 interface ProductCardProps {
     image: ImageSourcePropType
@@ -15,15 +15,22 @@ interface ProductCardProps {
     swap?: boolean
 }
 
-/*
-  ProductCard, Bu kart yapısı ürünlerin görüntülenmesi ve listelenmesi için kullanılan bileşendir.  
-  Bu ekran, kullanıcıya ürünlerin resimlerini, fiyatını, ürün bilgisini gibi bilgileri gösteririrken istediğimiz ürünün detayına ulaşmamıza olanak tanır.   
-*/
+/**
+ * ProductCard: Uygulama genelindeki ürün listelemelerinde (ProductListSection, arama sonuçları vb.) kullanılan, tek bir ürünü kompakt bir şekilde temsil eden etkileşimli kart bileşenidir.
+ *
+ * Kullanıcı bu karta dokunduğunda (TouchableWithoutFeedback), 'ProductDetailsCard' ekranına navigasyon sağlar.
+ *
+ * Ürünün temel bilgileri şunlardır:
+ * 1. Görsel (Image), Başlık (title), Fiyat (price), İndirimli Fiyat (oldPrice) bilgileri.
+ * 2. Takas/Kargo Durumu: 'swap' prop'una bağlı olarak takas (images.home.swap) veya kargo (images.home.cargo) durumunu belirten bir rozet (badgeIcon) gösterir.
+ * 3. Favori/Beğeni: Ürünü favorilere ekleme/kaldırma işlevini (toggleFavorite) ve güncel beğeni sayısını (currentLikes) gösterir.
+ * 4. Fiyat Gösterimi (renderPrice): Fiyat '0' ise "Sadece Takas Teklifleri" ('onlyTradeOffers') metnini, aksi halde mevcut ve varsa eski fiyatı (oldPrice) gösterir.
+ */
 export const ProductCard: React.FC<ProductCardProps> = ({
     image, title, price, oldPrice, likes, swap
 }) => {
     const { t } = useTranslation()
-    const navigation = useNavigation<any>()
+    const navigation = useAppNavigation()
     const styles = getStyles()
     const [isFavorite, setIsFavorite] = useState(false)
     const [currentLikes, setCurrentLikes] = useState(likes)

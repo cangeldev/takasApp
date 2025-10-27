@@ -4,11 +4,13 @@ import { useTranslation } from 'react-i18next'
 import { Faqs } from 'utils/helper'
 import getStyles from './faqSection.style'
 
-/*
-  Bu bileşen, kullanıcıya sıkça sorulan soruları (`FAQ`) ve bunların yanıtlarını gösteren bir bölüm sunar.
-  `Faqs` dizisindeki her bir öğe, bir soru ve cevaptan oluşur ve bunlar, her bir soru için başlık ve cevap metinleri olarak sırasıyla görüntülenir.
-  Veriler, `useTranslation` ile çevrilen metinler olarak sunulur, böylece çoklu dil desteği sağlanır.
-*/
+/**
+ * FaqSection: Destek/SSS (Support/FAQ) sayfasında, kullanıcılara uygulama veya hizmetle ilgili en sık sorulan soruları ve yanıtlarını sunan bölümdür.
+ *
+ * `Faqs` yardımcı dizisindeki verileri (soru başlığı: item.q ve yanıt metni: item.a) haritalayarak bir liste oluşturur.
+ * Her bir soru ve cevap metni, çeviri (i18n) sistemi (t()) aracılığıyla çoklu dil desteğiyle görüntülenir.
+ * Bu bölüm, kullanıcıların kendi sorularına hızlıca yanıt bulmasını amaçlar.
+ */
 export const FaqSection = () => {
     const { t } = useTranslation()
     const styles = getStyles()

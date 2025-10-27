@@ -1,4 +1,4 @@
-import { StatusBar } from 'react-native'
+import { Platform, StatusBar } from 'react-native'
 import React, { FC, useEffect } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
@@ -8,7 +8,7 @@ interface IStatusBar {
     backgroundColor?: string
 }
 
-// AppStatusBar, bu component uygulama içinde kullanılan status barın ayarlamalarını yapmak için kullandığı bileşendir.
+// AppStatusBar, uygulama içinde kullanılan status bar ve Android navigasyon çubuğu ayarlarını temaya göre yapan bileşendir.
 export const AppStatusBar: FC<IStatusBar> = ({ translucent = false, backgroundColor }) => {
 
     const theme = useTheme()
@@ -16,7 +16,13 @@ export const AppStatusBar: FC<IStatusBar> = ({ translucent = false, backgroundCo
     const barStyle = theme.backgroundColor === '#fff' ? 'dark-content' : 'light-content'
 
     useEffect(() => {
-        SystemNavigationBar.setNavigationColor(theme.backgroundColor)
+        if (Platform.OS === 'android') {
+            try {
+                SystemNavigationBar.setNavigationColor(theme.backgroundColor)
+            } catch (error) {
+                console.warn("SystemNavigationBar'ı ayarlarken hata oluştu:", error)
+            }
+        }
     }, [theme.backgroundColor])
 
     return (

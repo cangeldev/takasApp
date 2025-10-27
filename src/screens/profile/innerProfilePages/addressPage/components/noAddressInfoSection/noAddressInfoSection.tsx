@@ -5,10 +5,12 @@ import images from 'assets/index'
 import getStyles from './noAddressInfoSection.style'
 import { CustomButton } from 'components/commonComponents'
 
-/*
-  `NoAddressInfoSection`, kullanıcının kaydedilmiş adresi olmadığı durumlarda görünen bilgi kartıdır. 
-  Bu kart, kullanıcıyı yeni bir adres eklemeye yönlendirir.
-*/
+/**
+ * NoAddressInfoSection: Kullanıcının sistemde kayıtlı hiçbir adresi bulunmadığında Adres ve Konum (AddressAndLocation) sayfasında gösterilen bilgilendirme ve yönlendirme bileşenidir.
+ *
+ * Durumu açıklayan bir görsel (Image), çeviri destekli bir bilgilendirme metni (NoSavedAddressInformationFound) ve kullanıcıyı yeni bir adres ekleme akışına (onPress prop'u aracılığıyla modal veya sayfa açılması) yönlendiren bir ana buton (CustomButton) içerir.
+ * Bu kart, kullanıcıyı gerekli bilgileri girmeye teşvik eder.
+ */
 export const NoAddressInfoSection = ({ onPress }: { onPress: () => void }) => {
     const styles = getStyles()
     const { t } = useTranslation()

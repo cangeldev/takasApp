@@ -8,10 +8,13 @@ interface IAddressCardProps {
     addressDetails: string[]
 }
 
-/*
-  `AddressCard`, kullanıcının kaydettiği adres bilgilerini görüntülemek için kullanılan bileşendir. 
-  Bu kart yapısı, kullanıcının daha sonra kolayca erişebileceği adres bilgilerini düzenli bir şekilde sunar. 
-*/
+/**
+ * AddressCard: Kayıtlı Adresler Bölümü (SavedAddressesSection) içinde, kullanıcının kaydettiği tek bir adresin tüm detaylarını düzenli bir formatta gösteren kart bileşenidir.
+ *
+ * Adres tipini belirten bir başlık (title) ve adresin bileşenlerini (ad, soyad, telefon, sokak, şehir vb. içeren addressDetails dizisi) içerir.
+ * Kartın solunda adres türünü simgeleyen bir konum ikonu (locationIcon) ve sağında, adresi düzenleme aksiyonunu tetikleyen bir düzenleme ikonu (editIcon) bulunur.
+ * Bu yapı, kullanıcının kayıtlı adreslerine hızlıca göz atmasını ve gerektiğinde bu adresleri düzenlemesini sağlar.
+ */
 export const AddressCard: FC<IAddressCardProps> = ({ title, addressDetails }) => {
     const styles = getStyles()
 

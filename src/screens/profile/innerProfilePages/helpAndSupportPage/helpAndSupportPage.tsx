@@ -2,11 +2,13 @@ import React from 'react'
 import { ScrollView } from 'react-native'
 import { ContactInfo, FaqSection, SupportForm } from './components'
 
-/*
-  Bu bileşen, kullanıcıların destek almak veya sorularını sormak için başvurabilecekleri bir yardım ve destek sayfası sunar.
-  Sayfa, sıkça sorulan soruları (`FaqSection`), kullanıcıların iletişim formunu doldurabilecekleri bir destek formunu (`SupportForm`) ve iletişim bilgilerini (`ContactInfo`) içerir.
-  Kullanıcılar, burada sorularını iletebilir, çözüm arayabilir veya destek ekibiyle iletişime geçebilirler.
-*/
+/**
+ * HelpAndSupportPage: Kullanıcılara sık sorulan sorular (SSS) aracılığıyla hızlı çözümler sunan ve doğrudan destek ekibiyle iletişime geçme imkanı veren sayfadır.
+ *
+ * Sıkça Sorulan Sorular (FaqSection), doğrudan destek talebi oluşturmak için kullanılan Destek Formu (SupportForm)
+ * ve çeşitli iletişim kanallarını içeren İletişim Bilgileri (ContactInfo) bileşenlerini bir araya getirir.
+ * Bu sayfa, kullanıcının uygulama ile ilgili sorunlarını çözmesine veya yardım almasına olanak tanır.
+ */
 export const HelpAndSupportPage = () => {
     return (
         <ScrollView>

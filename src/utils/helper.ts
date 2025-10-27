@@ -1,15 +1,27 @@
 import images from 'assets/index'
 
+/**
+ * MemberInfoTexts: Üye profilinde (örneğin, UserProfileInfo bileşeninde) kullanıcının doğrulama durumu ve üyelik süresi gibi temel bilgileri listelemek için kullanılan sabit metin ve ikon listesidir.
+ * Her bir nesne, bir ikon adı (icon) ve bu bilgiyi temsil eden bir çeviri anahtarı (text) içerir.
+ */
 export const MemberInfoTexts = [
     { icon: 'check-square', text: 'phoneNnumberVerified' },
     { icon: 'calendar', text: 'youSignedUpMonthAgo' }
 ]
 
+/**
+ * userName: Uygulama içinde kullanıcı adının farklı gösterimlerini (tam ad, kısaltılmış ad vb.) temsil eden basit etiket listesidir.
+ * Şu an için örnek kullanıcı adlarını içerir.
+ */
 export const userName = [
     { label: 'Can GEL' },
     { label: 'Can G.' }
 ]
 
+/**
+ * sortOptions: Ürün listeleme ekranlarında (örneğin, FavoriteProductsSection) kullanıcıya sunulan tüm sıralama seçeneklerinin çeviri anahtarlarını içeren dizedir.
+ * Bu seçenekler, ürünlerin görüntülenme sırasını (fiyat, tarih, popülarite, mesafe) değiştirmek için kullanılır.
+ */
 export const sortOptions = [
     'recommended',
     'lowestPrice',
@@ -21,6 +33,20 @@ export const sortOptions = [
 
 ]
 
+/**
+ * socials: Giriş/Kayıt ekranlarında sosyal medya ile hızlı giriş yapmak için kullanılan platformların ikon kaynaklarını ve benzersiz kimliklerini (id) içeren dizidir.
+ * Şu an için Facebook, Google ve Apple seçeneklerini içerir.
+ */
+export const socials = [
+    { id: "facebook", icon: images.login.facebook },
+    { id: "google", icon: images.login.google },
+    { id: "apple", icon: images.login.apple },
+]
+
+/**
+ * ProfileSettingsOptionsList: Profil Ekranında (ProfileScreen), kullanıcıya sunulan tüm hesap ayarı seçeneklerini tanımlayan, ikon, başlık ve navigasyon rotası (navigatePage) bilgilerini içeren sabit listedir.
+ * Bu veri, SettingsOptionList bileşeni tarafından render edilir ve kullanıcıyı ilgili ayar sayfalarına yönlendirir.
+ */
 export const ProfileSettingsOptionsList = [
     {
         id: 1,
@@ -76,10 +102,14 @@ export const ProfileSettingsOptionsList = [
         iconName: 'logout',
         type: 'MaterialCommunityIcons',
         title: 'logOut',
-        navigatePage: "null"
+        navigatePage: "Welcome"
     }
-]
+] as const;
 
+/**
+ * ThemeOptionsList: Uygulamanın tema (görünüm modu) ayarları sayfasında kullanıcılara sunulan tema seçeneklerini (Açık, Koyu, Varsayılan) tanımlayan listedir.
+ * Her bir tema için bir görsel (image), çeviri anahtarı (title) ve tema kodu (theme) içerir.
+ */
 export const ThemeOptionsList =
     [
         { id: 1, image: images.other.sun, title: 'lightMode', theme: "light" },
@@ -87,7 +117,10 @@ export const ThemeOptionsList =
         { id: 3, image: images.other.palette, title: 'defaultMode', theme: "default" }
     ]
 
-
+/**
+ * languages: Uygulamanın dil ayarları ekranında kullanıcıya sunulan tüm dil seçeneklerini (kodu, etiketi ve bayrak emojisi ile birlikte) içeren sabit listedir.
+ * Bu veri, i18n sisteminin dil değiştirme işlevselliği için kullanılır.
+ */
 export const languages = [
     { code: "tr", label: "Turkish", flag: "🇹🇷" },
     { code: "en", label: "English (US)", flag: "🇺🇸" },
@@ -103,6 +136,10 @@ export const languages = [
     { code: "it", label: "Italian", flag: "🇮🇹" }
 ]
 
+/**
+ * notificationSettingsOptions: Bildirim Ayarları sayfasında (NotificationSettingsPage) listelenen, her bir bildirim türünün (e-posta, push, yorum, teklif vb.) ayarlarını yönetmek için kullanılan sabit seçenek listesidir.
+ * Her bir seçenek, benzersiz anahtar (key), çeviri anahtarı (label) ve ilgili ikonu (icon) içerir.
+ */
 export const notificationSettingsOptions = [
     { key: "pushNotifications", label: 'generalNotifications', icon: "notifications" },
     { key: "emailNotifications", label: 'emailNotifications', icon: "mail" },
@@ -116,12 +153,20 @@ export const notificationSettingsOptions = [
     { key: "campaignCalls", label: 'receiveCallsRelatedCampaigns', icon: "call" }
 ]
 
+/**
+ * Faqs: Sıkça Sorulan Sorular (SSS) bölümünde (FaqSection) gösterilecek olan soru-cevap çiftlerini içeren listedir.
+ * Her bir nesne, sorunun çeviri anahtarını (q) ve cevabın çeviri anahtarını (a) içerir.
+ */
 export const Faqs = [
     { q: 'howToTrade', a: 'howToTradeDesc' },
     { q: 'problemSolution', a: 'problemSolutionDesc' },
     { q: 'isSafeTrade', a: 'isSafeTradeDesc' }
 ]
 
+/**
+ * recommenedList: Uygulama içinde kullanıcılara önerilen ürünleri veya favori listesi boşken gösterilen ürünleri temsil eden statik veri setidir.
+ * Her bir ürün için temel görsel, açıklama ve fiyat bilgisi (price) içerir.
+ */
 export const recommenedList = [
     { id: 1, image: images.other.gradient, description: "descriptiondescription descriptiosddn", price: 1881 },
     { id: 2, image: images.other.gradient, description: "description", price: 190 },
@@ -129,6 +174,10 @@ export const recommenedList = [
     { id: 4, image: images.other.gradient, description: "saf dfs sdf sdfsg", price: 1 }
 ]
 
+/**
+ * followingUsers: Kullanıcının takip ettiği kişileri temsil eden statik kullanıcı listesidir.
+ * Her bir öğe, kullanıcı kimliği (id), adı (name) ve avatar görseli (avatar) içerir. MyNetworkPage gibi alanlarda kullanılır.
+ */
 export const followingUsers = [
     { id: '1', name: 'Mücahit ASLANHAN', avatar: images.profile.defaultProfileImage },
     { id: '2', name: 'Nata Vega Ankara', avatar: images.profile.defaultProfileImage },
@@ -139,6 +188,10 @@ export const followingUsers = [
     { id: '7', name: 'asd Kullanıcısı', avatar: images.profile.defaultProfileImage }
 ]
 
+/**
+ * followerUsers: Kullanıcının takipçilerini temsil eden statik kullanıcı listesidir.
+ * Her bir öğe, kullanıcı kimliği (id), adı (name) ve avatar görseli (avatar) içerir. MyNetworkPage gibi alanlarda kullanılır.
+ */
 export const followerUsers = [
     { id: '1', name: 'otoplus ASLANHAN', avatar: images.profile.defaultProfileImage },
     { id: '2', name: 'Kullanıcısı Vega Ankara', avatar: images.profile.defaultProfileImage },
@@ -148,7 +201,10 @@ export const followerUsers = [
     { id: '6', name: 'Halil.', avatar: images.profile.defaultProfileImage },
 ]
 
-
+/**
+ * productList: Uygulamanın ana sayfasında (HomeScreen) veya kategori listelemelerinde gösterilen genişletilmiş ürün listesi için kullanılan statik veri setidir.
+ * Her bir ürün için görsel, açıklama, güncel fiyat (price), varsa eski fiyat (oldPrice), beğeni sayısı (likes) ve takas edilebilir olup olmadığı (swap) gibi detaylı bilgileri içerir.
+ */
 export const productList = [
     { id: 1, image: images.other.gradient, description: "descriptiondescription descriptiosddn", price: 1881, oldPrice: 0, likes: 0, swap: true },
     { id: 2, image: images.other.gradient, description: "description", price: 0, oldPrice: 10, likes: 3, swap: true },

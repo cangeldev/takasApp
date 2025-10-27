@@ -11,8 +11,12 @@ interface IAddAddressModalProps {
 }
 
 /**
- * AddAddressModal: Kullanıcıdan adres bilgilerini almayı sağlayan bir modal bileşenidir.
- * Alınan bilgiler, önce Redux Toolkit'e kaydedilir ve daha sonra veritabanına aktarılır.
+ * AddAddressModal: Kullanıcının yeni bir teslimat veya fatura adresi eklemesini sağlayan, tam ekran kaydırılabilir (ScrollView) ve klavye etkileşimini yönetebilen (KeyboardAvoidingView) modaldır.
+ *
+ * Gerekli tüm adres bileşenlerini (ad, soyad, telefon, sokak, şehir vb.) almak için 'AddressModalTextInput' bileşenlerini kullanır.
+ * Formun geçerliliğini kontrol eden (validateForm) ve başarılı olması durumunda verileri kaydetme (handleSave) aksiyonunu tetikleyen işlevselliğe sahiptir.
+ * Kapatma (close) ikonu ve modal dışına dokunma (TouchableWithoutFeedback) ile klavyeyi gizleme özelliği içerir.
+ * Adres kaydedildiğinde, verilerin Redux Toolkit'e ve ardından veritabanına aktarılması hedeflenir.
  */
 export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isModalVisible }) => {
 

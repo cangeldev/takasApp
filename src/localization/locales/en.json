@@ -112,6 +112,7 @@
         "signText": "Hello Register to get started!",
         "confirmPassword": "Confirm password",
         "alreadyHaveAnAccount": "Already have an account",
-        "loginNow": "Login Now"
+        "loginNow": "Login Now",
+        "detailsText": "Add some more information for more relevant content and links."
     }
 }

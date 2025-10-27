@@ -13,12 +13,14 @@ const renderRecommenedProductItem = ({ item }: any) => (
     />
 )
 
-/*
-  Bu bileşen, kullanıcıya önerilen ürünlerin bir listesini sunar.
-  Ürünler, `recommenedList` adlı veri kaynağından alınır ve her ürün bir kart olarak gösterilir.
-  Ürünler yatay bir kaydırılabilir liste (`FlatList`) içinde sıralanır. Her bir ürün, `RecommenedProductCard` bileşeniyle görselleştirilir.
-  Başlık olarak "Sizi Beğenebileceğiniz Ürünler" metni görüntülenir ve kullanıcı, önerilen ürünleri kaydırarak keşfedebilir.
-*/
+/**
+ * RecommendedProductsSection: Kullanıcıya, ilgisini çekebilecek ürünlerin yatay olarak kaydırılabilir (horizontal FlatList) bir listesini sunan bölümdür.
+ *
+ * Başlık metni (productsYouMayLike) çeviri (i18n) desteklidir.
+ * Ürün verilerini `recommenedList` adlı kaynaktan alır.
+ * Her bir ürünü görselleştirmek için `RecommenedProductCard` bileşenini kullanır.
+ * Bu bölüm, favori listesi boşken (EmptyFavoritesContent) veya ana sayfa gibi keşfetme alanlarında kullanıcı etkileşimini artırmayı amaçlar.
+ */
 export const RecommendedProductsSection = () => {
     const styles = getStyles()
     const { t } = useTranslation()

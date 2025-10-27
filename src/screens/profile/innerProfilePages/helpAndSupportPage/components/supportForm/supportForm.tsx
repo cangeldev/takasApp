@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next'
 import getStyles from './supportForm.style'
 import { CustomButton } from 'components/commonComponents'
 
-/*
-  Bu bileşen, kullanıcıların destek talebi gönderebileceği bir iletişim formu sunar.
-  Kullanıcılar, adlarını ve mesajlarını girerek, destek ekibine e-posta yoluyla ulaşabilirler.
-  Formu göndermek için kullanıcıdan hem e-posta adresi hem de mesaj alanlarının doldurulması beklenir. 
-  Eğer herhangi bir alan boş bırakılırsa, kullanıcıya uyarı mesajı gösterilir.
-  E-posta gönderme işlemi, cihazın varsayılan e-posta istemcisiyle yapılır.
-*/
+/**
+ * SupportForm: Destek/İletişim (Support/Contact Page) sayfasında yer alan, kullanıcıların doğrudan destek ekibine e-posta göndermesini sağlayan etkileşimli iletişim formudur.
+ *
+ * Kullanıcının e-posta adresini ve destek talebini içeren mesajını girdiği iki ana TextInput alanını (email, message) içerir.
+ * 'handleSend' fonksiyonu ile formun gönderimi yönetilir; bu fonksiyon, zorunlu alanların (email, message) boş olup olmadığını kontrol eder (validateForm).
+ * Başarılı gönderim durumunda, cihazın varsayılan e-posta istemcisini kullanarak 'destek@takasapp.com' adresine, formdaki bilgileri içeren bir e-posta oluşturur (Linking.openURL).
+ */
 export const SupportForm = () => {
     const { t } = useTranslation()
     const styles = getStyles()

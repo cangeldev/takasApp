@@ -7,7 +7,13 @@ interface IProfileInfoCardProps {
     title: string
 }
 
-//ProfileStatsCard, bu card yapısı kullanıcının takip ve takipçilerin favorilerinin ve takas sayılarının görünmesi ve istenilen sayfaya ulaşması için tasarlanan yapıdır.
+/**
+ * ProfileStatsCard: Kullanıcı Profil Bilgisi (UserProfileInfo) bileşeninde kullanılan, kullanıcının tek bir uygulama içi istatistiğini (örneğin, takipçi sayısı, favori sayısı, takas sayısı) gösteren, küçük ve sade kart bileşenidir.
+ *
+ * Bileşen, sayıyı (count) büyük ve belirgin bir şekilde, ilgili istatistiğin adını (title) ise altında daha küçük bir metinle gösterir.
+ * Bu kartlar, genellikle üzerine tıklandığında kullanıcıyı ilgili listeleme sayfasına (örneğin, Takipçilerim listesine) yönlendirir (ancak bu işlevsellik burada tanımlanmamıştır).
+ * Performans için React.memo ile sarmalanmıştır.
+ */
 export const ProfileStatsCard = React.memo(({ count, title }: IProfileInfoCardProps) => {
     const style = getStyles()
 

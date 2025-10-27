@@ -10,9 +10,13 @@ interface ISimilarProductCard {
     image: ImageSourcePropType
 }
 
-/*
-  SimilarProductCard, SimilarProductsSection içindeki gösterilen ürüne benzer ürünleri listelerken kullanılacak bileşenlerin görüntülenmesi için kullanılan bileşendir.
-*/
+/**
+ * SimilarProductCard: Benzer Ürünler Bölümü (SimilarProductsSection) içinde listelenen tek bir ürünün görselleştirilmesi için kullanılan kart bileşenidir.
+ *
+ * Ürünün resmini, başlığını, konumunu ve fiyat bilgisini kompakt bir görünümde sunar.
+ * Kullanıcının ürünü doğrudan favorilerine ekleyebilmesi için bir favorileme düğmesi (isFavorite state'i ile yönetilir) içerir.
+ * Kartın tamamı tıklanabilir olup, genellikle ilgili ürünün detay sayfasına yönlendirme yapar.
+ */
 export const SimilarProductCard: FC<ISimilarProductCard> = ({ title, location, price, image }) => {
     const styles = getStyles()
     const [isFavorite, setIsFavorite] = useState<boolean>(false)

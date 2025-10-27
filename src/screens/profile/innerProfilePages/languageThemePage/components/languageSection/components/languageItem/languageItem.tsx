@@ -10,10 +10,13 @@ interface LanguageItemProps {
     onPress: (code: string) => void
 }
 
-/*
-  LanguageItem, kullanıcının istediği dili kullanması için seçim yapabildiği bir yardımcı bileşendir.
-  Bu bileşen, kullanıcıya dil seçeneklerini radio buton şeklinde listelerken aynı zamanda istedikleri dili seçip uygulama üzerinde kullanmalarına olanak tanır.
-*/
+/**
+ * LanguageItem: Dil Seçimi (LanguageSection) ekranında gösterilen, tek bir dil seçeneğini temsil eden etkileşimli liste öğesidir.
+ *
+ * Dilin bayrağını (flag), çevrilmiş adını (languageText) ve bir RadioButton içerir.
+ * RadioButton'ın durumu (checked/unchecked), global olarak seçili olan dil (selectedLanguage) ile öğenin kodunu (item.code) karşılaştırarak dinamik olarak belirlenir.
+ * Kullanıcının öğeye dokunması, uygulama dilini değiştirecek olan 'onPress' aksiyonunu tetikler.
+ */
 export const LanguageItem = ({ item, selectedLanguage, onPress }: LanguageItemProps) => {
     const styles = getStyles()
     const { t } = useTranslation()

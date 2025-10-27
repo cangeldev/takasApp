@@ -3,10 +3,12 @@ import { Divider } from 'components/commonComponents'
 import NoFavoriteInfoSection from '../noFavoriteInfoSection/noFavoriteInfoSection'
 import RecommendedProductsSection from '../recommendedProductsSection/recommendedProductsSection'
 
-/*
-  `EmptyFavoritesContent` bileşeni, kullanıcı favorilerine hiçbir ürün eklemediğinde gösterilen içeriktir.
-  Bu bileşen, kullanıcıya favorilere ürün eklemeyi teşvik etmek amacıyla önerilen ürünleri gösterir.
-*/
+/**
+ * EmptyFavoritesContent: Kullanıcının favori listesi boş olduğunda, FavoriteProductsSection bileşeninin içinde (ListEmptyComponent olarak) gösterilen özel içerik alanıdır.
+ *
+ * Kullanıcıya durumunu bildiren (NoFavoriteInfoSection) bir mesaj sunar ve hemen ardından favorilere ürün eklemesini teşvik etmek amacıyla RecommendedProductsSection bileşeni ile önerilen ürünleri görüntüler.
+ * Bu, kullanıcı etkileşimini artırmayı ve uygulama içinde gezinmeye devam etmeyi sağlamayı amaçlar.
+ */
 export const EmptyFavoritesContent = () => {
 
     return (

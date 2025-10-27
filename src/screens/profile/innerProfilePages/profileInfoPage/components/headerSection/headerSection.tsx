@@ -7,10 +7,14 @@ import ProfileImageSection from '../profileImageSection/profileImageSection'
 import MemberInfoSection from '../memberInfoSection/memberInfoSection'
 import { useNavigation } from '@react-navigation/native'
 
-/*
-  Bu bileşen, profil sayfasının üst kısmında yer alan başlık bölümünü oluşturur.
-  Arka plan olarak bir görsel kullanır, geri dönüş simgesi içerir ve kullanıcıya ait profil fotoğrafı ile üyelik bilgilerini göstermek için ilgili alt bileşenleri (`ProfileImageSection`, `MemberInfoSection`) barındırır.
-*/
+/**
+ * HeaderSection: Profil sayfasının en üst bölümünü oluşturan, görsel bir arka plan kullanan ve kullanıcının temel profil bilgilerini sergileyen bileşendir.
+ *
+ * Arka planda bir görsel (ImageBackground) kullanarak estetik bir görünüm sağlar.
+ * Önceki ekrana dönme işlevini sağlayan bir geri butonu (Icon) içerir.
+ * Ayrıca, kullanıcının profil fotoğrafını (ProfileImageSection) ve üyelik ad, soyad/kullanıcı adı gibi bilgileri (MemberInfoSection) göstermek için alt bileşenleri organize eder.
+ * Bu bölüm, kullanıcının profile ilk bakışta kendisini tanımlamasını amaçlar.
+ */
 export const HeaderSection = () => {
     const styles = getStyles()
     const navigation = useNavigation()

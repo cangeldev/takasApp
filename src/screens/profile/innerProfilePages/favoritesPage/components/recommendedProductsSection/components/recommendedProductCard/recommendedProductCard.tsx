@@ -11,12 +11,13 @@ interface IRecommenedProductCardProps {
     description: string
 }
 
-/*
-  Bu bileşen, kullanıcının daha önce incelediği veya favorilerine ekleyebileceği ürünleri göstermek için kullanılan bir kart yapısıdır.
-  Her kart, ürünün görseli, fiyatı, açıklaması ve "Teklif Yap" metni ile birlikte bir kalp simgesi (favori butonu) içerir.
-  Kullanıcı, ürünü favorilerine eklemek için kalp simgesine tıklayabilir; simge, favori durumu değiştikçe güncellenir.
-  `isFavorite` durumu, kullanıcının ürünü favorilerine ekleyip eklemediğini takip eder.
-*/
+/**
+ * RecommenedProductCard: Önerilen Ürünler Bölümü (RecommendedProductsSection) içinde kullanılan, tek bir ürünü kompakt bir kart formatında gösteren bileşendir.
+ *
+ * Ürünün görselini (image), fiyatını (price), kısa açıklamasını (description) ve kullanıcıya "Teklif Yap" (makeOffer) metnini görüntüler.
+ * Kart, kullanıcının ürünü favorilere ekleyip kaldırmasını sağlayan etkileşimli bir kalp simgesi (Icon) içerir.
+ * isFavorite state'i ile favori durumu takip edilir ve ikonun görünümü dinamik olarak güncellenir (heart/heart-outline).
+ */
 export const RecommenedProductCard: FC<IRecommenedProductCardProps> = ({ image, price, description }) => {
     const styles = getStyles()
     const { t } = useTranslation()

@@ -9,9 +9,12 @@ interface INotificationSettingsCardProps {
     label: string
 }
 
-/*
-  NotificationSettingsCard, bu card yapısı kullanıcının  bildirim ayarlarını görmesi ve istediği ayarları açıp kapatması için tasarlanan yapıdır.
-*/
+/**
+ * NotificationSettingsCard: Ayarlar sayfasında (Settings Page), kullanıcıya belirli bir bildirim türünü (örneğin, "Yeni Mesajlar", "Promosyonlar" vb.) etkinleştirme veya devre dışı bırakma imkanı sunan standartlaştırılmış kart bileşenidir.
+ *
+ * Bildirim türünü temsil eden bir ikon (icon), çeviri destekli bir başlık metni (label) ve bu ayarın durumunu değiştirmek için bir Switch bileşeni içerir.
+ * Kullanıcının bildirim tercihlerini kolayca yönetmesi için tasarlanmıştır.
+ */
 
 //iconları renkleri boyutu switch rengi diğer ayarlara tekrar bak !!
 export const NotificationSettingsCard: FC<INotificationSettingsCardProps> = ({ icon, label }) => {

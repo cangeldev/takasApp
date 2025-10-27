@@ -5,11 +5,16 @@ import images from 'assets/index'
 import getStyles from './activitySummary.style'
 import { ProfileActivitySummaryCard } from './components/profileActivitySummaryCard/profileActivitySummaryCard'
 
-/*
-  `ActivitySummary` bileşeni, kullanıcının profil etkinliklerini gösteren bir bileşendir. Bu bileşen, kullanıcının 
-  aldığı, verdiği ve bekleyen takas işlemleri gibi etkinliklerini özetleyen kartlar içerir. 
-  Kullanıcı, burada geçmiş takasları, bekleyen takasları ve yaptığı diğer aktiviteleri hızlıca görebilir.
-*/
+/**
+ * ActivitySummary: Profil Ekranında (ProfileScreen) yer alan, kullanıcının uygulama içindeki takas ve etkileşim aktivitelerinin (alınan, bekleyen, verilen takaslar gibi) sayısal özetini sunan yatay bileşen grubudur.
+ *
+ * Üç adet ProfileActivitySummaryCard alt bileşenini içerir:
+ * 1. "received" (Alınan Takaslar)
+ * 2. "pendingExchanges" (Bekleyen Takaslar)
+ * 3. "gave" (Verilen Takaslar)
+ *
+ * Her kart, çeviri destekli bir başlık (title) ve ilgili aktiviteyi temsil eden bir görsel (image) ile birlikte görüntülenir. Kartlar dikey bölücülerle (cardDivider) ayrılmıştır. Bu bölüm, kullanıcının uygulama performansını hızlıca gözden geçirmesini sağlar.
+ */
 export const ActivitySummary = () => {
     const styles = getStyles()
     const { t } = useTranslation()

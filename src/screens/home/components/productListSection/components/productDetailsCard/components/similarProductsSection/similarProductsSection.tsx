@@ -5,6 +5,7 @@ import images from 'assets/index'
 import { useTranslation } from 'react-i18next'
 import { SimilarProductCard } from './components'
 
+//Test için kaldır ileride
 const products = [
     {
         id: '1',
@@ -29,9 +30,13 @@ const products = [
     },
 ]
 
-/*
-  SimilarProductsSection, ProductDetailsCard içindeki gösterilen ürüne benzer ürünleri listelemek için kullanılan bileşendir.
-*/
+/**
+ * SimilarProductsSection: Ürün Detay sayfasının (ProductDetailsCard) alt kısmında, mevcut ürüne benzer olabilecek diğer ürünleri yatay olarak listeler.
+ *
+ * Kullanıcının ilgisini çekebilecek alternatif ürünleri (kamp feneri, çadır vb. örnek verilerle) gösterir.
+ * FlatList bileşeni ve SimilarProductCard kullanılarak her bir benzer ürünün fiyat, başlık ve konum bilgileri sunulur.
+ * Bu, kullanıcı deneyimini zenginleştirerek diğer ilanlara kolay erişim sağlar.
+ */
 export const SimilarProductsSection = () => {
     const styles = getStyles()
     const { t } = useTranslation()

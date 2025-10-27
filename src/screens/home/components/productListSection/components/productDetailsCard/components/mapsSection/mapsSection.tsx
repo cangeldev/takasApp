@@ -3,9 +3,12 @@ import React from 'react'
 import MapView, { Marker } from 'react-native-maps'
 import getStyles from './mapsSection.style'
 
-/*
-  MapsSection, Bu bileşen ürünün konumunun haritada nerde olduğunun görüntülenebilmesi için ve istenildiği taktirde rota oluşturulabilmesi için kullanılan bileşendir.
-*/
+/**
+ * MapsSection: Ürünün ilan konumunu bir harita üzerinde görselleştiren ve kullanıcının bu konuma erişimi/yönlendirmeyi başlatmasını sağlayan bileşendir.
+ *
+ * MapView bileşenini kullanarak belirtilen koordinatları (Marker) harita üzerinde işaretler.
+ * Kullanıcıya, ürünün yaklaşık bulunduğu yeri görme ve potansiyel olarak harita uygulamaları aracılığıyla rota oluşturma imkanı sunar.
+ */
 export const MapsSection = () => {
     const styles = getStyles()
 

@@ -1,29 +1,35 @@
 import { TouchableOpacity, Text } from 'react-native'
 import React, { FC } from 'react'
-import { useNavigation } from '@react-navigation/native'
 import getStyles from './profileSettingOptionCard.style'
 import { Icon } from 'components/commonComponents'
 import { useTranslation } from 'react-i18next'
+import { iconType, RootStackParamList } from 'utils/types'
+import { useAppNavigation } from 'hooks/useAppNavigation'
 
 interface IProfileSettingOptionCardProps {
     title: string
-    icontype: any
+    icontype: iconType
     iconName: string
-    navigatePage?: string
+    navigatePage?: keyof RootStackParamList
 }
 
-/*
-  `ProfileSettingOptionCard`, kullanıcıların ayar sayfalarına kolayca yönlendirilebileceği bir kart bileşenidir. 
-  Bu bileşen, her bir ayar seçeneği için bir ikon, başlık ve yönlendirme işlevi sunar. 
-  Kullanıcılar kartlara tıklayarak ilgili ayar sayfasına ulaşabilirler.
-*/
+/**
+ * ProfileSettingOptionCard: Ayarlar Seçeneği Listesi (SettingsOptionList) içinde kullanılan, tek bir ayar başlığını ve ilgili navigasyon aksiyonunu içeren etkileşimli kart bileşenidir.
+ *
+ * Kullanıcının, karta dokunarak (TouchableOpacity) uygulamadaki farklı ayar sayfalarına (örneğin, Kişisel Bilgiler, Bildirimler) geçiş yapmasını sağlar.
+ *
+ * Bileşen içeriği:
+ * 1. İkon: Ayar türünü temsil eden bir ikon (iconName, icontype).
+ * 2. Başlık: Çeviri destekli ayar başlığı (t(title)).
+ * 3. Yönlendirme İkonu: Kullanıcıya aksiyonun bir navigasyon olduğunu belirten sağ ok ikonu.
+ */
 export const ProfileSettingOptionCard: FC<IProfileSettingOptionCardProps> = ({ title, iconName, icontype, navigatePage }) => {
-    const navigation = useNavigation<any>()
+    const navigation = useAppNavigation()
     const style = getStyles()
     const { t } = useTranslation()
 
     const onPress = () => {
-        navigation.navigate(navigatePage)
+        navigation.navigate(navigatePage as never)
     }
 
     return (

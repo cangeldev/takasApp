@@ -4,11 +4,13 @@ import getStyles from './profileInfoPage.style'
 import { AppStatusBar } from 'components/commonComponents'
 import { HeaderSection, InputSection, NameVisibilitySection } from './components'
 
-/*
-  PersonInformationPage, kullanıcının kişisel bilgilerinin görüntülendiği ve çeşitli ayarların yapıldığı bir ekran bileşenidir. 
-  Bu ekran, kullanıcıya profil bilgilerini gösterirken, aynı zamanda profil bilgilerini güncelleme fırsatı sunar.
-  kullanıcıların profilini güncelleyebilmesi, isterlerse şifre değişikliği yapabilmeleri ve diğer kullanıcılar tarafından görüntülenecek kullanıcı adını seçebilecekleri bir radio buton bölümü bulunur.
-*/
+/**
+ * ProfileInfoPage: Kullanıcının temel kişisel bilgilerini görüntülediği ve güncellediği ayarlar ekranıdır.
+ *
+ * Ad, e-posta, telefon gibi bilgilerin girildiği InputSection, şifre değişikliği opsiyonları ve
+ * diğer kullanıcıların göreceği isim/kullanıcı adı görünürlük ayarlarının yapıldığı NameVisibilitySection bileşenlerini içerir.
+ * Kullanıcı bu sayfa üzerinden profilini yönetir ve günceller.
+ */
 export const ProfileInfoPage = () => {
   const styles = getStyles()
 
