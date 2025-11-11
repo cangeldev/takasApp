@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { View, Text, Image, ImageSourcePropType, TouchableWithoutFeedback } from 'react-native'
 import { Icon } from 'components/commonComponents'
 import getStyles from './productCard.style'
@@ -35,22 +35,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     const [isFavorite, setIsFavorite] = useState(false)
     const [currentLikes, setCurrentLikes] = useState(likes)
 
-    const toggleFavorite = () => {
+    const toggleFavorite = useCallback(() => {
         setIsFavorite(prev => {
             setCurrentLikes(prevLikes => prevLikes + (prev ? -1 : 1))
             return !prev
         })
-    }
+    }, [])
 
-    const renderPrice = () =>
-        price === 0 ? (
-            <Text style={styles.newPrice}>{t('onlyTradeOffers')}</Text>
-        ) : (
+    const priceContent = useMemo(() => {
+        if (price === 0) {
+            return <Text style={styles.newPrice}>{t('onlyTradeOffers')}</Text>
+        }
+        return (
             <View style={styles.priceView}>
                 {oldPrice !== 0 && <Text style={styles.oldPrice}>{oldPrice} TL</Text>}
                 <Text style={styles.newPrice}>{price} TL</Text>
             </View>
         )
+    }, [price, oldPrice, t])
 
     return (
         <TouchableWithoutFeedback onPress={() => navigation.navigate("ProductDetailsCard")}>
@@ -69,7 +71,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     <Image source={swap ? images.home.swap : images.home.cargo} style={styles.badgeIcon} />
                 </View>
                 <Text numberOfLines={1} style={styles.productTitle}>{title}</Text>
-                <View style={styles.priceContainer}>{renderPrice()}</View>
+                <View style={styles.priceContainer}>{priceContent}</View>
             </View>
         </TouchableWithoutFeedback>
     )

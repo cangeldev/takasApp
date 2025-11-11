@@ -2,12 +2,13 @@ import { Text, TextInput, Pressable } from 'react-native'
 import React, { FC } from 'react'
 import getStyles from './profileInfoPageTxtInput.style'
 import { Icon } from 'components/commonComponents'
+import { iconType } from 'utils/types'
 
 interface IProfileInfoPageTxtInputProps {
     title: string
-    placeHolder?: string,
-    iconName?: string,
-    iconType?: any,
+    placeHolder?: string
+    iconName?: string
+    iconType?: iconType
     editable?: boolean
     multiline?: boolean
 }
@@ -33,7 +34,7 @@ export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ mul
             <Text style={style.title}>
                 {title}
             </Text>
-            {iconName && <Icon name={iconName} type={iconType} style={style.icon} />}
+            {iconName && iconType && <Icon name={iconName} type={iconType} style={style.icon} />}
         </Pressable>
     )
 }

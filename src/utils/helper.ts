@@ -1,4 +1,6 @@
 import images from 'assets/index'
+import { Language } from './types'
+import { ImageSourcePropType } from 'react-native'
 
 /**
  * MemberInfoTexts: Üye profilinde (örneğin, UserProfileInfo bileşeninde) kullanıcının doğrulama durumu ve üyelik süresi gibi temel bilgileri listelemek için kullanılan sabit metin ve ikon listesidir.
@@ -110,18 +112,31 @@ export const ProfileSettingsOptionsList = [
  * ThemeOptionsList: Uygulamanın tema (görünüm modu) ayarları sayfasında kullanıcılara sunulan tema seçeneklerini (Açık, Koyu, Varsayılan) tanımlayan listedir.
  * Her bir tema için bir görsel (image), çeviri anahtarı (title) ve tema kodu (theme) içerir.
  */
-export const ThemeOptionsList =
-    [
-        { id: 1, image: images.other.sun, title: 'lightMode', theme: "light" },
-        { id: 2, image: images.other.moon, title: 'darkMode', theme: "dark" },
-        { id: 3, image: images.other.palette, title: 'defaultMode', theme: "default" }
-    ]
+export type ThemeType = 'light' | 'dark' | 'default'
+
+export interface ThemeOption {
+    id: number
+    image: ImageSourcePropType
+    title: string
+    theme: ThemeType
+}
+
+export const ThemeOptionsList: ThemeOption[] = [
+    { id: 1, image: images.other.sun, title: 'lightMode', theme: "light" },
+    { id: 2, image: images.other.moon, title: 'darkMode', theme: "dark" },
+    { id: 3, image: images.other.palette, title: 'defaultMode', theme: "default" }
+]
 
 /**
  * languages: Uygulamanın dil ayarları ekranında kullanıcıya sunulan tüm dil seçeneklerini (kodu, etiketi ve bayrak emojisi ile birlikte) içeren sabit listedir.
  * Bu veri, i18n sisteminin dil değiştirme işlevselliği için kullanılır.
  */
-export const languages = [
+export interface LanguageOption {
+    code: Language
+    label: string
+    flag: string
+}
+export const languages: LanguageOption[] = [
     { code: "tr", label: "Turkish", flag: "🇹🇷" },
     { code: "en", label: "English (US)", flag: "🇺🇸" },
     { code: "uk", label: "English (UK)", flag: "🇬🇧" },

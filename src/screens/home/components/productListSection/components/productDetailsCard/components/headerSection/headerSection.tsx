@@ -2,7 +2,7 @@ import { View } from 'react-native'
 import React, { FC } from 'react'
 import { Icon } from 'components/commonComponents'
 import getStyles from './headerSection.style'
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from 'hooks/useAppNavigation'
 
 interface IHeaderSection {
     toggleFavorite: () => void
@@ -17,7 +17,7 @@ interface IHeaderSection {
  */
 export const HeaderSection: FC<IHeaderSection> = ({ isFavorite, toggleFavorite }) => {
 
-    const navigation = useNavigation()
+    const navigation = useAppNavigation()
     const styles = getStyles()
 
     return (

@@ -1,6 +1,11 @@
-export type Theme = 'light' | 'dark'
+// Uygulamanın kullanacağı tema seçenekleri
+export type Theme = 'light' | 'dark' | 'default'
 
+// Uygulamanın kullanacağı dil seçenekleri
 export type Language = 'tr' | 'en' | 'uk' | 'fr' | 'de' | 'jp' | 'kr' | 'pt' | 'es' | 'ar' | 'cn' | 'it'
+
+// userName dizisinin öğe tipi
+export type UserNameOption = { label: string }
 
 export type RootStackParamList = {
     // Auth & Giriş Ekranları

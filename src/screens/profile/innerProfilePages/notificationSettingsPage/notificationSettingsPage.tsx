@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, FlatList } from 'react-native'
+import React, { useCallback } from 'react'
+import { View, FlatList, ListRenderItem } from 'react-native'
 import { notificationSettingsOptions } from 'utils/helper'
 import getStyles from './notificationSettingsPage.style'
 import { NotificationSettingsCard } from './components/notificationSettingsCard/notificationSettingsCard'
@@ -11,10 +11,25 @@ import { NotificationSettingsCard } from './components/notificationSettingsCard/
  * Kullanıcı, her bir bildirim ayarını NotificationSettingsCard bileşeni aracılığıyla kolayca açıp kapatabilir
  * ve böylece hangi bildirimleri almak istediğini kişiselleştirebilir.
  */
+
+type notificationSettings = {
+    key: string
+    icon: string
+    label: string
+}
+
 export const NotificationSettingsPage = () => {
 
-    const renderItem = ({ item }: any) => <NotificationSettingsCard icon={item.icon} label={item.label} />
     const styles = getStyles()
+
+    const renderItem: ListRenderItem<notificationSettings> = useCallback(
+        ({ item }) => (
+            <NotificationSettingsCard
+                icon={item.icon}
+                label={item.label}
+            />
+        ), []
+    )
 
     return (
         <View style={styles.container}>

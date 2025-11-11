@@ -29,7 +29,7 @@ export const LanguageSection = () => {
                 data={languages}
                 keyExtractor={(item) => item.code}
                 renderItem={({ item }) => (
-                    <LanguageItem item={item} selectedLanguage={selectedLanguage} onPress={(language: any) => handleLanguageChange(language, dispatch)} />
+                    <LanguageItem item={item} selectedLanguage={selectedLanguage} onPress={(language) => handleLanguageChange(language, dispatch)} />
                 )}
             />
         </View>

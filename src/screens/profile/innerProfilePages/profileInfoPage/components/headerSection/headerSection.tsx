@@ -5,7 +5,7 @@ import images from 'assets/index'
 import getStyles from './headerSection.style'
 import ProfileImageSection from '../profileImageSection/profileImageSection'
 import MemberInfoSection from '../memberInfoSection/memberInfoSection'
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from 'hooks/useAppNavigation'
 
 /**
  * HeaderSection: Profil sayfasının en üst bölümünü oluşturan, görsel bir arka plan kullanan ve kullanıcının temel profil bilgilerini sergileyen bileşendir.
@@ -17,7 +17,7 @@ import { useNavigation } from '@react-navigation/native'
  */
 export const HeaderSection = () => {
     const styles = getStyles()
-    const navigation = useNavigation()
+    const navigation = useAppNavigation()
     
     return (
         <ImageBackground source={images.other.gradient} style={styles.headerBackground}>

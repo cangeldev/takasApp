@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { ImageSourcePropType } from 'react-native'
+import { ImageSourcePropType, StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { HomeScreen, MyAdsScreen, ProductAddScreen, ProfileScreen, SearchScreen } from 'screens/index'
 import { useTheme } from 'hooks/useTheme'
@@ -18,13 +18,12 @@ const Tab = createBottomTabNavigator<RootTabParamList>()
  */
 interface TabConfig {
   name: keyof RootTabParamList
-  component: React.ComponentType<any>
+  component: React.ComponentType<{}>
   icon: [ImageSourcePropType, ImageSourcePropType]
   size?: number
   isTinted?: boolean
 }
-
-const tabs: TabConfig[] = [
+const TABS: TabConfig[] = [
   { name: "Home", component: HomeScreen, icon: [images.icons.homeInactive, images.icons.home] },
   { name: "Search", component: SearchScreen, icon: [images.icons.search, images.icons.search], isTinted: true },
   { name: "ProductAdd", component: ProductAddScreen, icon: [images.icons.plus, images.icons.plus], size: 34, isTinted: true },
@@ -46,11 +45,16 @@ const renderIcon =
 export const AppTabs = () => {
   const theme = useTheme()
 
-  const tabBarStyle = useMemo(() => ({
-    paddingTop: 5,
-    backgroundColor: theme.backgroundColor
-  }), [theme.backgroundColor])
+  const baseTabBarStyle = StyleSheet.create({
+    tabBar: {
+      paddingTop: 5
+    }
+  })
 
+  const tabBarStyle = useMemo(() => [
+    baseTabBarStyle.tabBar,
+    { backgroundColor: theme.backgroundColor }
+  ], [theme.backgroundColor])
   return (
     <Tab.Navigator
       detachInactiveScreens={true}
@@ -59,7 +63,7 @@ export const AppTabs = () => {
         tabBarShowLabel: false,
         tabBarStyle
       }}>
-      {tabs.map(({ name, component, icon, size = 24, isTinted }) => (
+      {TABS.map(({ name, component, icon, size = 24, isTinted }) => (
         <Tab.Screen
           key={name}
           name={name}

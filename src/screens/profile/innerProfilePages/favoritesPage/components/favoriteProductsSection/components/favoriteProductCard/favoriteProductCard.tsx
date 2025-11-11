@@ -1,11 +1,11 @@
 import { View, Text, Image, ImageSourcePropType } from 'react-native'
-import React, { FC, useState } from 'react'
+import React, { FC, useCallback, useState } from 'react'
 import getStyles from './favoriteProductCard.style'
 import { Icon } from 'components/commonComponents'
 
 interface IFavoriteProductCardProps {
     image: ImageSourcePropType
-    price: string
+    price: number
     description: string
     address: string
 }
@@ -21,10 +21,9 @@ export const FavoriteProductCard: FC<IFavoriteProductCardProps> = ({ image, pric
     const styles = getStyles()
     const [isFavorite, setIsFavorite] = useState(true)
 
-    const toggleFavorite = () => {
-        setIsFavorite(!isFavorite)
-    }
-
+    const toggleFavorite = useCallback(() => {
+        setIsFavorite(prev => !prev)
+    }, [])
     return (
         <View style={styles.cardContainer}>
             <Image source={image} style={styles.productImage} />

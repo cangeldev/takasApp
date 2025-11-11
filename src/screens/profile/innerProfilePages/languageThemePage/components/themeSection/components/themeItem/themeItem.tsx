@@ -3,11 +3,13 @@ import { Text, TouchableOpacity, Image, ImageSourcePropType } from 'react-native
 import { RadioButton } from 'react-native-paper'
 import getStyles from './themeItem.style'
 import { useTranslation } from 'react-i18next'
+import { ThemeOption, ThemeType } from 'utils/helper'
+
 
 interface ThemeItemProps {
-    item: { theme: string, title: string, image: ImageSourcePropType }
-    selectedTheme: string
-    onPress: (theme: string) => void
+    item: ThemeOption
+    selectedTheme: ThemeType
+    onPress: (theme: ThemeType) => void
 }
 
 /**

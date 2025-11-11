@@ -7,7 +7,7 @@ import { ImageSourcePropType } from 'react-native'
 
 interface IRecommenedProductCardProps {
     image: ImageSourcePropType
-    price: string
+    price: number
     description: string
 }
 

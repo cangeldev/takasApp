@@ -3,11 +3,13 @@ import { Text, TouchableOpacity } from 'react-native'
 import { RadioButton } from 'react-native-paper'
 import getStyles from './languageItem.style'
 import { useTranslation } from 'react-i18next'
+import { LanguageOption } from 'utils/helper'
+import { Language } from 'utils/types'
 
 interface LanguageItemProps {
-    item: { code: string, label: string, flag: string }
-    selectedLanguage: string
-    onPress: (code: string) => void
+  item: LanguageOption
+  selectedLanguage: Language
+  onPress: (code: Language) => void
 }
 
 /**

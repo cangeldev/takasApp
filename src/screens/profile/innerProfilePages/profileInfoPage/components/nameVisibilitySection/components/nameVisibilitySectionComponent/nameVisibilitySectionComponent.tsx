@@ -3,6 +3,7 @@ import RadioButtonRN from 'radio-buttons-react-native'
 import { colors } from 'assets/colors/colors'
 import getStyles from './nameVisibilitySectionComponent.style'
 import { userName } from 'utils/helper'
+import { UserNameOption } from 'utils/types'
 
 /**
  * NameVisibilitySectionComponent: Kullanıcının, profilinde veya ilanlarında gösterilecek isim formatını (örneğin, "Ad Soyad" veya "Kullanıcı Adı") seçmesini sağlayan özel bir radyo buton grubudur.
@@ -11,8 +12,13 @@ import { userName } from 'utils/helper'
  * Kullanıcı seçim yaptığında (selectedBtn), ilgili bilgiyi konsola loglar (gerçek uygulamada bu, Redux'a kaydedilmelidir).
  * Bu bileşen, isim görünürlüğü gizlilik ayarının ana etkileşim noktasını oluşturur.
  */
+
 export const NameVisibilitySectionComponent = () => {
     const style = getStyles()
+
+    const handleSelection = (selectedOption: UserNameOption) => {
+        console.log(selectedOption)
+    }
 
     return (
         <RadioButtonRN
@@ -24,7 +30,7 @@ export const NameVisibilitySectionComponent = () => {
             deactiveColor={colors.tab.inactive}
             boxStyle={style.boxStyle}
             data={userName}
-            selectedBtn={(e: any) => console.log(e)}
+            selectedBtn={handleSelection}
         />
     )
 }

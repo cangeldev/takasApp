@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, FlatList, View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import getStyles from './themeSection.style'
-import { ThemeOptionsList } from 'utils/helper'
+import { ThemeOptionsList, ThemeType } from 'utils/helper'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store/store'
 import { handleThemeChange } from 'theme/theme'
@@ -22,6 +22,9 @@ export const ThemeSection = () => {
     const selectedTheme = useSelector((state: RootState) => state.theme.theme)
     const dispatch = useDispatch()
 
+    const onThemePress = (theme: ThemeType) => {
+        handleThemeChange(theme, dispatch)
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.sectionTitle}>{t('themeSelection')}</Text>
@@ -30,7 +33,11 @@ export const ThemeSection = () => {
                 data={ThemeOptionsList}
                 keyExtractor={(item) => item.theme}
                 renderItem={({ item }) => (
-                    <ThemeItem item={item} selectedTheme={selectedTheme} onPress={(theme: any) => handleThemeChange(theme, dispatch)} />
+                    <ThemeItem
+                        item={item}
+                        selectedTheme={selectedTheme}
+                        onPress={onThemePress}
+                    />
                 )}
             />
         </View>

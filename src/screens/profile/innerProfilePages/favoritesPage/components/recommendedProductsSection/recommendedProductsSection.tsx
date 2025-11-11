@@ -1,18 +1,25 @@
-import React from 'react'
-import { FlatList, Text, View } from 'react-native'
+import React, { useCallback } from 'react'
+import { FlatList, ImageSourcePropType, ListRenderItem, Text, View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import { recommenedList } from 'utils/helper'
 import getStyles from './recommendedProductsSection.style'
 import { RecommenedProductCard } from './components/recommendedProductCard/recommendedProductCard'
 
-const renderRecommenedProductItem = ({ item }: any) => (
-    <RecommenedProductCard
-        description={item.description}
-        image={item.image}
-        price={item.price}
-    />
+type Product = {
+    id: number
+    description: string
+    image: ImageSourcePropType
+    price: number
+}
+const renderRecommenedProductItem: ListRenderItem<Product> = useCallback(
+    ({ item }) => (
+        <RecommenedProductCard
+            description={item.description}
+            image={item.image}
+            price={item.price}
+        />
+    ), []
 )
-
 /**
  * RecommendedProductsSection: Kullanıcıya, ilgisini çekebilecek ürünlerin yatay olarak kaydırılabilir (horizontal FlatList) bir listesini sunan bölümdür.
  *
