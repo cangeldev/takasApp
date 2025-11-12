@@ -12,7 +12,8 @@
         "localization/*": ["src/localization/*"],
         "store/*": ["src/store/*"],
         "hooks/*": ["src/hooks/*"],
-        "theme/*": ["src/theme/*"]
+        "theme/*": ["src/theme/*"],
+        "api/*": ["src/api/*"]
       }
     }
 }
