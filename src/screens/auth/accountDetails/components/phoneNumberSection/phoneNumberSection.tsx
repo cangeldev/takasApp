@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { PhoneInput, isValidNumber } from 'react-native-phone-entry'
+import { PhoneInput  } from 'react-native-phone-entry'
 import { Country, CountryCode } from 'react-native-country-picker-modal'
 import { LogBox } from 'react-native'
 import getStyles from './phoneNumberSection.style'
+import { useDispatch } from 'react-redux'
+import { setUserInfo } from 'store/slices/userSlice'
 
 LogBox.ignoreLogs([
     'Support for defaultProps will be removed from function components'
@@ -16,6 +18,7 @@ LogBox.ignoreLogs([
  */
 export const PhoneNumberSection = () => {
     const [countryCode, setCountryCode] = useState<CountryCode>('TR')
+    const dispatch = useDispatch()
     const styles = getStyles()
     return (
         <PhoneInput
@@ -25,12 +28,7 @@ export const PhoneNumberSection = () => {
                 phoneNumber: '+90',
             }}
             onChangeText={(text) =>
-                console.log(
-                    'Phone number:',
-                    text,
-                    'isValidNumber:',
-                    isValidNumber(text, countryCode)
-                )
+                dispatch(setUserInfo({ phoneNumber: text }))
             }
             onChangeCountry={(country: Country) => {
                 console.log('Country:', country)

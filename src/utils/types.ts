@@ -4,6 +4,19 @@ export type Theme = 'light' | 'dark' | 'default'
 // Uygulamanın kullanacağı dil seçenekleri
 export type Language = 'tr' | 'en' | 'uk' | 'fr' | 'de' | 'jp' | 'kr' | 'pt' | 'es' | 'ar' | 'cn' | 'it'
 
+// kayıt olan kullanıcıların bilgileri 
+export type UserInfo = {
+    email: string,
+    password: string,
+    username: string,
+    name: string,
+    surname: string,
+    phoneNumber: string,
+    city: string,
+    district: string,
+    profileImage: string
+}
+
 // userName dizisinin öğe tipi
 export type UserNameOption = { label: string }
 
