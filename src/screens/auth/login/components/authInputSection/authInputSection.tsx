@@ -21,18 +21,17 @@ export const AuthInputSection = () => {
     const navigation = useAppNavigation()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    
     const handleLogin = async () => {
         try {
-            const { token, user } = await loginUser(email, password);
-            Alert.alert("Giriş başarılı", `Hoş geldin ${user.name || user.email}`)
-            navigation.navigate("AppTabs");
+            const { token, user } = await loginUser({ email, password })
+            Alert.alert('Giriş başarılı', `Hoş geldin ${user.name || user.email}`)
+            navigation.navigate('AppTabs')
             console.log(token)
         } catch (error: any) {
-            Alert.alert("Hata", error.response?.data?.message || "Giriş başarısız")
+            Alert.alert('Hata', error.message || 'Giriş başarısız')
         }
     }
-    
     return (
         <View>
             <AuthInput placeholder="enterYourEmail" onInputChange={setEmail} />

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { PhoneInput  } from 'react-native-phone-entry'
-import { Country, CountryCode } from 'react-native-country-picker-modal'
 import { LogBox } from 'react-native'
 import getStyles from './phoneNumberSection.style'
 import { useDispatch } from 'react-redux'
@@ -17,7 +16,6 @@ LogBox.ignoreLogs([
  * Varsayılan ülke kodu olarak 'TR' (Türkiye) ayarlanmıştır ve kullanıcı girişi sırasında numaranın geçerliliğini anlık olarak denetler.
  */
 export const PhoneNumberSection = () => {
-    const [countryCode, setCountryCode] = useState<CountryCode>('TR')
     const dispatch = useDispatch()
     const styles = getStyles()
     return (
@@ -30,10 +28,6 @@ export const PhoneNumberSection = () => {
             onChangeText={(text) =>
                 dispatch(setUserInfo({ phoneNumber: text }))
             }
-            onChangeCountry={(country: Country) => {
-                console.log('Country:', country)
-                setCountryCode(country.cca2 as CountryCode)
-            }}
             theme={{
                 containerStyle: styles.phoneContainer
             }}

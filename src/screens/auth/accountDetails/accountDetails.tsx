@@ -14,34 +14,60 @@ import { registerUser } from 'api/authService'
  * Kullanıcı Bilgileri, Telefon Numarası ve Adres Bilgileri gibi alt bileşenleri bir araya getirerek kayıt işleminin
  * tamamlanmasını sağlayan ana arayüzdür. Başarılı kayıt sonrası ana sekmeler navigasyonuna (AppTabs) yönlendirme yapar.
  */
+
 export const AccountDetails = () => {
     const styles = getStyles()
     const navigation = useAppNavigation()
     const userInfo = useSelector((state: RootState) => state.userInfo)
 
+
     const handleRegister = async () => {
+        if (
+            !userInfo.username ||
+            !userInfo.name ||
+            !userInfo.surname ||
+            !userInfo.phoneNumber ||
+            !userInfo.city ||
+            !userInfo.district
+        ) {
+            Alert.alert('Uyarı', 'Lütfen eksik bilgilerinizi giriniz.')
+            return
+        }
+
         try {
-            if (!userInfo.username || !userInfo.name || !userInfo.surname || !userInfo.phoneNumber || !userInfo.city || !userInfo.district) {
-                Alert.alert("Uyarı", "Lütfen eksik bilgilerinizi giriniz.")
-                return
-            }
-            const { token, user } = await registerUser(userInfo.email, userInfo.password, userInfo.username, userInfo.name, userInfo.surname, userInfo.phoneNumber, userInfo.city, userInfo.district,);
-            console.log(token)
-               navigation.reset({
-                            index: 0,
-                            routes: [{ name: 'AppTabs' }],
-                        })
+            await registerUser({
+                email: userInfo.email,
+                password: userInfo.password,
+                username: userInfo.username,
+                name: userInfo.name,
+                surname: userInfo.surname,
+                phoneNumber: userInfo.phoneNumber,
+                city: userInfo.city,
+                district: userInfo.district
+            })
+
+            navigation.reset({
+                index: 0,
+                routes: [{ name: 'AppTabs' }]
+            })
         } catch (error: any) {
-            Alert.alert("Hata", error.response?.data?.message || "Kayıt başarısız")
+            Alert.alert('Hata', error.message || 'Kayıt başarısız')
         }
     }
+
     return (
         <View style={styles.container}>
             <HeaderSection />
             <UserInfoSection />
             <PhoneNumberSection />
             <AddresSection />
-            <CustomButton title="signUp" variant='primary' style={styles.submitButton} textStyle={styles.submitText} onPress={handleRegister} />
+            <CustomButton
+                title={'signUp'}
+                variant="primary"
+                style={styles.submitButton}
+                textStyle={styles.submitText}
+                onPress={handleRegister}
+            />
         </View>
     )
 }

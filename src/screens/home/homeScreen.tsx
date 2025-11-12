@@ -1,5 +1,5 @@
-import { ScrollView, View } from 'react-native'
-import React from 'react'
+import { Alert, BackHandler, ScrollView, View } from 'react-native'
+import React, { useEffect } from 'react'
 import { AdvertSection, HeaderSection, ProductListSection } from './components'
 
 /**
@@ -13,6 +13,30 @@ import { AdvertSection, HeaderSection, ProductListSection } from './components'
  * Bu ekran, kullanıcıya uygulama içindeki ana içeriğe erişimi ve hızlı arama yapma imkanı sağlar.
  */
 export const HomeScreen = () => {
+    
+    useEffect(() => {
+        const backAction = () => {
+            Alert.alert(
+                "Uygulamadan çık",
+                "Uygulamayı kapatmak istediğinize emin misiniz?",
+                [
+                    {
+                        text: "İptal",
+                        onPress: () => null,
+                        style: "cancel"
+                    },
+                    { text: "Evet", onPress: () => BackHandler.exitApp() }
+                ]
+            )
+            return true
+        }
+        const backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            backAction
+        )
+        return () => backHandler.remove()
+    }, [])
+
     return (
         <View>
             <HeaderSection />
