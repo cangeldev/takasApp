@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { api } from './apiClient'
 
 export interface RegisterUserPayload {
@@ -15,7 +16,6 @@ export interface LoginPayload {
   email: string
   password: string
 }
-
 
 export interface AuthResponse {
   token: string
@@ -46,6 +46,7 @@ export const registerUser = async (payload: RegisterUserPayload): Promise<AuthRe
 export const loginUser = async (payload: LoginPayload): Promise<AuthResponse> => {
   try {
     const { data } = await api.post<AuthResponse>('/users/login', payload)
+    await AsyncStorage.setItem("userToken", data.token)
     return data
   } catch (error: any) {
     throw new Error(error?.response?.data?.message || 'Giriş işlemi başarısız.')

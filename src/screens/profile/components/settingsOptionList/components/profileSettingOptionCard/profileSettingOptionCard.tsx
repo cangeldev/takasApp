@@ -5,6 +5,8 @@ import { Icon } from 'components/commonComponents'
 import { useTranslation } from 'react-i18next'
 import { iconType, RootStackParamList } from 'utils/types'
 import { useAppNavigation } from 'hooks/useAppNavigation'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import Toast from 'react-native-toast-message'
 
 interface IProfileSettingOptionCardProps {
     title: string
@@ -29,7 +31,23 @@ export const ProfileSettingOptionCard: FC<IProfileSettingOptionCardProps> = ({ t
     const { t } = useTranslation()
 
     const onPress = () => {
-        navigation.navigate(navigatePage as never)
+
+        if (navigatePage == "Welcome") {
+            AsyncStorage.removeItem("userToken")
+            Toast.show({
+                type: 'success',
+                text1: t('exitSuccessful'),
+                text2: t('youHaveSuccessfullyLoggedAccount'),
+                text1Style: style.text1Style,
+                text2Style: style.text2Style
+            })
+            navigation.reset({
+                index: 0,
+                routes: [{ name: 'Welcome' }],
+            })
+        }
+        else
+            navigation.navigate(navigatePage as never)
     }
 
     return (

@@ -24,6 +24,12 @@ const getStyles = () => {
             flex: 1,
             fontSize: scaleFont(15),
             color: theme.textColor
+        },
+        text1Style: {
+            fontSize: scaleFont(16)
+        },
+        text2Style: {
+            fontSize: scaleFont(13)
         }
     })
 }

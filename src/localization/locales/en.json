@@ -121,6 +121,8 @@
         "infoText": "Some information seems to be missing. Please check again",
         "success": "Login Successful 🎉",
         "successText": "Welcome! You can start using the app",
-        "invalidEmail": "İnvalid Email"
+        "invalidEmail": "İnvalid Email",
+        "exitSuccessful": "Exit successful",
+        "youHaveSuccessfullyLoggedAccount": "You have successfully logged out of your account"
     }
 }

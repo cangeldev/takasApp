@@ -46,7 +46,7 @@ export const AuthInputSection = () => {
             return
         }
         try {
-            const { token, user } = await loginUser({ email, password })
+            await loginUser({ email, password })
             Toast.show({
                 type: 'success',
                 text1: t('success'),
@@ -58,7 +58,6 @@ export const AuthInputSection = () => {
                 index: 0,
                 routes: [{ name: 'AppTabs' }],
             })
-            console.log(token)
         } catch (error: any) {
             Toast.show({
                 type: 'error',
@@ -69,7 +68,6 @@ export const AuthInputSection = () => {
             })
         }
     }
-
     return (
         <View>
             <AuthInput placeholder="enterYourEmail" onInputChange={setEmail} />
