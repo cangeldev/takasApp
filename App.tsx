@@ -7,6 +7,7 @@ import { store } from 'store/store'
 import i18n from 'localization/i18next'
 import { MenuProvider } from 'react-native-popup-menu'
 import { initializeApp } from 'utils/initializeApp'
+import Toast from 'react-native-toast-message'
 
 /**
  * App bileşeni: Uygulamanın ana başlatma mantığını (tema/dil yükleme) ve i18n sağlayıcısını içerir.
@@ -46,6 +47,9 @@ const Root = () => (
     <AppStatusBar />
     <MenuProvider>
       <App />
+      <Toast
+        topOffset={10}
+      />
     </MenuProvider>
   </Provider>
 )

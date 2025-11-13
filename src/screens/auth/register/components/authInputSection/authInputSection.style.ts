@@ -11,6 +11,12 @@ const getStyles = () => {
     loginText: {
       fontSize: scaleFont(16),
       fontWeight: "600"
+    },
+    text1Style: {
+      fontSize: scaleFont(16)
+    },
+    text2Style: {
+      fontSize: scaleFont(13)
     }
   })
 }

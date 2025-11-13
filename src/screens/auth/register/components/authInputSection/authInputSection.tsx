@@ -1,10 +1,12 @@
-import { Alert, View } from 'react-native'
+import { View } from 'react-native'
 import React, { useCallback, useState } from 'react'
 import { AuthInput, CustomButton } from 'components/commonComponents'
 import getStyles from './authInputSection.style'
 import { useAppNavigation } from 'hooks/useAppNavigation'
 import { useDispatch } from 'react-redux'
 import { setUserInfo } from 'store/slices/userSlice'
+import Toast from 'react-native-toast-message'
+import { useTranslation } from 'react-i18next'
 
 /**
  * AuthInputSection: Kayıt (Register) ekranında, kullanıcıdan e-posta, şifre ve şifre onayı gibi temel kimlik doğrulama bilgilerini toplamak için kullanılan form bölümüdür.
@@ -17,6 +19,7 @@ export const AuthInputSection = () => {
     const styles = getStyles()
     const navigation = useAppNavigation()
     const dispatch = useDispatch()
+    const { t } = useTranslation()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -24,14 +27,25 @@ export const AuthInputSection = () => {
 
     const handleRegister = useCallback(() => {
         if (!email || !password) {
-            Alert.alert('Uyarı', 'Lütfen e-posta ve şifre giriniz.')
+            Toast.show({
+                type: 'info',
+                text1: t('info'),
+                text2: t('infoText'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style
+            })
             return
         }
         if (password !== confirmPassword) {
-            Alert.alert('Uyarı', 'Şifreler uyuşmuyor.')
+            Toast.show({
+                type: 'info',
+                text1: t('info'),
+                text2: "Şifreler uyuşmuyor",
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style
+            })
             return
         }
-
         dispatch(setUserInfo({ email, password }))
         navigation.navigate('AccountDetails')
     }, [email, password, confirmPassword, dispatch, navigation])

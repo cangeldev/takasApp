@@ -37,7 +37,6 @@ const getStyles = () => {
       textAlignVertical: 'top'
     },
     button: {
-
       padding: verticalScale(15),
       borderRadius: moderateScale(12),
       elevation: 4
@@ -45,6 +44,12 @@ const getStyles = () => {
     buttonText: {
       fontWeight: 'bold',
       fontSize: scaleFont(16)
+    },
+    text1Style: {
+      fontSize: scaleFont(16)
+    },
+    text2Style: {
+      fontSize: scaleFont(13)
     }
   })
 }

@@ -1,4 +1,4 @@
-import { Alert, View } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import getStyles from './accountDetails.style'
 import { CustomButton } from 'components/commonComponents'
@@ -7,6 +7,8 @@ import { useAppNavigation } from 'hooks/useAppNavigation'
 import { useSelector } from 'react-redux'
 import { RootState } from 'store/store'
 import { registerUser } from 'api/authService'
+import Toast from 'react-native-toast-message'
+import { useTranslation } from 'react-i18next'
 
 /**
  * AccountDetails: Kullanıcının kayıt (sign-up) sürecinde detaylı bilgilerini (isim, telefon, adres vb.) girdiği formu temsil eder.
@@ -19,7 +21,7 @@ export const AccountDetails = () => {
     const styles = getStyles()
     const navigation = useAppNavigation()
     const userInfo = useSelector((state: RootState) => state.userInfo)
-
+    const { t } = useTranslation()
 
     const handleRegister = async () => {
         if (
@@ -30,7 +32,13 @@ export const AccountDetails = () => {
             !userInfo.city ||
             !userInfo.district
         ) {
-            Alert.alert('Uyarı', 'Lütfen eksik bilgilerinizi giriniz.')
+            Toast.show({
+                type: 'info',
+                text1: t('info'),
+                text2: t('infoText'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style
+            })
             return
         }
 
@@ -45,13 +53,24 @@ export const AccountDetails = () => {
                 city: userInfo.city,
                 district: userInfo.district
             })
-
+            Toast.show({
+                type: 'success',
+                text1: t('success'),
+                text2: t('successText'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style
+            })
             navigation.reset({
                 index: 0,
                 routes: [{ name: 'AppTabs' }]
             })
+
         } catch (error: any) {
-            Alert.alert('Hata', error.message || 'Kayıt başarısız')
+            Toast.show({
+                type: 'error',
+                text1: t('error'),
+                text2: t('errorText')
+            })
         }
     }
 

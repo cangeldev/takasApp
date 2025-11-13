@@ -29,7 +29,7 @@ export interface AuthResponse {
 }
 
 /**
- * 👤 Yeni kullanıcı kaydı
+ * Yeni kullanıcı kaydı
  */
 export const registerUser = async (payload: RegisterUserPayload): Promise<AuthResponse> => {
   try {
