@@ -20,35 +20,20 @@ const App = () => {
   const [initialRoute, setInitialRoute] = useState<keyof RootStackParamList | null>(null)
 
   useEffect(() => {
-    const fetchToken = async () => {
+    const prepareApp = async () => {
       try {
+        await initializeApp(dispatch)
         const savedToken = await AsyncStorage.getItem('userToken')
-        console.log('Saved token from AsyncStorage:', savedToken)
+
         setInitialRoute(savedToken ? 'AppTabs' : 'Welcome')
       } catch (error) {
-        console.error('Error fetching token:', error)
+        console.error('Başlatma hatası:', error)
         setInitialRoute('Welcome')
       }
     }
-    fetchToken()
-  }, [])
-
-  useEffect(() => {
-    let mounted = true
-    const loadSettings = async () => {
-      try {
-        if (mounted) await initializeApp(dispatch)
-      } catch (err) {
-        console.error('Ayar yükleme hatası:', err)
-      }
-    }
-    loadSettings()
-    return () => {
-      mounted = false
-    }
+    prepareApp()
   }, [dispatch])
 
-  // token kontrolü bitene kadar splash screen ayarla veya başka  bir şey 
   if (initialRoute === null) {
     return null
   }
@@ -62,8 +47,8 @@ const App = () => {
 
 const Root = () => (
   <Provider store={store}>
-    <AppStatusBar />
     <MenuProvider>
+      <AppStatusBar />
       <App />
       <Toast topOffset={10} />
     </MenuProvider>

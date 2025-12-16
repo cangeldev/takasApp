@@ -64,3 +64,32 @@ export type iconType =
     | "FontAwesome"
     | "MaterialCommunityIcons"
     | "FontAwesome5"
+
+
+export type RegisterUserPayload = {
+    email: string
+    password: string
+    username?: string
+    name?: string
+    surname?: string
+    phoneNumber?: string
+    city?: string
+    district?: string
+    selectedName: string
+}
+
+export type LoginPayload = {
+    email: string
+    password: string
+}
+
+export type AuthResponse = {
+    token: string
+    user: {
+        id: string
+        email: string
+        username?: string
+        name?: string
+        surname?: string
+    }
+}

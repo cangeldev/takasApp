@@ -12,7 +12,6 @@ import { AccountDetails, LoginScreen, RegisterScreen, Welcome } from 'screens/au
 
 /**
  * AppStack: Uygulamanın ana navigasyon yığınını (stack) tanımlar.
- *
  * Temel olarak, hoş geldin/kimlik doğrulama (Welcome, Login, Register) ve ana sekme
  * navigasyonu (AppTabs) arasındaki geçişleri yönetir. Ayrıca, profil sayfalarının
  * (Dil/Tema, Adres, Bildirimler vb.) ve ürün detaylarının ekranlarını da içerir.
@@ -41,11 +40,14 @@ export const AppStack: React.FC<AppStackProps> = ({ initialRoute }) => {
 
   return (
     <Stack.Navigator screenOptions={commonScreenOptions} initialRouteName={initialRoute}    >
+      {/* Auth Screens */}
       <Stack.Screen name="Welcome" component={Welcome} options={hiddenHeader} />
       <Stack.Screen name="Login" component={LoginScreen} options={hiddenHeader} />
       <Stack.Screen name="AccountDetails" component={AccountDetails} options={hiddenHeader} />
       <Stack.Screen name="Register" component={RegisterScreen} options={hiddenHeader} />
       <Stack.Screen name="AppTabs" component={AppTabs} options={hiddenHeader} />
+
+      {/* Profile Pages */}
       <Stack.Screen name="ProfileInfoPage" component={ProfileInfoPage} options={hiddenHeader} />
       <Stack.Screen name="LanguageThemePage" component={LanguageThemePage} options={{ headerTitle: t('languageAndThemeSettings') }} />
       <Stack.Screen name="NotificationSettingsPage" component={NotificationSettingsPage} options={{ headerTitle: t('notificationSettings') }} />
@@ -53,6 +55,7 @@ export const AppStack: React.FC<AppStackProps> = ({ initialRoute }) => {
       <Stack.Screen name="FavoritesPage" component={FavoritesPage} options={{ headerTitle: t('myFavorites') }} />
       <Stack.Screen name="MyNetworksPage" component={MyNetworksPage} options={{ headerTitle: t('myNetwork') }} />
       <Stack.Screen name="ProductDetailsCard" component={ProductDetailsCard} options={hiddenHeader} />
+     
       <Stack.Screen name="AddressPage" component={AddressPage}
         options={{
           headerTitle: t('addressAndLocationInformation'),
