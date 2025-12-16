@@ -1,12 +1,12 @@
 import { View } from 'react-native'
 import React, { useCallback, useState } from 'react'
-import { AuthInput, CustomButton } from 'components/commonComponents'
+import { AuthInput, CustomButton, ToastMessage } from 'components/commonComponents'
 import getStyles from './authInputSection.style'
 import { useAppNavigation } from 'hooks/useAppNavigation'
 import { useDispatch } from 'react-redux'
 import { setUserInfo } from 'store/slices/userSlice'
-import Toast from 'react-native-toast-message'
 import { useTranslation } from 'react-i18next'
+import { checkEmail } from 'api/authService'
 
 /**
  * AuthInputSection: Kayıt (Register) ekranında, kullanıcıdan e-posta, şifre ve şifre onayı gibi temel kimlik doğrulama bilgilerini toplamak için kullanılan form bölümüdür.
@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next'
  * Bu bileşen, yeni kullanıcıların kimlik doğrulama bilgilerini girdiği başlangıç noktasıdır.
  */
 export const AuthInputSection = () => {
+
     const styles = getStyles()
     const navigation = useAppNavigation()
     const dispatch = useDispatch()
@@ -24,32 +25,41 @@ export const AuthInputSection = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState('')
-
-    const handleRegister = useCallback(() => {
+    const handleRegister = useCallback(async () => {
         if (!email || !password) {
-            Toast.show({
-                type: 'info',
-                text1: t('info'),
-                text2: t('infoText'),
+            ToastMessage({
+                title: t('info'),
+                message: t('infoText'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
             return
         }
-        if (password !== confirmPassword) {
-            Toast.show({
-                type: 'info',
-                text1: t('info'),
-                text2: "Şifreler uyuşmuyor",
-                text1Style: styles.text1Style,
-                text2Style: styles.text2Style
-            })
-            return
-        }
-        dispatch(setUserInfo({ email, password }))
-        navigation.navigate('AccountDetails')
-    }, [email, password, confirmPassword, dispatch, navigation])
 
+        if (password !== confirmPassword) {
+            ToastMessage({
+                title: t('info'),
+                message: t('passwordsDontMatch'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style,
+            })
+            return
+        }
+
+        try {
+            await checkEmail(email)
+            dispatch(setUserInfo({ email, password }))
+            navigation.navigate('AccountDetails')
+        } catch (err) {
+            ToastMessage({
+                type: 'error',
+                title: t('error'),
+                message: t('thisEmailAlreadyRegistered'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style,
+            })
+        }
+    }, [email, password, confirmPassword, dispatch, t, navigation])
     return (
         <View>
             <AuthInput placeholder="enterYourEmail" onInputChange={setEmail} />

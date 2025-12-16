@@ -10,6 +10,7 @@ export interface RegisterUserPayload {
   phoneNumber?: string
   city?: string
   district?: string
+  selectedName: string
 }
 
 export interface LoginPayload {
@@ -33,8 +34,9 @@ export interface AuthResponse {
  */
 export const registerUser = async (payload: RegisterUserPayload): Promise<AuthResponse> => {
   try {
-    const { data } = await api.post<AuthResponse>('/users/register', payload)
-    return data
+    await api.post<AuthResponse>('/users/register', payload)
+    const loginData = await loginUser({ email: payload.email, password: payload.password })
+    return loginData
   } catch (error: any) {
     throw new Error(error?.response?.data?.message || 'Kayıt işlemi başarısız.')
   }
@@ -50,5 +52,17 @@ export const loginUser = async (payload: LoginPayload): Promise<AuthResponse> =>
     return data
   } catch (error: any) {
     throw new Error(error?.response?.data?.message || 'Giriş işlemi başarısız.')
+  }
+}
+
+/**
+ *  Email kayıt kontrol
+ */
+export const checkEmail = async (email: string): Promise<{ exists: boolean; message: string }> => {
+  try {
+    const { data } = await api.post<{ exists: boolean; message: string }>('/users/check-email', { email })
+    return data
+  } catch (error: any) {
+    throw new Error(error?.response?.data?.message || 'Email kontrolü başarısız.')
   }
 }

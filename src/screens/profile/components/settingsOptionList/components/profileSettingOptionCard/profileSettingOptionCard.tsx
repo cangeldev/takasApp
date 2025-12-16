@@ -1,12 +1,11 @@
 import { TouchableOpacity, Text } from 'react-native'
 import React, { FC } from 'react'
 import getStyles from './profileSettingOptionCard.style'
-import { Icon } from 'components/commonComponents'
+import { Icon, ToastMessage } from 'components/commonComponents'
 import { useTranslation } from 'react-i18next'
 import { iconType, RootStackParamList } from 'utils/types'
 import { useAppNavigation } from 'hooks/useAppNavigation'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import Toast from 'react-native-toast-message'
 
 interface IProfileSettingOptionCardProps {
     title: string
@@ -34,12 +33,12 @@ export const ProfileSettingOptionCard: FC<IProfileSettingOptionCardProps> = ({ t
 
         if (navigatePage == "Welcome") {
             AsyncStorage.removeItem("userToken")
-            Toast.show({
+            ToastMessage({
                 type: 'success',
-                text1: t('exitSuccessful'),
-                text2: t('youHaveSuccessfullyLoggedAccount'),
+                title: t('exitSuccessful'),
+                message: t('youHaveSuccessfullyLoggedAccount'),
                 text1Style: style.text1Style,
-                text2Style: style.text2Style
+                text2Style: style.text2Style,
             })
             navigation.reset({
                 index: 0,

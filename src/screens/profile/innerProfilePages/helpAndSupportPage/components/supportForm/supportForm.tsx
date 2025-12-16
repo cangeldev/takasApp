@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TextInput, Linking } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import getStyles from './supportForm.style'
-import { CustomButton } from 'components/commonComponents'
-import Toast from 'react-native-toast-message'
+import { CustomButton, ToastMessage } from 'components/commonComponents'
 
 /**
  * SupportForm: Destek/İletişim (Support/Contact Page) sayfasında yer alan, kullanıcıların doğrudan destek ekibine e-posta göndermesini sağlayan etkileşimli iletişim formudur.
@@ -21,25 +20,26 @@ export const SupportForm = () => {
 
     const handleSend = () => {
         if (!email.trim() || !message.trim()) {
-            Toast.show({
+            ToastMessage({
                 type: 'info',
-                text1: t('info'),
-                text2: t('pleaseFillAllFields'),
+                title: t('info'),
+                message: t('pleaseFillAllFields'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
             return
         }
 
         const url = `mailto:destek@takasapp.com?subject=Destek Talebi&body=${encodeURIComponent(`Email: ${email}\n\nMesaj:\n${message}`)}`
         Linking.openURL(url).catch(() =>
-            Toast.show({
+            ToastMessage({
                 type: 'error',
-                text1: t('error'),
-                text2: t('emailClientError'),
+                title: t('error'),
+                message: t('emailClientError'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
-            }))
+                text2Style: styles.text2Style,
+            })
+        )
     }
 
     return (

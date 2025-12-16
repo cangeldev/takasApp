@@ -1,13 +1,12 @@
 import { View } from 'react-native'
 import React from 'react'
 import getStyles from './accountDetails.style'
-import { CustomButton } from 'components/commonComponents'
+import { CustomButton, ToastMessage } from 'components/commonComponents'
 import { AddresSection, HeaderSection, PhoneNumberSection, UserInfoSection } from './components'
 import { useAppNavigation } from 'hooks/useAppNavigation'
 import { useSelector } from 'react-redux'
 import { RootState } from 'store/store'
 import { registerUser } from 'api/authService'
-import Toast from 'react-native-toast-message'
 import { useTranslation } from 'react-i18next'
 
 /**
@@ -32,12 +31,12 @@ export const AccountDetails = () => {
             !userInfo.city ||
             !userInfo.district
         ) {
-            Toast.show({
+              ToastMessage({
                 type: 'info',
-                text1: t('info'),
-                text2: t('infoText'),
+                title: t('info'),
+                message: t('infoText'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
             return
         }
@@ -51,26 +50,31 @@ export const AccountDetails = () => {
                 surname: userInfo.surname,
                 phoneNumber: userInfo.phoneNumber,
                 city: userInfo.city,
-                district: userInfo.district
+                district: userInfo.district,
+                selectedName: userInfo.name + " " + userInfo.surname
             })
-            Toast.show({
+            ToastMessage({
                 type: 'success',
-                text1: t('success'),
-                text2: t('successText'),
+                title: t('success'),
+                message: t('successText'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
             navigation.reset({
                 index: 0,
                 routes: [{ name: 'AppTabs' }]
             })
 
-        } catch (error: any) {
-            Toast.show({
+        }
+        catch (error: any) {
+             ToastMessage({
                 type: 'error',
-                text1: t('error'),
-                text2: t('errorText')
+                title: t('error'),
+                message: t('ThisUsernameAlreadyBeenTaken'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style,
             })
+            
         }
     }
 

@@ -1,12 +1,10 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { AuthInput, CustomButton } from 'components/commonComponents'
+import { AuthInput, CustomButton, ToastMessage } from 'components/commonComponents'
 import getStyles from './authInputSection.style'
 import { useTranslation } from 'react-i18next'
 import { useAppNavigation } from 'hooks/useAppNavigation'
 import { loginUser } from 'api/authService'
-import Toast from 'react-native-toast-message'
-
 /**
  * AuthInputSection: Giriş (Login) veya Kayıt (Register) ekranlarında kullanıcıdan e-posta ve şifre gibi temel kimlik doğrulama bilgilerini toplamak için kullanılan ana form bölümüdür.
  *
@@ -26,45 +24,45 @@ export const AuthInputSection = () => {
     const handleLogin = async () => {
         /**  const isValidEmail = (email: string) => /\S+@\S+\.\S+/.test(email)
           if (!isValidEmail(email)) {
-              Toast.show({
-                  type: 'info',
-                  text1: t('info'),
-                  text2: t('invalidEmail'),
-                  text1Style: styles.text1Style,
-                  text2Style: styles.text2Style
-              })
+                   ToastMessage({
+                type: 'info',
+                title: t('info'),
+                message:  t('invalidEmail'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style,
+            })
               return
           }*/
         if (!email || !password) {
-            Toast.show({
+            ToastMessage({
                 type: 'info',
-                text1: t('info'),
-                text2: t('infoText'),
+                title: t('info'),
+                message: t('infoText'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
             return
         }
         try {
             await loginUser({ email, password })
-            Toast.show({
+            ToastMessage({
                 type: 'success',
-                text1: t('success'),
-                text2: t('successText'),
+                title: t('success'),
+                message: t('successText'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
             navigation.reset({
                 index: 0,
                 routes: [{ name: 'AppTabs' }],
             })
         } catch (error: any) {
-            Toast.show({
-                type: 'error',
-                text1: t('error'),
-                text2: error.message,
+            ToastMessage({
+                type: 'success',
+                title: t('error'),
+                message: error.message,
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style
+                text2Style: styles.text2Style,
             })
         }
     }

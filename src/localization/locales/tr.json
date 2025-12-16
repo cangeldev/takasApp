@@ -123,7 +123,10 @@
         "success": "Giriş Başarılı 🎉",
         "successText": "Hoş geldin! Uygulamayı kullanmaya başlayabilirsin",
         "invalidEmail": "Lütfen geçerli bir e posta giriniz",
-        "exitSuccessful":"Çıkış başarılı",
-        "youHaveSuccessfullyLoggedAccount":"Başarıyla hesabınızdan çıkış yaptınız"
+        "exitSuccessful": "Çıkış başarılı",
+        "youHaveSuccessfullyLoggedAccount": "Başarıyla hesabınızdan çıkış yaptınız",
+        "thisEmailAlreadyRegistered": "Bu e posta zaten kayıtlı",
+        "passwordsDontMatch": "Şifreler uyuşmuyor",
+        "ThisUsernameAlreadyBeenTaken": "Bu kullanıcı adı daha önce alınmış"
     }
 }
