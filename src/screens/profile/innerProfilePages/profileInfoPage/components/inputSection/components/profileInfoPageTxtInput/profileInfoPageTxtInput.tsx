@@ -10,7 +10,10 @@ interface IProfileInfoPageTxtInputProps {
     iconName?: string
     iconType?: iconType
     editable?: boolean
-    multiline?: boolean
+    changePassword?: boolean
+    multiline?: boolean,
+    value?: string,
+    onInputChange?: (inputText: string) => void
 }
 
 /**
@@ -21,16 +24,16 @@ interface IProfileInfoPageTxtInputProps {
  * Eğer 'editable' prop'u 'false' ise (örneğin şifre alanı için), Pressable öğesine dokunulduğunda bir aksiyon tetiklenir (örn: şifre değiştirme modalı açılır).
  * Opsiyonel olarak, yönlendirme veya aksiyon belirtmek için bir ikon (iconName/iconType) gösterebilir.
  */
-export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable }) => {
+export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable, changePassword, value, onInputChange }) => {
 
     const onPress = () => {
-        editable === false && console.log("modal açıp şifre değiştir")
+        changePassword === false && console.log("modal açıp şifre değiştir")
     }
     const style = getStyles()
 
     return (
         <Pressable onPress={onPress} style={style.container}>
-            <TextInput multiline={multiline} style={style.txtInput} placeholder={placeHolder} editable={editable} />
+            <TextInput onChangeText={onInputChange} multiline={multiline} style={style.txtInput} placeholder={placeHolder} editable={editable} value={value} />
             <Text style={style.title}>
                 {title}
             </Text>

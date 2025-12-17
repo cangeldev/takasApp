@@ -10,6 +10,7 @@ export interface User {
   surname?: string;
   username?: string;
   selectedNameType: 'FULL_NAME' | 'USERNAME';
+  description: string
 }
 
 interface AuthState {
@@ -39,8 +40,13 @@ const authSlice = createSlice({
       if (state.user) {
         state.user.selectedNameType = action.payload.selectedNameType;
       }
+    },
+    updateDescription: (state, action: PayloadAction<string>) => {
+      if (state.user) {
+        state.user.description = action.payload
+      }
     }
   }
 })
-export const { setUser, logout, updateSelectedName } = authSlice.actions
+export const { setUser, logout, updateSelectedName ,updateDescription} = authSlice.actions
 export default authSlice.reducer
