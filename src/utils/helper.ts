@@ -12,15 +12,6 @@ export const MemberInfoTexts = [
 ]
 
 /**
- * userName: Uygulama içinde kullanıcı adının farklı gösterimlerini (tam ad, kısaltılmış ad vb.) temsil eden basit etiket listesidir.
- * Şu an için örnek kullanıcı adlarını içerir.
- */
-export const userName = [
-    { label: 'Can GEL' },
-    { label: 'Can G.' }
-]
-
-/**
  * sortOptions: Ürün listeleme ekranlarında (örneğin, FavoriteProductsSection) kullanıcıya sunulan tüm sıralama seçeneklerinin çeviri anahtarlarını içeren dizedir.
  * Bu seçenekler, ürünlerin görüntülenme sırasını (fiyat, tarih, popülarite, mesafe) değiştirmek için kullanılır.
  */

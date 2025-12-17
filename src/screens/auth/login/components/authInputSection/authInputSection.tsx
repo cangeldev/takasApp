@@ -5,6 +5,10 @@ import getStyles from './authInputSection.style'
 import { useTranslation } from 'react-i18next'
 import { useAppNavigation } from 'hooks/useAppNavigation'
 import { loginUser } from 'api/authService'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { api } from 'api/apiClient'
+import { useDispatch } from 'react-redux'
+import { setUser } from 'store/slices/authSlice'
 /**
  * AuthInputSection: Giriş (Login) veya Kayıt (Register) ekranlarında kullanıcıdan e-posta ve şifre gibi temel kimlik doğrulama bilgilerini toplamak için kullanılan ana form bölümüdür.
  *
@@ -20,7 +24,7 @@ export const AuthInputSection = () => {
     const navigation = useAppNavigation()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    const dispatch = useDispatch()
     const handleLogin = async () => {
         /**  const isValidEmail = (email: string) => /\S+@\S+\.\S+/.test(email)
           if (!isValidEmail(email)) {
@@ -52,6 +56,10 @@ export const AuthInputSection = () => {
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
+            const token = await AsyncStorage.getItem("userToken");
+          
+            const res = await api.get("/users/me");
+            dispatch(setUser(res.data));
             navigation.reset({
                 index: 0,
                 routes: [{ name: 'AppTabs' }],

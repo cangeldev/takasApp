@@ -10,6 +10,8 @@ import { initializeApp } from 'utils/initializeApp'
 import Toast from 'react-native-toast-message'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RootStackParamList } from 'utils/types'
+import { api } from 'api/apiClient'
+import { logout, setUser } from 'store/slices/authSlice'
 
 /**
  * App bileşeni: Uygulamanın ana başlatma mantığını (tema/dil yükleme) ve i18n sağlayıcısını içerir.
@@ -22,17 +24,37 @@ const App = () => {
   useEffect(() => {
     const prepareApp = async () => {
       try {
-        await initializeApp(dispatch)
-        const savedToken = await AsyncStorage.getItem('userToken')
+        await initializeApp(dispatch);
 
-        setInitialRoute(savedToken ? 'AppTabs' : 'Welcome')
-      } catch (error) {
-        console.error('Başlatma hatası:', error)
-        setInitialRoute('Welcome')
+        const token = await AsyncStorage.getItem("userToken");
+        console.log("APP AÇILIŞ TOKEN:", token);
+
+        if (!token) {
+          setInitialRoute("Welcome");
+          return;
+        }
+
+        const res = await api.get("/users/me");
+        dispatch(setUser(res.data));
+
+        setInitialRoute("AppTabs");
+      } catch (error: any) {
+        console.log("AUTH ME ERROR:", error?.message);
+
+        // 🔴 SADECE 401 / 403 İSE LOGOUT
+        if (error?.response?.status === 401 || error?.response?.status === 403) {
+          await AsyncStorage.removeItem("userToken");
+          dispatch(logout());
+          setInitialRoute("Welcome");
+        } else {
+          setInitialRoute("AppTabs");
+        }
       }
-    }
-    prepareApp()
-  }, [dispatch])
+    };
+
+    prepareApp();
+  }, [dispatch]);
+
 
   if (initialRoute === null) {
     return null

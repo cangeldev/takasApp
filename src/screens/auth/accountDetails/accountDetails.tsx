@@ -4,11 +4,11 @@ import getStyles from './accountDetails.style'
 import { CustomButton, ToastMessage } from 'components/commonComponents'
 import { AddresSection, HeaderSection, PhoneNumberSection, UserInfoSection } from './components'
 import { useAppNavigation } from 'hooks/useAppNavigation'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store/store'
 import { registerUser } from 'api/authService'
 import { useTranslation } from 'react-i18next'
-
+import { setUser } from 'store/slices/authSlice'
 /**
  * AccountDetails: Kullanıcının kayıt (sign-up) sürecinde detaylı bilgilerini (isim, telefon, adres vb.) girdiği formu temsil eder.
  *
@@ -21,7 +21,8 @@ export const AccountDetails = () => {
     const navigation = useAppNavigation()
     const userInfo = useSelector((state: RootState) => state.userInfo)
     const { t } = useTranslation()
-
+    const dispatch = useDispatch();
+    
     const handleRegister = async () => {
         if (
             !userInfo.username ||
@@ -31,18 +32,18 @@ export const AccountDetails = () => {
             !userInfo.city ||
             !userInfo.district
         ) {
-              ToastMessage({
+            ToastMessage({
                 type: 'info',
                 title: t('info'),
                 message: t('infoText'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
-            })
-            return
+            });
+            return;
         }
 
         try {
-            await registerUser({
+            const authResponse = await registerUser({
                 email: userInfo.email,
                 password: userInfo.password,
                 username: userInfo.username,
@@ -51,32 +52,35 @@ export const AccountDetails = () => {
                 phoneNumber: userInfo.phoneNumber,
                 city: userInfo.city,
                 district: userInfo.district,
-                selectedName: userInfo.name + " " + userInfo.surname
-            })
+                selectedName: userInfo.name + " " + userInfo.surname,
+            });
+
+            // 🔥 BURASI KRİTİK
+            dispatch(setUser(authResponse.user));
+
             ToastMessage({
                 type: 'success',
                 title: t('success'),
                 message: t('successText'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
-            })
+            });
+
             navigation.reset({
                 index: 0,
-                routes: [{ name: 'AppTabs' }]
-            })
-
-        }
-        catch (error: any) {
-             ToastMessage({
+                routes: [{ name: 'AppTabs' }],
+            });
+        } catch (error: any) {
+            ToastMessage({
                 type: 'error',
                 title: t('error'),
                 message: t('ThisUsernameAlreadyBeenTaken'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
-            })
-            
+            });
         }
-    }
+    };
+
 
     return (
         <View style={styles.container}>

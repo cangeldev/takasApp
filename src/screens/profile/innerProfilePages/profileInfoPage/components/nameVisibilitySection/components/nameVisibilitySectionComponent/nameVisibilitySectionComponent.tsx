@@ -2,8 +2,9 @@ import React from 'react'
 import RadioButtonRN from 'radio-buttons-react-native'
 import { colors } from 'assets/colors/colors'
 import getStyles from './nameVisibilitySectionComponent.style'
-import { userName } from 'utils/helper'
 import { UserNameOption } from 'utils/types'
+import { useSelector } from 'react-redux'
+import { RootState } from 'store/store'
 
 /**
  * NameVisibilitySectionComponent: Kullanıcının, profilinde veya ilanlarında gösterilecek isim formatını (örneğin, "Ad Soyad" veya "Kullanıcı Adı") seçmesini sağlayan özel bir radyo buton grubudur.
@@ -15,8 +16,17 @@ import { UserNameOption } from 'utils/types'
 
 export const NameVisibilitySectionComponent = () => {
     const style = getStyles()
-
+    /**
+     * userName: Uygulama içinde kullanıcı adının farklı gösterimlerini (tam ad, kısaltılmış ad vb.) temsil eden basit etiket listesidir.
+     * Şu an için örnek kullanıcı adlarını içerir.
+     */
+    const userInfo = useSelector((state: RootState) => state.auth.user)
+    const userName = [
+        { label: userInfo?.name + " " + userInfo?.surname },
+        { label: userInfo?.username }
+    ]
     const handleSelection = (selectedOption: UserNameOption) => {
+        console.log(userInfo?.selectedName)
         console.log(selectedOption)
     }
 

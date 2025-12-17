@@ -93,3 +93,15 @@ export type AuthResponse = {
         surname?: string
     }
 }
+
+export interface User {
+  id: number;
+  email: string;
+  name: string;
+  surname?: string;
+  username?: string;
+  phoneNumber?: string;
+  city?: string;
+  district?: string;
+  selectedName?: string;
+}

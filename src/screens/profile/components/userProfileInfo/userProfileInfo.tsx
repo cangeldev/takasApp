@@ -4,6 +4,8 @@ import { Icon, ProfileImage } from 'components/commonComponents'
 import { useTranslation } from 'react-i18next'
 import getStyles from './userProfileInfo.style'
 import { ProfileStatsCard } from './components/profileStatsCard/profileStatsCard'
+import { useSelector } from 'react-redux'
+import { RootState } from 'store/store'
 
 /**
  * UserProfileInfo: Profil Ekranının (ProfileScreen) üst kısmında yer alan ve kullanıcının temel kimlik bilgilerini ve uygulama içi istatistik özetini gösteren ana bileşendir.
@@ -17,7 +19,8 @@ import { ProfileStatsCard } from './components/profileStatsCard/profileStatsCard
 export const UserProfileInfo = () => {
     const styles = getStyles()
     const { t } = useTranslation()
-
+    const user = useSelector((state: RootState) => state.auth.user);
+    if (!user) return null;
     return (
         <View style={styles.container}>
             <View>
@@ -25,7 +28,7 @@ export const UserProfileInfo = () => {
                     <ProfileImage />
                     <Icon name="camera-plus-outline" type="MaterialCommunityIcons" style={styles.cameraOverlayIcon} />
                 </View>
-                <Text style={styles.userNameText}>Can GEL</Text>
+                <Text style={styles.userNameText}>{user.name + " " + user.surname}</Text>
             </View>
             <View style={styles.statsCardContainer}>
                 <ProfileStatsCard count="0" title={t('exchange')} />
