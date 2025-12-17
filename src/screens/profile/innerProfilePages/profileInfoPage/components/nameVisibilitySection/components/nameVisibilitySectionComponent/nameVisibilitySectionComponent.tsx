@@ -1,46 +1,81 @@
-import React from 'react'
-import RadioButtonRN from 'radio-buttons-react-native'
-import { colors } from 'assets/colors/colors'
-import getStyles from './nameVisibilitySectionComponent.style'
-import { UserNameOption } from 'utils/types'
-import { useSelector } from 'react-redux'
-import { RootState } from 'store/store'
+import React from 'react';
+import RadioButtonRN from 'radio-buttons-react-native';
+import { colors } from 'assets/colors/colors';
+import getStyles from './nameVisibilitySectionComponent.style';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store/store';
+import { updateSelectedName } from 'store/slices/authSlice';
+import axios from 'axios';
+import { Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 /**
- * NameVisibilitySectionComponent: Kullanıcının, profilinde veya ilanlarında gösterilecek isim formatını (örneğin, "Ad Soyad" veya "Kullanıcı Adı") seçmesini sağlayan özel bir radyo buton grubudur.
- *
- * 'radio-buttons-react-native' kütüphanesini kullanarak kullanıcıya seçenekleri (userName dizisi) sunar.
- * Kullanıcı seçim yaptığında (selectedBtn), ilgili bilgiyi konsola loglar (gerçek uygulamada bu, Redux'a kaydedilmelidir).
- * Bu bileşen, isim görünürlüğü gizlilik ayarının ana etkileşim noktasını oluşturur.
+ * Kullanıcının isim görünürlük tercihini (Ad Soyad veya Kullanıcı Adı) 
+ * hem veritabanında (PostgreSQL) hem de uygulama durumunda (Redux) günceller.
  */
-
 export const NameVisibilitySectionComponent = () => {
-    const style = getStyles()
-    /**
-     * userName: Uygulama içinde kullanıcı adının farklı gösterimlerini (tam ad, kısaltılmış ad vb.) temsil eden basit etiket listesidir.
-     * Şu an için örnek kullanıcı adlarını içerir.
-     */
-    const userInfo = useSelector((state: RootState) => state.auth.user)
-    const userName = [
-        { label: userInfo?.name + " " + userInfo?.surname },
-        { label: userInfo?.username }
-    ]
-    const handleSelection = (selectedOption: UserNameOption) => {
-        console.log(userInfo?.selectedName)
-        console.log(selectedOption)
+  const style = getStyles()
+  const dispatch = useDispatch()
+  const userInfo = useSelector((state: RootState) => state.auth.user)
+
+  if (!userInfo) return null
+
+  const nameOptions = [
+    {
+      label: `${userInfo.name} ${userInfo.surname}`,
+      value: 'FULL_NAME'
+    },
+    {
+      label: userInfo.username || 'Kullanıcı Adı Yok',
+      value: 'USERNAME'
+    }
+  ]
+
+  const initialIndex =
+    nameOptions.findIndex(
+      item => item.value === userInfo.selectedNameType
+    ) + 1
+
+  const handleSelection = async (selectedOption: any) => {
+  try {
+    const token = await AsyncStorage.getItem("userToken")
+
+    if (!token) {
+      Alert.alert("Hata", "Oturum bulunamadı")
+      return
     }
 
-    return (
-        <RadioButtonRN
-            textStyle={style.textStyle}
-            initial={1}
-            circleSize={14}
-            box={false}
-            activeColor={"#02A598"}
-            deactiveColor={colors.tab.inactive}
-            boxStyle={style.boxStyle}
-            data={userName}
-            selectedBtn={handleSelection}
-        />
+    const res = await axios.patch(
+      "http://192.168.1.40:4000/users/update-profile",
+      { selectedNameType: selectedOption.value },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
     )
+
+    dispatch(updateSelectedName({
+      selectedNameType: res.data.selectedNameType
+    }))
+
+  } catch (error: any) {
+    console.log(error.response?.data)
+    Alert.alert("Hata", "Kaydedilemedi")
+  }
+}
+
+  return (
+    <RadioButtonRN
+      key={userInfo.selectedNameType}
+      data={nameOptions}
+      initial={initialIndex}
+      selectedBtn={handleSelection}
+      circleSize={14}
+      box={false}
+      activeColor="#02A598"
+      deactiveColor={colors.tab.inactive}
+      textStyle={style.textStyle}
+    />
+  )
 }

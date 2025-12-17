@@ -9,6 +9,7 @@ import { RootState } from 'store/store'
 import { registerUser } from 'api/authService'
 import { useTranslation } from 'react-i18next'
 import { setUser } from 'store/slices/authSlice'
+
 /**
  * AccountDetails: Kullanıcının kayıt (sign-up) sürecinde detaylı bilgilerini (isim, telefon, adres vb.) girdiği formu temsil eder.
  *
@@ -52,10 +53,8 @@ export const AccountDetails = () => {
                 phoneNumber: userInfo.phoneNumber,
                 city: userInfo.city,
                 district: userInfo.district,
-                selectedName: userInfo.name + " " + userInfo.surname,
             });
 
-            // 🔥 BURASI KRİTİK
             dispatch(setUser(authResponse.user));
 
             ToastMessage({
@@ -77,10 +76,9 @@ export const AccountDetails = () => {
                 message: t('ThisUsernameAlreadyBeenTaken'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
-            });
+            })
         }
-    };
-
+    }
 
     return (
         <View style={styles.container}>

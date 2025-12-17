@@ -75,7 +75,6 @@ export type RegisterUserPayload = {
     phoneNumber?: string
     city?: string
     district?: string
-    selectedName: string
 }
 
 export type LoginPayload = {
@@ -102,6 +101,5 @@ export interface User {
   username?: string;
   phoneNumber?: string;
   city?: string;
-  district?: string;
-  selectedName?: string;
+  district?: string
 }
