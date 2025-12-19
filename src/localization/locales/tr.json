@@ -127,6 +127,8 @@
         "youHaveSuccessfullyLoggedAccount": "Başarıyla hesabınızdan çıkış yaptınız",
         "thisEmailAlreadyRegistered": "Bu e posta zaten kayıtlı",
         "passwordsDontMatch": "Şifreler uyuşmuyor",
-        "ThisUsernameAlreadyBeenTaken": "Bu kullanıcı adı daha önce alınmış"
+        "ThisUsernameAlreadyBeenTaken": "Bu kullanıcı adı daha önce alınmış",
+        "phoneNumber": "Telefon Numarası",
+        "countryCode": "Ülke Kodu"
     }
 }

@@ -11,14 +11,15 @@ export interface User {
   username?: string;
   selectedNameType: 'FULL_NAME' | 'USERNAME';
   description: string
+  phoneNumber: string
 }
 
 interface AuthState {
-  user: User | null;
+  user: User | null
 }
 
 const initialState: AuthState = {
-  user: null,
+  user: null
 };
 
 const authSlice = createSlice({
@@ -48,5 +49,5 @@ const authSlice = createSlice({
     }
   }
 })
-export const { setUser, logout, updateSelectedName ,updateDescription} = authSlice.actions
+export const { setUser, logout, updateSelectedName, updateDescription } = authSlice.actions
 export default authSlice.reducer

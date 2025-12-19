@@ -124,8 +124,10 @@
         "invalidEmail": "İnvalid Email",
         "exitSuccessful": "Exit successful",
         "youHaveSuccessfullyLoggedAccount": "You have successfully logged out of your account",
-        "thisEmailAlreadyRegistered":"This email is already registered",
-        "passwordsDontMatch":"Passwords don't match",
-        "ThisUsernameAlreadyBeenTaken":"This username has already been taken"
+        "thisEmailAlreadyRegistered": "This email is already registered",
+        "passwordsDontMatch": "Passwords don't match",
+        "ThisUsernameAlreadyBeenTaken": "This username has already been taken",
+        "phoneNumber": "Phone Number",
+        "countryCode": "Country Code"
     }
 }

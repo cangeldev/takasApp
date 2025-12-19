@@ -10,7 +10,7 @@ interface IProfileInfoPageTxtInputProps {
     iconName?: string
     iconType?: iconType
     editable?: boolean
-    changePassword?: boolean
+    changeInfo?: boolean
     multiline?: boolean,
     value?: string,
     onInputChange?: (inputText: string) => void
@@ -24,10 +24,11 @@ interface IProfileInfoPageTxtInputProps {
  * Eğer 'editable' prop'u 'false' ise (örneğin şifre alanı için), Pressable öğesine dokunulduğunda bir aksiyon tetiklenir (örn: şifre değiştirme modalı açılır).
  * Opsiyonel olarak, yönlendirme veya aksiyon belirtmek için bir ikon (iconName/iconType) gösterebilir.
  */
-export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable, changePassword, value, onInputChange }) => {
+export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable, changeInfo, value, onInputChange }) => {
 
     const onPress = () => {
-        changePassword === false && console.log("modal açıp şifre değiştir")
+        changeInfo === false && console.log("modal açıp şifre değiştir")
+        changeInfo === true && console.log("modal açıp telefon no değiştir")
     }
     const style = getStyles()
 

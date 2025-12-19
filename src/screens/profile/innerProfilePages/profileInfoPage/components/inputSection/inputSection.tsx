@@ -23,6 +23,18 @@ export const InputSection = () => {
     const authInfo = useSelector((state: RootState) => state.auth)
     const debounceRef = useRef<NodeJS.Timeout | null>(null)
 
+    const formatPhoneNumber = (phone?: string) => {
+        if (!phone) return ''
+
+        const match = phone.match(/(\d{3})(\d{3})(\d{4})$/)
+
+        if (!match) return phone
+
+        const [, first, second, third] = match
+        return `(${first}) ${second}-${third}`
+    }
+    const formattedPhone = formatPhoneNumber(authInfo.user?.phoneNumber)
+
     const [description, setDescription] = useState(
         authInfo.user?.description ?? ''
     )
@@ -73,7 +85,27 @@ export const InputSection = () => {
                 iconName="chevron-right"
                 iconType="Entypo"
                 editable={false}
-                changePassword={false} />
+                changeInfo={false} />
+
+            <View style={{ flexDirection: 'row' }}>
+                <View style={styles.countryCode}>
+                    <ProfileInfoPageTxtInput
+                        title={t('countryCode')}
+                        placeHolder="+90"
+                        editable={false}
+                    />
+                </View>
+                <View style={styles.phoneNumber}>
+                    <ProfileInfoPageTxtInput
+                        title={t('phoneNumber')}
+                        iconName="chevron-right"
+                        iconType="Entypo"
+                        editable={false}
+                        value={formattedPhone}
+                        changeInfo={true}
+                    />
+                </View>
+            </View>
             <ProfileInfoPageTxtInput
                 multiline
                 title={t('description')}
