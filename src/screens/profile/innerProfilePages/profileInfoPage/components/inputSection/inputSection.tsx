@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Alert, View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import getStyles from './inputSection.style'
-import { ProfileInfoPageTxtInput } from './components/profileInfoPageTxtInput/profileInfoPageTxtInput'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store/store'
 import { updateDescription } from 'store/slices/authSlice'
 import { api } from 'api/apiClient'
+import { ChangePasswordModal, ProfileInfoPageTxtInput } from './components'
 
 /**
  * InputSection: Kullanıcının kendi profil bilgilerini (kullanıcı adı, ad, soyad, şifre ve kişisel açıklama) görüntülemesini ve düzenlemesini sağlayan metin giriş alanları grubudur.
@@ -68,9 +68,14 @@ export const InputSection = () => {
         }, 800)
     }
 
+    const [changePasswordModalVisible, setChangePasswordModalVisible] = useState(false)
+    const changePassword = () => {
+        setChangePasswordModalVisible(true)
+    }
+    const handlePasswordModalClose = () => setChangePasswordModalVisible(false)
     return (
         <View style={styles.inputSection}>
-
+            <ChangePasswordModal isModalVisible={changePasswordModalVisible} onCloseModal={handlePasswordModalClose} />
             {fields.map(({ key, value }) => (
                 <ProfileInfoPageTxtInput
                     key={key}
@@ -80,12 +85,13 @@ export const InputSection = () => {
             ))}
 
             <ProfileInfoPageTxtInput
+                onPress={changePassword}
                 title={t('password')}
                 placeHolder="******"
                 iconName="chevron-right"
                 iconType="Entypo"
                 editable={false}
-                changeInfo={false} />
+            />
 
             <View style={{ flexDirection: 'row' }}>
                 <View style={styles.countryCode}>
@@ -102,7 +108,6 @@ export const InputSection = () => {
                         iconType="Entypo"
                         editable={false}
                         value={formattedPhone}
-                        changeInfo={true}
                     />
                 </View>
             </View>

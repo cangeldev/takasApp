@@ -1,17 +1,16 @@
-import React from 'react';
-import RadioButtonRN from 'radio-buttons-react-native';
-import { colors } from 'assets/colors/colors';
-import getStyles from './nameVisibilitySectionComponent.style';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'store/store';
-import { updateSelectedName } from 'store/slices/authSlice';
-import axios from 'axios';
-import { Alert } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React from 'react'
+import RadioButtonRN from 'radio-buttons-react-native'
+import { colors } from 'assets/colors/colors'
+import getStyles from './nameVisibilitySectionComponent.style'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'store/store'
+import { updateSelectedName } from 'store/slices/authSlice'
+import { Alert } from 'react-native'
+import { updateNameVisibility } from 'api/authService'
 
 /**
  * Kullanıcının isim görünürlük tercihini (Ad Soyad veya Kullanıcı Adı) 
- * hem veritabanında (PostgreSQL) hem de uygulama durumunda (Redux) günceller.
+ * hem veritabanında (PostgreSQL) hem de uygulama durumunda (Redux Toolkit) günceller.
  */
 export const NameVisibilitySectionComponent = () => {
   const style = getStyles()
@@ -37,33 +36,17 @@ export const NameVisibilitySectionComponent = () => {
     ) + 1
 
   const handleSelection = async (selectedOption: any) => {
-  try {
-    const token = await AsyncStorage.getItem("userToken")
+    try {
+      updateNameVisibility(selectedOption.value)
+      dispatch(updateSelectedName({
+        selectedNameType: selectedOption.value
+      }))
 
-    if (!token) {
-      Alert.alert("Hata", "Oturum bulunamadı")
-      return
+    } catch (error: any) {
+      console.log(error.response?.data)
+      Alert.alert("Hata", "Kaydedilemedi")
     }
-
-    const res = await axios.patch(
-      "http://192.168.1.40:4000/users/update-profile",
-      { selectedNameType: selectedOption.value },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    )
-
-    dispatch(updateSelectedName({
-      selectedNameType: res.data.selectedNameType
-    }))
-
-  } catch (error: any) {
-    console.log(error.response?.data)
-    Alert.alert("Hata", "Kaydedilemedi")
   }
-}
 
   return (
     <RadioButtonRN

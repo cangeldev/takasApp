@@ -129,6 +129,15 @@
         "passwordsDontMatch": "Şifreler uyuşmuyor",
         "ThisUsernameAlreadyBeenTaken": "Bu kullanıcı adı daha önce alınmış",
         "phoneNumber": "Telefon Numarası",
-        "countryCode": "Ülke Kodu"
+        "countryCode": "Ülke Kodu",
+        "currentPassword": "Mevcut Şifre",
+        "newPassword": "Yeni Şifre",
+        "confirmNewPassword": "Yeni Şifreyi Onayla",
+        "updatePassword": "Şifreyi Güncelle",
+        "passwordError": "Girdiğiniz yeni şifre ile şifre onayı birbiriyle uyuşmuyor. Lütfen aynı şifreyi girerek tekrar deneyin.",
+        "passwordErrorEmpty": "Herhangi bir alan boş bırakılamaz. lütfen kontrol edip tekrar deneyin.",
+        "passwordErrorSame": "Eski şifreniz ve yeni şifreniz aynı olamaz. Lütfen farklı bir şifre girin.",
+        "changePassword": "Şifreyi Değiştir",
+        "passwordErrorRule": "Yeni şifreniz en az 8 karakter uzunluğunda olmalıdır."
     }
 }

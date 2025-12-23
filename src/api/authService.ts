@@ -20,9 +20,29 @@ export const loginUser = async (payload: LoginPayload): Promise<AuthResponse> =>
 }
 
 /**
- * Email kayıt kontrol
+ * Email daha önce kullanıldı mı kontrol
  */
 export const checkEmail = async (email: string): Promise<{ exists: boolean; message: string }> => {
   const { data } = await api.post<{ exists: boolean; message: string }>('/users/check-email', { email })
+  return data
+}
+
+/**
+* Şifre değiştirme
+*/
+export const changePassword = async (currentPassword: string, newPassword: string): Promise<void> => {
+  await api.patch("/users/change-password", {
+    currentPassword,
+    newPassword
+  })
+}
+
+/**
+ * Kullanıcının isim görünürlük tercihini değiştirmek için
+ */
+export const updateNameVisibility = async (
+  selectedNameType: "FULL_NAME" | "USERNAME"
+) => {
+  const { data } = await api.patch("/users/update-profile", { selectedNameType })
   return data
 }

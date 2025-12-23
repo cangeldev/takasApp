@@ -128,6 +128,16 @@
         "passwordsDontMatch": "Passwords don't match",
         "ThisUsernameAlreadyBeenTaken": "This username has already been taken",
         "phoneNumber": "Phone Number",
-        "countryCode": "Country Code"
+        "countryCode": "Country Code",
+        "currentPassword": "Current Password",
+        "newPassword": "New Password",
+        "confirmNewPassword": "Confirm New Password",
+        "updatePassword": "Update Password",
+        "passwordError": "The password you entered does not match your password confirmation. Please try again by entering the same password in both fields.",
+        "passwordErrorEmpty": "No fields can be left blank. Please check and try again.",
+        "passwordErrorSame": "Your old password and your new password cannot be the same. Please enter a different password.",
+        "changePassword": "Change Password",
+        "passwordErrorRule": "Your new password must be at least 8 characters long."
+        
     }
 }
