@@ -23,7 +23,7 @@ const getStyles = () => {
         button: {
             padding: moderateScale(15),
             borderRadius: moderateScale(8),
-            marginTop: verticalScale(10)
+            marginTop: verticalScale(27)
         },
         saveButtonText: {
             fontSize: scaleFont(16),
@@ -35,6 +35,20 @@ const getStyles = () => {
             alignSelf: "flex-end",
             top: verticalScale(10),
             right: horizontalScale(10)
+        },
+        errorContainer: {
+            backgroundColor: "#F9D5CD",
+            alignItems: "center",
+            borderRadius: moderateScale(5),
+            paddingVertical: verticalScale(5),
+            marginTop: verticalScale(20)
+        },
+        errorText: {
+            textAlign: "center",
+            padding: moderateScale(5),
+        },
+        errorIcon: {
+            fontSize: scaleFont(25),
         }
     })
 }

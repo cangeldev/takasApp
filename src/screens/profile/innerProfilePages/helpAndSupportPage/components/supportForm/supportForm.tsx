@@ -52,6 +52,7 @@ export const SupportForm = () => {
                     onChangeText={setEmail}
                     style={styles.input}
                     placeholderTextColor="#888"
+                    autoCapitalize='none'
                 />
                 <TextInput
                     placeholder={t('yourMessage')}

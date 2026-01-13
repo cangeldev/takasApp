@@ -123,18 +123,21 @@ export const ChangePasswordModal: FC<IChangePasswordModalProps> = ({ isModalVisi
                     placeHolder="******"
                     secureTextEntry={true}
                     onInputChange={setCurrentPassword}
+                    autoCapitalize='none'
                 />
                 <ProfileInfoPageTxtInput
                     title={t('newPassword')}
                     placeHolder="******"
                     secureTextEntry={true}
                     onInputChange={setNewPassword}
+                    autoCapitalize='none'
                 />
                 <ProfileInfoPageTxtInput
                     title={t('confirmNewPassword')}
                     placeHolder="******"
                     secureTextEntry={true}
                     onInputChange={setConfirmPassword}
+                    autoCapitalize='none'
                 />
                 <CustomButton
                     title={t("updatePassword")}

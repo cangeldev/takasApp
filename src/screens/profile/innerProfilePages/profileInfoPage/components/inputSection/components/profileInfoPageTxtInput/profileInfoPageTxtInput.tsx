@@ -16,6 +16,7 @@ interface IProfileInfoPageTxtInputProps {
     onPress?: () => void,
     secureTextEntry?: boolean
     iconOnPress?: () => void,
+    autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters'
 }
 
 /**
@@ -26,13 +27,13 @@ interface IProfileInfoPageTxtInputProps {
  * Eğer 'editable' prop'u 'false' ise (örneğin şifre alanı için), Pressable öğesine dokunulduğunda bir aksiyon tetiklenir (örn: şifre değiştirme modalı açılır).
  * Opsiyonel olarak, yönlendirme veya aksiyon belirtmek için bir ikon (iconName/iconType) gösterebilir.
  */
-export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable, value, onInputChange, onPress, secureTextEntry, iconOnPress }) => {
+export const ProfileInfoPageTxtInput: FC<IProfileInfoPageTxtInputProps> = ({ multiline, title, placeHolder, iconName, iconType, editable, value, onInputChange, onPress, secureTextEntry, iconOnPress, autoCapitalize }) => {
 
     const style = getStyles()
     const [isSecureEntry, setIsSecureEntry] = useState(secureTextEntry)
     return (
         <Pressable onPress={onPress} style={style.container}>
-            <TextInput onChangeText={onInputChange} multiline={multiline} style={style.txtInput} placeholder={placeHolder} editable={editable} value={value} secureTextEntry={isSecureEntry} />
+            <TextInput autoCapitalize={autoCapitalize ?? 'sentences'} onChangeText={onInputChange} multiline={multiline} style={style.txtInput} placeholder={placeHolder} editable={editable} value={value} secureTextEntry={isSecureEntry} />
             <Text style={style.title}>
                 {title}
             </Text>

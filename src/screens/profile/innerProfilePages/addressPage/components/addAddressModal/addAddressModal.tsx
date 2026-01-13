@@ -1,5 +1,5 @@
 import React, { FC, useState, useCallback } from 'react'
-import { View, Alert, Modal, ScrollView, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { View, Alert, Modal, ScrollView, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Text } from 'react-native'
 import getStyles from './addAddressModal.style'
 import { CustomButton, Icon } from 'components/commonComponents'
 import { AddressModalTextInput } from './components/addressModalTextInput/addressModalTextInput'
@@ -22,6 +22,13 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
 
     const styles = getStyles()
     const { t } = useTranslation()
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
+    const showError = (message: string) => {
+        setErrorMessage(message)
+        setTimeout(() => {
+            setErrorMessage(null)
+        }, 2000)
+    }
 
     const [form, setForm] = useState({
         identifier: '',
@@ -43,22 +50,36 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
     const validateForm = () => {
         const { identifier, firstName, lastName, phone, street, city, state, zip } = form;
         if (!identifier || !firstName || !lastName || !phone || !street || !city || !state || !zip) {
-            Alert.alert('Please fill in all required fields.');
+            // Alert.alert('Please fill in all required fields.');
+            showError("Please fill in all required fields.")
             return false
         }
         return true
     }
 
     // Adres verilerini kaydeden fonksiyon ileride doldur burayı unutma nereye kaydediceksen
-    const handleSave = () => {
-        if (validateForm()) {
-            console.log('Saved Address:', form);
-            onCloseModal()
-        }
-    }
 
-    const renderInput = (label: string, key: keyof typeof form) => (
-        <AddressModalTextInput label={`${label} *`} value={form[key]} onInputChange={text => handleChange(key, text)} />
+
+    const handleSave = async () => {
+
+        try {
+            if (validateForm()) {
+                console.log('Saved Address:', form);
+                onCloseModal()
+            }
+
+
+        } catch (error: any) {
+            Alert.alert(
+                t("error"),
+                error?.response?.data?.message ||
+                error?.message ||
+                t("unknownError")
+            );
+        }
+    };
+    const renderInput = (label: string, key: keyof typeof form, keyboardType?: 'number-pad' | 'default' | 'email-address') => (
+        <AddressModalTextInput label={`${label} *`} value={form[key]} onInputChange={text => handleChange(key, text)} keyboardType={keyboardType} />
     )
 
     return (
@@ -77,12 +98,24 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
                                     {renderInput('Last name', 'lastName')}
                                 </View>
                             </View>
-                            {renderInput('Phone', 'phone')}
+                            {renderInput('Phone', 'phone','number-pad')}
                             {renderInput('Company', 'company')}
                             {renderInput('State', 'state')}
                             {renderInput('Street address', 'street')}
                             {renderInput('Town / City', 'city')}
-                            {renderInput('Postcode / ZIP', 'zip')}
+                            {renderInput('Postcode / ZIP', 'zip', "number-pad")}
+                            {errorMessage && (
+                                <View style={styles.errorContainer}>
+                                    <Icon
+                                        name="do-not-disturb-alt"
+                                        type="MaterialIcons"
+                                        style={styles.errorIcon}
+                                    />
+                                    <Text style={styles.errorText}>
+                                        {errorMessage}
+                                    </Text>
+                                </View>
+                            )}
                             <CustomButton title="saveAddress" variant="primary" style={styles.button} textStyle={styles.saveButtonText} onPress={handleSave} />
                         </View>
                     </ScrollView>

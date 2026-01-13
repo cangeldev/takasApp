@@ -45,6 +45,15 @@ export const AuthInputSection = () => {
             })
             return
         }
+        if (password.length < 8) {
+            ToastMessage({
+                title: t('info'),
+                message: t('passwordErrorRule'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style,
+            })
+            return
+        }
 
         try {
             await checkEmail(email)
@@ -63,8 +72,8 @@ export const AuthInputSection = () => {
     return (
         <View>
             <AuthInput placeholder="enterYourEmail" onInputChange={setEmail} />
-            <AuthInput placeholder="enterYourPassword" onInputChange={setPassword} />
-            <AuthInput placeholder="confirmPassword" onInputChange={setConfirmPassword} />
+            <AuthInput placeholder="enterYourPassword" onInputChange={setPassword} isSecure={true} />
+            <AuthInput placeholder="confirmPassword" onInputChange={setConfirmPassword} isSecure={true} />
             <CustomButton
                 title="signUp"
                 variant="primary"

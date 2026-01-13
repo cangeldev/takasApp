@@ -7,6 +7,7 @@ interface IAddressModalTextInputProps {
     placeHolder?: string
     value: string
     onInputChange: (inputText: string) => void
+    keyboardType?: 'number-pad' | 'default' | 'email-address'
 }
 
 /**
@@ -16,7 +17,7 @@ interface IAddressModalTextInputProps {
  * Kullanıcı odaklandığında görsel geri bildirim (focusedInput) sağlamak için 'isFocused' state'ini yönetir.
  * Değişiklikler, 'onInputChange' prop'u aracılığıyla üst bileşene iletilir ve 'value' prop'u ile kontrol edilir.
  */
-export const AddressModalTextInput: FC<IAddressModalTextInputProps> = ({ label, placeHolder, value, onInputChange }) => {
+export const AddressModalTextInput: FC<IAddressModalTextInputProps> = ({ label, placeHolder, value, onInputChange ,keyboardType}) => {
     const styles = getStyles()
     const [isFocused, setIsFocused] = useState(false)
 
@@ -30,6 +31,7 @@ export const AddressModalTextInput: FC<IAddressModalTextInputProps> = ({ label, 
                 onChangeText={onInputChange}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
+                keyboardType={keyboardType}
             />
         </>
     )
