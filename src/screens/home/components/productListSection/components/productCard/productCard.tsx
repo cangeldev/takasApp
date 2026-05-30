@@ -44,7 +44,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     const priceContent = useMemo(() => {
         if (price === 0) {
-            return <Text style={styles.newPrice}>{t('onlyTradeOffers')}</Text>
+            return <Text style={styles.newPrice}>{t('product:onlyTradeOffers')}</Text>
         }
         return (
             <View style={styles.priceView}>

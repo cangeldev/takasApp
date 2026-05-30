@@ -149,7 +149,7 @@ export const languages: LanguageOption[] = [
 export const notificationSettingsOptions = [
     { key: "pushNotifications", label: 'generalNotifications', icon: "notifications" },
     { key: "emailNotifications", label: 'emailNotifications', icon: "mail" },
-    { key: "commentNotifications", label: 'whenCommentisMadeOnProduct', icon: "chatbubble-ellipses" },
+    { key: "commentNotifications", label: 'whenCommentIsMadeOnProduct', icon: "chatbubble-ellipses" },
     { key: "offerNotifications", label: 'whenOfferMadeProduct', icon: "pricetag" },
     { key: "campaignNotifications", label: 'campaignNotifications', icon: "megaphone" },
     { key: "sentOfferNotifications", label: 'notificationsOffersYouSent', icon: "send" },

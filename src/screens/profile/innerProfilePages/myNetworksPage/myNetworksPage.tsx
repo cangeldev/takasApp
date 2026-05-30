@@ -24,8 +24,8 @@ export const MyNetworksPage = () => {
     const { t } = useTranslation()
     const [index, setIndex] = useState(0)
     const [routes] = useState<Route[]>([
-        { key: 'following', title: t('following') },
-        { key: 'followers', title: t('followers') },
+        { key: 'following', title: t('profile:following') },
+        { key: 'followers', title: t('profile:followers') },
     ])
 
     const FollowingRoute = () => (
@@ -35,7 +35,7 @@ export const MyNetworksPage = () => {
             renderItem={({ item }) => (
                 <FollowItemCard image={item.avatar} name={item.name} activeTab="following" />
             )}
-            ListEmptyComponent={<EmptyListComponent text={t('youDontHaveAnyFollowersYet')} />}
+            ListEmptyComponent={<EmptyListComponent text={t('profile:youDontHaveAnyFollowersYet')} />}
         />
     )
 
@@ -46,7 +46,7 @@ export const MyNetworksPage = () => {
             renderItem={({ item }) => (
                 <FollowItemCard image={item.avatar} name={item.name} activeTab="followers" />
             )}
-            ListEmptyComponent={<EmptyListComponent text={t('youHaventFollowedAnyoneYet')} />}
+            ListEmptyComponent={<EmptyListComponent text={t('profile:youHaventFollowedAnyoneYet')} />}
         />
     )
 

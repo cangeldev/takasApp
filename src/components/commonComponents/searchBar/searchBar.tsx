@@ -19,7 +19,7 @@ export const SearchBar = () => {
     return (
         <View style={styles.inputContainer}>
             <Icon name='search' type='Feather' style={styles.searchIcon} />
-            <TextInput placeholderTextColor={"#5b5d5f"} placeholder={t("homeSearchPlaceHolder")} />
+            <TextInput placeholderTextColor={"#5b5d5f"} placeholder={t('product:homeSearchPlaceHolder')} />
         </View>
     )
 }

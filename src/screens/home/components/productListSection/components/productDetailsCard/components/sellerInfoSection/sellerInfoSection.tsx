@@ -24,7 +24,7 @@ export const SellerInfoSection = () => {
             />
             <View style={styles.sellerInfoWrapper}>
                 <Text style={styles.sellerNameText}>cangel81</Text>
-                <Text style={styles.sellerMetaText}>⭐ 4.6 · 23 {t("evaluation")}</Text>
+                <Text style={styles.sellerMetaText}>⭐ 4.6 · 23 {t('product:evaluation')}</Text>
             </View>
             <CustomButton title="follow" variant="primary" style={styles.followButton} textStyle={styles.followButtonText} />
         </View>

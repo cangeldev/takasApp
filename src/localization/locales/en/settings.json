@@ -1,0 +1,17 @@
+{
+  "personalInformation": "Personal Information",
+  "addressAndLocationInformation": "Address and Location Information",
+  "myNetwork": "My Network",
+  "myFavorites": "My Favorites",
+  "notificationSettings": "Notification Settings",
+  "applicationLanguageAndTheme": "App Language and Theme",
+  "helpAndSupport": "Help & Support",
+  "logoutSuccess": "Logged Out Successfully",
+  "youHaveSuccessfullyLoggedAccount": "You have successfully logged out of your account",
+  "languageAndThemeSettings": "Language and Theme Settings",
+  "themeSelection": "Theme Selection",
+  "languageSelection": "Language Selection",
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode",
+  "defaultMode": "System Default"
+}

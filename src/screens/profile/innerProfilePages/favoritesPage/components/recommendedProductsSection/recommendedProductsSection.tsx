@@ -34,7 +34,7 @@ export const RecommendedProductsSection = () => {
 
     return (
         <View>
-            <Text style={styles.recommendedTitle}>{t('productsYouMayLike')}</Text>
+            <Text style={styles.recommendedTitle}>{t('product:productsYouMayLike')}</Text>
             <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}

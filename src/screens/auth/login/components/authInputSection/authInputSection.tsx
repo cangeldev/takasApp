@@ -30,8 +30,8 @@ export const AuthInputSection = () => {
           if (!isValidEmail(email)) {
                    ToastMessage({
                 type: 'info',
-                title: t('info'),
-                message:  t('invalidEmail'),
+                title: t('errors:info'),
+                message:  t('errors:invalidEmail'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -40,8 +40,8 @@ export const AuthInputSection = () => {
         if (!email || !password) {
             ToastMessage({
                 type: 'info',
-                title: t('info'),
-                message: t('infoText'),
+                title: t('errors:info'),
+                message: t('errors:infoText'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -51,8 +51,8 @@ export const AuthInputSection = () => {
             await loginUser({ email, password })
             ToastMessage({
                 type: 'success',
-                title: t('success'),
-                message: t('successText'),
+                title: t('errors:success'),
+                message: t('errors:successText'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -67,7 +67,7 @@ export const AuthInputSection = () => {
         } catch (error: any) {
             ToastMessage({
                 type: 'success',
-                title: t('error'),
+                title: t('errors:error'),
                 message: error.message,
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
@@ -79,7 +79,7 @@ export const AuthInputSection = () => {
             <AuthInput placeholder="enterYourEmail" onInputChange={setEmail} />
             <AuthInput placeholder="enterYourPassword" onInputChange={setPassword} isSecure />
             <TouchableOpacity style={styles.forgotPassword}>
-                <Text style={styles.forgotText}>{t("forgotPassword")}</Text>
+                <Text style={styles.forgotText}>{t('auth:forgotPassword')}</Text>
             </TouchableOpacity>
             <CustomButton title="login" variant='primary' onPress={handleLogin} style={styles.loginButton} textStyle={styles.loginText} />
 

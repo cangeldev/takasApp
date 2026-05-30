@@ -1,0 +1,14 @@
+{
+  "faq": "Sıkça Sorulan Sorular",
+  "howToTrade": "Ürün nasıl takas edilir?",
+  "howToTradeDesc": "İlgilendiğiniz ürüne girip, 'Takas Teklifi Gönder' butonuna basın",
+  "problemSolution": "Bir sorun yaşarsam ne yapmalıyım?",
+  "problemSolutionDesc": "Destek formunu doldurarak bizimle iletişime geçebilirsiniz",
+  "isSafeTrade": "Takas sırasında güvende miyim?",
+  "isSafeTradeDesc": "Tüm kullanıcılarımızı doğruluyoruz, önerdiğimiz kurallara uymanızı tavsiye ederiz",
+  "contactUs": "Bize Ulaşın",
+  "yourEmail": "E-posta adresiniz",
+  "yourMessage": "Sorununuz / Mesajınız",
+  "supportEmail": "Destek Maili",
+  "openMailApp": "Mail uygulaması açılacak"
+}

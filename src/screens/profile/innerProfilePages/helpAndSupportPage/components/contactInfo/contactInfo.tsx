@@ -18,7 +18,7 @@ export const ContactInfo = () => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.contactLabel}>{t('supportEmail')}:</Text>
+                <Text style={styles.contactLabel}>{t('support:supportEmail')}:</Text>
                 <TouchableOpacity onPress={() => Linking.openURL('mailto:destek@takasapp.com')}>
                     <Text style={styles.contactLink}>destek@takasapp.com</Text>
                 </TouchableOpacity>

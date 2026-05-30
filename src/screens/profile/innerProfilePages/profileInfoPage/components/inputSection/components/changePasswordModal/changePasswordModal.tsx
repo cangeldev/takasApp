@@ -42,21 +42,21 @@ export const ChangePasswordModal: FC<IChangePasswordModalProps> = ({ isModalVisi
 
     const validate = () => {
         if (!currentPassword || !newPassword || !confirmPassword) {
-            showError(t('passwordErrorEmpty'))
+            showError(t('errors:passwordErrorEmpty'))
             return false;
         }
 
         if (currentPassword == newPassword) {
-            showError(t('passwordErrorSame'))
+            showError(t('errors:passwordSameAsOld'))
             return false;
         }
         if (newPassword.length < 8) {
-            showError(t("passwordErrorRule"))
+            showError(t('errors:passwordTooShort'))
             return false;
         }
 
         if (newPassword !== confirmPassword) {
-            showError(t('passwordError'))
+            showError(t('errors:passwordError'))
             return false;
         }
 
@@ -70,7 +70,7 @@ export const ChangePasswordModal: FC<IChangePasswordModalProps> = ({ isModalVisi
             await changePassword(currentPassword, newPassword);
 
             Alert.alert(
-                t("success"),
+                t('errors:success'),
                 t("passwordChangedRelogin")
             );
 
@@ -84,7 +84,7 @@ export const ChangePasswordModal: FC<IChangePasswordModalProps> = ({ isModalVisi
 
         } catch (error: any) {
             Alert.alert(
-                t("error"),
+                t('errors:error'),
                 error?.response?.data?.message ||
                 error?.message ||
                 t("unknownError")

@@ -27,7 +27,7 @@ export const ThemeSection = () => {
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.sectionTitle}>{t('themeSelection')}</Text>
+            <Text style={styles.sectionTitle}>{t('settings:themeSelection')}</Text>
             <FlatList
                 scrollEnabled={false}
                 data={ThemeOptionsList}

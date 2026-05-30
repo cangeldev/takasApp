@@ -17,7 +17,7 @@ export const RegisterScreen = () => {
         <SafeAreaView style={styles.container}>
             <HeaderSection />
             <AuthInputSection />
-            <AuthSocialLoginSection navigationScreen="Login" preAuthText="alreadyHaveAnAccount" authActionText="loginNow" />
+            <AuthSocialLoginSection navigationScreen="Login" preAuthText="alreadyHaveAccount" authActionText="loginNow" />
         </SafeAreaView>
     )
 }

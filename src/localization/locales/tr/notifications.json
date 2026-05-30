@@ -1,0 +1,12 @@
+{
+  "generalNotifications": "Genel Bildirimler",
+  "emailNotifications": "E-Posta Bildirimleri",
+  "campaignNotifications": "Kampanya Bildirimleri",
+  "whenCommentIsMadeOnProduct": "Ürüne Yorum Yapıldığında",
+  "whenOfferMadeProduct": "Ürüne Teklif Yapıldığında",
+  "notificationsOffersYouSent": "Yaptığın Teklif Bildirimleri",
+  "offersMadeYourProducts": "Ürünlerine Yapılan Teklifler",
+  "receiveSMSNotifications": "SMS Almak İstiyorum",
+  "yourFavoriteProductsForYou": "Favori ürünlerin seni bekliyor! Fırsatları kaçırma!",
+  "receiveCallsRelatedCampaigns": "Kampanyalarla İlgili Çağrı Almak İstiyorum"
+}

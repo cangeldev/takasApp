@@ -1,0 +1,17 @@
+{
+  "personalInformation": "Kişisel Bilgiler",
+  "addressAndLocationInformation": "Adres ve Konum Bilgileri",
+  "myNetwork": "Ağım",
+  "myFavorites": "Favorilerim",
+  "notificationSettings": "Bildirim Ayarları",
+  "applicationLanguageAndTheme": "Uygulama Dili ve Tema",
+  "helpAndSupport": "Yardım & Destek",
+  "logoutSuccess": "Çıkış başarılı",
+  "youHaveSuccessfullyLoggedAccount": "Başarıyla hesabınızdan çıkış yaptınız",
+  "languageAndThemeSettings": "Dil ve Tema Ayarları",
+  "themeSelection": "Tema seçimi",
+  "languageSelection": "Dil seçimi",
+  "lightMode": "Aydınlık mod",
+  "darkMode": "Karanlık mod",
+  "defaultMode": "Varsayılan sistem ayarı"
+}

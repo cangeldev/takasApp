@@ -23,7 +23,7 @@ export const LanguageSection = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.sectionTitle}>{t('languageSelection')}</Text>
+            <Text style={styles.sectionTitle}>{t('settings:languageSelection')}</Text>
             <FlatList
                 scrollEnabled={false}
                 data={languages}

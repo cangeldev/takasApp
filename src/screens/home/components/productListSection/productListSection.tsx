@@ -44,7 +44,7 @@ export const ProductListSection = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{t("ourPicksForYou")}</Text>
+            <Text style={styles.title}>{t('product:ourPicksForYou')}</Text>
             <FlatList
                 data={productList}
                 renderItem={renderItem}

@@ -22,8 +22,8 @@ export const SupportForm = () => {
         if (!email.trim() || !message.trim()) {
             ToastMessage({
                 type: 'info',
-                title: t('info'),
-                message: t('pleaseFillAllFields'),
+                title: t('errors:info'),
+                message: t('errors:missingFields'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -34,7 +34,7 @@ export const SupportForm = () => {
         Linking.openURL(url).catch(() =>
             ToastMessage({
                 type: 'error',
-                title: t('error'),
+                title: t('errors:error'),
                 message: t('emailClientError'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
@@ -45,9 +45,9 @@ export const SupportForm = () => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.sectionTitle}>{t('contactUs')}</Text>
+                <Text style={styles.sectionTitle}>{t('support:contactUs')}</Text>
                 <TextInput
-                    placeholder={t('yourEmail')}
+                    placeholder={t('support:yourEmail')}
                     value={email}
                     onChangeText={setEmail}
                     style={styles.input}
@@ -55,7 +55,7 @@ export const SupportForm = () => {
                     autoCapitalize='none'
                 />
                 <TextInput
-                    placeholder={t('yourMessage')}
+                    placeholder={t('support:yourMessage')}
                     value={message}
                     onChangeText={setMessage}
                     style={[styles.input, styles.textArea]}

@@ -22,7 +22,7 @@ export const HeaderSection = () => {
             <TouchableOpacity style={styles.backButtonView} onPress={() => navigation.goBack()}>
                 <Icon name="chevron-left" type="Entypo" style={styles.backButton} />
             </TouchableOpacity>
-            <Text style={styles.title}>{t("detailsText")}</Text>
+            <Text style={styles.title}>{t('profile:detailsText')}</Text>
         </View>
     )
 }

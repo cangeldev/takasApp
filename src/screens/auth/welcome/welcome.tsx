@@ -27,16 +27,15 @@ export const Welcome = () => {
                 resizeMode="contain"
             />
             <View>
-                <Text style={styles.title}>{t("welcome")}</Text>
+                <Text style={styles.title}>{t('auth:welcome')}</Text>
                 <Text style={styles.subtitle}>
-                    {t("welcomeText")}
+                    {t('auth.welcomeText')}
                 </Text>
             </View>
             <View style={styles.buttonContainer}>
                 <CustomButton onPress={() => navigation.navigate("Login")} title="login" variant="primary" style={styles.button} textStyle={styles.buttonText} />
                 <CustomButton onPress={() => navigation.navigate("Register")} title="signUp" variant="secondary" style={styles.button} textStyle={styles.buttonText} />
             </View>
-
         </View>
     )
 }

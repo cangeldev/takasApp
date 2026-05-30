@@ -22,7 +22,7 @@ export const HeaderSection = () => {
             <TouchableOpacity style={styles.backButtonView} onPress={() => navigation.goBack()}>
                 <Icon name="chevron-left" type="Entypo" style={styles.backButton} />
             </TouchableOpacity>
-            <Text style={styles.title}>{t("loginText")}</Text>
+            <Text style={styles.title}>{t('auth:loginText')}</Text>
             <Image
                 source={images.login.login}
                 style={styles.image}

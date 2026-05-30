@@ -28,8 +28,8 @@ export const AuthInputSection = () => {
     const handleRegister = useCallback(async () => {
         if (!email || !password) {
             ToastMessage({
-                title: t('info'),
-                message: t('infoText'),
+                title: t('errors:info'),
+                message: t('errors:infoText'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -38,8 +38,8 @@ export const AuthInputSection = () => {
 
         if (password !== confirmPassword) {
             ToastMessage({
-                title: t('info'),
-                message: t('passwordsDontMatch'),
+                title: t('errors:info'),
+                message: t('errors:passwordsDontMatch'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -47,8 +47,8 @@ export const AuthInputSection = () => {
         }
         if (password.length < 8) {
             ToastMessage({
-                title: t('info'),
-                message: t('passwordErrorRule'),
+                title: t('errors:info'),
+                message: t('errors:passwordTooShort'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
@@ -62,8 +62,8 @@ export const AuthInputSection = () => {
         } catch (err) {
             ToastMessage({
                 type: 'error',
-                title: t('error'),
-                message: t('thisEmailAlreadyRegistered'),
+                title: t('errors:error'),
+                message: t('errors:emailAlreadyRegistered'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })

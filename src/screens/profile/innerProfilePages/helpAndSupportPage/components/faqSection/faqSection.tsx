@@ -18,7 +18,7 @@ export const FaqSection = () => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.sectionTitle}>{t('faq')}</Text>
+                <Text style={styles.sectionTitle}>{t('support:faq')}</Text>
                 {Faqs.map((item, index) => (
                     <View key={index} style={styles.faqItem}>
                         <Text style={styles.faqQuestion}>{t(item.q)}</Text>

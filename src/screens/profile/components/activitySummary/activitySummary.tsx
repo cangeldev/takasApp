@@ -22,11 +22,11 @@ export const ActivitySummary = () => {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
-                <ProfileActivitySummaryCard image={images.other.received} title={t('received')} />
+                <ProfileActivitySummaryCard image={images.other.received} title={t('common:received')} />
                 <View style={styles.cardDivider} />
-                <ProfileActivitySummaryCard image={images.other.replacement} title={t('pendingExchanges')} />
+                <ProfileActivitySummaryCard image={images.other.replacement} title={t('common:pendingExchanges')} />
                 <View style={styles.cardDivider} />
-                <ProfileActivitySummaryCard image={images.other.gave} title={t('gave')} />
+                <ProfileActivitySummaryCard image={images.other.gave} title={t('common:gave')} />
             </View>
         </View>
     )

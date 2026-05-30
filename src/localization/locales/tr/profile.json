@@ -1,0 +1,16 @@
+{
+  "username": "Kullanıcı Adı",
+  "name": "Ad",
+  "surname": "Soyad",
+  "description": "Açıklama",
+  "descriptionPlaceholder": "Hakkınızda bir şeyler yazabilirsiniz",
+  "selectNameText": "İlan verme, mesajlaşma, takas teklifi gönderme, gelen teklifleri cevaplama gibi özellikleri kullanırken diğer kullanıcıların adınızı nasıl göreceğini buradan seçebilirsiniz",
+  "phoneNumber": "Telefon Numarası",
+  "phoneNumberVerified": "Telefon numarası doğrulandı",
+  "youSignedUpMonthAgo": "Bir ay önce üye oldunuz",
+  "followers": "Takipçi",
+  "following": "Takip",
+  "youDontHaveAnyFollowersYet": "Henüz takipçiniz yok",
+  "youHaventFollowedAnyoneYet": "Henüz kimseyi takip etmediniz",
+  "detailsText": "Profiliniz, yeni ürünleri ve fırsatları keşfetmenize yardımcı olur"
+}

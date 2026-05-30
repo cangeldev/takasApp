@@ -31,10 +31,10 @@ export const UserProfileInfo = () => {
                 <Text style={styles.userNameText}>{user.name + " " + user.surname}</Text>
             </View>
             <View style={styles.statsCardContainer}>
-                <ProfileStatsCard count="0" title={t('exchange')} />
-                <ProfileStatsCard count="0" title={t('followers')} />
-                <ProfileStatsCard count="0" title={t('following')} />
-                <ProfileStatsCard count="0" title={t('favorite')} />
+                <ProfileStatsCard count="0" title={t('common:exchange')} />
+                <ProfileStatsCard count="0" title={t('profile:followers')} />
+                <ProfileStatsCard count="0" title={t('profile:following')} />
+                <ProfileStatsCard count="0" title={t('common:favorite')} />
             </View>
         </View>
     )

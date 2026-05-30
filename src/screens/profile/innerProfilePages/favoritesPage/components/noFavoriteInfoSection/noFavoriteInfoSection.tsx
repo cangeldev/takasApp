@@ -18,12 +18,12 @@ export const NoFavoriteInfoSection = ({ onPress }: { onPress: () => void }) => {
     return (
         <View style={styles.noFavoriteContainer}>
             <Image source={images.other.touch} style={styles.noFavoriteImage} />
-            <Text style={styles.noFavoriteText}>{t('favoriteTheProductsYouLike')}</Text>
+            <Text style={styles.noFavoriteText}>{t('product:favoriteTheProductsYouLike')}</Text>
             <Text style={styles.noFavoriteSubText}>
-                {t('getNotifiedWhenTradeOptionsChange')}
+                {t('product:getNotifiedWhenTradeOptionsChange')}
             </Text>
             <TouchableOpacity onPress={onPress} style={styles.exploreButton}>
-                <Text style={styles.exploreButtonText}>{t('explore')}</Text>
+                <Text style={styles.exploreButtonText}>{t('product:explore')}</Text>
             </TouchableOpacity>
         </View>
     )

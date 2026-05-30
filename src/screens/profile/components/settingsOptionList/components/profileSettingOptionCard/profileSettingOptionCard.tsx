@@ -35,8 +35,8 @@ export const ProfileSettingOptionCard: FC<IProfileSettingOptionCardProps> = ({ t
             AsyncStorage.removeItem("userToken")
             ToastMessage({
                 type: 'success',
-                title: t('exitSuccessful'),
-                message: t('youHaveSuccessfullyLoggedAccount'),
+                title: t('settings:logoutSuccess'),
+                message: t('settings:youHaveSuccessfullyLoggedAccount'),
                 text1Style: style.text1Style,
                 text2Style: style.text2Style,
             })

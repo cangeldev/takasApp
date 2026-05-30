@@ -1,0 +1,9 @@
+{
+  "saveAddress": "Adresi Kaydet",
+  "addressInformation": "Adres Bilgilerim",
+  "addAddress": "Adres Ekle",
+  "addNewAddress": "Yeni Adres Ekle",
+  "noSavedAddressInformationFound": "Kaydedilen adres bilgisi bulunamadı",
+  "countryCode": "Ülke Kodu",
+  "addressAndLocationInformation": "Adres ve Lokasyon Bilgileri"
+}

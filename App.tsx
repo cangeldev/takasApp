@@ -24,36 +24,36 @@ const App = () => {
   useEffect(() => {
     const prepareApp = async () => {
       try {
-        await initializeApp(dispatch);
+        await initializeApp(dispatch)
 
-        const token = await AsyncStorage.getItem("userToken");
-        console.log("APP AÇILIŞ TOKEN:", token);
+        const token = await AsyncStorage.getItem("userToken")
+        console.log("APP AÇILIŞ TOKEN:", token)
 
         if (!token) {
-          setInitialRoute("Welcome");
+          setInitialRoute("Welcome")
           return;
         }
 
-        const res = await api.get("/users/me");
-        dispatch(setUser(res.data));
+        const res = await api.get("/users/me")
+        dispatch(setUser(res.data))
 
-        setInitialRoute("AppTabs");
+        setInitialRoute("AppTabs")
       } catch (error: any) {
-        console.log("AUTH ME ERROR:", error?.message);
+        console.log("AUTH ME ERROR:", error?.message)
 
         // 🔴 SADECE 401 / 403 İSE LOGOUT
         if (error?.response?.status === 401 || error?.response?.status === 403) {
           await AsyncStorage.removeItem("userToken");
-          dispatch(logout());
-          setInitialRoute("Welcome");
+          dispatch(logout())
+          setInitialRoute("Welcome")
         } else {
-          setInitialRoute("AppTabs");
+          setInitialRoute("AppTabs")
         }
       }
-    };
+    }
 
-    prepareApp();
-  }, [dispatch]);
+    prepareApp()
+  }, [dispatch])
 
 
   if (initialRoute === null) {

@@ -33,7 +33,7 @@ export const RecommenedProductCard: FC<IRecommenedProductCardProps> = ({ image, 
             <Text style={styles.priceText}>{price} TL</Text>
             <Text style={styles.descriptionText} numberOfLines={1}>{description}</Text>
             <Text style={styles.offerText}>
-                {t('makeOffer')}
+                {t('product:makeOffer')}
             </Text>
             <Icon
                 onPress={toggleFavorite}

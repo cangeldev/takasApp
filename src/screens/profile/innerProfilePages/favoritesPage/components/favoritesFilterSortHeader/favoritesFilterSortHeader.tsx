@@ -45,11 +45,11 @@ export const FavoritesFilterSortHeader = ({ selectedOption, onOptionSelect }: Pr
                 <MenuTrigger>
                     <View style={styles.filterSortButton}>
                         <Icon name="sort" type="FontAwesome6" style={styles.filterIcon} />
-                        <Text style={styles.filterText}> {t('sortBy')} </Text>
+                        <Text style={styles.filterText}> {t('common:sortBy')} </Text>
                     </View>
                 </MenuTrigger>
                 <MenuOptions optionsContainerStyle={styles.menuOptionsContainer}>
-                    <Text style={styles.titleText}>{t('sortBy')}</Text>
+                    <Text style={styles.titleText}>{t('common:sortBy')}</Text>
                     <Icon name="close-a" type="Fontisto" style={styles.closeIcon} />
                     {renderSortOptions()}
                 </MenuOptions>
@@ -59,7 +59,7 @@ export const FavoritesFilterSortHeader = ({ selectedOption, onOptionSelect }: Pr
                 <MenuTrigger>
                     <View style={styles.filterSortButton}>
                         <Icon name="filter" type="FontAwesome" style={styles.filterIcon} />
-                        <Text style={styles.filterText}> {t('filter')}</Text>
+                        <Text style={styles.filterText}> {t('common:filter')}</Text>
                     </View>
                 </MenuTrigger>
                 <MenuOptions>

@@ -33,7 +33,7 @@ export const AuthInput: FC<IAuthInput> = ({ placeholder, onInputChange, isSecure
         <View style={styles.inputContainer}>
             <TextInput
                 autoCapitalize='none'
-                placeholder={t(placeholder)}
+                placeholder={placeholder}
                 secureTextEntry={isSecure ? isSecureEntry : false}
                 value={inputText}
                 onChangeText={handleTextChange}

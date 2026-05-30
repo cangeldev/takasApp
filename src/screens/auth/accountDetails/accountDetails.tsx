@@ -9,6 +9,7 @@ import { RootState } from 'store/store'
 import { registerUser } from 'api/authService'
 import { useTranslation } from 'react-i18next'
 import { setUser } from 'store/slices/authSlice'
+import { setUserInfo } from 'store/slices/userSlice'
 
 /**
  * AccountDetails: Kullanıcının kayıt (sign-up) sürecinde detaylı bilgilerini (isim, telefon, adres vb.) girdiği formu temsil eder.
@@ -22,8 +23,8 @@ export const AccountDetails = () => {
     const navigation = useAppNavigation()
     const userInfo = useSelector((state: RootState) => state.userInfo)
     const { t } = useTranslation()
-    const dispatch = useDispatch();
-    
+    const dispatch = useDispatch()
+
     const handleRegister = async () => {
         if (
             !userInfo.username ||
@@ -35,12 +36,22 @@ export const AccountDetails = () => {
         ) {
             ToastMessage({
                 type: 'info',
-                title: t('info'),
-                message: t('infoText'),
+                title: t('errors:info'),
+                message: t('errors:infoText'),
                 text1Style: styles.text1Style,
-                text2Style: styles.text2Style,
-            });
-            return;
+                text2Style: styles.text2Style
+            })
+            return
+        }
+        if (userInfo.phoneNumber.length != 17) {
+            ToastMessage({
+                type: 'error',
+                title: t('errors:error'),
+                message: t('errors:phoneNumberText'),
+                text1Style: styles.text1Style,
+                text2Style: styles.text2Style
+            })
+            return
         }
 
         try {
@@ -55,15 +66,15 @@ export const AccountDetails = () => {
                 district: userInfo.district,
             });
 
-            dispatch(setUser(authResponse.user));
+            dispatch(setUser(authResponse.user))
 
             ToastMessage({
                 type: 'success',
-                title: t('success'),
-                message: t('successText'),
+                title: t('errors:success'),
+                message: t('errors:successText'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
-            });
+            })
 
             navigation.reset({
                 index: 0,
@@ -72,11 +83,14 @@ export const AccountDetails = () => {
         } catch (error: any) {
             ToastMessage({
                 type: 'error',
-                title: t('error'),
-                message: t('ThisUsernameAlreadyBeenTaken'),
+                title: t('errors:error'),
+                message: t('errors:usernameAlreadyTaken'),
                 text1Style: styles.text1Style,
                 text2Style: styles.text2Style,
             })
+        }
+        finally {
+            dispatch(setUserInfo({city:"",district:"",name:"",surname:"",username:"",phoneNumber:""}))
         }
     }
 

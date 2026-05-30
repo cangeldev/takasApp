@@ -1,0 +1,16 @@
+{
+  "username": "Username",
+  "name": "First Name",
+  "surname": "Last Name",
+  "description": "Description",
+  "descriptionPlaceholder": "You can write something about yourself",
+  "selectNameText": "You can choose how other users see your name when posting listings, messaging, sending trade offers, and responding to received offers.",
+  "phoneNumber": "Phone Number",
+  "phoneNumberVerified": "Phone number verified",
+  "youSignedUpMonthAgo": "You joined a month ago",
+  "followers": "Followers",
+  "following": "Following",
+  "youDontHaveAnyFollowersYet": "You don't have any followers yet",
+  "youHaventFollowedAnyoneYet": "You haven't followed anyone yet",
+  "detailsText": "Your profile helps you discover new products and deals"
+}

@@ -92,7 +92,7 @@
         "onlyTradeOffers": "Only Trade Offers",
         "ourPicksForYou": "Our picks for you",
         "askTheSeller": "Ask the seller",
-        "addToCart": "Sepete Ekle",
+        "addToCart": "Add to cart",
         "questionAnswer": "Question & Answer",
         "askSellerQuestion": "Ask the seller a question",
         "follow": "Follow",
@@ -137,7 +137,7 @@
         "passwordErrorEmpty": "No fields can be left blank. Please check and try again.",
         "passwordErrorSame": "Your old password and your new password cannot be the same. Please enter a different password.",
         "changePassword": "Change Password",
-        "passwordErrorRule": "Your new password must be at least 8 characters long."
-        
+        "passwordErrorRule": "Your new password must be at least 8 characters long.",
+        "phoneNumberText": "Please enter a valid phone number."
     }
 }

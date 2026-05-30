@@ -1,0 +1,14 @@
+{
+  "exchange": "Exchanges",
+  "favorite": "Favorite",
+  "follow": "Follow",
+  "send": "Send",
+  "filter": "Filter",
+  "sortBy": "Sort By",
+  "recommended": "Recommended",
+  "distance": "By Distance",
+  "publishedDate": "Published Date",
+  "received": "Received",
+  "gave": "Given",
+  "pendingExchanges": "Pending Exchanges"
+}

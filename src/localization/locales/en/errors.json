@@ -1,0 +1,18 @@
+{
+  "error": "An Error Occurred ❌",
+  "errorText": "Something went wrong during login. Please try again later.",
+  "info": "Invalid Information ⚠️",
+  "infoText": "Some information appears to be missing. Please check again.",
+  "success": "Login Successful 🎉",
+  "successText": "Welcome! You can start using the app now.",
+  "invalidEmail": "Please enter a valid email address.",
+  "emailAlreadyRegistered": "This email is already registered.",
+  "usernameAlreadyTaken": "This username has already been taken.",
+  "passwordsDontMatch": "Passwords do not match.",
+  "passwordError": "The new password and the confirmation password do not match.",
+  "passwordErrorEmpty": "Fields cannot be left empty.",
+  "passwordSameAsOld": "Your new password cannot be the same as your current password.",
+  "passwordTooShort": "Your new password must be at least 8 characters long.",
+  "phoneNumberText": "Please enter a valid phone number.",
+  "missingFields": "Please fill in all fields."
+}

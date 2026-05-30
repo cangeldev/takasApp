@@ -71,7 +71,7 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
 
         } catch (error: any) {
             Alert.alert(
-                t("error"),
+                t('errors:error'),
                 error?.response?.data?.message ||
                 error?.message ||
                 t("unknownError")
@@ -98,7 +98,7 @@ export const AddAddressModal: FC<IAddAddressModalProps> = ({ onCloseModal, isMod
                                     {renderInput('Last name', 'lastName')}
                                 </View>
                             </View>
-                            {renderInput('Phone', 'phone','number-pad')}
+                            {renderInput('Phone', 'phone', 'number-pad')}
                             {renderInput('Company', 'company')}
                             {renderInput('State', 'state')}
                             {renderInput('Street address', 'street')}

@@ -26,12 +26,11 @@ export const InputSection = () => {
     const formatPhoneNumber = (phone?: string) => {
         if (!phone) return ''
 
-        const match = phone.match(/(\d{3})(\d{3})(\d{4})$/)
-
-        if (!match) return phone
-
-        const [, first, second, third] = match
-        return `(${first}) ${second}-${third}`
+        const first = phone.slice(4, 7)
+        const second = phone.slice(8, 11)
+        const third = phone.slice(12, 14)
+        const fourth = phone.slice(15, 17)
+        return "(" + first + ")" + " " + second + "-" + third + "-" + fourth
     }
     const formattedPhone = formatPhoneNumber(authInfo.user?.phoneNumber)
 
@@ -79,14 +78,14 @@ export const InputSection = () => {
             {fields.map(({ key, value }) => (
                 <ProfileInfoPageTxtInput
                     key={key}
-                    title={t(key)}
+                    title={t('profile:' + key)}
                     value={value ?? ''}
                     editable={false} />
             ))}
 
             <ProfileInfoPageTxtInput
                 onPress={changePassword}
-                title={t('password')}
+                title={t('auth:password')}
                 placeHolder="******"
                 iconName="chevron-right"
                 iconType="Entypo"
@@ -96,14 +95,14 @@ export const InputSection = () => {
             <View style={{ flexDirection: 'row' }}>
                 <View style={styles.countryCode}>
                     <ProfileInfoPageTxtInput
-                        title={t('countryCode')}
+                        title={t('address:countryCode')}
                         placeHolder="+90"
                         editable={false}
                     />
                 </View>
                 <View style={styles.phoneNumber}>
                     <ProfileInfoPageTxtInput
-                        title={t('phoneNumber')}
+                        title={t('profile:phoneNumber')}
                         iconName="chevron-right"
                         iconType="Entypo"
                         editable={false}
@@ -113,11 +112,11 @@ export const InputSection = () => {
             </View>
             <ProfileInfoPageTxtInput
                 multiline
-                title={t('description')}
+                title={t('profile:description')}
                 editable
                 value={description}
                 onInputChange={handleDescriptionChange}
-                placeHolder={t("youCanWriteSomethingAboutYourself")} />
+                placeHolder={t('profile:descriptionPlaceholder')} />
         </View>
     )
 }

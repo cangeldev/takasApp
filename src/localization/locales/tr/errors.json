@@ -1,0 +1,18 @@
+{
+    "error": "Bir Hata Oluştu ❌",
+    "errorText": "Giriş sırasında bir sorun meydana geldi. Lütfen daha sonra tekrar dene",
+    "info": "Hatalı Bilgiler ⚠️",
+    "infoText": "Bazı bilgilerin eksik görünüyor. Lütfen tekrar kontrol et",
+    "success": "Giriş Başarılı 🎉",
+    "successText": "Hoş geldin! Uygulamayı kullanmaya başlayabilirsin",
+    "invalidEmail": "Lütfen geçerli bir e posta giriniz",
+    "emailAlreadyRegistered": "Bu e posta zaten kayıtlı",
+    "usernameAlreadyTaken": "Bu kullanıcı adı daha önce alınmış",
+    "passwordsDontMatch": "Şifreler uyuşmuyor",
+    "passwordError": "Girdiğiniz yeni şifre ile şifre onayı birbiriyle uyuşmuyor.",
+    "passwordErrorEmpty": "Herhangi bir alan boş bırakılamaz.",
+    "passwordSameAsOld": "Eski şifreniz ve yeni şifreniz aynı olamaz.",
+    "passwordTooShort": "Yeni şifreniz en az 8 karakter uzunluğunda olmalıdır.",
+    "phoneNumberText": "Lütfen geçerli bir telefon numarası giriniz.",
+    "missingFields": "Lütfen tüm alanları doldurun"
+}

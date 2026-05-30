@@ -27,7 +27,7 @@ export const AuthSocialLoginSection: FC<IAuthSocialLoginSection> = ({ navigation
         <View>
             <View style={styles.dividerContainer}>
                 <View style={styles.divider} />
-                <Text style={styles.orText}>{t("loginWith")}</Text>
+                <Text style={styles.orText}>{t('auth:loginWith')}</Text>
                 <View style={styles.divider} />
             </View>
             <View style={styles.socialContainer}>

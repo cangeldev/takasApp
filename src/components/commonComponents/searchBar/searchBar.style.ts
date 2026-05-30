@@ -18,7 +18,8 @@ const getStyles = () => {
         },
         searchIcon: {
             fontSize: scaleFont(17),
-            color: colors.text.primary
+            color: colors.text.primary,
+            marginRight: horizontalScale(5)
         }
     })
 }

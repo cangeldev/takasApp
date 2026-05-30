@@ -49,19 +49,19 @@ export const AppStack: React.FC<AppStackProps> = ({ initialRoute }) => {
 
       {/* Profile Pages */}
       <Stack.Screen name="ProfileInfoPage" component={ProfileInfoPage} options={hiddenHeader} />
-      <Stack.Screen name="LanguageThemePage" component={LanguageThemePage} options={{ headerTitle: t('languageAndThemeSettings') }} />
-      <Stack.Screen name="NotificationSettingsPage" component={NotificationSettingsPage} options={{ headerTitle: t('notificationSettings') }} />
-      <Stack.Screen name="HelpAndSupportPage" component={HelpAndSupportPage} options={{ headerTitle: t('helpAndSupport') }} />
-      <Stack.Screen name="FavoritesPage" component={FavoritesPage} options={{ headerTitle: t('myFavorites') }} />
-      <Stack.Screen name="MyNetworksPage" component={MyNetworksPage} options={{ headerTitle: t('myNetwork') }} />
+      <Stack.Screen name="LanguageThemePage" component={LanguageThemePage} options={{ headerTitle: t('settings:languageAndThemeSettings') }} />
+      <Stack.Screen name="NotificationSettingsPage" component={NotificationSettingsPage} options={{ headerTitle: t('settings:notificationSettings') }} />
+      <Stack.Screen name="HelpAndSupportPage" component={HelpAndSupportPage} options={{ headerTitle: t('settings:helpAndSupport') }} />
+      <Stack.Screen name="FavoritesPage" component={FavoritesPage} options={{ headerTitle: t('settings:myFavorites') }} />
+      <Stack.Screen name="MyNetworksPage" component={MyNetworksPage} options={{ headerTitle: t('settings:myNetwork') }} />
       <Stack.Screen name="ProductDetailsCard" component={ProductDetailsCard} options={hiddenHeader} />
-     
+
       <Stack.Screen name="AddressPage" component={AddressPage}
         options={{
-          headerTitle: t('addressAndLocationInformation'),
+          headerTitle: t('settings:addressAndLocationInformation'),
           headerRight: () => (
             <Text style={{ color: colors.text.primary, fontWeight: '600' }}>
-              {t('addAddress')}
+              { t('address:addAddress')}
             </Text>
           )
         }} />

@@ -1,0 +1,12 @@
+{
+  "generalNotifications": "General Notifications",
+  "emailNotifications": "Email Notifications",
+  "campaignNotifications": "Campaign Notifications",
+  "whenCommentIsMadeOnProduct": "When a comment is made on a product",
+  "whenOfferMadeProduct": "When an offer is made on a product",
+  "notificationsOffersYouSent": "Notifications for offers you sent",
+  "offersMadeYourProducts": "Offers made on your products",
+  "receiveSMSNotifications": "I want to receive SMS notifications",
+  "yourFavoriteProductsForYou": "Your favorite products are waiting for you! Don't miss out on great deals!",
+  "receiveCallsRelatedCampaigns": "I want to receive calls related to campaigns"
+}

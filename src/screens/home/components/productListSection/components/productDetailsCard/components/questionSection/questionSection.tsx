@@ -24,7 +24,7 @@ export const QuestionSection = () => {
     return (
         <View style={styles.qaSectionContainer}>
             <View style={styles.qaHeaderRow}>
-                <Text style={styles.qaTitleText}>{t("questionAnswer")}</Text>
+                <Text style={styles.qaTitleText}>{t('product:questionAnswer')}</Text>
                 <Text style={styles.qaInfoIcon}>ℹ️</Text>
             </View>
 
@@ -41,7 +41,7 @@ export const QuestionSection = () => {
                 </ScrollView>
             </View>
             <TouchableOpacity style={styles.questionInputBox}>
-                <Text style={styles.questionPlaceholderText}>{t("askSellerQuestion")}</Text>
+                <Text style={styles.questionPlaceholderText}>{t('product:askSellerQuestion')}</Text>
                 <Icon name={'pencil'} type="EvilIcons" style={styles.questionPencilIcon} />
             </TouchableOpacity>
         </View>

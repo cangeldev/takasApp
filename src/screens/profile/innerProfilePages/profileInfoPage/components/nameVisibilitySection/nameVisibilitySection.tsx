@@ -17,7 +17,7 @@ export const NameVisibilitySection = () => {
 
     return (
         <View style={styles.descriptionContainer}>
-            <Text style={styles.descriptionText}>{t("selectNameText")}</Text>
+            <Text style={styles.descriptionText}>{t('profile:selectNameText')}</Text>
             <NameVisibilitySectionComponent />
         </View>
     )

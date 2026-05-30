@@ -34,9 +34,9 @@ export const FavoriteProductsSection = () => {
   const sortedList = useMemo(() => {
     const sortedData = [...recommenedList]
     switch (t(selectedSort)) {
-      case t('lowestPrice'):
+      case t('product:lowestPrice'):
         return sortedData.sort((a, b) => a.price - b.price)
-      case t('highestPrice'):
+      case t('product:highestPrice'):
         return sortedData.sort((a, b) => b.price - a.price)
       default:
         return sortedData
@@ -59,7 +59,7 @@ export const FavoriteProductsSection = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.bannerText}>{t('yourFavoriteProductsForYou')}</Text>
+      <Text style={styles.bannerText}>{t('notifications:yourFavoriteProductsForYou')}</Text>
 
       <FlatList<Product>
         data={sortedList}

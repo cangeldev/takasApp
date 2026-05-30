@@ -43,7 +43,7 @@ export const SimilarProductsSection = () => {
 
     return (
         <View>
-            <Text style={styles.sectionTitleText}>{t("similarProducts")}</Text>
+            <Text style={styles.sectionTitleText}>{t('product:similarProducts')}</Text>
             <FlatList
                 data={products}
                 keyExtractor={(item) => item.id}
